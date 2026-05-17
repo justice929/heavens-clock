@@ -1,0 +1,19 @@
+{
+  "name": "천국의 시계",
+  "short_name": "천국시계",
+  "description": "남은 시간을 보여주는 시계",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "lang": "ko",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

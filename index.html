@@ -1,0 +1,799 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#000000">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <title>Heaven's Clock</title>
+  <style>
+    :root {
+      --size: min(72vmin, 520px);
+      --ease-mood: 1.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      color-scheme: dark;
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--font-body);
+      padding:
+        env(safe-area-inset-top)
+        env(safe-area-inset-right)
+        env(safe-area-inset-bottom)
+        env(safe-area-inset-left);
+      transition:
+        background var(--ease-mood),
+        color var(--ease-mood);
+    }
+
+    body[data-mood="calm"] {
+      --bg: #07090d;
+      --fg: #b8c4d0;
+      --dim: rgba(184, 196, 208, 0.45);
+      --glow: rgba(140, 170, 200, 0.08);
+      --ring-track: rgba(255, 255, 255, 0.04);
+      --ring-years: rgba(210, 220, 235, 0.85);
+      --ring-days: rgba(170, 195, 220, 0.65);
+      --ring-hours: rgba(150, 180, 210, 0.5);
+      --ring-minutes: rgba(130, 165, 200, 0.4);
+      --ring-seconds: rgba(120, 160, 195, 0.75);
+      --panel-border: rgba(255, 255, 255, 0.06);
+      --panel-bg: rgba(255, 255, 255, 0.02);
+      --text-glow: 0 0 20px rgba(140, 170, 200, 0.15);
+      --font-body: "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+      --font-digits: "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      --grain-opacity: 0.02;
+      --vignette: radial-gradient(ellipse 80% 70% at 50% 45%, transparent 40%, rgba(0, 0, 0, 0.55) 100%);
+    }
+
+    body[data-mood="impact"] {
+      --bg: #000000;
+      --fg: #ffffff;
+      --dim: rgba(255, 255, 255, 0.4);
+      --glow: rgba(255, 255, 255, 0.22);
+      --ring-track: rgba(255, 255, 255, 0.06);
+      --ring-years: rgba(255, 255, 255, 0.95);
+      --ring-days: rgba(255, 255, 255, 0.7);
+      --ring-hours: rgba(255, 255, 255, 0.55);
+      --ring-minutes: rgba(255, 255, 255, 0.4);
+      --ring-seconds: rgba(255, 55, 55, 0.95);
+      --panel-border: rgba(255, 255, 255, 0.2);
+      --panel-bg: rgba(255, 255, 255, 0.05);
+      --text-glow: 0 0 16px rgba(255, 255, 255, 0.5), 0 0 48px rgba(255, 50, 50, 0.2);
+      --font-body: "Segoe UI", "Roboto", "Noto Sans KR", sans-serif;
+      --font-digits: "Consolas", "Roboto Mono", "Segoe UI", sans-serif;
+      --grain-opacity: 0.07;
+      --vignette: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(255, 40, 40, 0.06) 0%, transparent 55%);
+    }
+
+    body[data-theme="ember"] {
+      --bg: #050202;
+      --fg: #fff2ec;
+      --dim: rgba(255, 210, 195, 0.44);
+      --glow: rgba(255, 80, 45, 0.18);
+      --ring-years: rgba(255, 238, 225, 0.92);
+      --ring-days: rgba(255, 170, 120, 0.7);
+      --ring-hours: rgba(255, 120, 85, 0.58);
+      --ring-minutes: rgba(255, 95, 70, 0.46);
+      --ring-seconds: rgba(255, 65, 45, 0.96);
+      --panel-border: rgba(255, 110, 80, 0.22);
+      --panel-bg: rgba(255, 80, 45, 0.055);
+      --text-glow: 0 0 18px rgba(255, 120, 80, 0.48), 0 0 54px rgba(255, 50, 30, 0.22);
+      --vignette: radial-gradient(ellipse 70% 48% at 50% 62%, rgba(255, 50, 30, 0.09), transparent 60%);
+    }
+
+    body[data-theme="cosmos"] {
+      --bg: #020712;
+      --fg: #dcecff;
+      --dim: rgba(190, 220, 255, 0.42);
+      --glow: rgba(80, 170, 255, 0.17);
+      --ring-years: rgba(220, 242, 255, 0.92);
+      --ring-days: rgba(135, 215, 255, 0.72);
+      --ring-hours: rgba(105, 170, 255, 0.58);
+      --ring-minutes: rgba(145, 130, 255, 0.48);
+      --ring-seconds: rgba(135, 232, 255, 0.95);
+      --panel-border: rgba(120, 200, 255, 0.2);
+      --panel-bg: rgba(90, 150, 255, 0.045);
+      --text-glow: 0 0 18px rgba(130, 210, 255, 0.42), 0 0 54px rgba(90, 120, 255, 0.18);
+      --vignette: radial-gradient(ellipse 80% 62% at 50% 42%, rgba(70, 120, 255, 0.08), transparent 60%);
+    }
+
+    body[data-theme="chronograph"] {
+      --bg: #070604;
+      --fg: #f0e3c2;
+      --dim: rgba(230, 210, 170, 0.43);
+      --glow: rgba(215, 190, 120, 0.14);
+      --ring-years: rgba(255, 244, 210, 0.93);
+      --ring-days: rgba(215, 194, 138, 0.75);
+      --ring-hours: rgba(190, 165, 105, 0.6);
+      --ring-minutes: rgba(165, 140, 90, 0.5);
+      --ring-seconds: rgba(255, 220, 140, 0.95);
+      --panel-border: rgba(215, 194, 138, 0.22);
+      --panel-bg: rgba(215, 194, 138, 0.045);
+      --text-glow: 0 0 18px rgba(215, 194, 138, 0.38), 0 0 50px rgba(90, 65, 25, 0.28);
+      --vignette: radial-gradient(ellipse 72% 58% at 50% 45%, rgba(215, 194, 138, 0.07), transparent 60%);
+    }
+
+    .backdrop {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: var(--vignette);
+      transition: background var(--ease-mood);
+    }
+
+    .grain {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: var(--grain-opacity);
+      transition: opacity var(--ease-mood);
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    body[data-mood="impact"] .scanlines { opacity: 0.04; }
+
+    .scanlines {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity var(--ease-mood);
+      background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.03) 4px);
+    }
+
+    .mood-switch {
+      position: fixed;
+      top: 1.25rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      display: flex;
+      padding: 3px;
+      border-radius: 999px;
+      border: 1px solid var(--panel-border);
+      background: var(--panel-bg);
+      backdrop-filter: blur(8px);
+      transition: border-color var(--ease-mood), background var(--ease-mood);
+    }
+
+    .theme-switch {
+      position: fixed;
+      top: 4.05rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      display: flex;
+      gap: 0.42rem;
+      padding: 0.35rem 0.5rem;
+      border: 1px solid var(--panel-border);
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.18);
+      backdrop-filter: blur(8px);
+      transition: border-color var(--ease-mood), background var(--ease-mood);
+    }
+
+    .theme-dot {
+      width: 0.72rem;
+      height: 0.72rem;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 50%;
+      background: var(--theme-accent, #fff);
+      cursor: pointer;
+      opacity: 0.55;
+      transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .theme-dot[aria-pressed="true"] {
+      opacity: 1;
+      transform: scale(1.18);
+      box-shadow: 0 0 18px var(--theme-accent, rgba(255, 255, 255, 0.4));
+    }
+
+    .mood-switch button {
+      appearance: none;
+      border: none;
+      background: transparent;
+      color: var(--dim);
+      font-family: inherit;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      padding: 0.55em 1.2em;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: color 0.35s ease, background 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .mood-switch button[aria-selected="true"] {
+      color: var(--fg);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .settings-button {
+      position: fixed;
+      top: 1.25rem;
+      right: max(1rem, env(safe-area-inset-right));
+      z-index: 10;
+      width: 2.2rem;
+      height: 2.2rem;
+      border: 1px solid var(--panel-border);
+      border-radius: 50%;
+      background: var(--panel-bg);
+      color: var(--dim);
+      font-size: 1rem;
+      line-height: 1;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+      transition: color 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+    }
+
+    .settings-button:hover {
+      color: var(--fg);
+      border-color: rgba(255, 255, 255, 0.28);
+    }
+
+    body[data-mood="impact"] .mood-switch button[aria-selected="true"] {
+      background: rgba(255, 255, 255, 0.14);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.12);
+    }
+
+    body[data-mood="calm"] .mood-switch button[aria-selected="true"] {
+      background: rgba(140, 170, 200, 0.12);
+    }
+
+    .brand-bar {
+      text-align: center;
+      margin-bottom: -0.5rem;
+    }
+
+    .brand-bar .app-name {
+      font-size: clamp(0.55rem, 1.8vw, 0.72rem);
+      letter-spacing: 0.42em;
+      color: var(--dim);
+      font-weight: 500;
+    }
+
+    .brand-bar .memento {
+      margin-top: 0.35em;
+      font-size: clamp(0.85rem, 2.8vw, 1.15rem);
+      letter-spacing: 0.55em;
+      font-weight: 500;
+      color: var(--fg);
+    }
+
+    body[data-mood="impact"] .brand-bar .memento {
+      text-shadow: var(--text-glow);
+      letter-spacing: 0.6em;
+    }
+
+    .daily-quote {
+      max-width: min(92vw, 420px);
+      text-align: center;
+      font-size: clamp(0.62rem, 1.8vw, 0.78rem);
+      line-height: 1.65;
+      letter-spacing: 0.06em;
+      color: var(--dim);
+      font-style: italic;
+      padding: 0 0.5rem;
+      min-height: 2.8em;
+    }
+
+    .stage {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: clamp(1.2rem, 3.5vh, 2.5rem);
+      padding: 4.5rem 1.25rem 2rem;
+      animation: fade-in 1.2s ease-out both;
+    }
+
+    .clock-wrap {
+      position: relative;
+      width: var(--size);
+      height: var(--size);
+      transition: filter var(--ease-mood);
+    }
+
+    body[data-mood="calm"] .clock-wrap {
+      animation: breathe 6s ease-in-out infinite;
+    }
+
+    body[data-mood="impact"] .clock-wrap.heartbeat {
+      animation: heartbeat 0.35s ease-out;
+    }
+
+    @keyframes breathe {
+      0%, 100% { transform: scale(1); filter: brightness(1); }
+      50% { transform: scale(1.012); filter: brightness(1.06); }
+    }
+
+    @keyframes heartbeat {
+      0% { transform: scale(1); }
+      40% { transform: scale(1.018); }
+      100% { transform: scale(1); }
+    }
+
+    .clock-wrap::before {
+      content: "";
+      position: absolute;
+      inset: 8%;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 42%, var(--glow), transparent 62%);
+      pointer-events: none;
+      transition: background var(--ease-mood);
+    }
+
+    .clock-wrap svg {
+      width: 100%;
+      height: 100%;
+      transform: rotate(-90deg);
+      filter: drop-shadow(0 0 28px var(--glow));
+      transition: filter var(--ease-mood);
+    }
+
+    .ring-track {
+      fill: none;
+      stroke: var(--ring-track);
+      transition: stroke var(--ease-mood);
+    }
+
+    .ring-fill {
+      fill: none;
+      stroke-linecap: round;
+      transition: stroke var(--ease-mood);
+    }
+
+    .ring-years { stroke: var(--ring-years); }
+    .ring-days { stroke: var(--ring-days); }
+    .ring-hours { stroke: var(--ring-hours); }
+    .ring-minutes { stroke: var(--ring-minutes); }
+    .ring-seconds { stroke: var(--ring-seconds); }
+
+    .center-dot {
+      fill: var(--fg);
+      transition: fill var(--ease-mood);
+    }
+
+    body[data-mood="impact"] .center-dot {
+      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.9));
+    }
+
+    .clock-label {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      pointer-events: none;
+    }
+
+    .ring-legend {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.45em 0.7em;
+      margin-top: 0.35em;
+      font-size: clamp(0.48rem, 1.5vmin, 0.62rem);
+      letter-spacing: 0.12em;
+      color: var(--dim);
+    }
+
+    .ring-legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35em;
+    }
+
+    .ring-legend i {
+      display: inline-block;
+      width: 0.55em;
+      height: 0.55em;
+      border-radius: 50%;
+      font-style: normal;
+    }
+
+    .ring-legend .lg-years i { background: var(--ring-years); }
+    .ring-legend .lg-days i { background: var(--ring-days); }
+    .ring-legend .lg-hours i { background: var(--ring-hours); }
+    .ring-legend .lg-minutes i { background: var(--ring-minutes); }
+    .ring-legend .lg-seconds i { background: var(--ring-seconds); }
+
+    .clock-label .pct {
+      display: block;
+      font-family: var(--font-digits);
+      font-size: clamp(1.6rem, 6.5vmin, 2.8rem);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+      transition: font-weight var(--ease-mood), text-shadow var(--ease-mood);
+    }
+
+    body[data-mood="impact"] .clock-label .pct {
+      font-weight: 700;
+      text-shadow: var(--text-glow);
+    }
+
+    .clock-label .pct-suffix {
+      font-size: 0.45em;
+      opacity: 0.65;
+    }
+
+    .clock-label .caption {
+      margin-top: 0.45em;
+      font-size: clamp(0.55rem, 1.8vmin, 0.72rem);
+      font-weight: 500;
+      letter-spacing: 0.35em;
+      color: var(--dim);
+      transition: letter-spacing var(--ease-mood), color var(--ease-mood);
+    }
+
+    body[data-mood="calm"] .clock-label .caption {
+      letter-spacing: 0.5em;
+    }
+
+    .digits {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: clamp(0.5rem, 2vw, 1rem);
+      max-width: 920px;
+    }
+
+    .unit {
+      --unit-w: clamp(4.2rem, 14vw, 7.5rem);
+      width: var(--unit-w);
+      text-align: center;
+    }
+
+    .unit-face {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.2em;
+      padding: 0.55em 0.35em 0.45em;
+      border: 1px solid var(--panel-border);
+      background: linear-gradient(180deg, var(--panel-bg) 0%, transparent 100%);
+      transition: border-color var(--ease-mood), box-shadow var(--ease-mood), transform 0.15s ease;
+    }
+
+    body[data-mood="calm"] .unit-face::before,
+    body[data-mood="calm"] .unit-face::after { display: none; }
+
+    .unit-face::before,
+    .unit-face::after {
+      content: "";
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-color: rgba(255, 255, 255, 0.4);
+      border-style: solid;
+      transition: opacity var(--ease-mood);
+    }
+
+    .unit-face::before {
+      top: 4px;
+      left: 4px;
+      border-width: 1px 0 0 1px;
+    }
+
+    .unit-face::after {
+      bottom: 4px;
+      right: 4px;
+      border-width: 0 1px 1px 0;
+    }
+
+    .unit-value {
+      display: block;
+      font-family: var(--font-digits);
+      font-size: clamp(1.6rem, 5.5vw, 2.8rem);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      line-height: 1.1;
+      font-variant-numeric: tabular-nums;
+      text-shadow: var(--text-glow);
+      transition: opacity 0.15s ease, transform 0.15s ease, font-weight var(--ease-mood), text-shadow var(--ease-mood);
+    }
+
+    body[data-mood="impact"] .unit-value { font-weight: 700; }
+
+    body[data-mood="calm"] .unit-value.tick-flash {
+      opacity: 0.88;
+      transform: scale(1.01);
+    }
+
+    body[data-mood="impact"] .unit-value.tick-flash {
+      opacity: 1;
+      transform: scale(1.04);
+      text-shadow: 0 0 24px rgba(255, 255, 255, 0.9), 0 0 60px rgba(255, 50, 50, 0.45);
+    }
+
+    .unit-label {
+      display: block;
+      margin: 0;
+      font-size: clamp(0.5rem, 1.4vw, 0.62rem);
+      font-weight: 500;
+      letter-spacing: 0.32em;
+      line-height: 1;
+      transition: color var(--ease-mood), letter-spacing var(--ease-mood);
+    }
+
+    body[data-mood="calm"] .unit-label { letter-spacing: 0.38em; }
+
+    /* Unit labels use complementary accents against the dark background. */
+    body[data-mood="calm"] .unit-years .unit-label { color: #e8d9b8; }
+    body[data-mood="calm"] .unit-days .unit-label { color: #b8dce8; }
+    body[data-mood="calm"] .unit-hours .unit-label { color: #b8e8c8; }
+    body[data-mood="calm"] .unit-minutes .unit-label { color: #d4b8e8; }
+    body[data-mood="calm"] .unit-seconds .unit-label { color: #e8b8b8; }
+
+    body[data-mood="impact"] .unit-years .unit-label { color: #ffe08a; }
+    body[data-mood="impact"] .unit-days .unit-label { color: #8ae8ff; }
+    body[data-mood="impact"] .unit-hours .unit-label { color: #a8ff8a; }
+    body[data-mood="impact"] .unit-minutes .unit-label { color: #e88aff; }
+    body[data-mood="impact"] .unit-seconds .unit-label { color: #ff6b6b; }
+
+    body[data-mood="impact"] .unit-seconds .unit-face {
+      border-color: rgba(255, 80, 80, 0.35);
+      box-shadow: 0 0 40px rgba(255, 50, 50, 0.12);
+    }
+
+    body[data-mood="calm"] .unit-seconds .unit-face {
+      border-color: rgba(160, 185, 210, 0.2);
+      box-shadow: none;
+    }
+
+    .footer-line {
+      font-size: clamp(0.5rem, 1.4vw, 0.62rem);
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      color: var(--dim);
+      text-align: center;
+      transition: color var(--ease-mood);
+    }
+
+    .mood-hint {
+      font-size: clamp(0.48rem, 1.2vw, 0.58rem);
+      letter-spacing: 0.18em;
+      color: var(--dim);
+      opacity: 0.7;
+      text-align: center;
+      margin-top: -1.5rem;
+    }
+
+    .install-tip[hidden] {
+      display: none !important;
+    }
+
+    .install-tip:not([hidden]) {
+      display: block;
+      position: fixed;
+      bottom: max(0.75rem, env(safe-area-inset-bottom));
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 20;
+      width: min(92vw, 360px);
+      padding: 0.75em 1em;
+      border-radius: 12px;
+      border: 1px solid var(--panel-border);
+      background: rgba(12, 12, 12, 0.92);
+      color: var(--fg);
+      font-size: 0.68rem;
+      line-height: 1.5;
+      letter-spacing: 0.04em;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    }
+
+    .install-tip strong {
+      display: block;
+      margin-bottom: 0.35em;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+    }
+
+    .install-tip button {
+      margin-top: 0.55em;
+      padding: 0.4em 1em;
+      border: 1px solid var(--panel-border);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--dim);
+      font-family: inherit;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      cursor: pointer;
+    }
+
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 520px) {
+      :root {
+        --size: min(78vw, 360px);
+      }
+
+      .stage {
+        gap: 1.25rem;
+        padding: 4rem 1rem 1.5rem;
+      }
+
+      .mood-switch {
+        top: max(0.75rem, env(safe-area-inset-top));
+      }
+
+      .theme-switch {
+        top: calc(max(0.75rem, env(safe-area-inset-top)) + 2.75rem);
+      }
+
+      .settings-button {
+        top: max(0.75rem, env(safe-area-inset-top));
+        right: max(0.75rem, env(safe-area-inset-right));
+      }
+
+      .clock-label .pct {
+        font-size: clamp(1.4rem, 7vw, 2.2rem);
+      }
+
+      .ring-legend {
+        gap: 0.35em 0.5em;
+        font-size: 0.5rem;
+      }
+
+      .digits {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.55rem;
+        width: min(92vw, 340px);
+        margin: 0 auto;
+      }
+
+      .unit {
+        width: 100%;
+        --unit-w: auto;
+      }
+
+      .unit-years {
+        grid-column: 1 / -1;
+      }
+
+      .unit-seconds {
+        grid-column: 2;
+        justify-self: stretch;
+      }
+
+      .unit-value {
+        font-size: clamp(1.35rem, 6.5vw, 2rem);
+      }
+
+      .unit-label {
+        letter-spacing: 0.28em;
+        font-size: 0.48rem;
+      }
+
+      .mood-hint {
+        margin-top: 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body data-mood="calm" data-theme="void">
+  <div class="backdrop" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <nav class="mood-switch" role="tablist" aria-label="Display mood">
+    <button type="button" role="tab" data-mood="calm" aria-selected="true" data-i18n="mood.calm">Calm</button>
+    <button type="button" role="tab" data-mood="impact" aria-selected="false" data-i18n="mood.impact">Impact</button>
+  </nav>
+  <nav class="theme-switch" id="theme-switch" aria-label="Theme selector"></nav>
+  <button type="button" class="settings-button" id="edit-settings" aria-label="Edit life settings">⚙</button>
+
+  <main class="stage">
+    <header class="brand-bar">
+      <p class="app-name" data-i18n="appTitle">Heaven's Clock</p>
+      <p class="memento">Memento Mori</p>
+    </header>
+
+    <div class="clock-wrap" id="clock-wrap">
+      <svg viewBox="0 0 200 200" role="img" aria-label="Remaining time rings">
+        <g id="rings"></g>
+        <circle class="center-dot" cx="100" cy="100" r="2"/>
+      </svg>
+      <div class="clock-label">
+        <span class="pct"><span id="pct-value">—</span><span class="pct-suffix">%</span></span>
+        <span class="caption" id="caption" data-i18n="remaining">TIME LEFT</span>
+        <div class="ring-legend" aria-hidden="true">
+          <span class="lg-years"><i></i><span data-i18n="unit.year">YEAR</span></span>
+          <span class="lg-days"><i></i><span data-i18n="unit.day">DAY</span></span>
+          <span class="lg-hours"><i></i><span data-i18n="unit.hour">HOUR</span></span>
+          <span class="lg-minutes"><i></i><span data-i18n="unit.min">MIN</span></span>
+          <span class="lg-seconds"><i></i><span data-i18n="unit.sec">SEC</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="digits" aria-live="polite">
+      <div class="unit unit-years">
+        <div class="unit-face">
+          <span class="unit-value" data-key="years">0</span>
+          <span class="unit-label" data-i18n="unit.year">YEAR</span>
+        </div>
+      </div>
+      <div class="unit unit-days">
+        <div class="unit-face">
+          <span class="unit-value" data-key="days">0</span>
+          <span class="unit-label" data-i18n="unit.day">DAY</span>
+        </div>
+      </div>
+      <div class="unit unit-hours">
+        <div class="unit-face">
+          <span class="unit-value" data-key="hours">00</span>
+          <span class="unit-label" data-i18n="unit.hour">HOUR</span>
+        </div>
+      </div>
+      <div class="unit unit-minutes">
+        <div class="unit-face">
+          <span class="unit-value" data-key="minutes">00</span>
+          <span class="unit-label" data-i18n="unit.min">MIN</span>
+        </div>
+      </div>
+      <div class="unit unit-seconds">
+        <div class="unit-face">
+          <span class="unit-value" data-key="seconds">00</span>
+          <span class="unit-label" data-i18n="unit.sec">SEC</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="daily-quote" id="daily-quote" aria-live="polite"></p>
+
+    <p class="footer-line"><span data-i18n="target">TARGET</span> <span id="target-label">—</span></p>
+    <p class="mood-hint" id="mood-hint">Breathe with the moment</p>
+  </main>
+
+  <aside class="install-tip" id="install-tip" hidden>
+    <strong>Use like an app</strong>
+    Open this address in Safari or Chrome, then choose<br>
+    <b>Add to Home Screen</b>
+    <button type="button" id="install-dismiss">Close</button>
+  </aside>
+
+  <script src="js/app-bundle.js"></script>
+</body>
+</html>

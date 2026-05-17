@@ -1,0 +1,50 @@
+{
+  "appTitle": "Horloge du Ciel",
+  "mementoMori": "Memento Mori",
+  "remaining": "TEMPS RESTANT",
+  "target": "CIBLE",
+  "mood": {
+    "calm": "Calme",
+    "impact": "Impact"
+  },
+  "hint": {
+    "calm": "Respirez avec l'instant",
+    "impact": "Chaque instant s'en va"
+  },
+  "unit": {
+    "year": "AN",
+    "day": "JOUR",
+    "hour": "H",
+    "min": "MIN",
+    "sec": "SEC"
+  },
+  "onboarding": {
+    "title": "Commencer",
+    "subtitle": "Définissez la vie que vous espérez.",
+    "step1": "Langue",
+    "step2": "Date de naissance",
+    "step3": "Heure de naissance",
+    "step4": "Espérance de vie (ans)",
+    "birthDate": "Date de naissance",
+    "birthTime": "Heure de naissance",
+    "lifespan": "Années espérées",
+    "timezone": "Fuseau horaire",
+    "next": "Suivant",
+    "start": "Lancer l'horloge",
+    "note": "Stocké sur l'appareil. Le compte à rebours suit votre fuseau.",
+    "languageQuestion": "Choisis la voix de ton horloge.",
+    "birthDateQuestion": "Quand ton histoire a-t-elle commencé ?",
+    "birthTimeQuestion": "Si tu la connais, ajoute ton heure de naissance.",
+    "lifespanQuestion": "Combien d’années espères-tu vivre ?",
+    "invalidDate": "Veuillez saisir une date valide.",
+    "invalidTime": "Veuillez saisir une heure valide.",
+    "year": "Année",
+    "month": "Mois",
+    "day": "Jour",
+    "hour": "Heure",
+    "minute": "Minute",
+    "editTitle": "Ajuste ton horloge",
+    "editSubtitle": "Modifie ta date de naissance, ton heure de naissance ou ton espérance de vie.",
+    "back": "Retour"
+  }
+}

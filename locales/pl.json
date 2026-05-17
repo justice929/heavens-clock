@@ -1,0 +1,50 @@
+{
+  "appTitle": "Zegar Nieba",
+  "mementoMori": "Memento Mori",
+  "remaining": "POZOSTAŁO",
+  "target": "CEL",
+  "mood": {
+    "calm": "Spokój",
+    "impact": "Impakt"
+  },
+  "hint": {
+    "calm": "Oddychaj z chwilą",
+    "impact": "Każda chwila znika"
+  },
+  "unit": {
+    "year": "ROK",
+    "day": "DZIEŃ",
+    "hour": "GODZ",
+    "min": "MIN",
+    "sec": "SEK"
+  },
+  "onboarding": {
+    "title": "Zacznij",
+    "subtitle": "Ustaw życie, którego pragniesz.",
+    "step1": "Język",
+    "step2": "Data urodzenia",
+    "step3": "Godzina urodzenia",
+    "step4": "Oczekiwana długość życia",
+    "birthDate": "Data urodzenia",
+    "birthTime": "Godzina urodzenia",
+    "lifespan": "Oczekiwane lata",
+    "timezone": "Strefa czasowa",
+    "next": "Dalej",
+    "start": "Uruchom zegar",
+    "note": "Tylko na urządzeniu. Odliczanie według strefy czasowej.",
+    "languageQuestion": "Wybierz język swojego zegara.",
+    "birthDateQuestion": "Kiedy zaczęła się twoja historia?",
+    "birthTimeQuestion": "Jeśli znasz, wpisz godzinę urodzenia.",
+    "lifespanQuestion": "Ile lat masz nadzieję żyć?",
+    "invalidDate": "Wpisz prawidłową datę.",
+    "invalidTime": "Wpisz prawidłową godzinę.",
+    "year": "Rok",
+    "month": "Miesiąc",
+    "day": "Dzień",
+    "hour": "Godzina",
+    "minute": "Minuta",
+    "editTitle": "Dostosuj swój zegar",
+    "editSubtitle": "Zmień datę urodzenia, godzinę urodzenia lub oczekiwaną długość życia.",
+    "back": "Wstecz"
+  }
+}

@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Heaven\'s Clock</string>
+    <string name="title_activity_main">Heaven\'s Clock</string>
+    <string name="widget_description">Memento Mori life countdown widget</string>
+    <string name="package_name">com.heavensclock.app</string>
+    <string name="custom_url_scheme">com.heavensclock.app</string>
+</resources>

@@ -1,0 +1,50 @@
+{
+  "appTitle": "Jam Surga",
+  "mementoMori": "Memento Mori",
+  "remaining": "WAKTU TERSISA",
+  "target": "TARGET",
+  "mood": {
+    "calm": "Tenang",
+    "impact": "Dampak"
+  },
+  "hint": {
+    "calm": "Bernapas dengan saat ini",
+    "impact": "Setiap detik berkurang"
+  },
+  "unit": {
+    "year": "THN",
+    "day": "HARI",
+    "hour": "JAM",
+    "min": "MENIT",
+    "sec": "DETIK"
+  },
+  "onboarding": {
+    "title": "Mulai",
+    "subtitle": "Tetapkan hidup yang Anda harapkan.",
+    "step1": "Bahasa",
+    "step2": "Tanggal lahir",
+    "step3": "Waktu lahir",
+    "step4": "Harapan umur (tahun)",
+    "birthDate": "Tanggal lahir",
+    "birthTime": "Waktu lahir",
+    "lifespan": "Tahun yang diharapkan",
+    "timezone": "Zona waktu",
+    "next": "Lanjut",
+    "start": "Mulai jam",
+    "note": "Hanya di perangkat Anda. Hitung mundur mengikuti zona waktu.",
+    "languageQuestion": "Pilih bahasa untuk jam Anda.",
+    "birthDateQuestion": "Kapan kisah Anda dimulai?",
+    "birthTimeQuestion": "Jika tahu, masukkan jam kelahiran Anda.",
+    "lifespanQuestion": "Berapa tahun Anda berharap hidup?",
+    "invalidDate": "Masukkan tanggal yang valid.",
+    "invalidTime": "Masukkan waktu yang valid.",
+    "year": "Tahun",
+    "month": "Bulan",
+    "day": "Hari",
+    "hour": "Jam",
+    "minute": "Menit",
+    "editTitle": "Atur jam Anda",
+    "editSubtitle": "Ubah tanggal lahir, waktu lahir, atau usia yang Anda harapkan.",
+    "back": "Kembali"
+  }
+}

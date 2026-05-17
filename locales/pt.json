@@ -1,0 +1,50 @@
+{
+  "appTitle": "Relógio do Céu",
+  "mementoMori": "Memento Mori",
+  "remaining": "TEMPO RESTANTE",
+  "target": "META",
+  "mood": {
+    "calm": "Calma",
+    "impact": "Impacto"
+  },
+  "hint": {
+    "calm": "Respire com o momento",
+    "impact": "Cada instante passa"
+  },
+  "unit": {
+    "year": "ANO",
+    "day": "DIA",
+    "hour": "HORA",
+    "min": "MIN",
+    "sec": "SEG"
+  },
+  "onboarding": {
+    "title": "Começar",
+    "subtitle": "Defina a vida que espera viver.",
+    "step1": "Idioma",
+    "step2": "Data de nascimento",
+    "step3": "Hora de nascimento",
+    "step4": "Expectativa de vida (anos)",
+    "birthDate": "Data de nascimento",
+    "birthTime": "Hora de nascimento",
+    "lifespan": "Anos que espera viver",
+    "timezone": "Fuso horário",
+    "next": "Próximo",
+    "start": "Iniciar relógio",
+    "note": "Salvo apenas no dispositivo. A contagem usa seu fuso.",
+    "languageQuestion": "Escolha a voz do seu relógio.",
+    "birthDateQuestion": "Quando a sua história começou?",
+    "birthTimeQuestion": "Se souber, informe a hora em que nasceu.",
+    "lifespanQuestion": "Quantos anos você espera viver?",
+    "invalidDate": "Digite uma data válida.",
+    "invalidTime": "Digite um horário válido.",
+    "year": "Ano",
+    "month": "Mês",
+    "day": "Dia",
+    "hour": "Hora",
+    "minute": "Minuto",
+    "editTitle": "Ajuste seu relógio",
+    "editSubtitle": "Altere sua data de nascimento, hora de nascimento ou expectativa de vida.",
+    "back": "Voltar"
+  }
+}

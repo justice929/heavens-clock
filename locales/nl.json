@@ -1,0 +1,50 @@
+{
+  "appTitle": "Hemelklok",
+  "mementoMori": "Memento Mori",
+  "remaining": "RESTEREND",
+  "target": "DOEL",
+  "mood": {
+    "calm": "Rust",
+    "impact": "Impact"
+  },
+  "hint": {
+    "calm": "Adem met het moment",
+    "impact": "Elk moment glipt weg"
+  },
+  "unit": {
+    "year": "JAAR",
+    "day": "DAG",
+    "hour": "UUR",
+    "min": "MIN",
+    "sec": "SEC"
+  },
+  "onboarding": {
+    "title": "Beginnen",
+    "subtitle": "Stel de levensduur in die u hoopt.",
+    "step1": "Taal",
+    "step2": "Geboortedatum",
+    "step3": "Geboortetijd",
+    "step4": "Verwachte levensjaren",
+    "birthDate": "Geboortedatum",
+    "birthTime": "Geboortetijd",
+    "lifespan": "Verwachte jaren",
+    "timezone": "Tijdzone",
+    "next": "Volgende",
+    "start": "Start klok",
+    "note": "Alleen op uw apparaat. Aftellen volgt uw tijdzone.",
+    "languageQuestion": "Kies de taal van je klok.",
+    "birthDateQuestion": "Wanneer begon jouw verhaal?",
+    "birthTimeQuestion": "Als je het weet, voeg je geboortetijd toe.",
+    "lifespanQuestion": "Hoeveel jaar hoop je te leven?",
+    "invalidDate": "Voer een geldige datum in.",
+    "invalidTime": "Voer een geldige tijd in.",
+    "year": "Jaar",
+    "month": "Maand",
+    "day": "Dag",
+    "hour": "Uur",
+    "minute": "Minuut",
+    "editTitle": "Pas je klok aan",
+    "editSubtitle": "Wijzig je geboortedatum, geboortetijd of gewenste levensduur.",
+    "back": "Terug"
+  }
+}

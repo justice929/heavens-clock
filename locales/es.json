@@ -1,0 +1,50 @@
+{
+  "appTitle": "Reloj del Cielo",
+  "mementoMori": "Memento Mori",
+  "remaining": "TIEMPO RESTANTE",
+  "target": "META",
+  "mood": {
+    "calm": "Calma",
+    "impact": "Impacto"
+  },
+  "hint": {
+    "calm": "Respira con el momento",
+    "impact": "Cada instante se va"
+  },
+  "unit": {
+    "year": "AÑO",
+    "day": "DÍA",
+    "hour": "HORA",
+    "min": "MIN",
+    "sec": "SEG"
+  },
+  "onboarding": {
+    "title": "Comenzar",
+    "subtitle": "Define la vida que esperas vivir.",
+    "step1": "Idioma",
+    "step2": "Fecha de nacimiento",
+    "step3": "Hora de nacimiento",
+    "step4": "Esperanza de vida (años)",
+    "birthDate": "Fecha de nacimiento",
+    "birthTime": "Hora de nacimiento",
+    "lifespan": "Años que esperas vivir",
+    "timezone": "Zona horaria",
+    "next": "Siguiente",
+    "start": "Iniciar reloj",
+    "note": "Solo en tu dispositivo. La cuenta regresiva usa tu zona horaria.",
+    "languageQuestion": "Elige la voz de tu reloj.",
+    "birthDateQuestion": "¿Cuándo comenzó tu historia?",
+    "birthTimeQuestion": "Si la sabes, añade la hora en que naciste.",
+    "lifespanQuestion": "¿Cuántos años esperas vivir?",
+    "invalidDate": "Introduce una fecha válida.",
+    "invalidTime": "Introduce una hora válida.",
+    "year": "Año",
+    "month": "Mes",
+    "day": "Día",
+    "hour": "Hora",
+    "minute": "Minuto",
+    "editTitle": "Ajusta tu reloj",
+    "editSubtitle": "Cambia tu fecha de nacimiento, hora de nacimiento o esperanza de vida.",
+    "back": "Atrás"
+  }
+}

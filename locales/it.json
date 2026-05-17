@@ -1,0 +1,50 @@
+{
+  "appTitle": "Orologio del Cielo",
+  "mementoMori": "Memento Mori",
+  "remaining": "TEMPO RESTANTE",
+  "target": "OBIETTIVO",
+  "mood": {
+    "calm": "Calma",
+    "impact": "Impatto"
+  },
+  "hint": {
+    "calm": "Respira con il momento",
+    "impact": "Ogni istante scorre via"
+  },
+  "unit": {
+    "year": "ANNO",
+    "day": "GIORNO",
+    "hour": "ORA",
+    "min": "MIN",
+    "sec": "SEC"
+  },
+  "onboarding": {
+    "title": "Inizia",
+    "subtitle": "Imposta la vita che speri di vivere.",
+    "step1": "Lingua",
+    "step2": "Data di nascita",
+    "step3": "Ora di nascita",
+    "step4": "Aspettativa di vita (anni)",
+    "birthDate": "Data di nascita",
+    "birthTime": "Ora di nascita",
+    "lifespan": "Anni che speri di vivere",
+    "timezone": "Fuso orario",
+    "next": "Avanti",
+    "start": "Avvia orologio",
+    "note": "Salvato solo sul dispositivo. Il conto alla rovescia segue il fuso.",
+    "languageQuestion": "Scegli la voce del tuo orologio.",
+    "birthDateQuestion": "Quando è iniziata la tua storia?",
+    "birthTimeQuestion": "Se la conosci, aggiungi l’ora in cui sei nato.",
+    "lifespanQuestion": "Quanti anni speri di vivere?",
+    "invalidDate": "Inserisci una data valida.",
+    "invalidTime": "Inserisci un orario valido.",
+    "year": "Anno",
+    "month": "Mese",
+    "day": "Giorno",
+    "hour": "Ora",
+    "minute": "Minuto",
+    "editTitle": "Regola il tuo orologio",
+    "editSubtitle": "Modifica la data di nascita, l’ora di nascita o la durata di vita desiderata.",
+    "back": "Indietro"
+  }
+}

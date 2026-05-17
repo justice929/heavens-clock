@@ -1,0 +1,50 @@
+{
+  "appTitle": "Himmelstuhr",
+  "mementoMori": "Memento Mori",
+  "remaining": "VERBLEIBEND",
+  "target": "ZIEL",
+  "mood": {
+    "calm": "Ruhe",
+    "impact": "Impact"
+  },
+  "hint": {
+    "calm": "Atme mit dem Moment",
+    "impact": "Jeder Augenblick vergeht"
+  },
+  "unit": {
+    "year": "JAHR",
+    "day": "TAG",
+    "hour": "STD",
+    "min": "MIN",
+    "sec": "SEK"
+  },
+  "onboarding": {
+    "title": "Beginnen",
+    "subtitle": "Lege die erhoffte Lebensdauer fest.",
+    "step1": "Sprache",
+    "step2": "Geburtsdatum",
+    "step3": "Geburtszeit",
+    "step4": "Erwartete Lebensjahre",
+    "birthDate": "Geburtsdatum",
+    "birthTime": "Geburtszeit",
+    "lifespan": "Erwartete Lebensjahre",
+    "timezone": "Zeitzone",
+    "next": "Weiter",
+    "start": "Uhr starten",
+    "note": "Nur auf dem Gerät gespeichert. Countdown folgt der Zeitzone.",
+    "languageQuestion": "Wähle die Sprache deiner Uhr.",
+    "birthDateQuestion": "Wann begann deine Geschichte?",
+    "birthTimeQuestion": "Wenn du sie kennst, gib deine Geburtszeit ein.",
+    "lifespanQuestion": "Wie viele Jahre möchtest du leben?",
+    "invalidDate": "Bitte gib ein gültiges Datum ein.",
+    "invalidTime": "Bitte gib eine gültige Uhrzeit ein.",
+    "year": "Jahr",
+    "month": "Monat",
+    "day": "Tag",
+    "hour": "Stunde",
+    "minute": "Minute",
+    "editTitle": "Passe deine Uhr an",
+    "editSubtitle": "Ändere dein Geburtsdatum, deine Geburtszeit oder deine gewünschte Lebensdauer.",
+    "back": "Zurück"
+  }
+}

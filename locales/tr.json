@@ -1,0 +1,50 @@
+{
+  "appTitle": "Cennet Saati",
+  "mementoMori": "Memento Mori",
+  "remaining": "KALAN SÜRE",
+  "target": "HEDEF",
+  "mood": {
+    "calm": "Sakin",
+    "impact": "Etki"
+  },
+  "hint": {
+    "calm": "Anla birlikte nefes al",
+    "impact": "Her an azalır"
+  },
+  "unit": {
+    "year": "YIL",
+    "day": "GÜN",
+    "hour": "SAAT",
+    "min": "DAK",
+    "sec": "SN"
+  },
+  "onboarding": {
+    "title": "Başla",
+    "subtitle": "Umut ettiğiniz yaşam süresini belirleyin.",
+    "step1": "Dil",
+    "step2": "Doğum tarihi",
+    "step3": "Doğum saati",
+    "step4": "Beklenen ömür (yıl)",
+    "birthDate": "Doğum tarihi",
+    "birthTime": "Doğum saati",
+    "lifespan": "Beklenen yıl",
+    "timezone": "Saat dilimi",
+    "next": "İleri",
+    "start": "Saati başlat",
+    "note": "Yalnızca cihazınızda. Geri sayım saat diliminizi kullanır.",
+    "languageQuestion": "Saatinin konuşacağı dili seç.",
+    "birthDateQuestion": "Hikayen hangi gün başladı?",
+    "birthTimeQuestion": "Biliyorsan doğduğun saati ekle.",
+    "lifespanQuestion": "Kaç yıl yaşamayı umuyorsun?",
+    "invalidDate": "Lütfen geçerli bir tarih girin.",
+    "invalidTime": "Lütfen geçerli bir saat girin.",
+    "year": "Yıl",
+    "month": "Ay",
+    "day": "Gün",
+    "hour": "Saat",
+    "minute": "Dakika",
+    "editTitle": "Saatini ayarla",
+    "editSubtitle": "Doğum tarihini, doğum saatini veya umut ettiğin yaşam süresini değiştir.",
+    "back": "Geri"
+  }
+}

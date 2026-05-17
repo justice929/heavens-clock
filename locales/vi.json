@@ -1,0 +1,50 @@
+{
+  "appTitle": "Đồng Hồ Thiên Đàng",
+  "mementoMori": "Memento Mori",
+  "remaining": "THỜI GIAN CÒN",
+  "target": "MỤC TIÊU",
+  "mood": {
+    "calm": "Tĩnh",
+    "impact": "Mạnh"
+  },
+  "hint": {
+    "calm": "Hít thở cùng khoảnh khắc",
+    "impact": "Từng giây đang trôi"
+  },
+  "unit": {
+    "year": "NĂM",
+    "day": "NGÀY",
+    "hour": "GIỜ",
+    "min": "PHÚT",
+    "sec": "GIÂY"
+  },
+  "onboarding": {
+    "title": "Bắt đầu",
+    "subtitle": "Đặt cuộc đời bạn mong muốn.",
+    "step1": "Ngôn ngữ",
+    "step2": "Ngày sinh",
+    "step3": "Giờ sinh",
+    "step4": "Tuổi thọ mong muốn",
+    "birthDate": "Ngày sinh",
+    "birthTime": "Giờ sinh",
+    "lifespan": "Số năm mong muốn",
+    "timezone": "Múi giờ",
+    "next": "Tiếp",
+    "start": "Bắt đầu đồng hồ",
+    "note": "Chỉ lưu trên thiết bị. Đếm ngược theo múi giờ bạn chọn.",
+    "languageQuestion": "Chọn ngôn ngữ cho chiếc đồng hồ của bạn.",
+    "birthDateQuestion": "Câu chuyện của bạn bắt đầu vào ngày nào?",
+    "birthTimeQuestion": "Nếu biết, hãy nhập giờ bạn chào đời.",
+    "lifespanQuestion": "Bạn hy vọng sống bao nhiêu năm?",
+    "invalidDate": "Vui lòng nhập ngày hợp lệ.",
+    "invalidTime": "Vui lòng nhập thời gian hợp lệ.",
+    "year": "Năm",
+    "month": "Tháng",
+    "day": "Ngày",
+    "hour": "Giờ",
+    "minute": "Phút",
+    "editTitle": "Điều chỉnh đồng hồ của bạn",
+    "editSubtitle": "Thay đổi ngày sinh, giờ sinh hoặc tuổi thọ mong muốn.",
+    "back": "Quay lại"
+  }
+}

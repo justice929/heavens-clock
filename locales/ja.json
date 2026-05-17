@@ -1,0 +1,50 @@
+{
+  "appTitle": "天国の時計",
+  "mementoMori": "Memento Mori",
+  "remaining": "残りの時間",
+  "target": "目標",
+  "mood": {
+    "calm": "瞑想",
+    "impact": "インパクト"
+  },
+  "hint": {
+    "calm": "呼吸に合わせて",
+    "impact": "一瞬一瞬が減る"
+  },
+  "unit": {
+    "year": "年",
+    "day": "日",
+    "hour": "時",
+    "min": "分",
+    "sec": "秒"
+  },
+  "onboarding": {
+    "title": "はじめる",
+    "subtitle": "望む人生の長さを設定します。",
+    "step1": "言語",
+    "step2": "生年月日",
+    "step3": "出生時刻",
+    "step4": "希望寿命（年）",
+    "birthDate": "生年月日",
+    "birthTime": "出生時刻",
+    "lifespan": "希望する寿命（年）",
+    "timezone": "タイムゾーン",
+    "next": "次へ",
+    "start": "時計を始める",
+    "note": "端末内のみに保存。カウントダウンは選択した時間帯に従います。",
+    "languageQuestion": "時計が話す言葉を選んでください。",
+    "birthDateQuestion": "あなたの物語が始まった日はいつですか？",
+    "birthTimeQuestion": "分かる場合は、生まれた時間を入力してください。",
+    "lifespanQuestion": "何年生きたいですか？",
+    "invalidDate": "正しい日付を入力してください。",
+    "invalidTime": "正しい時刻を入力してください。",
+    "year": "年",
+    "month": "月",
+    "day": "日",
+    "hour": "時",
+    "minute": "分",
+    "editTitle": "時計を調整",
+    "editSubtitle": "生年月日、出生時刻、希望寿命を変更します。",
+    "back": "戻る"
+  }
+}

@@ -1,0 +1,50 @@
+■ 천국의 시계 — 앱 개발 다음 단계
+
+현재 index.html 기반으로 앱 뼈대가 준비되었습니다.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+지금 포함된 기능
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+· 첫 실행 온보딩 (onboarding.html)
+  - 언어 선택 (19개국어)
+  - 생년월일 / 태어난 시간 / 희망 수명
+  - 기기 시간대 자동 적용
+· 메인 시계 (index.html)
+  - Memento Mori 표시
+  - 매일 바뀌는 명언 (한·영 32개, 기타 언어는 영문 명언)
+  - 명상 / 임팩트 모드
+· Netlify 배포 시 폴더 전체 업로드 필요
+  (index.html + js/ + locales/ + onboarding.html)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+테스트 방법 (PC)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. 핸드폰으로-보기.bat 실행
+2. 브라우저에서 http://주소/onboarding.html
+3. 설정 후 시계 화면 확인
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+진짜 iOS / Android 앱 (Capacitor)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Node.js 설치
+2. 이 폴더에서: npm install
+3. npx cap init (최초 1회, web-dir 은 . )
+4. npx cap add ios
+5. npx cap add android
+6. npx cap sync
+7. npx cap open ios  (Xcode에서 빌드)
+8. npx cap open android (Android Studio)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+인앱 결제 (IAP) — 다음 작업
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+· Apple App Store Connect / Google Play Console 상품 등록
+· RevenueCat 또는 @capacitor-community/in-app-purchases 연동
+· 온보딩 완료 후 또는 프리미엄 기능 잠금 해제 UI
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+명언 / 번역 보완
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+· locales/en.json, ko.json — 명언 32개 완료
+· 기타 언어 — UI 번역 완료, 명언은 영문 fallback
+· 전문 번역가 검수 후 각 locales/*.json 의 quotes 배열 추가 권장

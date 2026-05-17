@@ -1,0 +1,246 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <title>Heaven's Clock</title>
+  <style>
+    :root { color-scheme: dark; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { min-height: 100%; background: #05070b; color: #d7e0ea; }
+    body {
+      font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Segoe UI", system-ui, sans-serif;
+      padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 50% 20%, rgba(180, 210, 240, 0.12), transparent 34%),
+        radial-gradient(circle at 50% 95%, rgba(255, 120, 120, 0.08), transparent 42%);
+    }
+    .wrap {
+      position: relative;
+      width: min(100%, 440px);
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: 2rem 1.15rem 2.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.2rem;
+    }
+    .brand { text-align: center; }
+    .brand h1 {
+      font-size: 0.76rem;
+      font-weight: 500;
+      letter-spacing: 0.45em;
+      color: rgba(215, 224, 234, 0.52);
+    }
+    .brand .mm {
+      margin-top: 0.55rem;
+      font-size: clamp(1.2rem, 7vw, 2rem);
+      letter-spacing: 0.38em;
+      color: #f3f6f9;
+      text-indent: 0.38em;
+    }
+    .brand p {
+      max-width: 300px;
+      margin: 0.85rem auto 0;
+      color: rgba(215, 224, 234, 0.62);
+      font-size: 0.82rem;
+      line-height: 1.65;
+    }
+    .card {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 26px;
+      padding: 1.15rem;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.018));
+      box-shadow: 0 20px 70px rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(12px);
+    }
+    .step-kicker {
+      margin-bottom: 0.65rem;
+      color: rgba(215, 224, 234, 0.45);
+      font-size: 0.62rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+    }
+    .question {
+      margin-bottom: 1rem;
+      font-size: 1.05rem;
+      line-height: 1.45;
+      font-weight: 500;
+      color: #eef4f9;
+    }
+    .hidden { display: none !important; }
+    .lang-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+      max-height: 260px;
+      overflow-y: auto;
+      padding-right: 0.1rem;
+    }
+    .choice {
+      padding: 0.78rem 0.55rem;
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.035);
+      color: rgba(238, 244, 249, 0.86);
+      font: inherit;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+    .choice.active {
+      border-color: rgba(230, 215, 170, 0.62);
+      background: rgba(230, 215, 170, 0.12);
+      color: #fff4d2;
+      box-shadow: 0 0 24px rgba(230, 215, 170, 0.08);
+    }
+    .field-row {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 0.55rem;
+    }
+    .time-row { grid-template-columns: 1fr 1fr; }
+    label {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: rgba(215, 224, 234, 0.48);
+      font-size: 0.58rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    input {
+      width: 100%;
+      min-height: 3.1rem;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      background: rgba(0, 0, 0, 0.22);
+      color: #eef4f9;
+      padding: 0 0.85rem;
+      font: inherit;
+      font-size: 1.05rem;
+      text-align: center;
+      outline: none;
+    }
+    input:focus {
+      border-color: rgba(230, 215, 170, 0.58);
+      box-shadow: 0 0 0 3px rgba(230, 215, 170, 0.08);
+    }
+    .lifespan-value {
+      margin: 0.4rem 0 0.9rem;
+      text-align: center;
+      font-size: clamp(2.5rem, 16vw, 4rem);
+      font-weight: 600;
+      line-height: 1;
+      color: #f3f6f9;
+      font-variant-numeric: tabular-nums;
+    }
+    input[type="range"] {
+      padding: 0;
+      min-height: auto;
+      accent-color: #e6d7aa;
+    }
+    .tz-note {
+      margin-top: 0.9rem;
+      color: rgba(215, 224, 234, 0.46);
+      font-size: 0.68rem;
+      line-height: 1.55;
+      text-align: center;
+    }
+    .dots { display: flex; justify-content: center; gap: 0.4rem; }
+    .dots span {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.14);
+    }
+    .dots span.on { background: #e6d7aa; }
+    .actions {
+      display: grid;
+      grid-template-columns: 0.32fr 1fr;
+      gap: 0.65rem;
+    }
+    .btn {
+      min-height: 3.15rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      font-family: inherit;
+      letter-spacing: 0.16em;
+      cursor: pointer;
+    }
+    .btn-back { background: transparent; color: rgba(215, 224, 234, 0.52); }
+    .btn-primary {
+      background: linear-gradient(135deg, rgba(230, 215, 170, 0.26), rgba(150, 180, 210, 0.14));
+      color: #fff4d2;
+    }
+    .error {
+      min-height: 1.2em;
+      margin-top: 0.75rem;
+      color: #ff9c9c;
+      font-size: 0.72rem;
+      text-align: center;
+    }
+    @media (max-width: 420px) {
+      .brand .mm { letter-spacing: 0.28em; text-indent: 0.28em; }
+      .card { padding: 1rem; border-radius: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="brand">
+      <h1 data-i18n="appTitle">Heaven's Clock</h1>
+      <div class="mm">Memento Mori</div>
+      <p id="subtitle" data-i18n="onboarding.subtitle">Set the life you hope to live.</p>
+    </header>
+    <div class="dots" id="dots" aria-hidden="true"></div>
+    <section class="card">
+      <div id="step-0">
+        <p class="step-kicker">01 - <span data-i18n="onboarding.step1">Language</span></p>
+        <h2 class="question" data-i18n="onboarding.languageQuestion">Choose the voice of your clock.</h2>
+        <div class="lang-grid" id="lang-grid"></div>
+      </div>
+      <div id="step-1" class="hidden">
+        <p class="step-kicker">02 - <span data-i18n="onboarding.step2">Birth date</span></p>
+        <h2 class="question" data-i18n="onboarding.birthDateQuestion">When did your story begin?</h2>
+        <div class="field-row">
+          <div><label data-i18n="onboarding.year">Year</label><input id="birth-year" inputmode="numeric" maxlength="4" placeholder="1990"></div>
+          <div><label data-i18n="onboarding.month">Month</label><input id="birth-month" inputmode="numeric" maxlength="2" placeholder="01"></div>
+          <div><label data-i18n="onboarding.day">Day</label><input id="birth-day" inputmode="numeric" maxlength="2" placeholder="31"></div>
+        </div>
+      </div>
+      <div id="step-2" class="hidden">
+        <p class="step-kicker">03 - <span data-i18n="onboarding.step3">Birth time</span></p>
+        <h2 class="question" data-i18n="onboarding.birthTimeQuestion">If you know it, add the hour you arrived.</h2>
+        <div class="field-row time-row">
+          <div><label data-i18n="onboarding.hour">Hour</label><input id="birth-hour" inputmode="numeric" maxlength="2" placeholder="12"></div>
+          <div><label data-i18n="onboarding.minute">Minute</label><input id="birth-minute" inputmode="numeric" maxlength="2" placeholder="00"></div>
+        </div>
+        <p class="tz-note"><span data-i18n="onboarding.timezone">Time zone</span>: <strong id="tz-display"></strong></p>
+      </div>
+      <div id="step-3" class="hidden">
+        <p class="step-kicker">04 - <span data-i18n="onboarding.step4">Hoped lifespan</span></p>
+        <h2 class="question" data-i18n="onboarding.lifespanQuestion">How many years do you hope to live?</h2>
+        <div class="lifespan-value"><span id="lifespan-display">80</span></div>
+        <input type="range" id="lifespan" min="40" max="120" value="80">
+        <p class="tz-note" data-i18n="onboarding.note">Used only on your device. Countdown follows your local time zone.</p>
+      </div>
+      <p class="error" id="error"></p>
+    </section>
+    <div class="actions">
+      <button type="button" class="btn btn-back hidden" id="btn-back" data-i18n="onboarding.back">Back</button>
+      <button type="button" class="btn btn-primary" id="btn-next" data-i18n="onboarding.next">Next</button>
+    </div>
+  </main>
+  <script src="js/onboarding-bundle.js"></script>
+
+</body>
+</html>
+

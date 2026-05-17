@@ -1,0 +1,50 @@
+{
+  "appTitle": "天堂之钟",
+  "mementoMori": "Memento Mori",
+  "remaining": "剩余时间",
+  "target": "目标",
+  "mood": {
+    "calm": "冥想",
+    "impact": "冲击"
+  },
+  "hint": {
+    "calm": "随呼吸放慢",
+    "impact": "每一刻都在流逝"
+  },
+  "unit": {
+    "year": "年",
+    "day": "日",
+    "hour": "时",
+    "min": "分",
+    "sec": "秒"
+  },
+  "onboarding": {
+    "title": "开始",
+    "subtitle": "设定你期望的人生长度。",
+    "step1": "语言",
+    "step2": "出生日期",
+    "step3": "出生时间",
+    "step4": "期望寿命（岁）",
+    "birthDate": "出生日期",
+    "birthTime": "出生时间",
+    "lifespan": "期望寿命（年）",
+    "timezone": "时区",
+    "next": "下一步",
+    "start": "启动时钟",
+    "note": "仅保存在本设备。倒计时遵循所选时区。",
+    "languageQuestion": "选择你的时钟使用的语言。",
+    "birthDateQuestion": "你的故事从哪一天开始？",
+    "birthTimeQuestion": "如果知道，请输入你出生的时间。",
+    "lifespanQuestion": "你希望活多少年？",
+    "invalidDate": "请输入有效日期。",
+    "invalidTime": "请输入有效时间。",
+    "year": "年",
+    "month": "月",
+    "day": "日",
+    "hour": "时",
+    "minute": "分",
+    "editTitle": "调整你的时钟",
+    "editSubtitle": "更改你的出生日期、出生时间或希望寿命。",
+    "back": "返回"
+  }
+}
