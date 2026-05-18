@@ -256,39 +256,39 @@
 <body>
   <main class="wrap">
     <div class="topbar">
-      <a class="back" href="index.html">← Clock</a>
+      <a class="back" href="index.html" data-page-i18n="back">← Clock</a>
       <span class="count" id="count">0/100</span>
     </div>
 
     <header class="hero">
-      <p class="kicker">Memento Mori Practice</p>
-      <h1>Bucket List</h1>
-      <p class="sub">처음부터 100개를 쓰려고 하지 마세요. 질문 하나에 답하고, 좋은 예시를 눌러 담고, 오늘 미루지 않을 삶을 조금씩 모으면 됩니다.</p>
+      <p class="kicker" data-page-i18n="kicker">Memento Mori Practice</p>
+      <h1 data-i18n="bucket.title">Bucket List</h1>
+      <p class="sub" data-page-i18n="intro">Do not try to write 100 things at once. Answer one question, borrow one good example, and slowly collect the life you do not want to postpone.</p>
     </header>
 
     <section class="grid">
       <div class="panel">
-        <h2>내가 직접 쓰기</h2>
+        <h2 data-page-i18n="writeTitle">Write My Own</h2>
         <form class="form" id="form">
-          <textarea id="input" maxlength="120" placeholder="예: 부모님과 오래 미뤄둔 여행을 가기"></textarea>
-          <button class="add-btn" type="submit">Add to My Life</button>
+          <textarea id="input" maxlength="120" data-page-i18n-placeholder="inputPlaceholder" placeholder="Example: Take the trip I postponed with my parents"></textarea>
+          <button class="add-btn" type="submit" data-page-i18n="addToLife">Add to My Life</button>
         </form>
 
-        <h2>쓰게 만드는 질문</h2>
+        <h2 data-page-i18n="promptsTitle">Questions That Make You Write</h2>
         <div class="prompts" id="prompts"></div>
       </div>
 
       <div class="panel">
-        <h2>고품질 예시</h2>
+        <h2 data-page-i18n="suggestionsTitle">High-Quality Examples</h2>
         <div class="filters" id="filters"></div>
         <div class="suggestions" id="suggestions"></div>
       </div>
     </section>
 
     <section class="panel">
-      <h2>내 버킷리스트</h2>
+      <h2 data-page-i18n="myList">My Bucket List</h2>
       <div class="items" id="items"></div>
-      <p class="empty" id="empty">아직 등록된 버킷이 없습니다. 질문이나 예시를 눌러 하나부터 시작하세요.</p>
+      <p class="empty" id="empty" data-page-i18n="emptyPage">No buckets yet. Tap a question or example to begin with one.</p>
     </section>
   </main>
 

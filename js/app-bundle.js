@@ -25,6 +25,33 @@
     { id: "hologram", name: "Hologram", tier: "premium", accent: "#48eaff" },
   ];
 
+  const BUCKET_SUGGESTIONS = {
+    family_phone_free: { en: "Spend a full day with my parents without phones", ko: "부모님과 하루 종일 휴대폰 없이 시간을 보내기" },
+    family_photo: { en: "Take a proper family photo and frame it", ko: "가족사진을 제대로 찍고 액자로 남기기" },
+    family_letter: { en: "Write a handwritten letter to someone I am grateful for", ko: "고마웠던 사람에게 손편지 쓰기" },
+    travel_city_week: { en: "Live for one week in the city I keep saying I will visit someday", ko: "언젠가만 말하던 도시에서 일주일 살아보기" },
+    travel_dawn_train: { en: "Take a dawn train alone to see an unfamiliar sea", ko: "혼자 새벽 기차를 타고 낯선 바다 보러 가기" },
+    travel_meaningful_place: { en: "Return to a place that means something to me", ko: "나에게 의미 있는 장소를 다시 찾아가기" },
+    learning_instrument: { en: "Start one instrument I have wanted to learn for years", ko: "오랫동안 배우고 싶었던 악기 하나 시작하기" },
+    learning_language_letter: { en: "Study until I can write a short letter in another language", ko: "외국어로 짧은 편지를 쓸 수 있을 만큼 공부하기" },
+    learning_books: { en: "Reread 10 books that changed my life", ko: "내 인생을 바꾼 책 10권을 다시 읽기" },
+    courage_apology: { en: "Deliver the apology I have postponed", ko: "미뤄둔 사과를 직접 전하기" },
+    courage_public_start: { en: "Share even a small start on the thing fear kept me from beginning", ko: "두려워서 시작하지 못한 일을 작게라도 공개하기" },
+    courage_release_regret: { en: "Name the regret that held me for too long and let it go", ko: "나를 오래 붙잡던 후회를 한 문장으로 정리하고 놓아주기" },
+    health_walk_100: { en: "Walk for 100 days in a way my body will thank me for", ko: "내 몸이 고마워할 만큼 100일 걷기" },
+    health_checkup: { en: "Book the health checkup I have been delaying", ko: "건강검진을 미루지 않고 예약하기" },
+    health_sleep_month: { en: "Live one month without sacrificing sleep", ko: "잠을 희생하지 않는 한 달을 보내기" },
+    creation_finish_work: { en: "Finish one small work under my own name", ko: "내 이름으로 작은 작품 하나 완성하기" },
+    creation_record_year: { en: "Record this year of my life through photos, writing, or video", ko: "사진, 글, 영상으로 올해의 삶을 기록하기" },
+    creation_teach: { en: "Teach someone something I know", ko: "내가 아는 것을 누군가에게 가르쳐보기" },
+    spirit_no_proving: { en: "Spend one day proving nothing to anyone", ko: "하루 동안 아무것도 증명하지 않고 살아보기" },
+    spirit_values: { en: "Write down the five values that truly matter to me", ko: "나에게 정말 중요한 가치 5개를 적어보기" },
+    spirit_end_today: { en: "Imagine the end of my life in a quiet place and choose today again", ko: "조용한 곳에서 내 삶의 끝을 상상하고 오늘을 다시 정하기" },
+  };
+  const LEGACY_BUCKET_TEXT_TO_KEY = Object.fromEntries(
+    Object.entries(BUCKET_SUGGESTIONS).map(([key, text]) => [text.ko, key])
+  );
+
   let strings = {};
   let currentLocale = "en";
   let initialYears = 0;
@@ -99,6 +126,13 @@
     let v = strings;
     for (const p of key.split(".")) v = v?.[p];
     return typeof v === "string" ? v : key;
+  }
+
+  function localizedBucketText(item) {
+    const key = item.key || LEGACY_BUCKET_TEXT_TO_KEY[item.text];
+    const suggestion = key ? BUCKET_SUGGESTIONS[key] : null;
+    if (!suggestion) return item.text;
+    return currentLocale === "ko" ? suggestion.ko : suggestion.en;
   }
 
   function applyI18n() {
@@ -313,7 +347,7 @@
       bucketIndex = ((nextIndex % items.length) + items.length) % items.length;
       bucketSpotlight.classList.add("swap");
       window.setTimeout(() => {
-        bucketSpotlight.textContent = items[bucketIndex].text;
+        bucketSpotlight.textContent = localizedBucketText(items[bucketIndex]);
         bucketSpotlight.classList.remove("swap");
       }, 220);
     }
@@ -343,7 +377,7 @@
     function updateDigits(now) {
       const parts = remainingParts(now, target);
       updateRings(parts, now);
-      pctValue.textContent = (lifeRatio(now) * 100).toFixed(2);
+      pctValue.textContent = (lifeRatio(now) * 100).toFixed(1);
       values.years.textContent = parts.years;
       values.days.textContent = parts.days;
       values.hours.textContent = pad(parts.hours);
