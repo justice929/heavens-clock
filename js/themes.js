@@ -36,6 +36,13 @@ export const THEMES = [
     accent: "#f3c76f",
     description: "A warm heirloom watch face with gold rings and quiet depth.",
   },
+  {
+    id: "hologram",
+    name: "Hologram",
+    tier: "premium",
+    accent: "#48eaff",
+    description: "A futuristic neon clock skin built from the selected AI concept art.",
+  },
 ];
 
 export function loadTheme() {

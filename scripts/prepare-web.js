@@ -10,6 +10,7 @@ const entries = [
   "bucket.html",
   "manifest.webmanifest",
   "icon.svg",
+  "assets",
   "js",
   "locales",
 ];

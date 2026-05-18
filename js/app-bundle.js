@@ -22,6 +22,7 @@
     { id: "cosmos", name: "Cosmos", tier: "premium", accent: "#8ae8ff" },
     { id: "chronograph", name: "Chronograph", tier: "premium", accent: "#d7c28a" },
     { id: "legacy", name: "Legacy", tier: "premium", accent: "#f3c76f" },
+    { id: "hologram", name: "Hologram", tier: "premium", accent: "#48eaff" },
   ];
 
   let strings = {};
