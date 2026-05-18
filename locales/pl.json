@@ -53,6 +53,8 @@
     "add": "Dodaj",
     "empty": "Zapisz jedną rzecz, której nie chcesz odkładać.",
     "done": "Oznacz jako zrobione",
-    "delete": "Usuń element"
+    "delete": "Usuń element",
+    "today": "Dzisiejsze marzenie",
+    "manage": "Zarz?dzaj list?"
   }
 }

@@ -53,6 +53,8 @@
     "add": "Ajouter",
     "empty": "Écris une chose que tu ne veux pas repousser.",
     "done": "Marquer comme fait",
-    "delete": "Supprimer"
+    "delete": "Supprimer",
+    "today": "Bucket du jour",
+    "manage": "G?rer la liste"
   }
 }

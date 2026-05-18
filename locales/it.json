@@ -53,6 +53,8 @@
     "add": "Aggiungi",
     "empty": "Scrivi una cosa che non vuoi rimandare.",
     "done": "Segna come fatto",
-    "delete": "Elimina elemento"
+    "delete": "Elimina elemento",
+    "today": "Bucket di oggi",
+    "manage": "Gestisci lista"
   }
 }

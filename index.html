@@ -611,7 +611,7 @@
 
     .bucket-panel {
       width: min(92vw, 460px);
-      padding: 1rem;
+      padding: 1rem 1.05rem;
       border: 1px solid var(--panel-border);
       border-radius: 24px;
       background: linear-gradient(180deg, var(--panel-bg), rgba(0, 0, 0, 0.12));
@@ -642,102 +642,50 @@
       font-variant-numeric: tabular-nums;
     }
 
-    .bucket-form {
+    .bucket-spotlight {
+      min-height: 4.2rem;
       display: flex;
-      gap: 0.5rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .bucket-form input {
-      min-width: 0;
-      flex: 1;
-      border: 1px solid var(--panel-border);
-      border-radius: 999px;
-      background: rgba(0, 0, 0, 0.18);
+      align-items: center;
+      justify-content: center;
+      padding: 0.85rem 0.95rem;
+      border: 1px solid rgba(255, 255, 255, 0.055);
+      border-radius: 18px;
+      background: rgba(0, 0, 0, 0.14);
       color: var(--fg);
-      font: inherit;
-      font-size: 0.82rem;
-      padding: 0.72rem 0.9rem;
-      outline: none;
+      font-size: clamp(0.88rem, 2.45vw, 1.06rem);
+      line-height: 1.55;
+      text-align: center;
+      overflow-wrap: anywhere;
+      transition: opacity 0.55s ease, transform 0.55s ease, color var(--ease-mood);
     }
 
-    .bucket-form input::placeholder {
-      color: var(--dim);
+    .bucket-spotlight.swap {
+      opacity: 0;
+      transform: translateY(6px);
     }
 
-    .bucket-form button,
-    .bucket-delete {
+    .bucket-manage {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.85rem;
+      width: 100%;
+      min-height: 2.45rem;
       border: 1px solid var(--panel-border);
       border-radius: 999px;
       background: var(--panel-bg);
-      color: var(--fg);
-      font: inherit;
-      cursor: pointer;
-    }
-
-    .bucket-form button {
-      padding: 0.72rem 0.95rem;
+      color: var(--dim);
       font-size: 0.72rem;
       font-weight: 600;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.16em;
+      text-decoration: none;
       text-transform: uppercase;
+      transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
     }
 
-    .bucket-list {
-      list-style: none;
-      display: grid;
-      gap: 0.5rem;
-      max-height: 10rem;
-      overflow-y: auto;
-      padding-right: 0.15rem;
-    }
-
-    .bucket-item {
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      align-items: center;
-      gap: 0.65rem;
-      padding: 0.68rem 0.75rem;
-      border: 1px solid rgba(255, 255, 255, 0.055);
-      border-radius: 16px;
-      background: rgba(0, 0, 0, 0.14);
-    }
-
-    .bucket-item input {
-      accent-color: var(--ring-seconds);
-    }
-
-    .bucket-text {
+    .bucket-manage:hover {
       color: var(--fg);
-      font-size: 0.82rem;
-      line-height: 1.35;
-      overflow-wrap: anywhere;
-    }
-
-    .bucket-item.done .bucket-text {
-      color: var(--dim);
-      text-decoration: line-through;
-    }
-
-    .bucket-delete {
-      width: 1.8rem;
-      height: 1.8rem;
-      color: var(--dim);
-      font-size: 1rem;
-      line-height: 1;
-    }
-
-    .bucket-empty {
-      display: none;
-      margin: 0.2rem 0 0;
-      color: var(--dim);
-      font-size: 0.78rem;
-      line-height: 1.5;
-      text-align: center;
-    }
-
-    .bucket-empty.visible {
-      display: block;
+      border-color: rgba(255, 255, 255, 0.24);
     }
 
     .mood-hint {
@@ -868,14 +816,6 @@
       .bucket-panel {
         padding: 0.85rem;
       }
-
-      .bucket-form {
-        flex-direction: column;
-      }
-
-      .bucket-form button {
-        width: 100%;
-      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -959,15 +899,11 @@
 
     <section class="bucket-panel" aria-labelledby="bucket-title">
       <div class="bucket-head">
-        <h2 class="bucket-title" id="bucket-title" data-i18n="bucket.title">Bucket List</h2>
+        <h2 class="bucket-title" id="bucket-title" data-i18n="bucket.today">Today's Bucket</h2>
         <span class="bucket-count" id="bucket-count">0/0</span>
       </div>
-      <form class="bucket-form" id="bucket-form">
-        <input id="bucket-input" type="text" maxlength="80" autocomplete="off" data-i18n-placeholder="bucket.placeholder" placeholder="One thing to do while I can">
-        <button type="submit" data-i18n="bucket.add">Add</button>
-      </form>
-      <ul class="bucket-list" id="bucket-items" aria-live="polite"></ul>
-      <p class="bucket-empty" id="bucket-empty" data-i18n="bucket.empty">Write one thing you do not want to postpone.</p>
+      <p class="bucket-spotlight" id="bucket-spotlight" aria-live="polite" data-i18n="bucket.empty">Write one thing you do not want to postpone.</p>
+      <a class="bucket-manage" href="bucket.html" data-i18n="bucket.manage">Manage Bucket List</a>
     </section>
 
     <p class="footer-line"><span data-i18n="target">TARGET</span> <span id="target-label">—</span></p>

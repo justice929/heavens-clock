@@ -204,14 +204,12 @@
     const caption = document.getElementById("caption");
     const clockWrap = document.getElementById("clock-wrap");
     const themeSwitch = document.getElementById("theme-switch");
-    const bucketForm = document.getElementById("bucket-form");
-    const bucketInput = document.getElementById("bucket-input");
-    const bucketItems = document.getElementById("bucket-items");
-    const bucketEmpty = document.getElementById("bucket-empty");
+    const bucketSpotlight = document.getElementById("bucket-spotlight");
     const bucketCount = document.getElementById("bucket-count");
     const values = Object.fromEntries([...document.querySelectorAll(".unit-value")].map((el) => [el.dataset.key, el]));
     const tabs = [...document.querySelectorAll(".mood-switch button")];
     let bucketState = loadBucketItems();
+    let bucketIndex = 0;
 
     document.title = t("appTitle");
     targetLabel.textContent = formatTargetLabel(target);
@@ -298,59 +296,32 @@
     setTheme(loadTheme());
     setMood(localStorage.getItem(MOOD_KEY) === "impact" ? "impact" : "calm");
 
-    function renderBucketList() {
-      bucketItems.textContent = "";
-      const completed = bucketState.filter((item) => item.done).length;
-      bucketCount.textContent = `${completed}/${bucketState.length}`;
-      bucketEmpty.classList.toggle("visible", bucketState.length === 0);
-
-      bucketState.forEach((item) => {
-        const li = document.createElement("li");
-        li.className = `bucket-item${item.done ? " done" : ""}`;
-
-        const checkbox = document.createElement("input");
-        checkbox.type = "checkbox";
-        checkbox.checked = !!item.done;
-        checkbox.setAttribute("aria-label", t("bucket.done"));
-        checkbox.addEventListener("change", () => {
-          bucketState = bucketState.map((next) => next.id === item.id ? { ...next, done: checkbox.checked } : next);
-          saveBucketItems(bucketState);
-          renderBucketList();
-        });
-
-        const text = document.createElement("span");
-        text.className = "bucket-text";
-        text.textContent = item.text;
-
-        const remove = document.createElement("button");
-        remove.type = "button";
-        remove.className = "bucket-delete";
-        remove.textContent = "×";
-        remove.setAttribute("aria-label", t("bucket.delete"));
-        remove.addEventListener("click", () => {
-          bucketState = bucketState.filter((next) => next.id !== item.id);
-          saveBucketItems(bucketState);
-          renderBucketList();
-        });
-
-        li.append(checkbox, text, remove);
-        bucketItems.appendChild(li);
-      });
+    function visibleBucketItems() {
+      const active = bucketState.filter((item) => !item.done);
+      return active.length ? active : bucketState;
     }
 
-    bucketForm?.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const text = bucketInput.value.trim();
-      if (!text) return;
-      bucketState = [
-        { id: `${Date.now()}-${Math.random().toString(16).slice(2)}`, text, done: false },
-        ...bucketState,
-      ].slice(0, 30);
-      saveBucketItems(bucketState);
-      bucketInput.value = "";
-      renderBucketList();
-    });
-    renderBucketList();
+    function showBucketItem(nextIndex = bucketIndex) {
+      const items = visibleBucketItems();
+      const completed = bucketState.filter((item) => item.done).length;
+      bucketCount.textContent = `${completed}/${bucketState.length}`;
+      if (!items.length) {
+        bucketSpotlight.textContent = t("bucket.empty");
+        return;
+      }
+      bucketIndex = ((nextIndex % items.length) + items.length) % items.length;
+      bucketSpotlight.classList.add("swap");
+      window.setTimeout(() => {
+        bucketSpotlight.textContent = items[bucketIndex].text;
+        bucketSpotlight.classList.remove("swap");
+      }, 220);
+    }
+
+    showBucketItem();
+    setInterval(() => {
+      const items = visibleBucketItems();
+      if (items.length > 1) showBucketItem(bucketIndex + 1);
+    }, 12_000);
 
     function lifeRatio(now) {
       const total = target - lifeStart;

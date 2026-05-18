@@ -53,6 +53,8 @@
     "add": "Tambah",
     "empty": "Tulis satu hal yang tidak ingin Anda tunda.",
     "done": "Tandai selesai",
-    "delete": "Hapus item"
+    "delete": "Hapus item",
+    "today": "Bucket hari ini",
+    "manage": "Kelola daftar"
   }
 }

@@ -87,6 +87,8 @@
     "add": "Add",
     "empty": "Write one thing you do not want to postpone.",
     "done": "Mark as done",
-    "delete": "Delete item"
+    "delete": "Delete item",
+    "today": "Today's Bucket",
+    "manage": "Manage Bucket List"
   }
 }

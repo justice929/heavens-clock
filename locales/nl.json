@@ -53,6 +53,8 @@
     "add": "Toevoegen",
     "empty": "Schrijf iets op dat je niet wilt uitstellen.",
     "done": "Markeer als klaar",
-    "delete": "Item verwijderen"
+    "delete": "Item verwijderen",
+    "today": "Bucket van vandaag",
+    "manage": "Bucketlist beheren"
   }
 }

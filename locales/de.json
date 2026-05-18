@@ -53,6 +53,8 @@
     "add": "Hinzufügen",
     "empty": "Schreibe etwas auf, das du nicht aufschieben willst.",
     "done": "Als erledigt markieren",
-    "delete": "Eintrag löschen"
+    "delete": "Eintrag löschen",
+    "today": "Heutiger Wunsch",
+    "manage": "Bucket List verwalten"
   }
 }

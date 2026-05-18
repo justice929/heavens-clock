@@ -7,6 +7,7 @@ const out = path.join(root, "www");
 const entries = [
   "index.html",
   "onboarding.html",
+  "bucket.html",
   "manifest.webmanifest",
   "icon.svg",
   "js",

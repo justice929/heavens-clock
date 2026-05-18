@@ -53,6 +53,8 @@
     "add": "Ekle",
     "empty": "Ertelemek istemediğin bir şeyi yaz.",
     "done": "Tamamlandı işaretle",
-    "delete": "Öğeyi sil"
+    "delete": "Öğeyi sil",
+    "today": "Bug?n?n hedefi",
+    "manage": "Listeyi y?net"
   }
 }

@@ -53,6 +53,8 @@
     "add": "Añadir",
     "empty": "Escribe algo que no quieres posponer.",
     "done": "Marcar como hecho",
-    "delete": "Eliminar elemento"
+    "delete": "Eliminar elemento",
+    "today": "Bucket de hoy",
+    "manage": "Gestionar lista"
   }
 }
