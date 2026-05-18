@@ -3,6 +3,7 @@
   const THEME_KEY = "heavens-clock-theme";
   const WIDGET_DATA_KEY = "memento-mori-widget";
   const MOOD_KEY = "heaven-clock-mood";
+  const BUCKET_KEY = "heavens-clock-bucket-list";
 
   const DEFAULT_SETTINGS = {
     birthDate: "",
@@ -20,6 +21,7 @@
     { id: "ember", name: "Ember", tier: "premium", accent: "#ff6b4a" },
     { id: "cosmos", name: "Cosmos", tier: "premium", accent: "#8ae8ff" },
     { id: "chronograph", name: "Chronograph", tier: "premium", accent: "#d7c28a" },
+    { id: "legacy", name: "Legacy", tier: "premium", accent: "#f3c76f" },
   ];
 
   let strings = {};
@@ -102,6 +104,9 @@
     document.querySelectorAll("[data-i18n]").forEach((el) => {
       el.textContent = t(el.dataset.i18n);
     });
+    document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+      el.setAttribute("placeholder", t(el.dataset.i18nPlaceholder));
+    });
   }
 
   function quoteForToday() {
@@ -129,6 +134,19 @@
     const next = THEMES.some((theme) => theme.id === id) ? id : "void";
     try { localStorage.setItem(THEME_KEY, next); } catch (_) {}
     return next;
+  }
+
+  function loadBucketItems() {
+    try {
+      const items = JSON.parse(localStorage.getItem(BUCKET_KEY) || "[]");
+      return Array.isArray(items) ? items.filter((item) => item && typeof item.text === "string") : [];
+    } catch (_) {
+      return [];
+    }
+  }
+
+  function saveBucketItems(items) {
+    try { localStorage.setItem(BUCKET_KEY, JSON.stringify(items)); } catch (_) {}
   }
 
   function pad(n) { return String(n).padStart(2, "0"); }
@@ -186,8 +204,14 @@
     const caption = document.getElementById("caption");
     const clockWrap = document.getElementById("clock-wrap");
     const themeSwitch = document.getElementById("theme-switch");
+    const bucketForm = document.getElementById("bucket-form");
+    const bucketInput = document.getElementById("bucket-input");
+    const bucketItems = document.getElementById("bucket-items");
+    const bucketEmpty = document.getElementById("bucket-empty");
+    const bucketCount = document.getElementById("bucket-count");
     const values = Object.fromEntries([...document.querySelectorAll(".unit-value")].map((el) => [el.dataset.key, el]));
     const tabs = [...document.querySelectorAll(".mood-switch button")];
+    let bucketState = loadBucketItems();
 
     document.title = t("appTitle");
     targetLabel.textContent = formatTargetLabel(target);
@@ -273,6 +297,60 @@
     document.getElementById("edit-settings")?.addEventListener("click", () => location.href = "onboarding.html?edit=1");
     setTheme(loadTheme());
     setMood(localStorage.getItem(MOOD_KEY) === "impact" ? "impact" : "calm");
+
+    function renderBucketList() {
+      bucketItems.textContent = "";
+      const completed = bucketState.filter((item) => item.done).length;
+      bucketCount.textContent = `${completed}/${bucketState.length}`;
+      bucketEmpty.classList.toggle("visible", bucketState.length === 0);
+
+      bucketState.forEach((item) => {
+        const li = document.createElement("li");
+        li.className = `bucket-item${item.done ? " done" : ""}`;
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.checked = !!item.done;
+        checkbox.setAttribute("aria-label", t("bucket.done"));
+        checkbox.addEventListener("change", () => {
+          bucketState = bucketState.map((next) => next.id === item.id ? { ...next, done: checkbox.checked } : next);
+          saveBucketItems(bucketState);
+          renderBucketList();
+        });
+
+        const text = document.createElement("span");
+        text.className = "bucket-text";
+        text.textContent = item.text;
+
+        const remove = document.createElement("button");
+        remove.type = "button";
+        remove.className = "bucket-delete";
+        remove.textContent = "×";
+        remove.setAttribute("aria-label", t("bucket.delete"));
+        remove.addEventListener("click", () => {
+          bucketState = bucketState.filter((next) => next.id !== item.id);
+          saveBucketItems(bucketState);
+          renderBucketList();
+        });
+
+        li.append(checkbox, text, remove);
+        bucketItems.appendChild(li);
+      });
+    }
+
+    bucketForm?.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const text = bucketInput.value.trim();
+      if (!text) return;
+      bucketState = [
+        { id: `${Date.now()}-${Math.random().toString(16).slice(2)}`, text, done: false },
+        ...bucketState,
+      ].slice(0, 30);
+      saveBucketItems(bucketState);
+      bucketInput.value = "";
+      renderBucketList();
+    });
+    renderBucketList();
 
     function lifeRatio(now) {
       const total = target - lifeStart;

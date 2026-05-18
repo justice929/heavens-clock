@@ -136,6 +136,22 @@
       --vignette: radial-gradient(ellipse 72% 58% at 50% 45%, rgba(215, 194, 138, 0.07), transparent 60%);
     }
 
+    body[data-theme="legacy"] {
+      --bg: #050504;
+      --fg: #f7ead0;
+      --dim: rgba(245, 225, 185, 0.52);
+      --glow: rgba(230, 190, 95, 0.18);
+      --ring-years: rgba(255, 244, 218, 0.96);
+      --ring-days: rgba(235, 203, 135, 0.78);
+      --ring-hours: rgba(195, 165, 95, 0.64);
+      --ring-minutes: rgba(150, 118, 70, 0.52);
+      --ring-seconds: rgba(255, 196, 83, 0.98);
+      --panel-border: rgba(235, 197, 118, 0.28);
+      --panel-bg: rgba(235, 197, 118, 0.06);
+      --text-glow: 0 0 20px rgba(235, 197, 118, 0.45), 0 0 56px rgba(110, 75, 20, 0.32);
+      --vignette: radial-gradient(ellipse 75% 58% at 50% 45%, rgba(235, 197, 118, 0.1), transparent 62%);
+    }
+
     .backdrop {
       position: fixed;
       inset: 0;
@@ -292,13 +308,19 @@
     .daily-quote {
       max-width: min(92vw, 420px);
       text-align: center;
-      font-size: clamp(0.62rem, 1.8vw, 0.78rem);
-      line-height: 1.65;
-      letter-spacing: 0.06em;
-      color: var(--dim);
+      font-size: clamp(0.82rem, 2.35vw, 1.08rem);
+      line-height: 1.75;
+      letter-spacing: 0.035em;
+      color: var(--fg);
       font-style: italic;
-      padding: 0 0.5rem;
-      min-height: 2.8em;
+      padding: 0.95rem 1.1rem;
+      min-height: 3.5em;
+      border: 1px solid var(--panel-border);
+      border-radius: 22px;
+      background: linear-gradient(180deg, var(--panel-bg), rgba(0, 0, 0, 0.08));
+      box-shadow: 0 0 28px var(--glow);
+      text-wrap: balance;
+      transition: color var(--ease-mood), border-color var(--ease-mood), background var(--ease-mood), box-shadow var(--ease-mood);
     }
 
     .stage {
@@ -308,7 +330,16 @@
       align-items: center;
       gap: clamp(1.2rem, 3.5vh, 2.5rem);
       padding: 4.5rem 1.25rem 2rem;
+      width: 100%;
+      max-height: 100dvh;
+      overflow-y: auto;
+      overscroll-behavior: contain;
       animation: fade-in 1.2s ease-out both;
+    }
+
+    .stage::-webkit-scrollbar {
+      width: 0;
+      height: 0;
     }
 
     .clock-wrap {
@@ -578,6 +609,137 @@
       transition: color var(--ease-mood);
     }
 
+    .bucket-panel {
+      width: min(92vw, 460px);
+      padding: 1rem;
+      border: 1px solid var(--panel-border);
+      border-radius: 24px;
+      background: linear-gradient(180deg, var(--panel-bg), rgba(0, 0, 0, 0.12));
+      box-shadow: 0 0 28px rgba(0, 0, 0, 0.18);
+      transition: border-color var(--ease-mood), background var(--ease-mood), box-shadow var(--ease-mood);
+    }
+
+    .bucket-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .bucket-title {
+      margin: 0;
+      font-size: clamp(0.72rem, 2vw, 0.86rem);
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      color: var(--fg);
+      text-transform: uppercase;
+    }
+
+    .bucket-count {
+      font-size: 0.68rem;
+      color: var(--dim);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .bucket-form {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .bucket-form input {
+      min-width: 0;
+      flex: 1;
+      border: 1px solid var(--panel-border);
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.18);
+      color: var(--fg);
+      font: inherit;
+      font-size: 0.82rem;
+      padding: 0.72rem 0.9rem;
+      outline: none;
+    }
+
+    .bucket-form input::placeholder {
+      color: var(--dim);
+    }
+
+    .bucket-form button,
+    .bucket-delete {
+      border: 1px solid var(--panel-border);
+      border-radius: 999px;
+      background: var(--panel-bg);
+      color: var(--fg);
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .bucket-form button {
+      padding: 0.72rem 0.95rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .bucket-list {
+      list-style: none;
+      display: grid;
+      gap: 0.5rem;
+      max-height: 10rem;
+      overflow-y: auto;
+      padding-right: 0.15rem;
+    }
+
+    .bucket-item {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.68rem 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.055);
+      border-radius: 16px;
+      background: rgba(0, 0, 0, 0.14);
+    }
+
+    .bucket-item input {
+      accent-color: var(--ring-seconds);
+    }
+
+    .bucket-text {
+      color: var(--fg);
+      font-size: 0.82rem;
+      line-height: 1.35;
+      overflow-wrap: anywhere;
+    }
+
+    .bucket-item.done .bucket-text {
+      color: var(--dim);
+      text-decoration: line-through;
+    }
+
+    .bucket-delete {
+      width: 1.8rem;
+      height: 1.8rem;
+      color: var(--dim);
+      font-size: 1rem;
+      line-height: 1;
+    }
+
+    .bucket-empty {
+      display: none;
+      margin: 0.2rem 0 0;
+      color: var(--dim);
+      font-size: 0.78rem;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .bucket-empty.visible {
+      display: block;
+    }
+
     .mood-hint {
       font-size: clamp(0.48rem, 1.2vw, 0.58rem);
       letter-spacing: 0.18em;
@@ -702,6 +864,18 @@
       .mood-hint {
         margin-top: 0;
       }
+
+      .bucket-panel {
+        padding: 0.85rem;
+      }
+
+      .bucket-form {
+        flex-direction: column;
+      }
+
+      .bucket-form button {
+        width: 100%;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -782,6 +956,19 @@
     </div>
 
     <p class="daily-quote" id="daily-quote" aria-live="polite"></p>
+
+    <section class="bucket-panel" aria-labelledby="bucket-title">
+      <div class="bucket-head">
+        <h2 class="bucket-title" id="bucket-title" data-i18n="bucket.title">Bucket List</h2>
+        <span class="bucket-count" id="bucket-count">0/0</span>
+      </div>
+      <form class="bucket-form" id="bucket-form">
+        <input id="bucket-input" type="text" maxlength="80" autocomplete="off" data-i18n-placeholder="bucket.placeholder" placeholder="One thing to do while I can">
+        <button type="submit" data-i18n="bucket.add">Add</button>
+      </form>
+      <ul class="bucket-list" id="bucket-items" aria-live="polite"></ul>
+      <p class="bucket-empty" id="bucket-empty" data-i18n="bucket.empty">Write one thing you do not want to postpone.</p>
+    </section>
 
     <p class="footer-line"><span data-i18n="target">TARGET</span> <span id="target-label">—</span></p>
     <p class="mood-hint" id="mood-hint">Breathe with the moment</p>

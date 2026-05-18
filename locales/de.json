@@ -46,5 +46,13 @@
     "editTitle": "Passe deine Uhr an",
     "editSubtitle": "Ändere dein Geburtsdatum, deine Geburtszeit oder deine gewünschte Lebensdauer.",
     "back": "Zurück"
+  },
+  "bucket": {
+    "title": "Bucket List",
+    "placeholder": "Eine Sache, die ich tun will, solange ich kann",
+    "add": "Hinzufügen",
+    "empty": "Schreibe etwas auf, das du nicht aufschieben willst.",
+    "done": "Als erledigt markieren",
+    "delete": "Eintrag löschen"
   }
 }

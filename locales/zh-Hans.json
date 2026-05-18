@@ -46,5 +46,13 @@
     "editTitle": "调整你的时钟",
     "editSubtitle": "更改你的出生日期、出生时间或希望寿命。",
     "back": "返回"
+  },
+  "bucket": {
+    "title": "愿望清单",
+    "placeholder": "趁还能做时想完成的一件事",
+    "add": "添加",
+    "empty": "写下一件你不想再拖延的事。",
+    "done": "标记完成",
+    "delete": "删除项目"
   }
 }

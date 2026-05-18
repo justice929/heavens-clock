@@ -46,5 +46,13 @@
     "editTitle": "Ajuste seu relógio",
     "editSubtitle": "Altere sua data de nascimento, hora de nascimento ou expectativa de vida.",
     "back": "Voltar"
+  },
+  "bucket": {
+    "title": "Lista de vida",
+    "placeholder": "Algo para fazer enquanto posso",
+    "add": "Adicionar",
+    "empty": "Escreva algo que você não quer adiar.",
+    "done": "Marcar como feito",
+    "delete": "Excluir item"
   }
 }

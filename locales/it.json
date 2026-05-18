@@ -46,5 +46,13 @@
     "editTitle": "Regola il tuo orologio",
     "editSubtitle": "Modifica la data di nascita, l’ora di nascita o la durata di vita desiderata.",
     "back": "Indietro"
+  },
+  "bucket": {
+    "title": "Lista dei desideri",
+    "placeholder": "Una cosa da fare finché posso",
+    "add": "Aggiungi",
+    "empty": "Scrivi una cosa che non vuoi rimandare.",
+    "done": "Segna come fatto",
+    "delete": "Elimina elemento"
   }
 }

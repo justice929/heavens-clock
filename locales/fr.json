@@ -46,5 +46,13 @@
     "editTitle": "Ajuste ton horloge",
     "editSubtitle": "Modifie ta date de naissance, ton heure de naissance ou ton espérance de vie.",
     "back": "Retour"
+  },
+  "bucket": {
+    "title": "Liste de vie",
+    "placeholder": "Une chose à faire tant que je peux",
+    "add": "Ajouter",
+    "empty": "Écris une chose que tu ne veux pas repousser.",
+    "done": "Marquer comme fait",
+    "delete": "Supprimer"
   }
 }

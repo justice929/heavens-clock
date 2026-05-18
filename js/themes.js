@@ -29,6 +29,13 @@ export const THEMES = [
     accent: "#d7c28a",
     description: "Luxury watch face inspired by brass and graphite.",
   },
+  {
+    id: "legacy",
+    name: "Legacy",
+    tier: "premium",
+    accent: "#f3c76f",
+    description: "A warm heirloom watch face with gold rings and quiet depth.",
+  },
 ];
 
 export function loadTheme() {

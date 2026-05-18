@@ -46,5 +46,13 @@
     "editTitle": "Pas je klok aan",
     "editSubtitle": "Wijzig je geboortedatum, geboortetijd of gewenste levensduur.",
     "back": "Terug"
+  },
+  "bucket": {
+    "title": "Bucketlist",
+    "placeholder": "Iets om te doen zolang ik kan",
+    "add": "Toevoegen",
+    "empty": "Schrijf iets op dat je niet wilt uitstellen.",
+    "done": "Markeer als klaar",
+    "delete": "Item verwijderen"
   }
 }

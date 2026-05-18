@@ -80,5 +80,13 @@
     "Hold the day lightly, but do not drop it.",
     "Remember death; remember therefore to live.",
     "Heaven's clock counts down so you may count what matters up."
-  ]
+  ],
+  "bucket": {
+    "title": "Bucket List",
+    "placeholder": "One thing to do while I can",
+    "add": "Add",
+    "empty": "Write one thing you do not want to postpone.",
+    "done": "Mark as done",
+    "delete": "Delete item"
+  }
 }

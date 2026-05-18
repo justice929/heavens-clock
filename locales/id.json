@@ -46,5 +46,13 @@
     "editTitle": "Atur jam Anda",
     "editSubtitle": "Ubah tanggal lahir, waktu lahir, atau usia yang Anda harapkan.",
     "back": "Kembali"
+  },
+  "bucket": {
+    "title": "Daftar hidup",
+    "placeholder": "Satu hal yang ingin dilakukan selagi bisa",
+    "add": "Tambah",
+    "empty": "Tulis satu hal yang tidak ingin Anda tunda.",
+    "done": "Tandai selesai",
+    "delete": "Hapus item"
   }
 }

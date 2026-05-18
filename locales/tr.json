@@ -46,5 +46,13 @@
     "editTitle": "Saatini ayarla",
     "editSubtitle": "Doğum tarihini, doğum saatini veya umut ettiğin yaşam süresini değiştir.",
     "back": "Geri"
+  },
+  "bucket": {
+    "title": "Yapılacaklar listesi",
+    "placeholder": "Hala yapabiliyorken yapmak istediğim bir şey",
+    "add": "Ekle",
+    "empty": "Ertelemek istemediğin bir şeyi yaz.",
+    "done": "Tamamlandı işaretle",
+    "delete": "Öğeyi sil"
   }
 }

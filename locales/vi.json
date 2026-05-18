@@ -46,5 +46,13 @@
     "editTitle": "Điều chỉnh đồng hồ của bạn",
     "editSubtitle": "Thay đổi ngày sinh, giờ sinh hoặc tuổi thọ mong muốn.",
     "back": "Quay lại"
+  },
+  "bucket": {
+    "title": "Danh sách muốn làm",
+    "placeholder": "Một điều muốn làm khi còn có thể",
+    "add": "Thêm",
+    "empty": "Viết một điều bạn không muốn trì hoãn.",
+    "done": "Đánh dấu hoàn thành",
+    "delete": "Xóa mục"
   }
 }
