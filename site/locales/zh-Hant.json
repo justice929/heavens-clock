@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "title": "天堂之鐘",
+    "landingEnglishFallback": "Landing page in English for now. Open the clock app for your language."
+  },
+  "brand": "天堂之鐘",
+  "nav": {
+    "app": "App",
+    "beta": "Beta",
+    "community": "Community",
+    "join": "Join"
+  },
+  "hero": {
+    "kicker": "Memento Mori · Live Today",
+    "title": "Count less.<br>Live more.",
+    "body": "A premium life clock for people who refuse to drift. Track the time you hope to live, keep one meaningful bucket close, and return to the day before it disappears.",
+    "primaryCta": "Get Android beta notice",
+    "secondaryCta": "Explore the ritual",
+    "openWebClock": "Open web clock (Premium)",
+    "installWebClock": "Install on PC (Premium)",
+    "proof1": "Android first",
+    "proof2": "Global by design",
+    "proof3": "Community is the endgame"
+  },
+  "mock": {
+    "appTitle": "天堂之鐘",
+    "caption": "剩餘時間",
+    "year": "年",
+    "day": "日",
+    "hour": "時",
+    "bucketTitle": "今日願望",
+    "bucketText": "寫下一件你不想再拖延的事。"
+  },
+  "app": {
+    "kicker": "The app",
+    "title": "A clock for finite days.",
+    "lead": "Heaven's Clock is not a productivity dashboard. It is a ritual: mortality becomes attention, attention becomes action, and action becomes a life you recognize.",
+    "lifeClockTitle": "Life Clock",
+    "lifeClock": "See your remaining life as years, days, hours, minutes, seconds, and living rings.",
+    "todayBucketTitle": "Today's Bucket",
+    "todayBucket": "Let one meaningful bucket item rotate on the main screen so it stays close to your choices.",
+    "clockSkinsTitle": "Clock Skins",
+    "clockSkins": "Premium clock skins can make the same reminder feel ancient, luxurious, futuristic, or deeply personal."
+  },
+  "beta": {
+    "kicker": "Beta path",
+    "title": "From Android beta to public launch.",
+    "lead": "The site supports the app. The app comes first, then the circle grows from real users who felt the clock change their day.",
+    "step1Title": "Stabilize the app",
+    "step1": "Finish the core Android experience: onboarding, life clock, bucket list, themes, and language flow.",
+    "step2Title": "Open beta notice",
+    "step2": "Use this landing page to gather early testers and explain why the app exists.",
+    "step3Title": "Publish Android",
+    "step3": "Prepare store assets, privacy policy, screenshots, and a focused first release.",
+    "step4Title": "Grow the circle",
+    "step4": "Only after real use, evolve toward shared buckets, groups, and a school for finite days."
+  },
+  "community": {
+    "kicker": "The endgame",
+    "manifesto": "A global circle for people who share goals, buckets, and the courage to live before the day is gone.",
+    "signal1Title": "School of finite days",
+    "signal1": "A future place to learn how to choose, plan, and live with mortality in view.",
+    "signal2Title": "Shared buckets",
+    "signal2": "People will be able to share goals and find others walking toward the same kind of life.",
+    "signal3Title": "Human, not noisy",
+    "signal3": "The community should feel like a real circle, not another feed built for distraction."
+  },
+  "join": {
+    "kicker": "Early access",
+    "title": "The app comes first. The circle follows.",
+    "lead": "We are preparing the Android beta and the first public path. Join the list if you want to test Heaven's Clock before it becomes a larger community.",
+    "placeholder": "your@email.com",
+    "button": "Notify me",
+    "note": "This preview stores your email only on this device. A real waitlist provider will be connected before public release.",
+    "success": "You're on the local preview list. Real waitlist connection comes before public release.",
+    "invalidEmail": "Enter a valid email address."
+  },
+  "footer": "Heaven's Clock · A reminder to live before the day is gone."
+}

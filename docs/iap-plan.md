@@ -32,7 +32,7 @@
 
 1. Keep product IDs in `js/entitlements.js`.
 2. Use local mock entitlements during design/testing.
-3. Android first: connect Google Play Billing or RevenueCat.
+3. Android: Google Play Billing via `capacitor-plugin-cdv-purchase` (see `docs/android-play-billing.md`).
 4. iOS later: reuse the same product IDs with RevenueCat or StoreKit.
 5. Gate premium themes and premium widget styles, not the core life clock.
 

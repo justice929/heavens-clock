@@ -45,7 +45,8 @@
     "minute": "الدقيقة",
     "editTitle": "اضبط ساعتك",
     "editSubtitle": "غيّر تاريخ ميلادك أو وقت ميلادك أو العمر الذي تأمل أن تعيشه.",
-    "back": "رجوع"
+    "back": "رجوع",
+    "backToClock": "Back to clock"
   },
   "bucket": {
     "title": "قائمة الأمنيات",

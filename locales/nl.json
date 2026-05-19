@@ -45,7 +45,8 @@
     "minute": "Minuut",
     "editTitle": "Pas je klok aan",
     "editSubtitle": "Wijzig je geboortedatum, geboortetijd of gewenste levensduur.",
-    "back": "Terug"
+    "back": "Terug",
+    "backToClock": "Back to clock"
   },
   "bucket": {
     "title": "Bucketlist",

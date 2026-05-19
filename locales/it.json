@@ -45,7 +45,8 @@
     "minute": "Minuto",
     "editTitle": "Regola il tuo orologio",
     "editSubtitle": "Modifica la data di nascita, l’ora di nascita o la durata di vita desiderata.",
-    "back": "Indietro"
+    "back": "Indietro",
+    "backToClock": "Back to clock"
   },
   "bucket": {
     "title": "Lista dei desideri",

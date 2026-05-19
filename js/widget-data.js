@@ -15,6 +15,7 @@ export function buildWidgetSnapshot({
   settings = loadSettings(),
   locale = "en",
   quote = "",
+  labels = {},
   theme = "calm",
 } = {}) {
   const { birth, target, timeZone } = computeLifeRange(settings);
@@ -29,6 +30,7 @@ export function buildWidgetSnapshot({
     locale,
     theme,
     quote,
+    labels,
     timeZone,
     birthAt: birth.toISOString(),
     targetAt: target.toISOString(),

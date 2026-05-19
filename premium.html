@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="js/web-guard.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <title>Heaven's Clock — Premium</title>
+  <style>
+    :root { color-scheme: dark; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { min-height: 100%; background: #05070b; color: #d7e0ea; }
+    body {
+      font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Segoe UI", system-ui, sans-serif;
+      padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(241, 200, 115, 0.14), transparent 28rem),
+        radial-gradient(circle at 80% 90%, rgba(72, 234, 255, 0.1), transparent 24rem);
+    }
+    .wrap {
+      position: relative;
+      width: min(100%, 440px);
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: 1.5rem 1.15rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+    .back {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.2rem;
+      padding: 0 0.85rem;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.2);
+      color: rgba(215, 224, 234, 0.72);
+      font-size: 0.78rem;
+      text-decoration: none;
+      letter-spacing: 0.06em;
+    }
+    .status {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(232, 217, 184, 0.85);
+    }
+    .hero { text-align: center; padding: 0.5rem 0 0.25rem; }
+    .hero h1 {
+      font-size: clamp(1.35rem, 6vw, 1.85rem);
+      letter-spacing: 0.12em;
+      color: #f3f6f9;
+    }
+    .hero p {
+      margin-top: 0.75rem;
+      color: rgba(215, 224, 234, 0.68);
+      font-size: 0.86rem;
+      line-height: 1.65;
+    }
+    .features {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 22px;
+      padding: 1rem 1.05rem;
+      background: rgba(255, 255, 255, 0.03);
+    }
+    .features h2 {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(215, 224, 234, 0.5);
+      margin-bottom: 0.65rem;
+    }
+    .features ul {
+      list-style: none;
+      display: grid;
+      gap: 0.45rem;
+    }
+    .features li {
+      font-size: 0.84rem;
+      color: rgba(238, 244, 249, 0.88);
+      padding-left: 1rem;
+      position: relative;
+    }
+    .features li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      color: #e8d9b8;
+    }
+    .plans { display: grid; gap: 0.65rem; }
+    .plan {
+      width: 100%;
+      text-align: left;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 1rem 1.05rem;
+      background: rgba(255, 255, 255, 0.035);
+      color: inherit;
+      font: inherit;
+      cursor: pointer;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .plan:hover { border-color: rgba(232, 217, 184, 0.35); }
+    .plan.active {
+      border-color: rgba(232, 217, 184, 0.55);
+      background: rgba(232, 217, 184, 0.08);
+    }
+    .plan-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+    .plan-name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #f3f6f9;
+    }
+    .plan-price {
+      font-size: 0.92rem;
+      color: #e8d9b8;
+      letter-spacing: 0.04em;
+    }
+    .plan-desc {
+      margin-top: 0.35rem;
+      font-size: 0.78rem;
+      line-height: 1.5;
+      color: rgba(215, 224, 234, 0.62);
+    }
+    .actions { display: grid; gap: 0.55rem; margin-top: 0.25rem; }
+    .btn {
+      width: 100%;
+      min-height: 2.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: transparent;
+      color: #eef4f9;
+      font: inherit;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      cursor: pointer;
+    }
+    .btn-primary {
+      border-color: rgba(232, 217, 184, 0.45);
+      background: linear-gradient(180deg, rgba(232, 217, 184, 0.22), rgba(232, 217, 184, 0.08));
+      color: #fff8ea;
+    }
+    .btn:disabled { opacity: 0.45; cursor: not-allowed; }
+    .note, .message {
+      font-size: 0.72rem;
+      line-height: 1.55;
+      color: rgba(215, 224, 234, 0.55);
+      text-align: center;
+    }
+    .message { color: rgba(232, 217, 184, 0.9); min-height: 1.2em; }
+    .active-panel {
+      border: 1px solid rgba(232, 217, 184, 0.28);
+      border-radius: 20px;
+      padding: 1rem;
+      text-align: center;
+      background: rgba(232, 217, 184, 0.06);
+    }
+    .active-panel.hidden { display: none; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <a class="back" href="index.html" id="back-link" data-i18n="premium.back">← Clock</a>
+      <span class="status" id="plan-status" data-i18n="premium.freePlan">Free</span>
+    </div>
+
+    <header class="hero">
+      <h1 data-i18n="premium.title">Heaven's Clock Premium</h1>
+      <p data-i18n="premium.subtitle">Unlock every theme, mood, widget, bucket, and the web clock for PC.</p>
+    </header>
+
+    <section class="active-panel hidden" id="active-panel">
+      <p data-i18n="premium.alreadyActive">You already have Premium access on this device.</p>
+    </section>
+
+    <section class="features" id="features-panel">
+      <h2 data-i18n="premium.includesTitle">Includes</h2>
+      <ul>
+        <li data-i18n="premium.feature1">All clock themes and Impact mood</li>
+        <li data-i18n="premium.feature2">Unlimited bucket list</li>
+        <li data-i18n="premium.feature3">Home screen widget</li>
+        <li data-i18n="premium.feature4">Web clock + install on PC (Premium web)</li>
+      </ul>
+    </section>
+
+    <section class="plans" id="plans-panel" aria-label="Premium plans">
+      <button type="button" class="plan" id="plan-yearly" data-product="heavens_clock_yearly_premium">
+        <div class="plan-head">
+          <span class="plan-name" data-i18n="premium.yearlyName">Yearly</span>
+          <span class="plan-price" data-i18n="premium.yearlyPrice">Price at launch</span>
+        </div>
+        <p class="plan-desc" data-i18n="premium.yearlyDesc">Renews every year. Full access while active.</p>
+      </button>
+      <button type="button" class="plan" id="plan-lifetime" data-product="heavens_clock_lifetime_premium">
+        <div class="plan-head">
+          <span class="plan-name" data-i18n="premium.lifetimeName">Lifetime</span>
+          <span class="plan-price" data-i18n="premium.lifetimePrice">Price at launch</span>
+        </div>
+        <p class="plan-desc" data-i18n="premium.lifetimeDesc">Pay once. Keep every Premium feature forever.</p>
+      </button>
+    </section>
+
+    <div class="actions" id="purchase-actions">
+      <button type="button" class="btn btn-primary" id="btn-purchase" disabled data-i18n="premium.continue">Continue</button>
+      <button type="button" class="btn" id="btn-restore" data-i18n="premium.restore">Restore purchases</button>
+    </div>
+
+    <p class="message" id="message" aria-live="polite"></p>
+    <p class="note" id="preview-note" data-i18n="premium.previewNote">Store billing connects in the next release. Purchases on this screen apply locally for testing until Play Billing is live.</p>
+  </div>
+
+  <script src="js/billing-bundle.js"></script>
+  <script src="js/premium-bundle.js"></script>
+</body>
+</html>

@@ -4,6 +4,7 @@
   const WIDGET_DATA_KEY = "memento-mori-widget";
   const MOOD_KEY = "heaven-clock-mood";
   const BUCKET_KEY = "heavens-clock-bucket-list";
+  const ENTITLEMENTS_KEY = "heavens-clock-entitlements";
 
   const DEFAULT_SETTINGS = {
     birthDate: "",
@@ -24,6 +25,13 @@
     { id: "legacy", name: "Legacy", tier: "premium", accent: "#f3c76f" },
     { id: "hologram", name: "Hologram", tier: "premium", accent: "#48eaff" },
   ];
+
+  const FREE_LIMITS = { bucketItems: 3, themeId: "void", moods: ["calm"] };
+  const DEFAULT_ENTITLEMENTS = {
+    yearlyPremium: false,
+    lifetimePremium: false,
+    yearlyExpiresAt: null,
+  };
 
   const BUCKET_SUGGESTIONS = {
     family_phone_free: { en: "Spend a full day with my parents without phones", ko: "부모님과 하루 종일 휴대폰 없이 시간을 보내기" },
@@ -63,12 +71,28 @@
     catch (_) { return "UTC"; }
   }
 
+  function detectLocale() {
+    const lang = (navigator.language || "en").toLowerCase();
+    const map = {
+      ko: "ko", ja: "ja", zh: "zh-Hans", "zh-cn": "zh-Hans", "zh-tw": "zh-Hant", "zh-hk": "zh-Hant",
+      es: "es", fr: "fr", de: "de", pt: "pt", it: "it", ar: "ar", hi: "hi", ru: "ru",
+      vi: "vi", th: "th", id: "id", tr: "tr", nl: "nl", pl: "pl",
+    };
+    return map[lang] || map[lang.split("-")[0]] || "en";
+  }
+
   function loadSettings() {
+    const detected = { locale: detectLocale(), timeZone: detectTimeZone() };
     try {
       const raw = localStorage.getItem(SETTINGS_KEY);
-      return raw ? { ...DEFAULT_SETTINGS, ...JSON.parse(raw) } : { ...DEFAULT_SETTINGS, timeZone: detectTimeZone() };
+      const settings = raw ? { ...DEFAULT_SETTINGS, ...JSON.parse(raw) } : { ...DEFAULT_SETTINGS };
+      return {
+        ...settings,
+        locale: settings.locale || detected.locale,
+        timeZone: settings.timeZone || detected.timeZone,
+      };
     } catch (_) {
-      return { ...DEFAULT_SETTINGS, timeZone: detectTimeZone() };
+      return { ...DEFAULT_SETTINGS, ...detected };
     }
   }
 
@@ -103,23 +127,22 @@
     return { birth, target, timeZone: tz };
   }
 
+  function normalizeLocale(code) {
+    const loader = window.HeavensClockLocaleLoader;
+    if (loader?.normalize) return loader.normalize(code);
+    return code || "en";
+  }
+
+  function saveSettings(settings) {
+    localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings));
+  }
+
   async function loadLocale(code) {
-    const locale = code || "en";
-    for (const p of [locale, "en"]) {
-      try {
-        const res = await fetch(`locales/${p}.json`);
-        if (!res.ok) continue;
-        strings = await res.json();
-        currentLocale = p;
-        document.documentElement.lang = p === "ko" ? "ko" : p.split("-")[0];
-        document.documentElement.dir = p === "ar" ? "rtl" : "ltr";
-        if (!strings.quotes?.length && p !== "en") {
-          const enRes = await fetch("locales/en.json");
-          if (enRes.ok) strings.quotes = (await enRes.json()).quotes;
-        }
-        return;
-      } catch (_) {}
-    }
+    const loader = window.HeavensClockLocaleLoader;
+    if (!loader?.loadLocale) return;
+    const loaded = await loader.loadLocale(code);
+    strings = loaded.strings;
+    currentLocale = loaded.locale;
   }
 
   function t(key) {
@@ -153,7 +176,8 @@
   }
 
   function formatTargetLabel(target) {
-    return new Intl.DateTimeFormat(currentLocale === "ko" ? "ko-KR" : currentLocale, {
+    const tag = window.HeavensClockLocaleLoader?.intlLocale(currentLocale) || "en";
+    return new Intl.DateTimeFormat(tag, {
       year: "numeric", month: "2-digit", day: "2-digit", timeZone: "UTC",
     }).format(target).replace(/\//g, ".").replace(/\s/g, "");
   }
@@ -171,17 +195,110 @@
     return next;
   }
 
-  function loadBucketItems() {
+  function normalizeEntitlements(entitlements) {
+    const next = { ...entitlements };
+    if (next.premiumThemes || next.premiumWidgets) {
+      next.lifetimePremium = Boolean(next.lifetimePremium || next.premiumThemes || next.premiumWidgets);
+    }
+    delete next.premiumThemes;
+    delete next.premiumWidgets;
+    return next;
+  }
+
+  function loadEntitlements() {
+    try {
+      const raw = localStorage.getItem(ENTITLEMENTS_KEY);
+      if (!raw) return { ...DEFAULT_ENTITLEMENTS };
+      return normalizeEntitlements({ ...DEFAULT_ENTITLEMENTS, ...JSON.parse(raw) });
+    } catch (_) {
+      return { ...DEFAULT_ENTITLEMENTS };
+    }
+  }
+
+  function isPremium(entitlements) {
+    if (entitlements.lifetimePremium) return true;
+    if (entitlements.yearlyPremium) {
+      if (!entitlements.yearlyExpiresAt) return true;
+      return new Date(entitlements.yearlyExpiresAt) > new Date();
+    }
+    if (entitlements.premiumThemes || entitlements.premiumWidgets) return true;
+    return false;
+  }
+
+  function hasPremiumThemeAccess(theme, entitlements) {
+    if (theme?.tier !== "premium") return true;
+    return isPremium(entitlements);
+  }
+
+  function canUseMood(mood, entitlements) {
+    if (FREE_LIMITS.moods.includes(mood)) return true;
+    return isPremium(entitlements);
+  }
+
+  function maxBucketItems(entitlements) {
+    return isPremium(entitlements) ? Infinity : FREE_LIMITS.bucketItems;
+  }
+
+  function openPremiumPage() {
+    const page = (location.pathname.split("/").pop() || "index.html").split("?")[0];
+    location.href = `premium.html?return=${encodeURIComponent(page)}`;
+  }
+
+  function saveEntitlementsLocal(patch) {
+    const next = normalizeEntitlements({ ...loadEntitlements(), ...patch });
+    localStorage.setItem(ENTITLEMENTS_KEY, JSON.stringify(next));
+    return next;
+  }
+
+  function getPremiumPlan(entitlements) {
+    if (entitlements.lifetimePremium) return "lifetime";
+    if (entitlements.yearlyPremium && isPremium(entitlements)) return "yearly";
+    return "free";
+  }
+
+  function grantLifetimePremiumLocal() {
+    return saveEntitlementsLocal({ lifetimePremium: true, yearlyPremium: false, yearlyExpiresAt: null });
+  }
+
+  function grantYearlyPremiumLocal(expiresAt) {
+    const expiry = expiresAt || (() => {
+      const date = new Date();
+      date.setFullYear(date.getFullYear() + 1);
+      return date.toISOString();
+    })();
+    return saveEntitlementsLocal({ lifetimePremium: false, yearlyPremium: true, yearlyExpiresAt: expiry });
+  }
+
+  function revokePremiumLocal() {
+    return saveEntitlementsLocal({ ...DEFAULT_ENTITLEMENTS });
+  }
+
+  function loadBucketItems(entitlements) {
     try {
       const items = JSON.parse(localStorage.getItem(BUCKET_KEY) || "[]");
-      return Array.isArray(items) ? items.filter((item) => item && typeof item.text === "string") : [];
+      if (!Array.isArray(items)) return [];
+      const valid = items.filter((item) => item && typeof item.text === "string");
+      const max = maxBucketItems(entitlements);
+      return max === Infinity ? valid : valid.slice(0, max);
     } catch (_) {
       return [];
     }
   }
 
-  function saveBucketItems(items) {
-    try { localStorage.setItem(BUCKET_KEY, JSON.stringify(items)); } catch (_) {}
+  function saveBucketItems(items, entitlements) {
+    const max = maxBucketItems(entitlements);
+    const next = max === Infinity ? items : items.slice(0, max);
+    try { localStorage.setItem(BUCKET_KEY, JSON.stringify(next)); } catch (_) {}
+  }
+
+  function enforceBucketLimit(entitlements) {
+    try {
+      const raw = JSON.parse(localStorage.getItem(BUCKET_KEY) || "[]");
+      if (!Array.isArray(raw)) return;
+      const max = maxBucketItems(entitlements);
+      if (max === Infinity || raw.length <= max) return;
+      localStorage.setItem(BUCKET_KEY, JSON.stringify(raw.slice(0, max)));
+    } catch (_) {}
   }
 
   function pad(n) { return String(n).padStart(2, "0"); }
@@ -243,7 +360,9 @@
     const bucketCount = document.getElementById("bucket-count");
     const values = Object.fromEntries([...document.querySelectorAll(".unit-value")].map((el) => [el.dataset.key, el]));
     const tabs = [...document.querySelectorAll(".mood-switch button")];
-    let bucketState = loadBucketItems();
+    let entitlements = loadEntitlements();
+    enforceBucketLimit(entitlements);
+    let bucketState = loadBucketItems(entitlements);
     let bucketIndex = 0;
 
     document.title = t("appTitle");
@@ -285,6 +404,10 @@
         locale: currentLocale,
         theme: document.body.dataset.theme || "void",
         quote: quote.textContent,
+        labels: {
+          memento: t("mementoMori"),
+          daysLeft: currentLocale.startsWith("ko") ? "남은 일수" : currentLocale.startsWith("en") ? "DAYS LEFT" : t("remaining"),
+        },
         timeZone: settings.timeZone || detectTimeZone(),
         birthAt: lifeStart.toISOString(),
         targetAt: target.toISOString(),
@@ -294,30 +417,55 @@
         percentLeft: Number(percentLeft.toFixed(2)),
       };
       try { localStorage.setItem(WIDGET_DATA_KEY, JSON.stringify(snapshot)); } catch (_) {}
-      window.HeavensClockBridge?.saveWidgetSnapshot?.(JSON.stringify(snapshot));
+      if (isPremium(entitlements)) {
+        window.HeavensClockBridge?.saveWidgetSnapshot?.(JSON.stringify(snapshot));
+      }
     }
 
     function setTheme(id) {
-      const next = saveTheme(id);
+      const requested = THEMES.find((item) => item.id === id) || THEMES[0];
+      if (!hasPremiumThemeAccess(requested, entitlements)) {
+        openPremiumPage();
+        return;
+      }
+      const next = saveTheme(requested.id);
       const theme = THEMES.find((item) => item.id === next) || THEMES[0];
       document.body.dataset.theme = theme.id;
       themeSwitch.querySelectorAll("button").forEach((btn) => btn.setAttribute("aria-pressed", btn.dataset.theme === theme.id ? "true" : "false"));
       updateWidgetSnapshot();
     }
 
-    themeSwitch.textContent = "";
-    THEMES.forEach((theme) => {
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "theme-dot";
-      btn.dataset.theme = theme.id;
-      btn.style.setProperty("--theme-accent", theme.accent);
-      btn.setAttribute("aria-label", `${theme.name} theme`);
-      btn.addEventListener("click", () => setTheme(theme.id));
-      themeSwitch.appendChild(btn);
-    });
+    function buildThemeSwitcher() {
+      themeSwitch.textContent = "";
+      THEMES.forEach((theme) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "theme-dot";
+        btn.dataset.theme = theme.id;
+        btn.style.setProperty("--theme-accent", theme.accent);
+        const locked = !hasPremiumThemeAccess(theme, entitlements);
+        btn.classList.toggle("locked", locked);
+        btn.setAttribute("aria-label", locked ? `${theme.name} premium theme` : `${theme.name} theme`);
+        btn.title = `${theme.name} (${theme.tier})`;
+        btn.addEventListener("click", () => setTheme(theme.id));
+        themeSwitch.appendChild(btn);
+      });
+    }
+
+    function syncMoodLocks() {
+      tabs.forEach((btn) => {
+        const locked = btn.dataset.mood === "impact" && !canUseMood("impact", entitlements);
+        btn.classList.toggle("locked", locked);
+      });
+    }
+
+    buildThemeSwitcher();
 
     function setMood(mood) {
+      if (!canUseMood(mood, entitlements)) {
+        openPremiumPage();
+        return;
+      }
       document.body.dataset.mood = mood;
       tabs.forEach((btn) => btn.setAttribute("aria-selected", btn.dataset.mood === mood ? "true" : "false"));
       caption.textContent = t("remaining");
@@ -327,9 +475,41 @@
     }
 
     tabs.forEach((btn) => btn.addEventListener("click", () => setMood(btn.dataset.mood)));
-    document.getElementById("edit-settings")?.addEventListener("click", () => location.href = "onboarding.html?edit=1");
-    setTheme(loadTheme());
-    setMood(localStorage.getItem(MOOD_KEY) === "impact" ? "impact" : "calm");
+    syncMoodLocks();
+    function refreshAppLocale() {
+      document.title = t("appTitle");
+      applyI18n();
+      tabs[0].textContent = t("mood.calm");
+      tabs[1].textContent = t("mood.impact");
+      caption.textContent = t("remaining");
+      moodHint.textContent = t(`hint.${document.body.dataset.mood || "calm"}`);
+      quote.textContent = quoteForToday();
+      targetLabel.textContent = formatTargetLabel(target);
+      showBucketItem();
+      updateWidgetSnapshot();
+    }
+
+    const langSelect = document.getElementById("app-language");
+    if (langSelect && window.HeavensClockLocales?.fillLanguageSelect) {
+      window.HeavensClockLocales.fillLanguageSelect(langSelect, settings.locale || currentLocale);
+      langSelect.addEventListener("change", async () => {
+        const next = normalizeLocale(langSelect.value);
+        settings.locale = next;
+        saveSettings(settings);
+        await loadLocale(next);
+        refreshAppLocale();
+      });
+    }
+
+    document.getElementById("edit-settings")?.addEventListener("click", () => {
+      location.href = "onboarding.html?edit=1";
+    });
+    document.getElementById("open-premium")?.addEventListener("click", openPremiumPage);
+    document.body.classList.toggle("is-premium", isPremium(entitlements));
+    const savedTheme = THEMES.find((theme) => theme.id === loadTheme()) || THEMES[0];
+    setTheme(hasPremiumThemeAccess(savedTheme, entitlements) ? savedTheme.id : FREE_LIMITS.themeId);
+    const savedMood = localStorage.getItem(MOOD_KEY);
+    setMood(savedMood === "impact" && canUseMood("impact", entitlements) ? "impact" : "calm");
 
     function visibleBucketItems() {
       const active = bucketState.filter((item) => !item.done);
@@ -351,6 +531,30 @@
         bucketSpotlight.classList.remove("swap");
       }, 220);
     }
+
+    function syncAccessUI() {
+      entitlements = loadEntitlements();
+      document.body.classList.toggle("is-premium", isPremium(entitlements));
+      buildThemeSwitcher();
+      syncMoodLocks();
+      bucketState = loadBucketItems(entitlements);
+      showBucketItem();
+      updateWidgetSnapshot();
+    }
+
+    window.HeavensClockDev = {
+      getPlan: () => getPremiumPlan(entitlements),
+      isPremium: () => isPremium(entitlements),
+      grantLifetime: () => { entitlements = grantLifetimePremiumLocal(); syncAccessUI(); },
+      grantYearly: (expiresAt) => { entitlements = grantYearlyPremiumLocal(expiresAt); syncAccessUI(); },
+      revoke: () => {
+        entitlements = revokePremiumLocal();
+        setTheme(FREE_LIMITS.themeId);
+        setMood("calm");
+        syncAccessUI();
+      },
+      refresh: syncAccessUI,
+    };
 
     showBucketItem();
     setInterval(() => {
@@ -403,6 +607,32 @@
     setInterval(() => updateDigits(new Date()), 1000);
     setInterval(updateWidgetSnapshot, 60_000);
     requestAnimationFrame(animate);
+
+    async function refreshClockPage() {
+      await loadLocale(settings.locale || currentLocale);
+      refreshAppLocale();
+      targetLabel.textContent = formatTargetLabel(target);
+      updateDigits(new Date());
+      updateWidgetSnapshot();
+    }
+
+    const mementoEl = document.querySelector(".brand-bar .memento");
+    if (mementoEl) {
+      mementoEl.setAttribute("aria-label", t("mementoMori"));
+      let refreshing = false;
+      mementoEl.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (refreshing) return;
+        refreshing = true;
+        refreshClockPage()
+          .catch(() => {
+            const url = new URL(window.location.href);
+            url.searchParams.set("_r", String(Date.now()));
+            window.location.replace(url.toString());
+          })
+          .finally(() => { refreshing = false; });
+      });
+    }
   }
 
   init().catch((err) => initError(`Startup error: ${err.message || err}`));

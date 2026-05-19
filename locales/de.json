@@ -45,7 +45,8 @@
     "minute": "Minute",
     "editTitle": "Passe deine Uhr an",
     "editSubtitle": "Ändere dein Geburtsdatum, deine Geburtszeit oder deine gewünschte Lebensdauer.",
-    "back": "Zurück"
+    "back": "Zurück",
+    "backToClock": "Back to clock"
   },
   "bucket": {
     "title": "Bucket List",

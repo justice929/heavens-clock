@@ -48,12 +48,20 @@ export function detectLocale() {
 }
 
 export function loadSettings() {
+  const detected = {
+    locale: detectLocale(),
+    timeZone: detectTimeZone(),
+  };
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return { ...DEFAULT_SETTINGS, timeZone: detectTimeZone() };
-    return { ...DEFAULT_SETTINGS, ...JSON.parse(raw) };
+    const settings = raw ? { ...DEFAULT_SETTINGS, ...JSON.parse(raw) } : { ...DEFAULT_SETTINGS };
+    return {
+      ...settings,
+      locale: settings.locale || detected.locale,
+      timeZone: settings.timeZone || detected.timeZone,
+    };
   } catch {
-    return { ...DEFAULT_SETTINGS, timeZone: detectTimeZone() };
+    return { ...DEFAULT_SETTINGS, ...detected };
   }
 }
 

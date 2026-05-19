@@ -45,7 +45,8 @@
     "minute": "Minuto",
     "editTitle": "Ajusta tu reloj",
     "editSubtitle": "Cambia tu fecha de nacimiento, hora de nacimiento o esperanza de vida.",
-    "back": "Atrás"
+    "back": "Atrás",
+    "backToClock": "Back to clock"
   },
   "bucket": {
     "title": "Lista de vida",

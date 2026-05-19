@@ -6,6 +6,20 @@ import {
 import { loadLocale, t, applyI18n, getQuoteForToday, getLocale } from "./i18n.js";
 import { buildWidgetSnapshot, saveWidgetSnapshot } from "./widget-data.js";
 import { THEMES, loadTheme, saveTheme } from "./themes.js";
+import {
+  applyPurchase,
+  canUseMood,
+  FREE_LIMITS,
+  getPremiumPlan,
+  grantLifetimePremium,
+  grantYearlyPremium,
+  hasPremiumThemeAccess,
+  hasPremiumWidgetAccess,
+  isPremium,
+  loadEntitlements,
+  PRODUCT_IDS,
+  revokePremium,
+} from "./entitlements.js";
 
 const settings = loadSettings();
 if (!settings.onboardingComplete || !settings.birthDate) {
@@ -14,6 +28,8 @@ if (!settings.onboardingComplete || !settings.birthDate) {
 
 const { birth: LIFE_START, target: TARGET } = computeLifeRange(settings);
 const MOOD_KEY = "heaven-clock-mood";
+let entitlements = loadEntitlements();
+document.body.classList.toggle("is-premium", isPremium(entitlements));
 
 const RING_DEFS = [
   { key: "years", radius: 92, width: 2.8, max: () => Math.max(1, initialYears) },
@@ -49,8 +65,18 @@ dailyQuote.textContent = getQuoteForToday();
 tabs[0].textContent = t("mood.calm");
 tabs[1].textContent = t("mood.impact");
 
+function openPremiumPage() {
+  const page = (location.pathname.split("/").pop() || "index.html").split("?")[0];
+  window.location.href = `premium.html?return=${encodeURIComponent(page)}`;
+}
+
 function setTheme(id) {
-  const next = saveTheme(id);
+  const requested = THEMES.find((item) => item.id === id) || THEMES[0];
+  if (!hasPremiumThemeAccess(requested, entitlements)) {
+    openPremiumPage();
+    return;
+  }
+  const next = saveTheme(requested.id);
   const theme = THEMES.find((item) => item.id === next) || THEMES[0];
   document.body.dataset.theme = theme.id;
   themeSwitch?.querySelectorAll("button").forEach((btn) => {
@@ -68,7 +94,9 @@ function buildThemeSwitcher() {
     btn.className = "theme-dot";
     btn.dataset.theme = theme.id;
     btn.style.setProperty("--theme-accent", theme.accent);
-    btn.setAttribute("aria-label", `${theme.name} theme`);
+    const locked = !hasPremiumThemeAccess(theme, entitlements);
+    btn.classList.toggle("locked", locked);
+    btn.setAttribute("aria-label", locked ? `${theme.name} premium theme` : `${theme.name} theme`);
     btn.title = `${theme.name} (${theme.tier})`;
     btn.addEventListener("click", () => setTheme(theme.id));
     themeSwitch.appendChild(btn);
@@ -103,6 +131,10 @@ function buildThemeSwitcher() {
 })();
 
 function setMood(mood) {
+  if (!canUseMood(mood, entitlements)) {
+    openPremiumPage();
+    return;
+  }
   document.body.dataset.mood = mood;
   tabs.forEach((btn) => {
     const on = btn.dataset.mood === mood;
@@ -114,15 +146,21 @@ function setMood(mood) {
   updateWidgetSnapshot();
 }
 
-tabs.forEach((btn) => btn.addEventListener("click", () => setMood(btn.dataset.mood)));
+tabs.forEach((btn) => {
+  const locked = btn.dataset.mood === "impact" && !canUseMood("impact", entitlements);
+  btn.classList.toggle("locked", locked);
+  btn.addEventListener("click", () => setMood(btn.dataset.mood));
+});
 editSettings?.addEventListener("click", () => {
   window.location.href = "onboarding.html?edit=1";
 });
+document.getElementById("open-premium")?.addEventListener("click", openPremiumPage);
 
 const savedMood = (() => { try { return localStorage.getItem(MOOD_KEY); } catch (_) { return null; } })();
 buildThemeSwitcher();
-setTheme(loadTheme());
-setMood(savedMood === "impact" ? "impact" : "calm");
+const savedTheme = THEMES.find((theme) => theme.id === loadTheme()) || THEMES[0];
+setTheme(hasPremiumThemeAccess(savedTheme, entitlements) ? savedTheme.id : FREE_LIMITS.themeId);
+setMood(savedMood === "impact" && canUseMood("impact", entitlements) ? "impact" : "calm");
 
 function pad(n) { return String(n).padStart(2, "0"); }
 
@@ -204,10 +242,16 @@ function updateDigits(now) {
 }
 
 function updateWidgetSnapshot() {
+  if (!hasPremiumWidgetAccess(entitlements)) return;
+  const locale = getLocale();
   saveWidgetSnapshot(buildWidgetSnapshot({
     settings,
-    locale: getLocale(),
+    locale,
     quote: dailyQuote.textContent,
+    labels: {
+      memento: t("mementoMori"),
+      daysLeft: locale.startsWith("ko") ? "남은 일수" : locale.startsWith("en") ? "DAYS LEFT" : t("remaining"),
+    },
     theme: document.body.dataset.theme || "void",
   }));
 }
@@ -226,5 +270,38 @@ requestAnimationFrame(animateRings);
 
 document.addEventListener("keydown", (e) => {
   if (e.key === "1") setMood("calm");
-  if (e.key === "2") setMood("impact");
+  if (e.key === "2" && canUseMood("impact", entitlements)) setMood("impact");
 });
+
+window.HeavensClockDev = {
+  getPlan: () => getPremiumPlan(entitlements),
+  isPremium: () => isPremium(entitlements),
+  grantLifetime: () => {
+    grantLifetimePremium();
+    entitlements = loadEntitlements();
+    document.body.classList.toggle("is-premium", true);
+    buildThemeSwitcher();
+    tabs.forEach((btn) => btn.classList.toggle("locked", btn.dataset.mood === "impact"));
+    updateWidgetSnapshot();
+  },
+  grantYearly: (expiresAt) => {
+    grantYearlyPremium(expiresAt);
+    entitlements = loadEntitlements();
+    document.body.classList.toggle("is-premium", true);
+    buildThemeSwitcher();
+    tabs.forEach((btn) => btn.classList.toggle("locked", false));
+    updateWidgetSnapshot();
+  },
+  revoke: () => {
+    revokePremium();
+    entitlements = loadEntitlements();
+    document.body.classList.remove("is-premium");
+    setTheme(FREE_LIMITS.themeId);
+    setMood("calm");
+    buildThemeSwitcher();
+    tabs.forEach((btn) => btn.classList.toggle("locked", btn.dataset.mood === "impact"));
+    updateWidgetSnapshot();
+  },
+  applyPurchase,
+  PRODUCT_IDS,
+};

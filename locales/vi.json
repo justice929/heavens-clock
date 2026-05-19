@@ -45,7 +45,8 @@
     "minute": "Phút",
     "editTitle": "Điều chỉnh đồng hồ của bạn",
     "editSubtitle": "Thay đổi ngày sinh, giờ sinh hoặc tuổi thọ mong muốn.",
-    "back": "Quay lại"
+    "back": "Quay lại",
+    "backToClock": "Back to clock"
   },
   "bucket": {
     "title": "Danh sách muốn làm",

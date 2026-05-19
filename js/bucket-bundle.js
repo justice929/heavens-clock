@@ -1,7 +1,9 @@
 (function () {
   const SETTINGS_KEY = "memento-mori-settings";
   const BUCKET_KEY = "heavens-clock-bucket-list";
-  const MAX_ITEMS = 100;
+  const ENTITLEMENTS_KEY = "heavens-clock-entitlements";
+  const PREMIUM_MAX_ITEMS = 100;
+  const FREE_BUCKET_ITEMS = 3;
 
   const pageText = {
     en: {
@@ -17,6 +19,7 @@
       emptyPage: "No buckets yet. Tap a question or example to begin with one.",
       all: "All",
       done: "done",
+      bucketLimit: "Free plan allows up to 3 bucket items. Open Premium to add more?",
     },
     ko: {
       back: "← 시계",
@@ -31,6 +34,7 @@
       emptyPage: "아직 등록된 버킷이 없습니다. 질문이나 예시를 눌러 하나부터 시작하세요.",
       all: "전체",
       done: "완료",
+      bucketLimit: "무료 이용 시 버킷리스트는 3개까지입니다. 프리미엄 화면으로 이동할까요?",
     },
   };
 
@@ -122,6 +126,37 @@
     }
   }
 
+  function loadEntitlements() {
+    try {
+      const raw = localStorage.getItem(ENTITLEMENTS_KEY);
+      const parsed = raw ? JSON.parse(raw) : {};
+      return parsed && typeof parsed === "object" ? parsed : {};
+    } catch (_) {
+      return {};
+    }
+  }
+
+  function isPremium(entitlements) {
+    if (entitlements.lifetimePremium) return true;
+    if (entitlements.yearlyPremium) {
+      if (!entitlements.yearlyExpiresAt) return true;
+      return new Date(entitlements.yearlyExpiresAt) > new Date();
+    }
+    if (entitlements.premiumThemes || entitlements.premiumWidgets) return true;
+    return false;
+  }
+
+  function maxBucketItems() {
+    return isPremium(loadEntitlements()) ? PREMIUM_MAX_ITEMS : FREE_BUCKET_ITEMS;
+  }
+
+  function saveEntitlementsLocal(patch) {
+    const current = loadEntitlements();
+    const next = { yearlyPremium: false, lifetimePremium: false, yearlyExpiresAt: null, ...current, ...patch };
+    localStorage.setItem(ENTITLEMENTS_KEY, JSON.stringify(next));
+    return next;
+  }
+
   async function loadLocale(code) {
     const locale = code || "en";
     for (const candidate of [locale, "en"]) {
@@ -153,14 +188,15 @@
   function loadItems() {
     try {
       const parsed = JSON.parse(localStorage.getItem(BUCKET_KEY) || "[]");
-      return Array.isArray(parsed) ? parsed.filter((item) => item && typeof item.text === "string").slice(0, MAX_ITEMS) : [];
+      const valid = Array.isArray(parsed) ? parsed.filter((item) => item && typeof item.text === "string") : [];
+      return valid.slice(0, maxBucketItems());
     } catch (_) {
       return [];
     }
   }
 
   function saveItems() {
-    localStorage.setItem(BUCKET_KEY, JSON.stringify(items.slice(0, MAX_ITEMS)));
+    localStorage.setItem(BUCKET_KEY, JSON.stringify(items.slice(0, maxBucketItems())));
   }
 
   function normalizeText(text) {
@@ -175,12 +211,20 @@
   function addItem(text, meta = {}) {
     const next = normalizeText(text);
     if (!next) return;
+    const limit = maxBucketItems();
+    if (items.length >= limit) {
+      const returnTo = encodeURIComponent("bucket.html");
+      if (confirm(page("bucketLimit"))) {
+        location.href = `premium.html?return=${returnTo}`;
+      }
+      return;
+    }
     const exists = items.some((item) => (meta.key && item.key === meta.key) || normalizeText(displayItemText(item)) === next);
     if (exists) return;
     items = [
       { id: `${Date.now()}-${Math.random().toString(16).slice(2)}`, text: next, key: meta.key || "", done: false },
       ...items,
-    ].slice(0, MAX_ITEMS);
+    ].slice(0, limit);
     saveItems();
     renderItems();
   }
@@ -239,7 +283,7 @@
   function renderItems() {
     itemWrap.textContent = "";
     const completed = items.filter((item) => item.done).length;
-    count.textContent = `${items.length}/${MAX_ITEMS} · ${page("done")} ${completed}`;
+    count.textContent = `${items.length}/${maxBucketItems()} · ${page("done")} ${completed}`;
     empty.style.display = items.length ? "none" : "block";
 
     items.forEach((item) => {
@@ -278,6 +322,7 @@
     const settings = loadSettings();
     await loadLocale(settings.locale || "en");
     applyI18n();
+    items = loadItems();
 
     form.addEventListener("submit", (event) => {
       event.preventDefault();
@@ -290,6 +335,31 @@
     renderSuggestions();
     renderItems();
   }
+
+  window.HeavensClockDev = {
+    getPlan: () => {
+      const ent = loadEntitlements();
+      if (ent.lifetimePremium) return "lifetime";
+      if (isPremium(ent)) return "yearly";
+      return "free";
+    },
+    grantLifetime: () => {
+      saveEntitlementsLocal({ lifetimePremium: true, yearlyPremium: false, yearlyExpiresAt: null });
+      items = loadItems();
+      renderItems();
+    },
+    grantYearly: (expiresAt) => {
+      const expiry = expiresAt || new Date(Date.now() + 365 * 86_400_000).toISOString();
+      saveEntitlementsLocal({ lifetimePremium: false, yearlyPremium: true, yearlyExpiresAt: expiry });
+      items = loadItems();
+      renderItems();
+    },
+    revoke: () => {
+      saveEntitlementsLocal({ lifetimePremium: false, yearlyPremium: false, yearlyExpiresAt: null });
+      items = loadItems();
+      renderItems();
+    },
+  };
 
   init();
 })();

@@ -45,7 +45,8 @@
     "minute": "मिनट",
     "editTitle": "अपनी घड़ी समायोजित करें",
     "editSubtitle": "अपनी जन्म तिथि, जन्म समय या अपेक्षित आयु बदलें।",
-    "back": "वापस"
+    "back": "वापस",
+    "backToClock": "Back to clock"
   },
   "bucket": {
     "title": "बकेट लिस्ट",

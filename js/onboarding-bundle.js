@@ -1,12 +1,8 @@
 (function () {
   const SETTINGS_KEY = "memento-mori-settings";
-  const SUPPORTED = ["en", "ko", "ja", "zh-Hans", "zh-Hant", "es", "fr", "de", "pt", "it", "ar", "hi", "ru", "vi", "th", "id", "tr", "nl", "pl"];
-  const LANG_NAMES = {
-    en: "English", ko: "한국어", ja: "日本語", "zh-Hans": "简体中文", "zh-Hant": "繁體中文",
-    es: "Español", fr: "Français", de: "Deutsch", pt: "Português", it: "Italiano",
-    ar: "العربية", hi: "हिन्दी", ru: "Русский", vi: "Tiếng Việt", th: "ไทย",
-    id: "Indonesia", tr: "Türkçe", nl: "Nederlands", pl: "Polski",
-  };
+  const meta = window.HeavensClockLocales || {};
+  const SUPPORTED = meta.SUPPORTED || ["en", "ko"];
+  const LANG_NAMES = meta.LABELS || { en: "English", ko: "한국어" };
   const DEFAULT_SETTINGS = {
     birthDate: "", birthTime: "00:00", lifespanYears: 80, timeZone: "",
     locale: "", onboardingComplete: false, setupVersion: 2, purchased: false,
@@ -41,17 +37,10 @@
   }
 
   async function loadLocale(code) {
-    for (const p of [code || "en", "en"]) {
-      try {
-        const res = await fetch(`locales/${p}.json`);
-        if (res.ok) {
-          strings = await res.json();
-          document.documentElement.lang = p === "ko" ? "ko" : p.split("-")[0];
-          document.documentElement.dir = p === "ar" ? "rtl" : "ltr";
-          return;
-        }
-      } catch (_) {}
-    }
+    const loader = window.HeavensClockLocaleLoader;
+    if (!loader?.loadLocale) return;
+    const loaded = await loader.loadLocale(code);
+    strings = loaded.strings;
   }
 
   function t(key) {
@@ -74,7 +63,8 @@
   }
 
   async function init() {
-    const isEdit = new URLSearchParams(location.search).get("edit") === "1";
+    const isEdit =
+      new URLSearchParams(location.search).get("edit") === "1" || location.hash === "#edit";
     const draft = loadSettings();
     draft.locale = draft.locale || detectLocale();
     draft.timeZone = draft.timeZone || detectTimeZone();
@@ -82,7 +72,15 @@
     await loadLocale(draft.locale);
     applyI18n();
     document.title = t("appTitle");
-    if (isEdit) $("subtitle").textContent = t("onboarding.editSubtitle");
+    if (isEdit) {
+      document.body.classList.add("is-edit");
+      $("subtitle").textContent = t("onboarding.editSubtitle");
+      $("edit-bottom")?.classList.remove("hidden");
+      $("btn-clock")?.addEventListener("click", () => {
+        saveSettings(draft);
+        location.replace("index.html");
+      });
+    }
     $("tz-display").textContent = draft.timeZone;
 
     if (draft.birthDate) {
@@ -115,7 +113,10 @@
         document.title = t("appTitle");
         $("btn-next").textContent = step === 3 ? t("onboarding.start") : t("onboarding.next");
         $("btn-back").textContent = t("onboarding.back");
-        if (isEdit) $("subtitle").textContent = t("onboarding.editSubtitle");
+        if (isEdit) {
+          $("subtitle").textContent = t("onboarding.editSubtitle");
+          $("btn-clock").textContent = t("onboarding.backToClock");
+        }
       });
       grid.appendChild(b);
     });

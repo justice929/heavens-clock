@@ -45,7 +45,8 @@
     "minute": "分",
     "editTitle": "時計を調整",
     "editSubtitle": "生年月日、出生時刻、希望寿命を変更します。",
-    "back": "戻る"
+    "back": "戻る",
+    "backToClock": "時計に戻る"
   },
   "bucket": {
     "title": "バケットリスト",

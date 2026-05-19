@@ -45,7 +45,8 @@
     "minute": "分",
     "editTitle": "調整你的時鐘",
     "editSubtitle": "更改你的出生日期、出生時間或希望壽命。",
-    "back": "返回"
+    "back": "返回",
+    "backToClock": "Back to clock"
   },
   "bucket": {
     "title": "願望清單",

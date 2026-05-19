@@ -45,7 +45,8 @@
     "minute": "Dakika",
     "editTitle": "Saatini ayarla",
     "editSubtitle": "Doğum tarihini, doğum saatini veya umut ettiğin yaşam süresini değiştir.",
-    "back": "Geri"
+    "back": "Geri",
+    "backToClock": "Back to clock"
   },
   "bucket": {
     "title": "Yapılacaklar listesi",

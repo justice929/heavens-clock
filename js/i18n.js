@@ -1,7 +1,10 @@
-const SUPPORTED = [
-  "en", "ko", "ja", "zh-Hans", "zh-Hant", "es", "fr", "de", "pt", "it",
-  "ar", "hi", "ru", "vi", "th", "id", "tr", "nl", "pl",
-];
+const SUPPORTED =
+  typeof globalThis !== "undefined" && globalThis.HeavensClockLocales?.SUPPORTED
+    ? globalThis.HeavensClockLocales.SUPPORTED
+    : [
+        "en", "ko", "ja", "zh-Hans", "zh-Hant", "es", "fr", "de", "pt", "it",
+        "ar", "hi", "ru", "vi", "th", "id", "tr", "nl", "pl",
+      ];
 
 let strings = {};
 let currentLocale = "en";

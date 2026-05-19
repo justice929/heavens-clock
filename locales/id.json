@@ -45,7 +45,8 @@
     "minute": "Menit",
     "editTitle": "Atur jam Anda",
     "editSubtitle": "Ubah tanggal lahir, waktu lahir, atau usia yang Anda harapkan.",
-    "back": "Kembali"
+    "back": "Kembali",
+    "backToClock": "Back to clock"
   },
   "bucket": {
     "title": "Daftar hidup",

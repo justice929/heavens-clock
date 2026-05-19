@@ -45,7 +45,8 @@
     "minute": "Minute",
     "editTitle": "Ajuste ton horloge",
     "editSubtitle": "Modifie ta date de naissance, ton heure de naissance ou ton espérance de vie.",
-    "back": "Retour"
+    "back": "Retour",
+    "backToClock": "Back to clock"
   },
   "bucket": {
     "title": "Liste de vie",

@@ -78,11 +78,20 @@
       text-decoration: none;
     }
 
+    .locale-notice {
+      width: 100%;
+      margin: 0.35rem 0 0;
+      font-size: 0.72rem;
+      line-height: 1.45;
+      color: rgba(215, 224, 234, 0.65);
+    }
+
     .topbar {
       position: sticky;
       top: 0;
       z-index: 20;
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
       padding: 1.1rem 0;
@@ -765,10 +774,7 @@
       <a href="#beta" data-i18n="nav.beta">Beta</a>
       <a href="#community" data-i18n="nav.community">Community</a>
       <a href="#join" data-i18n="nav.join">Join</a>
-      <select class="lang-select" id="language" aria-label="Language">
-        <option value="en">English</option>
-        <option value="ko">한국어</option>
-      </select>
+      <select class="lang-select" id="language" aria-label="Language"></select>
     </nav>
   </header>
 
@@ -907,6 +913,7 @@
   </main>
 
   <footer class="wrap" data-i18n="footer">Heaven's Clock · A reminder to live before the day is gone.</footer>
-  <script src="site.js?v=20260519-beta-path-2"></script>
+  <script src="/js/locales-meta.js"></script>
+  <script src="/site/site.js?v=20260519-lang-2"></script>
 </body>
 </html>

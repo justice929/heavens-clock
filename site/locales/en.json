@@ -1,6 +1,7 @@
 {
   "meta": {
-    "title": "Heaven's Clock - Live Today"
+    "title": "Heaven's Clock - Live Today",
+    "landingEnglishFallback": "Landing page in English for now. Open the clock app for your language."
   },
   "brand": "Heaven's Clock",
   "nav": {
@@ -15,6 +16,8 @@
     "body": "A premium life clock for people who refuse to drift. Track the time you hope to live, keep one meaningful bucket close, and return to the day before it disappears.",
     "primaryCta": "Get Android beta notice",
     "secondaryCta": "Explore the ritual",
+    "openWebClock": "Open web clock (Premium)",
+    "installWebClock": "Install on PC (Premium)",
     "proof1": "Android first",
     "proof2": "Global by design",
     "proof3": "Community is the endgame"

@@ -11,6 +11,8 @@ import android.widget.RemoteViews;
 
 import org.json.JSONObject;
 
+import java.util.Locale;
+
 public class LifeClockWidgetProvider extends AppWidgetProvider {
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
@@ -32,9 +34,9 @@ public class LifeClockWidgetProvider extends AppWidgetProvider {
         WidgetSnapshot snapshot = readSnapshot(context);
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_life_clock);
 
-        views.setTextViewText(R.id.widget_memento, "Memento Mori");
+        views.setTextViewText(R.id.widget_memento, snapshot.memento);
         views.setTextViewText(R.id.widget_days, String.valueOf(snapshot.daysLeft));
-        views.setTextViewText(R.id.widget_days_label, "DAYS LEFT");
+        views.setTextViewText(R.id.widget_days_label, snapshot.daysLabel);
         views.setTextViewText(R.id.widget_percent, snapshot.percentLeft + "%");
         views.setTextViewText(R.id.widget_quote, snapshot.quote);
 
@@ -59,24 +61,54 @@ public class LifeClockWidgetProvider extends AppWidgetProvider {
 
         try {
             JSONObject json = new JSONObject(raw);
+            String locale = json.optString("locale", Locale.getDefault().toLanguageTag());
+            JSONObject labels = json.optJSONObject("labels");
             return new WidgetSnapshot(
                 json.optInt("daysLeft", 0),
                 json.optDouble("percentLeft", 0),
-                json.optString("quote", "Open Heaven's Clock to begin.")
+                label(labels, "memento", "Memento Mori"),
+                label(labels, "daysLeft", defaultDaysLabel(locale)),
+                textOrDefault(json.optString("quote", ""), defaultQuote(locale))
             );
         } catch (Exception ignored) {
-            return new WidgetSnapshot(0, 0, "Open Heaven's Clock to begin.");
+            String locale = Locale.getDefault().toLanguageTag();
+            return new WidgetSnapshot(0, 0, "Memento Mori", defaultDaysLabel(locale), defaultQuote(locale));
         }
+    }
+
+    private static String label(JSONObject labels, String key, String fallback) {
+        if (labels == null) return fallback;
+        return textOrDefault(labels.optString(key, ""), fallback);
+    }
+
+    private static String textOrDefault(String value, String fallback) {
+        return value == null || value.trim().isEmpty() ? fallback : value;
+    }
+
+    private static boolean isKorean(String locale) {
+        return locale != null && locale.toLowerCase(Locale.ROOT).startsWith("ko");
+    }
+
+    private static String defaultDaysLabel(String locale) {
+        return isKorean(locale) ? "남은 일수" : "DAYS LEFT";
+    }
+
+    private static String defaultQuote(String locale) {
+        return isKorean(locale) ? "Heaven's Clock을 열어 시작하세요." : "Open Heaven's Clock to begin.";
     }
 
     private static class WidgetSnapshot {
         final int daysLeft;
         final String percentLeft;
+        final String memento;
+        final String daysLabel;
         final String quote;
 
-        WidgetSnapshot(int daysLeft, double percentLeft, String quote) {
+        WidgetSnapshot(int daysLeft, double percentLeft, String memento, String daysLabel, String quote) {
             this.daysLeft = daysLeft;
             this.percentLeft = String.format(java.util.Locale.US, "%.2f", percentLeft);
+            this.memento = memento;
+            this.daysLabel = daysLabel;
             this.quote = quote;
         }
     }

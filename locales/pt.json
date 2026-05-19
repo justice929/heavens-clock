@@ -45,7 +45,8 @@
     "minute": "Minuto",
     "editTitle": "Ajuste seu relógio",
     "editSubtitle": "Altere sua data de nascimento, hora de nascimento ou expectativa de vida.",
-    "back": "Voltar"
+    "back": "Voltar",
+    "backToClock": "Back to clock"
   },
   "bucket": {
     "title": "Lista de vida",

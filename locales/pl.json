@@ -45,7 +45,8 @@
     "minute": "Minuta",
     "editTitle": "Dostosuj swój zegar",
     "editSubtitle": "Zmień datę urodzenia, godzinę urodzenia lub oczekiwaną długość życia.",
-    "back": "Wstecz"
+    "back": "Wstecz",
+    "backToClock": "Back to clock"
   },
   "bucket": {
     "title": "Lista marzeń",
