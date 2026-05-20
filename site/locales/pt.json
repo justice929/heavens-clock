@@ -1,26 +1,26 @@
 {
   "meta": {
-    "title": "Relógio do Céu",
-    "landingEnglishFallback": "Landing page in English for now. Open the clock app for your language."
+    "title": "Relógio do Céu - Viva hoje",
+    "landingEnglishFallback": "A página inicial está em inglês por enquanto. Abra o app do relógio no seu idioma."
   },
   "brand": "Relógio do Céu",
   "nav": {
     "app": "App",
     "beta": "Beta",
-    "community": "Community",
-    "join": "Join"
+    "community": "Comunidade",
+    "join": "Participar"
   },
   "hero": {
-    "kicker": "Memento Mori · Live Today",
-    "title": "Count less.<br>Live more.",
-    "body": "A premium life clock for people who refuse to drift. Track the time you hope to live, keep one meaningful bucket close, and return to the day before it disappears.",
-    "primaryCta": "Get Android beta notice",
-    "secondaryCta": "Explore the ritual",
-    "openWebClock": "Open web clock (Premium)",
-    "installWebClock": "Install on PC (Premium)",
-    "proof1": "Android first",
-    "proof2": "Global by design",
-    "proof3": "Community is the endgame"
+    "kicker": "Memento Mori · Viva hoje",
+    "title": "Conte menos.<br>Viva mais.",
+    "body": "Um relógio de vida premium para quem se recusa a derivar. Acompanhe o tempo que espera viver, mantenha um bucket essencial por perto e volte ao dia antes que ele desapareça.",
+    "primaryCta": "Aviso da beta Android",
+    "secondaryCta": "Explorar o ritual",
+    "openWebClock": "Abrir relógio web (Premium)",
+    "installWebClock": "Instalar no PC (Premium)",
+    "proof1": "Android primeiro",
+    "proof2": "Global por design",
+    "proof3": "A comunidade é o destino"
   },
   "mock": {
     "appTitle": "Relógio do Céu",
@@ -32,48 +32,48 @@
     "bucketText": "Escreva algo que você não quer adiar."
   },
   "app": {
-    "kicker": "The app",
-    "title": "A clock for finite days.",
-    "lead": "Heaven's Clock is not a productivity dashboard. It is a ritual: mortality becomes attention, attention becomes action, and action becomes a life you recognize.",
-    "lifeClockTitle": "Life Clock",
-    "lifeClock": "See your remaining life as years, days, hours, minutes, seconds, and living rings.",
-    "todayBucketTitle": "Today's Bucket",
-    "todayBucket": "Let one meaningful bucket item rotate on the main screen so it stays close to your choices.",
-    "clockSkinsTitle": "Clock Skins",
-    "clockSkins": "Premium clock skins can make the same reminder feel ancient, luxurious, futuristic, or deeply personal."
+    "kicker": "O app",
+    "title": "Um relógio para dias finitos.",
+    "lead": "Relógio do Céu não é um painel de produtividade. É um ritual: a mortalidade vira atenção, a atenção vira ação e a ação vira uma vida que você reconhece.",
+    "lifeClockTitle": "Relógio de vida",
+    "lifeClock": "Veja sua vida restante em anos, dias, horas, minutos, segundos e anéis vivos.",
+    "todayBucketTitle": "Bucket de hoje",
+    "todayBucket": "Deixe um bucket essencial rodar na tela principal para ficar perto das suas escolhas.",
+    "clockSkinsTitle": "Visuais do relógio",
+    "clockSkins": "Visuais premium podem fazer o mesmo lembrete parecer antigo, luxuoso, futurista ou profundamente pessoal."
   },
   "beta": {
-    "kicker": "Beta path",
-    "title": "From Android beta to public launch.",
-    "lead": "The site supports the app. The app comes first, then the circle grows from real users who felt the clock change their day.",
-    "step1Title": "Stabilize the app",
-    "step1": "Finish the core Android experience: onboarding, life clock, bucket list, themes, and language flow.",
-    "step2Title": "Open beta notice",
-    "step2": "Use this landing page to gather early testers and explain why the app exists.",
-    "step3Title": "Publish Android",
-    "step3": "Prepare store assets, privacy policy, screenshots, and a focused first release.",
-    "step4Title": "Grow the circle",
-    "step4": "Only after real use, evolve toward shared buckets, groups, and a school for finite days."
+    "kicker": "Caminho beta",
+    "title": "Da beta Android ao lançamento público.",
+    "lead": "O site apoia o app. O app vem primeiro; depois o círculo cresce com usuários que sentiram o relógio mudar o dia.",
+    "step1Title": "Estabilizar o app",
+    "step1": "Concluir a experiência Android central: onboarding, relógio de vida, lista de buckets, temas e idiomas.",
+    "step2Title": "Abrir aviso beta",
+    "step2": "Use esta landing para reunir testadores iniciais e explicar por que o app existe.",
+    "step3Title": "Publicar no Android",
+    "step3": "Prepare assets da loja, política de privacidade, capturas e um primeiro lançamento focado.",
+    "step4Title": "Expandir o círculo",
+    "step4": "Só após uso real, evoluir para buckets compartilhados, grupos e uma escola de dias finitos."
   },
   "community": {
-    "kicker": "The endgame",
-    "manifesto": "A global circle for people who share goals, buckets, and the courage to live before the day is gone.",
-    "signal1Title": "School of finite days",
-    "signal1": "A future place to learn how to choose, plan, and live with mortality in view.",
-    "signal2Title": "Shared buckets",
-    "signal2": "People will be able to share goals and find others walking toward the same kind of life.",
-    "signal3Title": "Human, not noisy",
-    "signal3": "The community should feel like a real circle, not another feed built for distraction."
+    "kicker": "O destino final",
+    "manifesto": "Um círculo global para quem compartilha metas, buckets e a coragem de viver antes que o dia acabe.",
+    "signal1Title": "Escola de dias finitos",
+    "signal1": "Um lugar futuro para aprender a escolher, planejar e viver com a mortalidade à vista.",
+    "signal2Title": "Buckets compartilhados",
+    "signal2": "As pessoas poderão compartilhar metas e encontrar quem caminha para o mesmo tipo de vida.",
+    "signal3Title": "Humano, não barulhento",
+    "signal3": "A comunidade deve parecer um círculo real, não outro feed feito para distrair."
   },
   "join": {
-    "kicker": "Early access",
-    "title": "The app comes first. The circle follows.",
-    "lead": "We are preparing the Android beta and the first public path. Join the list if you want to test Heaven's Clock before it becomes a larger community.",
+    "kicker": "Acesso antecipado",
+    "title": "Primeiro o app. Depois o círculo.",
+    "lead": "Estamos preparando a beta Android e o primeiro caminho público. Entre na lista se quiser testar Relógio do Céu antes de virar uma comunidade maior.",
     "placeholder": "your@email.com",
-    "button": "Notify me",
-    "note": "This preview stores your email only on this device. A real waitlist provider will be connected before public release.",
-    "success": "You're on the local preview list. Real waitlist connection comes before public release.",
-    "invalidEmail": "Enter a valid email address."
+    "button": "Avise-me",
+    "note": "Esta prévia guarda seu e-mail apenas neste dispositivo. Conectaremos um serviço de lista de espera real antes do lançamento público.",
+    "success": "Você está na lista local de prévia. A conexão real virá antes do lançamento público.",
+    "invalidEmail": "Digite um endereço de e-mail válido."
   },
-  "footer": "Heaven's Clock · A reminder to live before the day is gone."
+  "footer": "Relógio do Céu · Um lembrete de viver antes que o dia acabe."
 }

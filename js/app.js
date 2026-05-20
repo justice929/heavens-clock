@@ -132,7 +132,6 @@ function buildThemeSwitcher() {
 
 function setMood(mood) {
   if (!canUseMood(mood, entitlements)) {
-    openPremiumPage();
     return;
   }
   document.body.dataset.mood = mood;

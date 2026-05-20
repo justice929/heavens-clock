@@ -1,26 +1,26 @@
 {
   "meta": {
-    "title": "天国の時計",
-    "landingEnglishFallback": "Landing page in English for now. Open the clock app for your language."
+    "title": "天国の時計 - 今日を生きる",
+    "landingEnglishFallback": "ランディングページは現在英語で表示されています。時計アプリではお選びの言語をご利用いただけます。"
   },
   "brand": "天国の時計",
   "nav": {
-    "app": "App",
-    "beta": "Beta",
-    "community": "Community",
-    "join": "Join"
+    "app": "アプリ",
+    "beta": "ベータ",
+    "community": "コミュニティ",
+    "join": "参加"
   },
   "hero": {
-    "kicker": "Memento Mori · Live Today",
-    "title": "Count less.<br>Live more.",
-    "body": "A premium life clock for people who refuse to drift. Track the time you hope to live, keep one meaningful bucket close, and return to the day before it disappears.",
-    "primaryCta": "Get Android beta notice",
-    "secondaryCta": "Explore the ritual",
-    "openWebClock": "Open web clock (Premium)",
-    "installWebClock": "Install on PC (Premium)",
-    "proof1": "Android first",
-    "proof2": "Global by design",
-    "proof3": "Community is the endgame"
+    "kicker": "Memento Mori · 今日を生きる",
+    "title": "数えすぎない。<br>もっと生きる。",
+    "body": "流されるのを拒む人のためのプレミアム・ライフクロック。生きたいと願う時間を見つめ、意味のあるバケットを一つそばに置き、消える前の「今日」へ戻る。",
+    "primaryCta": "Androidベータの通知を受け取る",
+    "secondaryCta": "儀式を知る",
+    "openWebClock": "ウェブ時計を開く（プレミアム）",
+    "installWebClock": "PCにインストール（プレミアム）",
+    "proof1": "Androidファースト",
+    "proof2": "世界を前提に設計",
+    "proof3": "コミュニティが最終目的地"
   },
   "mock": {
     "appTitle": "天国の時計",
@@ -32,48 +32,48 @@
     "bucketText": "先延ばしにしたくないことを一つ書いてください。"
   },
   "app": {
-    "kicker": "The app",
-    "title": "A clock for finite days.",
-    "lead": "Heaven's Clock is not a productivity dashboard. It is a ritual: mortality becomes attention, attention becomes action, and action becomes a life you recognize.",
-    "lifeClockTitle": "Life Clock",
-    "lifeClock": "See your remaining life as years, days, hours, minutes, seconds, and living rings.",
-    "todayBucketTitle": "Today's Bucket",
-    "todayBucket": "Let one meaningful bucket item rotate on the main screen so it stays close to your choices.",
-    "clockSkinsTitle": "Clock Skins",
-    "clockSkins": "Premium clock skins can make the same reminder feel ancient, luxurious, futuristic, or deeply personal."
+    "kicker": "アプリ",
+    "title": "有限な日々のための時計。",
+    "lead": "天国の時計は生産性ダッシュボードではありません。死を記憶に変え、記憶を注意に、注意を行動に、行動を自分の人生に変える儀式です。",
+    "lifeClockTitle": "ライフクロック",
+    "lifeClock": "残りの人生を年・日・時・分・秒と、生きているリングで見る。",
+    "todayBucketTitle": "今日のバケット",
+    "todayBucket": "意味のあるバケットを一つ、メイン画面で静かに巡らせ、選択のそばに置き続ける。",
+    "clockSkinsTitle": "時計スキン",
+    "clockSkins": "プレミアムのスキンで、同じリマインダーを古代・贅沢・未来・自分だけの感覚に変える。"
   },
   "beta": {
-    "kicker": "Beta path",
-    "title": "From Android beta to public launch.",
-    "lead": "The site supports the app. The app comes first, then the circle grows from real users who felt the clock change their day.",
-    "step1Title": "Stabilize the app",
-    "step1": "Finish the core Android experience: onboarding, life clock, bucket list, themes, and language flow.",
-    "step2Title": "Open beta notice",
-    "step2": "Use this landing page to gather early testers and explain why the app exists.",
-    "step3Title": "Publish Android",
-    "step3": "Prepare store assets, privacy policy, screenshots, and a focused first release.",
-    "step4Title": "Grow the circle",
-    "step4": "Only after real use, evolve toward shared buckets, groups, and a school for finite days."
+    "kicker": "ベータの道",
+    "title": "Androidベータから公開へ。",
+    "lead": "サイトはアプリを支える。まずアプリ。次に、時計が一日を変えたと感じた本当のユーザーから、サークルが育つ。",
+    "step1Title": "アプリを安定させる",
+    "step1": "オンボーディング、ライフクロック、バケットリスト、テーマ、言語フローまで、Androidの核を仕上げる。",
+    "step2Title": "ベータ通知を開く",
+    "step2": "このランディングで初期テスターを集め、アプリが存在する理由を伝える。",
+    "step3Title": "Androidを公開",
+    "step3": "ストア素材、プライバシーポリシー、スクリーンショット、集中した初回リリースを整える。",
+    "step4Title": "サークルを広げる",
+    "step4": "実際の利用のあとにだけ、共有バケット、グループ、有限な日々のスクールへ進化する。"
   },
   "community": {
-    "kicker": "The endgame",
-    "manifesto": "A global circle for people who share goals, buckets, and the courage to live before the day is gone.",
-    "signal1Title": "School of finite days",
-    "signal1": "A future place to learn how to choose, plan, and live with mortality in view.",
-    "signal2Title": "Shared buckets",
-    "signal2": "People will be able to share goals and find others walking toward the same kind of life.",
-    "signal3Title": "Human, not noisy",
-    "signal3": "The community should feel like a real circle, not another feed built for distraction."
+    "kicker": "最終目的地",
+    "manifesto": "目標とバケットを分かち合い、日が消える前に生きる勇気を分かち合う、世界のサークル。",
+    "signal1Title": "有限な日々のスクール",
+    "signal1": "死を見据えて選び、計画し、生きることを学ぶ、未来の場所。",
+    "signal2Title": "共有バケット",
+    "signal2": "目標を分かち合い、同じ方向へ歩く人々と出会えるようになる。",
+    "signal3Title": "人間的で、うるさくない",
+    "signal3": "もう一つのフィードではなく、本当のサークルであるべきコミュニティ。"
   },
   "join": {
-    "kicker": "Early access",
-    "title": "The app comes first. The circle follows.",
-    "lead": "We are preparing the Android beta and the first public path. Join the list if you want to test Heaven's Clock before it becomes a larger community.",
+    "kicker": "早期アクセス",
+    "title": "まずアプリ。サークルはそのあと。",
+    "lead": "Androidベータと最初の公開経路を準備中です。天国の時計が大きなコミュニティになる前に試したい方は、リストに参加してください。",
     "placeholder": "your@email.com",
-    "button": "Notify me",
-    "note": "This preview stores your email only on this device. A real waitlist provider will be connected before public release.",
-    "success": "You're on the local preview list. Real waitlist connection comes before public release.",
-    "invalidEmail": "Enter a valid email address."
+    "button": "通知を受け取る",
+    "note": "このプレビューはメールをこの端末にのみ保存します。公開前に本番のウェイトリストサービスを接続します。",
+    "success": "ローカルプレビューリストに登録されました。本番のウェイトリスト接続は公開前に行います。",
+    "invalidEmail": "有効なメールアドレスを入力してください。"
   },
-  "footer": "Heaven's Clock · A reminder to live before the day is gone."
+  "footer": "天国の時計 · 日が消える前に生きるためのリマインダー。"
 }

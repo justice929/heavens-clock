@@ -26,7 +26,7 @@
     { id: "hologram", name: "Hologram", tier: "premium", accent: "#48eaff" },
   ];
 
-  const FREE_LIMITS = { bucketItems: 3, themeId: "void", moods: ["calm"] };
+  const FREE_LIMITS = { bucketItems: 3, themeId: "void", moods: ["calm", "impact"] };
   const DEFAULT_ENTITLEMENTS = {
     yearlyPremium: false,
     lifetimePremium: false,
@@ -62,9 +62,6 @@
 
   let strings = {};
   let currentLocale = "en";
-  let initialYears = 0;
-  const ringEls = {};
-  const ringCirc = {};
 
   function detectTimeZone() {
     try { return Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC"; }
@@ -146,25 +143,18 @@
   }
 
   function t(key) {
-    let v = strings;
-    for (const p of key.split(".")) v = v?.[p];
-    return typeof v === "string" ? v : key;
+    return window.HeavensClockLocaleLoader?.t(strings, key) ?? key;
   }
 
   function localizedBucketText(item) {
     const key = item.key || LEGACY_BUCKET_TEXT_TO_KEY[item.text];
     const suggestion = key ? BUCKET_SUGGESTIONS[key] : null;
     if (!suggestion) return item.text;
-    return currentLocale === "ko" ? suggestion.ko : suggestion.en;
+    return window.HeavensClockLocaleLoader?.pickLocalized(suggestion, currentLocale) || item.text;
   }
 
   function applyI18n() {
-    document.querySelectorAll("[data-i18n]").forEach((el) => {
-      el.textContent = t(el.dataset.i18n);
-    });
-    document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
-      el.setAttribute("placeholder", t(el.dataset.i18nPlaceholder));
-    });
+    window.HeavensClockLocaleLoader?.applyI18n(strings);
   }
 
   function quoteForToday() {
@@ -371,28 +361,6 @@
     tabs[0].textContent = t("mood.calm");
     tabs[1].textContent = t("mood.impact");
 
-    const ringDefs = [
-      { key: "years", radius: 92, width: 2.8, max: () => Math.max(1, initialYears) },
-      { key: "days", radius: 80, width: 2.4, max: () => 365 },
-      { key: "hours", radius: 68, width: 2, max: () => 24 },
-      { key: "minutes", radius: 56, width: 1.8, max: () => 60 },
-      { key: "seconds", radius: 44, width: 1.6, max: () => 60 },
-    ];
-    const g = document.getElementById("rings");
-    g.textContent = "";
-    ringDefs.forEach(({ key, radius, width }) => {
-      const track = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-      track.setAttribute("cx", "100"); track.setAttribute("cy", "100"); track.setAttribute("r", radius);
-      track.setAttribute("stroke-width", width); track.setAttribute("class", "ring-track");
-      const fill = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-      fill.setAttribute("cx", "100"); fill.setAttribute("cy", "100"); fill.setAttribute("r", radius);
-      fill.setAttribute("stroke-width", width); fill.setAttribute("class", `ring-fill ring-${key}`);
-      g.appendChild(track); g.appendChild(fill);
-      ringEls[key] = fill;
-      ringCirc[key] = 2 * Math.PI * radius;
-      fill.style.strokeDasharray = ringCirc[key];
-    });
-
     function updateWidgetSnapshot() {
       const now = new Date();
       const total = target - lifeStart;
@@ -463,7 +431,6 @@
 
     function setMood(mood) {
       if (!canUseMood(mood, entitlements)) {
-        openPremiumPage();
         return;
       }
       document.body.dataset.mood = mood;
@@ -567,39 +534,26 @@
       const left = target - now;
       return total > 0 ? Math.max(0, Math.min(1, left / total)) : 0;
     }
-    function ringValue(key, parts, now) {
-      return key === "seconds" ? parts.seconds + now.getMilliseconds() / 1000 : parts[key];
-    }
-    function updateRings(parts, now) {
-      if (initialYears === 0) initialYears = Math.max(1, parts.years);
-      ringDefs.forEach(({ key, max }) => {
-        const ratio = Math.max(0, Math.min(1, ringValue(key, parts, now) / max()));
-        ringEls[key].style.strokeDashoffset = ringCirc[key] * (1 - ratio);
-      });
-    }
-    let prevSeconds = -1;
+    let prevWallSec = -1;
     function updateDigits(now) {
-      const parts = remainingParts(now, target);
-      updateRings(parts, now);
       pctValue.textContent = (lifeRatio(now) * 100).toFixed(1);
+      const parts = remainingParts(now, target);
       values.years.textContent = parts.years;
       values.days.textContent = parts.days;
       values.hours.textContent = pad(parts.hours);
-      values.minutes.textContent = pad(parts.minutes);
-      if (parts.seconds !== prevSeconds) {
-        values.seconds.textContent = pad(parts.seconds);
-        values.seconds.classList.add("tick-flash");
-        requestAnimationFrame(() => values.seconds.classList.remove("tick-flash"));
+      if (values.minutes) values.minutes.textContent = pad(parts.minutes);
+    }
+    function animate() {
+      const now = new Date();
+      const ws = now.getSeconds();
+      if (ws !== prevWallSec) {
+        prevWallSec = ws;
         if (document.body.dataset.mood === "impact") {
           clockWrap.classList.remove("heartbeat");
           void clockWrap.offsetWidth;
           clockWrap.classList.add("heartbeat");
         }
-        prevSeconds = parts.seconds;
       }
-    }
-    function animate() {
-      updateRings(remainingParts(new Date(), target), new Date());
       requestAnimationFrame(animate);
     }
     updateDigits(new Date());

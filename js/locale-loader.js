@@ -1,8 +1,9 @@
 /**
- * Shared locale JSON loader (clock app, onboarding, bucket).
+ * Shared locale JSON loader — all app pages use this.
+ * Missing keys fall back to English so no page shows raw "premium.title" keys.
  */
 (function (root) {
-  const CACHE_VERSION = "3";
+  const CACHE_VERSION = "4";
 
   const LOCALE_CODES = [
     "en", "ko", "ja", "zh-Hans", "zh-Hant", "es", "fr", "de", "pt", "it",
@@ -37,29 +38,84 @@
     return documentLang(code);
   }
 
+  function isPlainObject(value) {
+    return value && typeof value === "object" && !Array.isArray(value);
+  }
+
+  /** Locale strings override English; missing nested keys use English. */
+  function deepMergeWithEnglish(english, localeStrings) {
+    if (!english) return localeStrings || {};
+    if (!localeStrings) return { ...english };
+    const out = { ...english };
+    for (const key of Object.keys(localeStrings)) {
+      const lv = localeStrings[key];
+      const ev = english[key];
+      if (isPlainObject(lv) && isPlainObject(ev)) {
+        out[key] = deepMergeWithEnglish(ev, lv);
+      } else {
+        out[key] = lv;
+      }
+    }
+    return out;
+  }
+
   async function fetchLocaleJson(code) {
-    const res = await fetch(localeUrl(code), { cache: "no-store" });
-    if (!res.ok) return null;
-    return res.json();
+    try {
+      const res = await fetch(localeUrl(code), { cache: "no-store" });
+      if (!res.ok) return null;
+      return res.json();
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function t(strings, key) {
+    let value = strings;
+    for (const part of key.split(".")) value = value?.[part];
+    return typeof value === "string" ? value : key;
+  }
+
+  function applyI18n(strings, rootNode) {
+    const scope = rootNode || root.document;
+    scope.querySelectorAll("[data-i18n]").forEach((el) => {
+      el.textContent = t(strings, el.dataset.i18n);
+    });
+    scope.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+      el.setAttribute("placeholder", t(strings, el.dataset.i18nPlaceholder));
+    });
+    scope.querySelectorAll("[data-i18n-html]").forEach((el) => {
+      el.innerHTML = t(strings, el.dataset.i18nHtml);
+    });
+  }
+
+  function pickLocalized(map, locale) {
+    if (typeof map === "string") return map;
+    if (!map || typeof map !== "object") return "";
+    const code = normalize(locale);
+    return map[code] || map[locale] || map.en || "";
   }
 
   async function loadLocale(code) {
     const locale = normalize(code);
+    const english = (await fetchLocaleJson("en")) || {};
+
     for (const candidate of [locale, "en"]) {
-      try {
-        const data = await fetchLocaleJson(candidate);
-        if (!data) continue;
-        root.document.documentElement.lang = documentLang(candidate);
-        root.document.documentElement.dir = candidate === "ar" ? "rtl" : "ltr";
-        if (!data.quotes?.length && candidate !== "en") {
-          const en = await fetchLocaleJson("en");
-          if (en?.quotes?.length) data.quotes = en.quotes;
-        }
-        return { locale: candidate, strings: data };
-      } catch (_) {}
+      const raw = candidate === "en" ? english : await fetchLocaleJson(candidate);
+      if (!raw) continue;
+
+      const base = candidate === "en" ? english : english;
+      const strings =
+        candidate === "en"
+          ? { ...english }
+          : deepMergeWithEnglish(base, raw);
+
+      root.document.documentElement.lang = documentLang(candidate);
+      root.document.documentElement.dir = candidate === "ar" ? "rtl" : "ltr";
+
+      return { locale: candidate, strings };
     }
-    const en = await fetchLocaleJson("en");
-    return { locale: "en", strings: en || {} };
+
+    return { locale: "en", strings: { ...english } };
   }
 
   root.HeavensClockLocaleLoader = {
@@ -69,6 +125,10 @@
     localeUrl,
     documentLang,
     intlLocale,
+    deepMergeWithEnglish,
+    t,
+    applyI18n,
+    pickLocalized,
     loadLocale,
   };
 })(typeof globalThis !== "undefined" ? globalThis : window);

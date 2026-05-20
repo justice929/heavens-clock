@@ -1,26 +1,26 @@
 {
   "meta": {
-    "title": "स्वर्ग की घड़ी",
-    "landingEnglishFallback": "Landing page in English for now. Open the clock app for your language."
+    "title": "स्वर्ग की घड़ी - आज जियो",
+    "landingEnglishFallback": "लैंडिंग पेज अभी अंग्रेज़ी में है। घड़ी ऐप में अपनी भाषा चुनें।"
   },
   "brand": "स्वर्ग की घड़ी",
   "nav": {
-    "app": "App",
-    "beta": "Beta",
-    "community": "Community",
-    "join": "Join"
+    "app": "ऐप",
+    "beta": "बीटा",
+    "community": "समुदाय",
+    "join": "जुड़ें"
   },
   "hero": {
-    "kicker": "Memento Mori · Live Today",
-    "title": "Count less.<br>Live more.",
-    "body": "A premium life clock for people who refuse to drift. Track the time you hope to live, keep one meaningful bucket close, and return to the day before it disappears.",
-    "primaryCta": "Get Android beta notice",
-    "secondaryCta": "Explore the ritual",
-    "openWebClock": "Open web clock (Premium)",
-    "installWebClock": "Install on PC (Premium)",
-    "proof1": "Android first",
-    "proof2": "Global by design",
-    "proof3": "Community is the endgame"
+    "kicker": "Memento Mori · आज जियो",
+    "title": "कम गिनो।<br>ज़्यादा जियो।",
+    "body": "जो बहाव में नहीं जाना चाहते, उनके लिए एक प्रीमियम लाइफ क्लॉक। जिस समय को आप जीना चाहते हैं उसे देखें, एक अर्थपूर्ण बकेट पास रखें, और दिन गायब होने से पहले उसी दिन पर लौटें।",
+    "primaryCta": "Android बीटा सूचना",
+    "secondaryCta": "अनुष्ठान देखें",
+    "openWebClock": "वेब घड़ी खोलें (प्रीमियम)",
+    "installWebClock": "PC पर इंस्टॉल करें (प्रीमियम)",
+    "proof1": "पहले Android",
+    "proof2": "वैश्विक डिज़ाइन",
+    "proof3": "समुदाय अंतिम लक्ष्य"
   },
   "mock": {
     "appTitle": "स्वर्ग की घड़ी",
@@ -32,48 +32,48 @@
     "bucketText": "एक ऐसी बात लिखें जिसे आप टालना नहीं चाहते।"
   },
   "app": {
-    "kicker": "The app",
-    "title": "A clock for finite days.",
-    "lead": "Heaven's Clock is not a productivity dashboard. It is a ritual: mortality becomes attention, attention becomes action, and action becomes a life you recognize.",
-    "lifeClockTitle": "Life Clock",
-    "lifeClock": "See your remaining life as years, days, hours, minutes, seconds, and living rings.",
-    "todayBucketTitle": "Today's Bucket",
-    "todayBucket": "Let one meaningful bucket item rotate on the main screen so it stays close to your choices.",
-    "clockSkinsTitle": "Clock Skins",
-    "clockSkins": "Premium clock skins can make the same reminder feel ancient, luxurious, futuristic, or deeply personal."
+    "kicker": "ऐप",
+    "title": "सीमित दिनों की घड़ी।",
+    "lead": "स्वर्ग की घड़ी उत्पादकता डैशबोर्ड नहीं है। यह एक अनुष्ठान है: मृत्यु ध्यान बनती है, ध्यान कर्म, कर्म वह जीवन जिसे आप पहचानते हैं।",
+    "lifeClockTitle": "लाइफ क्लॉक",
+    "lifeClock": "शेष जीवन को वर्ष, दिन, घंटे, मिनट, सेकंड और जीवंत वलयों में देखें।",
+    "todayBucketTitle": "आज की इच्छा",
+    "todayBucket": "एक अर्थपूर्ण बकेट मुख्य स्क्रीन पर घूमे, ताकि वह आपके चुनाव के पास रहे।",
+    "clockSkinsTitle": "घड़ी स्किन",
+    "clockSkins": "प्रीमियम स्किन उसी अनुस्मारक को प्राचीन, शानदार, भविष्यवादी या गहराई से व्यक्तिगत बना सकती हैं।"
   },
   "beta": {
-    "kicker": "Beta path",
-    "title": "From Android beta to public launch.",
-    "lead": "The site supports the app. The app comes first, then the circle grows from real users who felt the clock change their day.",
-    "step1Title": "Stabilize the app",
-    "step1": "Finish the core Android experience: onboarding, life clock, bucket list, themes, and language flow.",
-    "step2Title": "Open beta notice",
-    "step2": "Use this landing page to gather early testers and explain why the app exists.",
-    "step3Title": "Publish Android",
-    "step3": "Prepare store assets, privacy policy, screenshots, and a focused first release.",
-    "step4Title": "Grow the circle",
-    "step4": "Only after real use, evolve toward shared buckets, groups, and a school for finite days."
+    "kicker": "बीटा मार्ग",
+    "title": "Android बीटा से सार्वजनिक लॉन्च तक।",
+    "lead": "साइट ऐप का सहारा है। पहले ऐप; फिर वह मंडली जिन्होंने महसूस किया कि घड़ी ने उनका दिन बदला।",
+    "step1Title": "ऐप स्थिर करें",
+    "step1": "मुख्य Android अनुभव पूरा करें: ऑनबोर्डिंग, लाइफ क्लॉक, बकेट सूची, थीम और भाषा प्रवाह।",
+    "step2Title": "बीटा सूचना खोलें",
+    "step2": "इस लैंडिंग से शुरुआती परीक्षक जुटाएँ और बताएँ कि ऐप क्यों है।",
+    "step3Title": "Android प्रकाशित करें",
+    "step3": "स्टोर संपत्ति, गोपनीयता नीति, स्क्रीनशॉट और केंद्रित पहला रिलीज़ तैयार करें।",
+    "step4Title": "मंडली बढ़ाएँ",
+    "step4": "वास्तविक उपयोग के बाद ही साझा बकेट, समूह और सीमित दिनों का स्कूल।"
   },
   "community": {
-    "kicker": "The endgame",
-    "manifesto": "A global circle for people who share goals, buckets, and the courage to live before the day is gone.",
-    "signal1Title": "School of finite days",
-    "signal1": "A future place to learn how to choose, plan, and live with mortality in view.",
-    "signal2Title": "Shared buckets",
-    "signal2": "People will be able to share goals and find others walking toward the same kind of life.",
-    "signal3Title": "Human, not noisy",
-    "signal3": "The community should feel like a real circle, not another feed built for distraction."
+    "kicker": "अंतिम लक्ष्य",
+    "manifesto": "उनके लिए एक वैश्विक मंडली जो लक्ष्य, बकेट और दिन जाने से पहले जीने का साहस बाँटते हैं।",
+    "signal1Title": "सीमित दिनों का स्कूल",
+    "signal1": "मृत्यु को सामने रखकर चुनना, योजना बनाना और जीना सीखने का भविष्य का स्थान।",
+    "signal2Title": "साझा बकेट",
+    "signal2": "लोग लक्ष्य साझा कर सकेंगे और उसी जीवन की ओर चलने वालों को पाएँगे।",
+    "signal3Title": "मानवीय, शोर नहीं",
+    "signal3": "समुदाय वास्तविक मंडली जैसा लगे, ध्यान भटकाने वाला फ़ीड नहीं।"
   },
   "join": {
-    "kicker": "Early access",
-    "title": "The app comes first. The circle follows.",
-    "lead": "We are preparing the Android beta and the first public path. Join the list if you want to test Heaven's Clock before it becomes a larger community.",
+    "kicker": "शीघ्र पहुँच",
+    "title": "पहले ऐप। फिर मंडली।",
+    "lead": "हम Android बीटा और पहला सार्वजनिक मार्ग तैयार कर रहे हैं। बड़े समुदाय से पहले स्वर्ग की घड़ी आज़माना चाहें तो सूची में जुड़ें।",
     "placeholder": "your@email.com",
-    "button": "Notify me",
-    "note": "This preview stores your email only on this device. A real waitlist provider will be connected before public release.",
-    "success": "You're on the local preview list. Real waitlist connection comes before public release.",
-    "invalidEmail": "Enter a valid email address."
+    "button": "सूचित करें",
+    "note": "यह पूर्वावलोकन ईमेल केवल इस डिवाइस पर रखता है। सार्वजनिक रिलीज़ से पहले वास्तविक वेटलिस्ट जोड़ेंगे।",
+    "success": "आप स्थानीय पूर्वावलोकन सूची में हैं। वास्तविक कनेक्शन सार्वजनिक रिलीज़ से पहले आएगा।",
+    "invalidEmail": "मान्य ईमेल पता दर्ज करें।"
   },
-  "footer": "Heaven's Clock · A reminder to live before the day is gone."
+  "footer": "स्वर्ग की घड़ी · दिन जाने से पहले जीने की याद।"
 }

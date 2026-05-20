@@ -13,7 +13,7 @@
   <title>Heaven's Clock</title>
   <style>
     :root {
-      --size: min(80vmin, 580px);
+      --size: min(88vmin, 640px);
       --ease-mood: 1.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
@@ -200,10 +200,11 @@
 
     .mood-switch {
       position: fixed;
-      top: 1.25rem;
+      top: max(0.72rem, env(safe-area-inset-top));
       left: 50%;
       transform: translateX(-50%);
-      z-index: 10;
+      z-index: 20;
+      max-width: calc(100% - 7.5rem);
       display: flex;
       padding: 3px;
       border-radius: 999px;
@@ -215,7 +216,7 @@
 
     .theme-switch {
       position: fixed;
-      top: 4.05rem;
+      top: calc(max(0.72rem, env(safe-area-inset-top)) + 2.02rem);
       left: 50%;
       transform: translateX(-50%);
       z-index: 10;
@@ -300,11 +301,18 @@
       background: rgba(255, 255, 255, 0.08);
     }
 
+    .lang-toolbar {
+      position: fixed;
+      top: max(0.72rem, env(safe-area-inset-top));
+      left: max(1rem, env(safe-area-inset-left));
+      z-index: 10;
+    }
+
     .top-actions {
       position: fixed;
-      top: max(1.25rem, env(safe-area-inset-top));
+      top: max(0.72rem, env(safe-area-inset-top));
       right: max(1rem, env(safe-area-inset-right));
-      z-index: 10;
+      z-index: 15;
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -348,8 +356,7 @@
       border-color: rgba(232, 217, 184, 0.35);
     }
 
-    .top-actions .lang-select {
-      flex: 0 1 auto;
+    .lang-toolbar .lang-select {
       width: auto;
       max-width: 6.75rem;
       height: 2.2rem;
@@ -366,10 +373,37 @@
       backdrop-filter: blur(8px);
     }
 
-    .top-actions .lang-select:focus {
+    .lang-toolbar .lang-select:focus {
       outline: none;
       border-color: rgba(255, 255, 255, 0.28);
       color: var(--fg);
+    }
+
+    /* Arabic (ar): RTL text is intentional; keep clock + numbers centered/LTR */
+    html[dir="rtl"] .lang-toolbar {
+      left: max(1rem, env(safe-area-inset-left));
+      right: auto;
+    }
+
+    html[dir="rtl"] .top-actions {
+      right: max(1rem, env(safe-area-inset-right));
+      left: auto;
+    }
+
+    html[dir="rtl"] .stage,
+    html[dir="rtl"] .brand-bar,
+    html[dir="rtl"] .daily-quote,
+    html[dir="rtl"] .bucket-panel,
+    html[dir="rtl"] .footer-line,
+    html[dir="rtl"] .mood-hint {
+      text-align: center;
+    }
+
+    html[dir="rtl"] .clock-wrap,
+    html[dir="rtl"] .clock-label,
+    html[dir="rtl"] .digits,
+    html[dir="rtl"] .mood-switch {
+      direction: ltr;
     }
 
     body[data-mood="impact"] .mood-switch button[aria-selected="true"] {
@@ -383,30 +417,30 @@
 
     .brand-bar {
       text-align: center;
-      margin-bottom: -0.1rem;
-      padding: 0.22rem 0.75rem 0;
+      margin: -0.62rem 0 0;
+      padding: 0 0.75rem;
       text-shadow: 0 0 18px var(--glow);
     }
 
     .brand-bar .app-name {
-      font-size: clamp(0.78rem, 2.25vw, 1rem);
-      letter-spacing: 0.24em;
+      font-size: clamp(0.94rem, 2.72vw, 1.22rem);
+      letter-spacing: 0.26em;
       color: var(--fg);
-      opacity: 0.72;
+      opacity: 0.82;
       font-weight: 600;
     }
 
     .brand-bar .memento {
       display: block;
       width: 100%;
-      margin-top: 0.22em;
-      padding: 0.2em 0;
+      margin-top: 0.18em;
+      padding: 0.16em 0;
       border: 0;
       background: transparent;
       font: inherit;
-      font-size: clamp(1.18rem, 3.55vw, 1.55rem);
-      letter-spacing: 0.3em;
-      font-weight: 600;
+      font-size: clamp(1.38rem, 4.65vw, 1.92rem);
+      letter-spacing: 0.36em;
+      font-weight: 700;
       color: var(--fg);
       cursor: pointer;
       position: relative;
@@ -421,19 +455,19 @@
 
     body[data-mood="impact"] .brand-bar .memento {
       text-shadow: var(--text-glow);
-      letter-spacing: 0.34em;
+      letter-spacing: 0.38em;
     }
 
     .daily-quote {
-      max-width: min(92vw, 420px);
+      max-width: min(94vw, 520px);
       text-align: center;
-      font-size: clamp(0.82rem, 2.35vw, 1.08rem);
-      line-height: 1.75;
-      letter-spacing: 0.035em;
+      font-size: clamp(1.02rem, 3.15vw, 1.34rem);
+      line-height: 1.82;
+      letter-spacing: 0.028em;
       color: var(--fg);
       font-style: italic;
-      padding: 0.95rem 1.1rem;
-      min-height: 3.5em;
+      padding: 1.2rem 1.35rem;
+      min-height: 4rem;
       border: 1px solid var(--panel-border);
       border-radius: 22px;
       background: linear-gradient(180deg, var(--panel-bg), rgba(0, 0, 0, 0.08));
@@ -447,8 +481,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: clamp(0.95rem, 2.8vh, 2rem);
-      padding: 7.25rem 1.25rem 2rem;
+      gap: clamp(0.72rem, 2.1vh, 1.55rem);
+      padding: 4rem 1.1rem 1.55rem;
       width: 100%;
       max-height: 100dvh;
       overflow-y: auto;
@@ -465,7 +499,98 @@
       position: relative;
       width: var(--size);
       height: var(--size);
+      /* 마케팅 히어로 mock 기준 폭 300px — 같은 비율로 링·글자 스케일 */
+      --clock-scale: calc(var(--size) / 300);
       transition: filter var(--ease-mood);
+      isolation: isolate;
+    }
+
+    /*
+      site/index.html `.clock-demo` 와 같은 마크업·동작·색·속도 (고정 픽셀 값은 scale 로 환산).
+    */
+    .clock-wrap .clock-demo {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(255, 246, 230, 0.13) 0 20%, transparent 22%),
+        radial-gradient(circle, rgba(72, 234, 255, 0.1), transparent 66%);
+      box-shadow: 0 0 calc(42px * var(--clock-scale)) rgba(72, 234, 255, 0.2);
+    }
+
+    html[dir="rtl"] .clock-wrap .clock-demo {
+      direction: ltr;
+    }
+
+    .clock-wrap .clock-demo > span {
+      position: absolute;
+      inset: var(--inset);
+      border-radius: 50%;
+      border: var(--width) solid rgba(255, 246, 230, 0.13);
+      transform-origin: 50% 50%;
+      pointer-events: none;
+      box-sizing: border-box;
+    }
+
+    .clock-wrap .clock-demo > span::before {
+      content: "";
+      position: absolute;
+      inset: calc(var(--width) * -1);
+      border-radius: 50%;
+      border: var(--width) solid transparent;
+      border-top-color: var(--color);
+      border-right-color: var(--color);
+      transform: rotate(var(--rotate));
+      filter: drop-shadow(0 0 calc(10px * var(--clock-scale)) var(--color));
+      animation: hcSiteRingPulse 5s ease-in-out infinite;
+    }
+
+    @keyframes hcSiteRingPulse {
+      0%, 100% { opacity: 0.78; }
+      50% { opacity: 1; }
+    }
+
+    @keyframes hcSiteOrbit {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes hcSiteOrbitReverse {
+      to { transform: rotate(-360deg); }
+    }
+
+    .clock-wrap .clock-demo .r1 {
+      --inset: 0;
+      --width: calc(4px * var(--clock-scale));
+      --color: rgba(255, 246, 230, 0.95);
+      --rotate: 35deg;
+      animation: hcSiteOrbit 36s linear infinite;
+    }
+
+    .clock-wrap .clock-demo .r2 {
+      --inset: calc(100% * 22 / 300);
+      --width: calc(3px * var(--clock-scale));
+      --color: rgba(72, 234, 255, 0.9);
+      --rotate: 120deg;
+      animation: hcSiteOrbitReverse 26s linear infinite;
+    }
+
+    .clock-wrap .clock-demo .r3 {
+      --inset: calc(100% * 46 / 300);
+      --width: calc(3px * var(--clock-scale));
+      --color: rgba(155, 92, 255, 0.9);
+      --rotate: 250deg;
+      animation: hcSiteOrbit 18s linear infinite;
+    }
+
+    .clock-wrap .clock-demo .r4 {
+      --inset: calc(100% * 70 / 300);
+      --width: calc(2px * var(--clock-scale));
+      --color: rgba(255, 76, 76, 0.95);
+      --rotate: 12deg;
+      animation: hcSiteOrbitReverse 12s linear infinite;
     }
 
     body[data-mood="calm"] .clock-wrap {
@@ -490,10 +615,11 @@
     .clock-wrap::before {
       content: "";
       position: absolute;
-      inset: 8%;
+      inset: 6%;
       border-radius: 50%;
-      background: radial-gradient(circle at 50% 42%, var(--glow), transparent 62%);
+      background: radial-gradient(circle at 50% 44%, rgba(255, 255, 255, 0.028), transparent 58%);
       pointer-events: none;
+      opacity: 0.55;
       transition: background var(--ease-mood);
       z-index: 0;
     }
@@ -520,111 +646,65 @@
       mask-image: radial-gradient(circle at 50% 50%, #000 0 58%, rgba(0, 0, 0, 0.88) 66%, transparent 76%);
     }
 
-    body[data-theme="hologram"] .ring-years {
-      filter: drop-shadow(0 0 12px rgba(80, 230, 255, 0.32));
-    }
-
-    .clock-wrap svg {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      height: 100%;
-      transform: rotate(-90deg);
-      filter: drop-shadow(0 0 28px var(--glow));
-      transition: filter var(--ease-mood);
-    }
-
-    .ring-track {
-      fill: none;
-      stroke: var(--ring-track);
-      transition: stroke var(--ease-mood);
-    }
-
-    .ring-fill {
-      fill: none;
-      stroke-linecap: round;
-      transition: stroke var(--ease-mood);
-    }
-
-    .ring-years { stroke: var(--ring-years); }
-    .ring-days { stroke: var(--ring-days); }
-    .ring-hours { stroke: var(--ring-hours); }
-    .ring-minutes { stroke: var(--ring-minutes); }
-    .ring-seconds { stroke: var(--ring-seconds); }
-
     .clock-label {
       position: absolute;
       left: 50%;
       top: 50%;
-      z-index: 2;
+      z-index: 5;
       transform: translate(-50%, -50%);
       text-align: center;
       pointer-events: none;
     }
 
-    .ring-legend {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.45em 0.7em;
-      margin-top: 0.35em;
-      font-size: clamp(0.48rem, 1.5vmin, 0.62rem);
-      letter-spacing: 0.12em;
-      color: var(--dim);
+    /* 히어로 mock `.percent` 타이포에 맞춤 */
+    .clock-wrap .clock-demo .clock-label {
+      font-variant-numeric: tabular-nums;
     }
 
-    .ring-legend span {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35em;
-    }
-
-    .ring-legend i {
-      display: inline-block;
-      width: 0.55em;
-      height: 0.55em;
-      border-radius: 50%;
-      font-style: normal;
-    }
-
-    .ring-legend .lg-years i { background: var(--ring-years); }
-    .ring-legend .lg-days i { background: var(--ring-days); }
-    .ring-legend .lg-hours i { background: var(--ring-hours); }
-    .ring-legend .lg-minutes i { background: var(--ring-minutes); }
-    .ring-legend .lg-seconds i { background: var(--ring-seconds); }
-
-    .clock-label .pct {
+    .clock-wrap .clock-demo .clock-label .pct {
       display: block;
       font-family: var(--font-digits);
-      font-size: clamp(1.6rem, 6.5vmin, 2.8rem);
-      font-weight: 500;
-      letter-spacing: 0.04em;
+      font-size: clamp(1.65rem, calc(2.15rem * var(--clock-scale)), 3rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
       line-height: 1;
-      font-variant-numeric: tabular-nums;
-      transition: font-weight var(--ease-mood), text-shadow var(--ease-mood);
+      transition: text-shadow var(--ease-mood);
     }
 
-    body[data-mood="impact"] .clock-label .pct {
+    body[data-mood="calm"] .clock-wrap .clock-demo .clock-label .pct {
       font-weight: 700;
+    }
+
+    body[data-mood="impact"] .clock-wrap .clock-demo .clock-label .pct {
       text-shadow: var(--text-glow);
     }
 
-    .clock-label .pct-suffix {
-      font-size: 0.45em;
-      opacity: 0.65;
+    .clock-wrap .clock-demo .clock-label .pct-suffix {
+      font-size: 0.42em;
+      color: var(--dim);
+      opacity: 1;
+      font-weight: 600;
     }
 
-    .clock-label .caption {
-      margin-top: 0.45em;
-      font-size: clamp(0.55rem, 1.8vmin, 0.72rem);
-      font-weight: 500;
-      letter-spacing: 0.35em;
+    .clock-wrap .clock-demo .clock-label .caption {
+      display: block;
+      margin-top: 0.18rem;
+      font-size: clamp(0.45rem, calc(0.5rem * var(--clock-scale)), 0.62rem);
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
       color: var(--dim);
       transition: letter-spacing var(--ease-mood), color var(--ease-mood);
     }
 
-    body[data-mood="calm"] .clock-label .caption {
+    body[data-mood="calm"] .clock-wrap .clock-demo .clock-label .caption {
       letter-spacing: 0.5em;
+    }
+
+    /* 년 · 일 · 시만 숫자로 표시; 분·초 칸 숨김 */
+    .unit-minutes,
+    .unit-seconds {
+      display: none;
     }
 
     .digits {
@@ -750,8 +830,8 @@
     }
 
     .bucket-panel {
-      width: min(90vw, 420px);
-      padding: 0.7rem 0.85rem;
+      width: min(92vw, 520px);
+      padding: 0.95rem 1.05rem;
       border: 1px solid var(--panel-border);
       border-radius: 18px;
       background: rgba(0, 0, 0, 0.1);
@@ -769,31 +849,31 @@
 
     .bucket-title {
       margin: 0;
-      font-size: clamp(0.58rem, 1.6vw, 0.68rem);
-      font-weight: 600;
+      font-size: clamp(0.76rem, 2.05vw, 0.9rem);
+      font-weight: 800;
       letter-spacing: 0.18em;
       color: var(--fg);
       text-transform: uppercase;
     }
 
     .bucket-count {
-      font-size: 0.58rem;
+      font-size: 0.66rem;
       color: var(--dim);
       font-variant-numeric: tabular-nums;
     }
 
     .bucket-spotlight {
-      min-height: 2.2rem;
-      padding: 0.3rem 0.25rem;
+      min-height: 2.85rem;
+      padding: 0.45rem 0.38rem;
       color: var(--fg);
-      font-size: clamp(0.75rem, 2vw, 0.9rem);
-      line-height: 1.35;
+      font-size: clamp(0.82rem, 2.35vw, 1.05rem);
+      line-height: 1.42;
       text-align: center;
       overflow-wrap: anywhere;
       overflow: hidden;
       display: -webkit-box;
       -webkit-box-orient: vertical;
-      -webkit-line-clamp: 2;
+      -webkit-line-clamp: 3;
       transition: opacity 0.55s ease, transform 0.55s ease, color var(--ease-mood);
     }
 
@@ -804,11 +884,11 @@
 
     .bucket-manage {
       display: block;
-      margin: 0.18rem auto -0.2rem;
-      padding: 0.36rem 0.8rem;
+      margin: 0.26rem auto -0.15rem;
+      padding: 0.44rem 0.95rem;
       width: fit-content;
       color: var(--dim);
-      font-size: 0.58rem;
+      font-size: 0.65rem;
       font-weight: 600;
       letter-spacing: 0.14em;
       text-decoration: none;
@@ -822,10 +902,10 @@
     }
 
     .mood-hint {
-      font-size: clamp(0.48rem, 1.2vw, 0.58rem);
-      letter-spacing: 0.18em;
+      font-size: clamp(0.6rem, 1.95vw, 0.82rem);
+      letter-spacing: 0.22em;
       color: var(--dim);
-      opacity: 0.7;
+      opacity: 0.88;
       text-align: center;
       margin-top: -1.5rem;
     }
@@ -898,56 +978,47 @@
 
     @media (max-width: 520px) {
       :root {
-        --size: min(94vw, 450px);
+        --size: min(96vw, 480px);
       }
 
       .stage {
-        gap: 0.85rem;
-        padding: 6.65rem 1rem 1.5rem;
+        gap: 0.7rem;
+        padding: 4.38rem 1rem 1.25rem;
       }
 
       .mood-switch {
-        top: max(0.75rem, env(safe-area-inset-top));
+        top: max(0.72rem, env(safe-area-inset-top));
       }
 
       .theme-switch {
-        top: calc(max(0.75rem, env(safe-area-inset-top)) + 2.75rem);
+        top: calc(max(0.72rem, env(safe-area-inset-top)) + 2.02rem);
+      }
+
+      .lang-toolbar {
+        top: max(0.72rem, env(safe-area-inset-top));
+        left: max(0.75rem, env(safe-area-inset-left));
       }
 
       .top-actions {
-        top: max(0.75rem, env(safe-area-inset-top));
+        top: max(0.72rem, env(safe-area-inset-top));
         right: max(0.75rem, env(safe-area-inset-right));
       }
 
-      .clock-label .pct {
-        font-size: clamp(1.4rem, 7vw, 2.2rem);
-      }
-
-      .ring-legend {
-        gap: 0.35em 0.5em;
-        font-size: 0.5rem;
+      .clock-wrap .clock-demo .clock-label .pct {
+        font-size: clamp(1.35rem, 7vw, 2.35rem);
       }
 
       .digits {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 0.55rem;
-        width: min(92vw, 340px);
+        width: min(94vw, 380px);
         margin: 0 auto;
       }
 
       .unit {
         width: 100%;
         --unit-w: auto;
-      }
-
-      .unit-years {
-        grid-column: 1 / -1;
-      }
-
-      .unit-seconds {
-        grid-column: 2;
-        justify-self: stretch;
       }
 
       .unit-value {
@@ -964,8 +1035,8 @@
       }
 
       .bucket-panel {
-        width: min(92vw, 360px);
-        padding: 0.62rem 0.72rem;
+        width: min(94vw, 520px);
+        padding: 0.78rem 0.92rem;
       }
     }
 
@@ -973,6 +1044,18 @@
       *, *::before, *::after {
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
+      }
+
+      .clock-wrap .clock-demo > span {
+        animation: none !important;
+      }
+
+      .clock-wrap .clock-demo > span::before {
+        animation: none !important;
+      }
+
+      body[data-mood="calm"] .clock-wrap {
+        animation: none !important;
       }
     }
   </style>
@@ -987,8 +1070,10 @@
     <button type="button" role="tab" data-mood="impact" aria-selected="false" data-i18n="mood.impact">Impact</button>
   </nav>
   <nav class="theme-switch" id="theme-switch" aria-label="Theme selector"></nav>
-  <div class="top-actions" aria-label="App actions">
+  <div class="lang-toolbar" aria-label="Language">
     <select class="lang-select" id="app-language" aria-label="Language"></select>
+  </div>
+  <div class="top-actions" aria-label="App actions">
     <button type="button" class="premium-button" id="open-premium" aria-label="Premium">✦</button>
     <button type="button" class="settings-button" id="edit-settings" aria-label="Edit life settings">⚙</button>
   </div>
@@ -1000,18 +1085,14 @@
     </header>
 
     <div class="clock-wrap" id="clock-wrap">
-      <svg viewBox="0 0 200 200" role="img" aria-label="Remaining time rings">
-        <g id="rings"></g>
-      </svg>
-      <div class="clock-label">
-        <span class="pct"><span id="pct-value">—</span><span class="pct-suffix">%</span></span>
-        <span class="caption" id="caption" data-i18n="remaining">TIME LEFT</span>
-        <div class="ring-legend" aria-hidden="true">
-          <span class="lg-years"><i></i><span data-i18n="unit.year">YEAR</span></span>
-          <span class="lg-days"><i></i><span data-i18n="unit.day">DAY</span></span>
-          <span class="lg-hours"><i></i><span data-i18n="unit.hour">HOUR</span></span>
-          <span class="lg-minutes"><i></i><span data-i18n="unit.min">MIN</span></span>
-          <span class="lg-seconds"><i></i><span data-i18n="unit.sec">SEC</span></span>
+      <div class="clock-demo">
+        <span class="r1" aria-hidden="true"></span>
+        <span class="r2" aria-hidden="true"></span>
+        <span class="r3" aria-hidden="true"></span>
+        <span class="r4" aria-hidden="true"></span>
+        <div class="clock-label">
+          <span class="pct"><span id="pct-value">—</span><span class="pct-suffix">%</span></span>
+          <span class="caption" id="caption" data-i18n="remaining">TIME LEFT</span>
         </div>
       </div>
     </div>

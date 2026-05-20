@@ -1,0 +1,1345 @@
+{
+  "ja": {
+    "meta": {
+      "title": "天国の時計 - 今日を生きる",
+      "landingEnglishFallback": "ランディングページは現在英語で表示されています。時計アプリではお選びの言語をご利用いただけます。"
+    },
+    "brand": "天国の時計",
+    "nav": {
+      "app": "アプリ",
+      "beta": "ベータ",
+      "community": "コミュニティ",
+      "join": "参加"
+    },
+    "hero": {
+      "kicker": "Memento Mori · 今日を生きる",
+      "title": "数えすぎない。<br>もっと生きる。",
+      "body": "流されるのを拒む人のためのプレミアム・ライフクロック。生きたいと願う時間を見つめ、意味のあるバケットを一つそばに置き、消える前の「今日」へ戻る。",
+      "primaryCta": "Androidベータの通知を受け取る",
+      "secondaryCta": "儀式を知る",
+      "openWebClock": "ウェブ時計を開く（プレミアム）",
+      "installWebClock": "PCにインストール（プレミアム）",
+      "proof1": "Androidファースト",
+      "proof2": "世界を前提に設計",
+      "proof3": "コミュニティが最終目的地"
+    },
+    "mock": {
+      "appTitle": "天国の時計",
+      "caption": "残りの時間",
+      "year": "年",
+      "day": "日",
+      "hour": "時",
+      "bucketTitle": "今日のバケット",
+      "bucketText": "先延ばしにしたくないことを一つ書いてください。"
+    },
+    "app": {
+      "kicker": "アプリ",
+      "title": "有限な日々のための時計。",
+      "lead": "天国の時計は生産性ダッシュボードではありません。死を記憶に変え、記憶を注意に、注意を行動に、行動を自分の人生に変える儀式です。",
+      "lifeClockTitle": "ライフクロック",
+      "lifeClock": "残りの人生を年・日・時・分・秒と、生きているリングで見る。",
+      "todayBucketTitle": "今日のバケット",
+      "todayBucket": "意味のあるバケットを一つ、メイン画面で静かに巡らせ、選択のそばに置き続ける。",
+      "clockSkinsTitle": "時計スキン",
+      "clockSkins": "プレミアムのスキンで、同じリマインダーを古代・贅沢・未来・自分だけの感覚に変える。"
+    },
+    "beta": {
+      "kicker": "ベータの道",
+      "title": "Androidベータから公開へ。",
+      "lead": "サイトはアプリを支える。まずアプリ。次に、時計が一日を変えたと感じた本当のユーザーから、サークルが育つ。",
+      "step1Title": "アプリを安定させる",
+      "step1": "オンボーディング、ライフクロック、バケットリスト、テーマ、言語フローまで、Androidの核を仕上げる。",
+      "step2Title": "ベータ通知を開く",
+      "step2": "このランディングで初期テスターを集め、アプリが存在する理由を伝える。",
+      "step3Title": "Androidを公開",
+      "step3": "ストア素材、プライバシーポリシー、スクリーンショット、集中した初回リリースを整える。",
+      "step4Title": "サークルを広げる",
+      "step4": "実際の利用のあとにだけ、共有バケット、グループ、有限な日々のスクールへ進化する。"
+    },
+    "community": {
+      "kicker": "最終目的地",
+      "manifesto": "目標とバケットを分かち合い、日が消える前に生きる勇気を分かち合う、世界のサークル。",
+      "signal1Title": "有限な日々のスクール",
+      "signal1": "死を見据えて選び、計画し、生きることを学ぶ、未来の場所。",
+      "signal2Title": "共有バケット",
+      "signal2": "目標を分かち合い、同じ方向へ歩く人々と出会えるようになる。",
+      "signal3Title": "人間的で、うるさくない",
+      "signal3": "もう一つのフィードではなく、本当のサークルであるべきコミュニティ。"
+    },
+    "join": {
+      "kicker": "早期アクセス",
+      "title": "まずアプリ。サークルはそのあと。",
+      "lead": "Androidベータと最初の公開経路を準備中です。天国の時計が大きなコミュニティになる前に試したい方は、リストに参加してください。",
+      "placeholder": "your@email.com",
+      "button": "通知を受け取る",
+      "note": "このプレビューはメールをこの端末にのみ保存します。公開前に本番のウェイトリストサービスを接続します。",
+      "success": "ローカルプレビューリストに登録されました。本番のウェイトリスト接続は公開前に行います。",
+      "invalidEmail": "有効なメールアドレスを入力してください。"
+    },
+    "footer": "天国の時計 · 日が消える前に生きるためのリマインダー。"
+  },
+  "zh-Hans": {
+    "meta": {
+      "title": "天堂之钟 - 活出今天",
+      "landingEnglishFallback": "着陆页暂时为英文。打开时钟应用可使用您选择的语言。"
+    },
+    "brand": "天堂之钟",
+    "nav": {
+      "app": "应用",
+      "beta": "测试",
+      "community": "社区",
+      "join": "加入"
+    },
+    "hero": {
+      "kicker": "Memento Mori · 活出今天",
+      "title": "少计时光，<br>多活当下。",
+      "body": "为拒绝随波逐流的人打造的高级人生时钟。看见你渴望活出的时间，让一件有意义的心愿靠近你，在今天消失之前回到这一天。",
+      "primaryCta": "获取 Android 测试版通知",
+      "secondaryCta": "探索这份仪式",
+      "openWebClock": "打开网页时钟（高级版）",
+      "installWebClock": "安装到电脑（高级版）",
+      "proof1": "Android 优先",
+      "proof2": "为全球市场而设计",
+      "proof3": "社区是终局"
+    },
+    "mock": {
+      "appTitle": "天堂之钟",
+      "caption": "剩余时间",
+      "year": "年",
+      "day": "日",
+      "hour": "时",
+      "bucketTitle": "今日愿望",
+      "bucketText": "写下一件你不想再拖延的事。"
+    },
+    "app": {
+      "kicker": "应用",
+      "title": "为有限之日而生的钟。",
+      "lead": "天堂之钟不是效率仪表盘。它是一种仪式：把死亡变成专注，把专注变成行动，把行动变成你认得出的生活。",
+      "lifeClockTitle": "人生时钟",
+      "lifeClock": "以年、日、时、分、秒与跃动的圆环，看见你剩余的人生。",
+      "todayBucketTitle": "今日愿望",
+      "todayBucket": "让一件有意义的心愿在主屏上静静轮换，贴近你的每一次选择。",
+      "clockSkinsTitle": "时钟皮肤",
+      "clockSkins": "高级皮肤让同一句提醒，变得古老、奢华、未来，或只属于你。"
+    },
+    "beta": {
+      "kicker": "测试路径",
+      "title": "从 Android 测试到公开发布。",
+      "lead": "网站服务应用。应用先行，再由真正感到时钟改变了一天的用户，让圈子生长。",
+      "step1Title": "稳定应用",
+      "step1": "完成 Android 核心体验：引导、人生时钟、愿望清单、主题与语言流程。",
+      "step2Title": "开放测试通知",
+      "step2": "用此着陆页招募早期测试者，说明应用为何存在。",
+      "step3Title": "发布 Android",
+      "step3": "准备商店素材、隐私政策、截图与聚焦的首次发布。",
+      "step4Title": "扩大圈子",
+      "step4": "只有在真实使用之后，才走向共享愿望、群组与有限之日的学堂。"
+    },
+    "community": {
+      "kicker": "终局",
+      "manifesto": "一个全球圈子：分享目标与心愿，分享在日子消逝前勇敢活出的勇气。",
+      "signal1Title": "有限之日学堂",
+      "signal1": "未来学习如何在选择、计划与生活中正视终局的地方。",
+      "signal2Title": "共享心愿",
+      "signal2": "人们将能分享目标，遇见走向同一种人生的人。",
+      "signal3Title": "有人味，不嘈杂",
+      "signal3": "社区应像真正的圈子，而不是为分心而建的又一条信息流。"
+    },
+    "join": {
+      "kicker": "抢先体验",
+      "title": "应用先来，圈子随后。",
+      "lead": "我们正在准备 Android 测试版与第一条公开路径。若想在天堂之钟成为更大社区之前抢先试用，请加入名单。",
+      "placeholder": "your@email.com",
+      "button": "通知我",
+      "note": "此预览仅在本设备保存您的邮箱。公开发布前将接入真实的候补名单服务。",
+      "success": "您已加入本地预览名单。真实的候补连接将在公开发布前完成。",
+      "invalidEmail": "请输入有效的邮箱地址。"
+    },
+    "footer": "天堂之钟 · 在日子消逝前活出来的提醒。"
+  },
+  "zh-Hant": {
+    "meta": {
+      "title": "天堂之鐘 - 活出今天",
+      "landingEnglishFallback": "著陸頁暫時為英文。開啟時鐘應用可使用您選擇的語言。"
+    },
+    "brand": "天堂之鐘",
+    "nav": {
+      "app": "應用",
+      "beta": "測試",
+      "community": "社群",
+      "join": "加入"
+    },
+    "hero": {
+      "kicker": "Memento Mori · 活出今天",
+      "title": "少計時光，<br>多活當下。",
+      "body": "為拒絕隨波逐流的人打造的高級人生時鐘。看見你渴望活出的時間，讓一件有意義的心願靠近你，在今天消失之前回到這一天。",
+      "primaryCta": "取得 Android 測試版通知",
+      "secondaryCta": "探索這份儀式",
+      "openWebClock": "開啟網頁時鐘（進階版）",
+      "installWebClock": "安裝到電腦（進階版）",
+      "proof1": "Android 優先",
+      "proof2": "為全球市場而設計",
+      "proof3": "社群是終局"
+    },
+    "mock": {
+      "appTitle": "天堂之鐘",
+      "caption": "剩餘時間",
+      "year": "年",
+      "day": "日",
+      "hour": "時",
+      "bucketTitle": "今日願望",
+      "bucketText": "寫下一件你不想再拖延的事。"
+    },
+    "app": {
+      "kicker": "應用",
+      "title": "為有限之日而生的鐘。",
+      "lead": "天堂之鐘不是效率儀表板。它是一種儀式：把死亡變成專注，把專注變成行動，把行動變成你認得出的生活。",
+      "lifeClockTitle": "人生時鐘",
+      "lifeClock": "以年、日、時、分、秒與躍動的圓環，看見你剩餘的人生。",
+      "todayBucketTitle": "今日願望",
+      "todayBucket": "讓一件有意義的心願在主畫面上靜靜輪換，貼近你的每一次選擇。",
+      "clockSkinsTitle": "時鐘外觀",
+      "clockSkins": "進階外觀讓同一句提醒，變得古老、奢華、未來，或只屬於你。"
+    },
+    "beta": {
+      "kicker": "測試路徑",
+      "title": "從 Android 測試到公開發布。",
+      "lead": "網站服務應用。應用先行，再由真正感到時鐘改變了一天的使用者，讓圈子生長。",
+      "step1Title": "穩定應用",
+      "step1": "完成 Android 核心體驗：引導、人生時鐘、願望清單、主題與語言流程。",
+      "step2Title": "開放測試通知",
+      "step2": "用此著陸頁招募早期測試者，說明應用為何存在。",
+      "step3Title": "發布 Android",
+      "step3": "準備商店素材、隱私權政策、截圖與聚焦的首次發布。",
+      "step4Title": "擴大圈子",
+      "step4": "只有在真實使用之後，才走向共享願望、群組與有限之日的學堂。"
+    },
+    "community": {
+      "kicker": "終局",
+      "manifesto": "一個全球圈子：分享目標與心願，分享在日子消逝前勇敢活出的勇氣。",
+      "signal1Title": "有限之日學堂",
+      "signal1": "未來學習如何在選擇、計畫與生活中正視終局的地方。",
+      "signal2Title": "共享心願",
+      "signal2": "人們將能分享目標，遇見走向同一種人生的人。",
+      "signal3Title": "有人味，不嘈雜",
+      "signal3": "社群應像真正的圈子，而不是為分心而建的又一條資訊流。"
+    },
+    "join": {
+      "kicker": "搶先體驗",
+      "title": "應用先來，圈子隨後。",
+      "lead": "我們正在準備 Android 測試版與第一條公開路徑。若想在天堂之鐘成為更大社群之前搶先試用，請加入名單。",
+      "placeholder": "your@email.com",
+      "button": "通知我",
+      "note": "此預覽僅在本裝置儲存您的電子郵件。公開發布前將接入真實的候補名單服務。",
+      "success": "您已加入本地預覽名單。真實的候補連接將在公開發布前完成。",
+      "invalidEmail": "請輸入有效的電子郵件地址。"
+    },
+    "footer": "天堂之鐘 · 在日子消逝前活出來的提醒。"
+  },
+  "es": {
+    "meta": {
+      "title": "Reloj del Cielo - Vive hoy",
+      "landingEnglishFallback": "La página de inicio está en inglés por ahora. Abre la app del reloj para tu idioma."
+    },
+    "brand": "Reloj del Cielo",
+    "nav": {
+      "app": "App",
+      "beta": "Beta",
+      "community": "Comunidad",
+      "join": "Unirse"
+    },
+    "hero": {
+      "kicker": "Memento Mori · Vive hoy",
+      "title": "Cuenta menos.<br>Vive más.",
+      "body": "Un reloj de vida premium para quienes se niegan a dejarse llevar. Mira el tiempo que esperas vivir, mantén cerca un bucket con sentido y vuelve al día antes de que desaparezca.",
+      "primaryCta": "Aviso de beta en Android",
+      "secondaryCta": "Explorar el ritual",
+      "openWebClock": "Abrir reloj web (Premium)",
+      "installWebClock": "Instalar en PC (Premium)",
+      "proof1": "Android primero",
+      "proof2": "Global por diseño",
+      "proof3": "La comunidad es el final"
+    },
+    "mock": {
+      "appTitle": "Reloj del Cielo",
+      "caption": "Tiempo restante",
+      "year": "Año",
+      "day": "Día",
+      "hour": "Hora",
+      "bucketTitle": "Bucket de hoy",
+      "bucketText": "Escribe algo que no quieres posponer."
+    },
+    "app": {
+      "kicker": "La app",
+      "title": "Un reloj para días finitos.",
+      "lead": "Reloj del Cielo no es un panel de productividad. Es un ritual: la mortalidad se vuelve atención, la atención acción y la acción una vida que reconoces.",
+      "lifeClockTitle": "Reloj de vida",
+      "lifeClock": "Ve tu vida restante en años, días, horas, minutos, segundos y anillos vivos.",
+      "todayBucketTitle": "Bucket de hoy",
+      "todayBucket": "Deja que un bucket con sentido rote en la pantalla principal y permanezca cerca de tus decisiones.",
+      "clockSkinsTitle": "Aspectos del reloj",
+      "clockSkins": "Los aspectos premium pueden hacer que el mismo recordatorio se sienta antiguo, lujoso, futurista o profundamente personal."
+    },
+    "beta": {
+      "kicker": "Ruta beta",
+      "title": "De la beta en Android al lanzamiento público.",
+      "lead": "El sitio apoya la app. La app va primero; luego el círculo crece con usuarios reales que sintieron cómo el reloj cambió su día.",
+      "step1Title": "Estabilizar la app",
+      "step1": "Terminar la experiencia Android central: onboarding, reloj de vida, lista de buckets, temas y flujo de idiomas.",
+      "step2Title": "Abrir aviso beta",
+      "step2": "Usa esta landing para reunir probadores tempranos y explicar por qué existe la app.",
+      "step3Title": "Publicar en Android",
+      "step3": "Prepara recursos de tienda, política de privacidad, capturas y un primer lanzamiento enfocado.",
+      "step4Title": "Hacer crecer el círculo",
+      "step4": "Solo después del uso real, evolucionar hacia buckets compartidos, grupos y una escuela de días finitos."
+    },
+    "community": {
+      "kicker": "El final del camino",
+      "manifesto": "Un círculo global para quienes comparten metas, buckets y el valor de vivir antes de que el día se acabe.",
+      "signal1Title": "Escuela de días finitos",
+      "signal1": "Un lugar futuro para aprender a elegir, planificar y vivir con la mortalidad a la vista.",
+      "signal2Title": "Buckets compartidos",
+      "signal2": "Las personas podrán compartir metas y encontrar a quienes caminan hacia el mismo tipo de vida.",
+      "signal3Title": "Humano, no ruidoso",
+      "signal3": "La comunidad debe sentirse como un círculo real, no otro feed hecho para distraer."
+    },
+    "join": {
+      "kicker": "Acceso anticipado",
+      "title": "Primero la app. Luego el círculo.",
+      "lead": "Preparamos la beta en Android y el primer camino público. Únete a la lista si quieres probar Reloj del Cielo antes de que sea una comunidad mayor.",
+      "placeholder": "your@email.com",
+      "button": "Avísame",
+      "note": "Esta vista previa guarda tu correo solo en este dispositivo. Conectaremos un proveedor de lista de espera real antes del lanzamiento público.",
+      "success": "Estás en la lista local de vista previa. La conexión real llegará antes del lanzamiento público.",
+      "invalidEmail": "Introduce una dirección de correo válida."
+    },
+    "footer": "Reloj del Cielo · Un recordatorio de vivir antes de que el día se acabe."
+  },
+  "fr": {
+    "meta": {
+      "title": "Horloge du Ciel - Vivre aujourd'hui",
+      "landingEnglishFallback": "La page d'accueil est en anglais pour l'instant. Ouvrez l'app horloge pour votre langue."
+    },
+    "brand": "Horloge du Ciel",
+    "nav": {
+      "app": "App",
+      "beta": "Bêta",
+      "community": "Communauté",
+      "join": "Rejoindre"
+    },
+    "hero": {
+      "kicker": "Memento Mori · Vivre aujourd'hui",
+      "title": "Compte moins.<br>Vivre plus.",
+      "body": "Une horloge de vie premium pour ceux qui refusent de dériver. Suivez le temps que vous espérez vivre, gardez un bucket essentiel près de vous et revenez au jour avant qu'il ne disparaisse.",
+      "primaryCta": "Alerte bêta Android",
+      "secondaryCta": "Explorer le rituel",
+      "openWebClock": "Ouvrir l'horloge web (Premium)",
+      "installWebClock": "Installer sur PC (Premium)",
+      "proof1": "Android d'abord",
+      "proof2": "Pensé pour le monde",
+      "proof3": "La communauté est le but"
+    },
+    "mock": {
+      "appTitle": "Horloge du Ciel",
+      "caption": "Temps restant",
+      "year": "An",
+      "day": "Jour",
+      "hour": "Heure",
+      "bucketTitle": "Bucket du jour",
+      "bucketText": "Écris une chose que tu ne veux pas repousser."
+    },
+    "app": {
+      "kicker": "L'app",
+      "title": "Une horloge pour des jours finis.",
+      "lead": "Horloge du Ciel n'est pas un tableau de productivité. C'est un rituel : la mortalité devient attention, l'attention action, et l'action une vie que tu reconnais.",
+      "lifeClockTitle": "Horloge de vie",
+      "lifeClock": "Vois ta vie restante en années, jours, heures, minutes, secondes et anneaux vivants.",
+      "todayBucketTitle": "Bucket du jour",
+      "todayBucket": "Laisse un bucket essentiel tourner sur l'écran principal pour rester proche de tes choix.",
+      "clockSkinsTitle": "Thèmes d'horloge",
+      "clockSkins": "Les thèmes premium peuvent rendre le même rappel antique, luxueux, futuriste ou profondément personnel."
+    },
+    "beta": {
+      "kicker": "Parcours bêta",
+      "title": "De la bêta Android au lancement public.",
+      "lead": "Le site soutient l'app. L'app d'abord, puis le cercle grandit avec des utilisateurs qui ont senti l'horloge changer leur journée.",
+      "step1Title": "Stabiliser l'app",
+      "step1": "Finaliser l'expérience Android : onboarding, horloge de vie, liste de buckets, thèmes et langues.",
+      "step2Title": "Ouvrir l'alerte bêta",
+      "step2": "Utilise cette landing pour recruter des testeurs et expliquer pourquoi l'app existe.",
+      "step3Title": "Publier sur Android",
+      "step3": "Prépare les assets store, la politique de confidentialité, les captures et une première version ciblée.",
+      "step4Title": "Élargir le cercle",
+      "step4": "Après un usage réel seulement, évoluer vers buckets partagés, groupes et une école des jours finis."
+    },
+    "community": {
+      "kicker": "Le but final",
+      "manifesto": "Un cercle mondial pour ceux qui partagent objectifs, buckets et le courage de vivre avant que le jour ne s'en aille.",
+      "signal1Title": "École des jours finis",
+      "signal1": "Un lieu futur pour apprendre à choisir, planifier et vivre avec la mortalité en vue.",
+      "signal2Title": "Buckets partagés",
+      "signal2": "Les gens pourront partager des objectifs et trouver d'autres personnes qui marchent vers le même type de vie.",
+      "signal3Title": "Humain, pas bruyant",
+      "signal3": "La communauté doit ressembler à un vrai cercle, pas à un autre fil fait pour distraire."
+    },
+    "join": {
+      "kicker": "Accès anticipé",
+      "title": "L'app d'abord. Le cercle ensuite.",
+      "lead": "Nous préparons la bêta Android et le premier chemin public. Rejoins la liste si tu veux tester Horloge du Ciel avant qu'elle devienne une grande communauté.",
+      "placeholder": "your@email.com",
+      "button": "Me prévenir",
+      "note": "Cet aperçu enregistre ton e-mail uniquement sur cet appareil. Un vrai service de liste d'attente sera connecté avant la sortie publique.",
+      "success": "Tu es sur la liste locale d'aperçu. La connexion réelle viendra avant la sortie publique.",
+      "invalidEmail": "Entre une adresse e-mail valide."
+    },
+    "footer": "Horloge du Ciel · Un rappel de vivre avant que le jour ne s'en aille."
+  },
+  "de": {
+    "meta": {
+      "title": "Himmelstuhr - Heute leben",
+      "landingEnglishFallback": "Die Landingpage ist vorerst auf Englisch. In der Uhr-App nutzt du deine Sprache."
+    },
+    "brand": "Himmelstuhr",
+    "nav": {
+      "app": "App",
+      "beta": "Beta",
+      "community": "Community",
+      "join": "Mitmachen"
+    },
+    "hero": {
+      "kicker": "Memento Mori · Heute leben",
+      "title": "Weniger zählen.<br>Mehr leben.",
+      "body": "Eine Premium-Lebensuhr für Menschen, die sich nicht treiben lassen. Sieh die Zeit, die du leben willst, halte einen bedeutungsvollen Bucket nah und kehre zum Tag zurück, bevor er verschwindet.",
+      "primaryCta": "Android-Beta-Hinweis",
+      "secondaryCta": "Das Ritual entdecken",
+      "openWebClock": "Web-Uhr öffnen (Premium)",
+      "installWebClock": "Auf dem PC installieren (Premium)",
+      "proof1": "Android zuerst",
+      "proof2": "Global gedacht",
+      "proof3": "Community ist das Ziel"
+    },
+    "mock": {
+      "appTitle": "Himmelstuhr",
+      "caption": "Verbleibend",
+      "year": "Jahr",
+      "day": "Tag",
+      "hour": "Stunde",
+      "bucketTitle": "Heutiger Wunsch",
+      "bucketText": "Schreibe etwas auf, das du nicht aufschieben willst."
+    },
+    "app": {
+      "kicker": "Die App",
+      "title": "Eine Uhr für endliche Tage.",
+      "lead": "Himmelstuhr ist kein Produktivitäts-Dashboard. Es ist ein Ritual: Sterblichkeit wird Aufmerksamkeit, Aufmerksamkeit Handlung, Handlung ein Leben, das du erkennst.",
+      "lifeClockTitle": "Lebensuhr",
+      "lifeClock": "Sieh dein verbleibendes Leben in Jahren, Tagen, Stunden, Minuten, Sekunden und lebendigen Ringen.",
+      "todayBucketTitle": "Heutiger Wunsch",
+      "todayBucket": "Lass einen bedeutungsvollen Bucket auf dem Hauptbildschirm rotieren, damit er deinen Entscheidungen nahe bleibt.",
+      "clockSkinsTitle": "Uhr-Designs",
+      "clockSkins": "Premium-Designs können dieselbe Erinnerung antik, luxuriös, futuristisch oder zutiefst persönlich wirken lassen."
+    },
+    "beta": {
+      "kicker": "Beta-Weg",
+      "title": "Von der Android-Beta bis zum öffentlichen Start.",
+      "lead": "Die Website unterstützt die App. Die App zuerst – dann wächst der Kreis aus Nutzern, die spürten, wie die Uhr ihren Tag veränderte.",
+      "step1Title": "App stabilisieren",
+      "step1": "Kern-Android-Erlebnis fertigstellen: Onboarding, Lebensuhr, Bucket-Liste, Themes und Sprachen.",
+      "step2Title": "Beta-Hinweis öffnen",
+      "step2": "Mit dieser Landing frühe Tester sammeln und erklären, warum die App existiert.",
+      "step3Title": "Android veröffentlichen",
+      "step3": "Store-Assets, Datenschutz, Screenshots und ein fokussiertes erstes Release vorbereiten.",
+      "step4Title": "Kreis erweitern",
+      "step4": "Erst nach echtem Gebrauch zu geteilten Buckets, Gruppen und einer Schule endlicher Tage."
+    },
+    "community": {
+      "kicker": "Das Endziel",
+      "manifesto": "Ein globaler Kreis für Menschen, die Ziele, Buckets und den Mut teilen, zu leben, bevor der Tag vergeht.",
+      "signal1Title": "Schule endlicher Tage",
+      "signal1": "Ein künftiger Ort, um zu wählen, zu planen und mit Sterblichkeit im Blick zu leben.",
+      "signal2Title": "Geteilte Buckets",
+      "signal2": "Menschen können Ziele teilen und andere finden, die auf dieselbe Art von Leben zugehen.",
+      "signal3Title": "Menschlich, nicht laut",
+      "signal3": "Die Community soll sich wie ein echter Kreis anfühlen, nicht wie ein weiterer Feed zur Ablenkung."
+    },
+    "join": {
+      "kicker": "Früher Zugang",
+      "title": "Zuerst die App. Dann der Kreis.",
+      "lead": "Wir bereiten die Android-Beta und den ersten öffentlichen Weg vor. Tritt der Liste bei, wenn du Himmelstuhr testen willst, bevor daraus eine größere Community wird.",
+      "placeholder": "your@email.com",
+      "button": "Benachrichtigen",
+      "note": "Diese Vorschau speichert deine E-Mail nur auf diesem Gerät. Vor dem öffentlichen Release verbinden wir einen echten Wartelisten-Dienst.",
+      "success": "Du stehst auf der lokalen Vorschau-Liste. Die echte Wartelisten-Verbindung kommt vor dem öffentlichen Release.",
+      "invalidEmail": "Gib eine gültige E-Mail-Adresse ein."
+    },
+    "footer": "Himmelstuhr · Eine Erinnerung, zu leben, bevor der Tag vergeht."
+  },
+  "pt": {
+    "meta": {
+      "title": "Relógio do Céu - Viva hoje",
+      "landingEnglishFallback": "A página inicial está em inglês por enquanto. Abra o app do relógio no seu idioma."
+    },
+    "brand": "Relógio do Céu",
+    "nav": {
+      "app": "App",
+      "beta": "Beta",
+      "community": "Comunidade",
+      "join": "Participar"
+    },
+    "hero": {
+      "kicker": "Memento Mori · Viva hoje",
+      "title": "Conte menos.<br>Viva mais.",
+      "body": "Um relógio de vida premium para quem se recusa a derivar. Acompanhe o tempo que espera viver, mantenha um bucket essencial por perto e volte ao dia antes que ele desapareça.",
+      "primaryCta": "Aviso da beta Android",
+      "secondaryCta": "Explorar o ritual",
+      "openWebClock": "Abrir relógio web (Premium)",
+      "installWebClock": "Instalar no PC (Premium)",
+      "proof1": "Android primeiro",
+      "proof2": "Global por design",
+      "proof3": "A comunidade é o destino"
+    },
+    "mock": {
+      "appTitle": "Relógio do Céu",
+      "caption": "Tempo restante",
+      "year": "Ano",
+      "day": "Dia",
+      "hour": "Hora",
+      "bucketTitle": "Bucket de hoje",
+      "bucketText": "Escreva algo que você não quer adiar."
+    },
+    "app": {
+      "kicker": "O app",
+      "title": "Um relógio para dias finitos.",
+      "lead": "Relógio do Céu não é um painel de produtividade. É um ritual: a mortalidade vira atenção, a atenção vira ação e a ação vira uma vida que você reconhece.",
+      "lifeClockTitle": "Relógio de vida",
+      "lifeClock": "Veja sua vida restante em anos, dias, horas, minutos, segundos e anéis vivos.",
+      "todayBucketTitle": "Bucket de hoje",
+      "todayBucket": "Deixe um bucket essencial rodar na tela principal para ficar perto das suas escolhas.",
+      "clockSkinsTitle": "Visuais do relógio",
+      "clockSkins": "Visuais premium podem fazer o mesmo lembrete parecer antigo, luxuoso, futurista ou profundamente pessoal."
+    },
+    "beta": {
+      "kicker": "Caminho beta",
+      "title": "Da beta Android ao lançamento público.",
+      "lead": "O site apoia o app. O app vem primeiro; depois o círculo cresce com usuários que sentiram o relógio mudar o dia.",
+      "step1Title": "Estabilizar o app",
+      "step1": "Concluir a experiência Android central: onboarding, relógio de vida, lista de buckets, temas e idiomas.",
+      "step2Title": "Abrir aviso beta",
+      "step2": "Use esta landing para reunir testadores iniciais e explicar por que o app existe.",
+      "step3Title": "Publicar no Android",
+      "step3": "Prepare assets da loja, política de privacidade, capturas e um primeiro lançamento focado.",
+      "step4Title": "Expandir o círculo",
+      "step4": "Só após uso real, evoluir para buckets compartilhados, grupos e uma escola de dias finitos."
+    },
+    "community": {
+      "kicker": "O destino final",
+      "manifesto": "Um círculo global para quem compartilha metas, buckets e a coragem de viver antes que o dia acabe.",
+      "signal1Title": "Escola de dias finitos",
+      "signal1": "Um lugar futuro para aprender a escolher, planejar e viver com a mortalidade à vista.",
+      "signal2Title": "Buckets compartilhados",
+      "signal2": "As pessoas poderão compartilhar metas e encontrar quem caminha para o mesmo tipo de vida.",
+      "signal3Title": "Humano, não barulhento",
+      "signal3": "A comunidade deve parecer um círculo real, não outro feed feito para distrair."
+    },
+    "join": {
+      "kicker": "Acesso antecipado",
+      "title": "Primeiro o app. Depois o círculo.",
+      "lead": "Estamos preparando a beta Android e o primeiro caminho público. Entre na lista se quiser testar Relógio do Céu antes de virar uma comunidade maior.",
+      "placeholder": "your@email.com",
+      "button": "Avise-me",
+      "note": "Esta prévia guarda seu e-mail apenas neste dispositivo. Conectaremos um serviço de lista de espera real antes do lançamento público.",
+      "success": "Você está na lista local de prévia. A conexão real virá antes do lançamento público.",
+      "invalidEmail": "Digite um endereço de e-mail válido."
+    },
+    "footer": "Relógio do Céu · Um lembrete de viver antes que o dia acabe."
+  },
+  "it": {
+    "meta": {
+      "title": "Orologio del Cielo - Vivi oggi",
+      "landingEnglishFallback": "La landing è in inglese per ora. Apri l'app orologio per la tua lingua."
+    },
+    "brand": "Orologio del Cielo",
+    "nav": {
+      "app": "App",
+      "beta": "Beta",
+      "community": "Community",
+      "join": "Unisciti"
+    },
+    "hero": {
+      "kicker": "Memento Mori · Vivi oggi",
+      "title": "Conta meno.<br>Vivi di più.",
+      "body": "Un orologio di vita premium per chi rifiuta di lasciarsi trascinare. Segui il tempo che speri di vivere, tieni vicino un bucket significativo e torna al giorno prima che scompaia.",
+      "primaryCta": "Avviso beta Android",
+      "secondaryCta": "Esplora il rituale",
+      "openWebClock": "Apri orologio web (Premium)",
+      "installWebClock": "Installa su PC (Premium)",
+      "proof1": "Android prima",
+      "proof2": "Globale per design",
+      "proof3": "La community è la meta"
+    },
+    "mock": {
+      "appTitle": "Orologio del Cielo",
+      "caption": "Tempo restante",
+      "year": "Anno",
+      "day": "Giorno",
+      "hour": "Ora",
+      "bucketTitle": "Bucket di oggi",
+      "bucketText": "Scrivi una cosa che non vuoi rimandare."
+    },
+    "app": {
+      "kicker": "L'app",
+      "title": "Un orologio per giorni finiti.",
+      "lead": "Orologio del Cielo non è una dashboard di produttività. È un rituale: la mortalità diventa attenzione, l'attenzione azione e l'azione una vita che riconosci.",
+      "lifeClockTitle": "Orologio di vita",
+      "lifeClock": "Vedi la vita che ti resta in anni, giorni, ore, minuti, secondi e anelli vivi.",
+      "todayBucketTitle": "Bucket di oggi",
+      "todayBucket": "Lascia ruotare un bucket significativo nella schermata principale, vicino alle tue scelte.",
+      "clockSkinsTitle": "Skin dell'orologio",
+      "clockSkins": "Le skin premium possono rendere lo stesso promemoria antico, lussuoso, futuristico o profondamente personale."
+    },
+    "beta": {
+      "kicker": "Percorso beta",
+      "title": "Dalla beta Android al lancio pubblico.",
+      "lead": "Il sito supporta l'app. L'app prima; poi il cerchio cresce con utenti che hanno sentito l'orologio cambiare la giornata.",
+      "step1Title": "Stabilizzare l'app",
+      "step1": "Completare l'esperienza Android: onboarding, orologio di vita, lista bucket, temi e lingue.",
+      "step2Title": "Aprire avviso beta",
+      "step2": "Usa questa landing per raccogliere tester iniziali e spiegare perché l'app esiste.",
+      "step3Title": "Pubblicare su Android",
+      "step3": "Prepara asset store, privacy, screenshot e una prima release mirata.",
+      "step4Title": "Far crescere il cerchio",
+      "step4": "Solo dopo uso reale, verso bucket condivisi, gruppi e una scuola di giorni finiti."
+    },
+    "community": {
+      "kicker": "La meta finale",
+      "manifesto": "Un cerchio globale per chi condivide obiettivi, bucket e il coraggio di vivere prima che il giorno finisca.",
+      "signal1Title": "Scuola dei giorni finiti",
+      "signal1": "Un luogo futuro per imparare a scegliere, pianificare e vivere con la mortalità in vista.",
+      "signal2Title": "Bucket condivisi",
+      "signal2": "Le persone potranno condividere obiettivi e trovare chi cammina verso lo stesso tipo di vita.",
+      "signal3Title": "Umano, non rumoroso",
+      "signal3": "La community deve sembrare un cerchio vero, non un altro feed fatto per distrarre."
+    },
+    "join": {
+      "kicker": "Accesso anticipato",
+      "title": "Prima l'app. Poi il cerchio.",
+      "lead": "Stiamo preparando la beta Android e il primo percorso pubblico. Unisciti alla lista se vuoi provare Orologio del Cielo prima che diventi una community più grande.",
+      "placeholder": "your@email.com",
+      "button": "Avvisami",
+      "note": "Questa anteprima salva la tua email solo su questo dispositivo. Collegheremo un servizio lista d'attesa reale prima del rilascio pubblico.",
+      "success": "Sei nella lista locale di anteprima. La connessione reale arriverà prima del rilascio pubblico.",
+      "invalidEmail": "Inserisci un indirizzo email valido."
+    },
+    "footer": "Orologio del Cielo · Un promemoria per vivere prima che il giorno finisca."
+  },
+  "ar": {
+    "meta": {
+      "title": "ساعة السماء - عِش اليوم",
+      "landingEnglishFallback": "صفحة الهبوط بالإنجليزية مؤقتًا. افتح تطبيق الساعة للغتك."
+    },
+    "brand": "ساعة السماء",
+    "nav": {
+      "app": "التطبيق",
+      "beta": "تجريبي",
+      "community": "المجتمع",
+      "join": "انضم"
+    },
+    "hero": {
+      "kicker": "Memento Mori · عِش اليوم",
+      "title": "عدّ أقل.<br>عِش أكثر.",
+      "body": "ساعة حياة فاخرة لمن يرفض الانجراف مع التيار. تتبّع الوقت الذي تأمل أن تعيشه، وأبقِ دلوًا واحدًا ذا معنى قريبًا، وعُد إلى اليوم قبل أن يختفي.",
+      "primaryCta": "إشعار نسخة Android التجريبية",
+      "secondaryCta": "استكشف الطقس",
+      "openWebClock": "فتح الساعة على الويب (بريميوم)",
+      "installWebClock": "التثبيت على الحاسوب (بريميوم)",
+      "proof1": "Android أولًا",
+      "proof2": "عالمي بالتصميم",
+      "proof3": "المجتمع هو الهدف النهائي"
+    },
+    "mock": {
+      "appTitle": "ساعة السماء",
+      "caption": "الوقت المتبقي",
+      "year": "سنة",
+      "day": "يوم",
+      "hour": "ساعة",
+      "bucketTitle": "أمنية اليوم",
+      "bucketText": "اكتب شيئًا لا تريد تأجيله."
+    },
+    "app": {
+      "kicker": "التطبيق",
+      "title": "ساعة لأيام محدودة.",
+      "lead": "ساعة السماء ليست لوحة إنتاجية. إنها طقس: الموت يصبح انتباهًا، والانتباه فعلًا، والفعل حياة تعرفها.",
+      "lifeClockTitle": "ساعة الحياة",
+      "lifeClock": "انظر إلى حياتك المتبقية بالسنوات والأيام والساعات والدقائق والثواني والحلقات الحية.",
+      "todayBucketTitle": "أمنية اليوم",
+      "todayBucket": "دع دلوًا واحدًا ذا معنى يدور على الشاشة الرئيسية ليبقى قريبًا من خياراتك.",
+      "clockSkinsTitle": "واجهات الساعة",
+      "clockSkins": "واجهات بريميوم تجعل نفس التذكير يبدو قديمًا أو فاخرًا أو مستقبليًا أو شخصيًا جدًا."
+    },
+    "beta": {
+      "kicker": "مسار التجريب",
+      "title": "من تجربة Android إلى الإطلاق العام.",
+      "lead": "الموقع يدعم التطبيق. التطبيق أولًا، ثم ينمو الدائرة من مستخدمين شعروا أن الساعة غيّرت يومهم.",
+      "step1Title": "استقرار التطبيق",
+      "step1": "إنهاء تجربة Android الأساسية: الإعداد، ساعة الحياة، قائمة الدلو، السمات وتدفق اللغة.",
+      "step2Title": "فتح إشعار التجريب",
+      "step2": "استخدم صفحة الهبوط هذه لجمع مختبرين مبكرين وشرح سبب وجود التطبيق.",
+      "step3Title": "نشر Android",
+      "step3": "تحضير مواد المتجر وسياسة الخصوصية ولقطات الشاشة وإصدار أول مركّز.",
+      "step4Title": "توسيع الدائرة",
+      "step4": "بعد الاستخدام الحقيقي فقط، نتجه إلى الدلو المشترك والمجموعات ومدرسة الأيام المحدودة."
+    },
+    "community": {
+      "kicker": "الهدف النهائي",
+      "manifesto": "دائرة عالمية لمن يشاركون الأهداف والدلو والشجاعة للعيش قبل أن يرحل اليوم.",
+      "signal1Title": "مدرسة الأيام المحدودة",
+      "signal1": "مكان مستقبلي لتعلّم الاختيار والتخطيط والعيش مع الموت في الأفق.",
+      "signal2Title": "دلو مشترك",
+      "signal2": "سيتمكن الناس من مشاركة الأهداف وإيجاد من يسيرون نحو نوع الحياة نفسه.",
+      "signal3Title": "إنساني، لا صاخب",
+      "signal3": "يجب أن يشعر المجتمع بدائرة حقيقية، لا خلاصة أخرى للتشتيت."
+    },
+    "join": {
+      "kicker": "وصول مبكر",
+      "title": "التطبيق أولًا. الدائرة تلي.",
+      "lead": "نُعدّ نسخة Android التجريبية وأول مسار عام. انضم إلى القائمة إن أردت تجربة ساعة السماء قبل أن تصبح مجتمعًا أكبر.",
+      "placeholder": "your@email.com",
+      "button": "أبلغني",
+      "note": "هذه المعاينة تحفظ بريدك على هذا الجهاز فقط. سنربط مزود قائمة انتظار حقيقيًا قبل الإطلاق العام.",
+      "success": "أنت على قائمة المعاينة المحلية. الربط الحقيقي سيأتي قبل الإطلاق العام.",
+      "invalidEmail": "أدخل عنوان بريد إلكتروني صالحًا."
+    },
+    "footer": "ساعة السماء · تذكير للعيش قبل أن يرحل اليوم."
+  },
+  "hi": {
+    "meta": {
+      "title": "स्वर्ग की घड़ी - आज जियो",
+      "landingEnglishFallback": "लैंडिंग पेज अभी अंग्रेज़ी में है। घड़ी ऐप में अपनी भाषा चुनें।"
+    },
+    "brand": "स्वर्ग की घड़ी",
+    "nav": {
+      "app": "ऐप",
+      "beta": "बीटा",
+      "community": "समुदाय",
+      "join": "जुड़ें"
+    },
+    "hero": {
+      "kicker": "Memento Mori · आज जियो",
+      "title": "कम गिनो।<br>ज़्यादा जियो।",
+      "body": "जो बहाव में नहीं जाना चाहते, उनके लिए एक प्रीमियम लाइफ क्लॉक। जिस समय को आप जीना चाहते हैं उसे देखें, एक अर्थपूर्ण बकेट पास रखें, और दिन गायब होने से पहले उसी दिन पर लौटें।",
+      "primaryCta": "Android बीटा सूचना",
+      "secondaryCta": "अनुष्ठान देखें",
+      "openWebClock": "वेब घड़ी खोलें (प्रीमियम)",
+      "installWebClock": "PC पर इंस्टॉल करें (प्रीमियम)",
+      "proof1": "पहले Android",
+      "proof2": "वैश्विक डिज़ाइन",
+      "proof3": "समुदाय अंतिम लक्ष्य"
+    },
+    "mock": {
+      "appTitle": "स्वर्ग की घड़ी",
+      "caption": "शेष समय",
+      "year": "वर्ष",
+      "day": "दिन",
+      "hour": "घंटा",
+      "bucketTitle": "आज की इच्छा",
+      "bucketText": "एक ऐसी बात लिखें जिसे आप टालना नहीं चाहते।"
+    },
+    "app": {
+      "kicker": "ऐप",
+      "title": "सीमित दिनों की घड़ी।",
+      "lead": "स्वर्ग की घड़ी उत्पादकता डैशबोर्ड नहीं है। यह एक अनुष्ठान है: मृत्यु ध्यान बनती है, ध्यान कर्म, कर्म वह जीवन जिसे आप पहचानते हैं।",
+      "lifeClockTitle": "लाइफ क्लॉक",
+      "lifeClock": "शेष जीवन को वर्ष, दिन, घंटे, मिनट, सेकंड और जीवंत वलयों में देखें।",
+      "todayBucketTitle": "आज की इच्छा",
+      "todayBucket": "एक अर्थपूर्ण बकेट मुख्य स्क्रीन पर घूमे, ताकि वह आपके चुनाव के पास रहे।",
+      "clockSkinsTitle": "घड़ी स्किन",
+      "clockSkins": "प्रीमियम स्किन उसी अनुस्मारक को प्राचीन, शानदार, भविष्यवादी या गहराई से व्यक्तिगत बना सकती हैं।"
+    },
+    "beta": {
+      "kicker": "बीटा मार्ग",
+      "title": "Android बीटा से सार्वजनिक लॉन्च तक।",
+      "lead": "साइट ऐप का सहारा है। पहले ऐप; फिर वह मंडली जिन्होंने महसूस किया कि घड़ी ने उनका दिन बदला।",
+      "step1Title": "ऐप स्थिर करें",
+      "step1": "मुख्य Android अनुभव पूरा करें: ऑनबोर्डिंग, लाइफ क्लॉक, बकेट सूची, थीम और भाषा प्रवाह।",
+      "step2Title": "बीटा सूचना खोलें",
+      "step2": "इस लैंडिंग से शुरुआती परीक्षक जुटाएँ और बताएँ कि ऐप क्यों है।",
+      "step3Title": "Android प्रकाशित करें",
+      "step3": "स्टोर संपत्ति, गोपनीयता नीति, स्क्रीनशॉट और केंद्रित पहला रिलीज़ तैयार करें।",
+      "step4Title": "मंडली बढ़ाएँ",
+      "step4": "वास्तविक उपयोग के बाद ही साझा बकेट, समूह और सीमित दिनों का स्कूल।"
+    },
+    "community": {
+      "kicker": "अंतिम लक्ष्य",
+      "manifesto": "उनके लिए एक वैश्विक मंडली जो लक्ष्य, बकेट और दिन जाने से पहले जीने का साहस बाँटते हैं।",
+      "signal1Title": "सीमित दिनों का स्कूल",
+      "signal1": "मृत्यु को सामने रखकर चुनना, योजना बनाना और जीना सीखने का भविष्य का स्थान।",
+      "signal2Title": "साझा बकेट",
+      "signal2": "लोग लक्ष्य साझा कर सकेंगे और उसी जीवन की ओर चलने वालों को पाएँगे।",
+      "signal3Title": "मानवीय, शोर नहीं",
+      "signal3": "समुदाय वास्तविक मंडली जैसा लगे, ध्यान भटकाने वाला फ़ीड नहीं।"
+    },
+    "join": {
+      "kicker": "शीघ्र पहुँच",
+      "title": "पहले ऐप। फिर मंडली।",
+      "lead": "हम Android बीटा और पहला सार्वजनिक मार्ग तैयार कर रहे हैं। बड़े समुदाय से पहले स्वर्ग की घड़ी आज़माना चाहें तो सूची में जुड़ें।",
+      "placeholder": "your@email.com",
+      "button": "सूचित करें",
+      "note": "यह पूर्वावलोकन ईमेल केवल इस डिवाइस पर रखता है। सार्वजनिक रिलीज़ से पहले वास्तविक वेटलिस्ट जोड़ेंगे।",
+      "success": "आप स्थानीय पूर्वावलोकन सूची में हैं। वास्तविक कनेक्शन सार्वजनिक रिलीज़ से पहले आएगा।",
+      "invalidEmail": "मान्य ईमेल पता दर्ज करें।"
+    },
+    "footer": "स्वर्ग की घड़ी · दिन जाने से पहले जीने की याद।"
+  },
+  "ru": {
+    "meta": {
+      "title": "Небесные часы — Живи сегодня",
+      "landingEnglishFallback": "Лендинг пока на английском. Откройте приложение часов для вашего языка."
+    },
+    "brand": "Небесные часы",
+    "nav": {
+      "app": "Приложение",
+      "beta": "Бета",
+      "community": "Сообщество",
+      "join": "Вступить"
+    },
+    "hero": {
+      "kicker": "Memento Mori · Живи сегодня",
+      "title": "Считай меньше.<br>Живи больше.",
+      "body": "Премиальные часы жизни для тех, кто отказывается плыть по течению. Смотри на время, которое хочешь прожить, держи рядом один важный bucket и возвращайся к дню, пока он не исчез.",
+      "primaryCta": "Уведомление о бета Android",
+      "secondaryCta": "Изучить ритуал",
+      "openWebClock": "Открыть веб-часы (Премиум)",
+      "installWebClock": "Установить на ПК (Премиум)",
+      "proof1": "Сначала Android",
+      "proof2": "Глобально по замыслу",
+      "proof3": "Сообщество — финал"
+    },
+    "mock": {
+      "appTitle": "Небесные часы",
+      "caption": "Осталось",
+      "year": "Год",
+      "day": "День",
+      "hour": "Час",
+      "bucketTitle": "Желание дня",
+      "bucketText": "Запишите то, что не хотите откладывать."
+    },
+    "app": {
+      "kicker": "Приложение",
+      "title": "Часы для конечных дней.",
+      "lead": "Небесные часы — не панель продуктивности. Это ритуал: смертность становится вниманием, внимание — действием, действие — жизнью, которую вы узнаёте.",
+      "lifeClockTitle": "Часы жизни",
+      "lifeClock": "Смотрите оставшуюся жизнь в годах, днях, часах, минутах, секундах и живых кольцах.",
+      "todayBucketTitle": "Желание дня",
+      "todayBucket": "Пусть один важный bucket крутится на главном экране и остаётся рядом с вашими выборами.",
+      "clockSkinsTitle": "Оформление часов",
+      "clockSkins": "Премиальные темы делают то же напоминание древним, роскошным, футуристичным или глубоко личным."
+    },
+    "beta": {
+      "kicker": "Путь беты",
+      "title": "От беты Android к публичному запуску.",
+      "lead": "Сайт поддерживает приложение. Сначала приложение — затем круг из тех, кто почувствовал, как часы изменили день.",
+      "step1Title": "Стабилизировать приложение",
+      "step1": "Завершить ядро Android: онбординг, часы жизни, список bucket, темы и языки.",
+      "step2Title": "Открыть уведомление о бете",
+      "step2": "Соберите ранних тестеров на этом лендинге и объясните, зачем существует приложение.",
+      "step3Title": "Опубликовать в Android",
+      "step3": "Подготовьте материалы магазина, политику конфиденциальности, скриншоты и сфокусированный первый релиз.",
+      "step4Title": "Расширить круг",
+      "step4": "Только после реального использования — к общим bucket, группам и школе конечных дней."
+    },
+    "community": {
+      "kicker": "Финал",
+      "manifesto": "Глобальный круг для тех, кто делится целями, bucket и смелостью жить, пока день не ушёл.",
+      "signal1Title": "Школа конечных дней",
+      "signal1": "Будущее место, чтобы учиться выбирать, планировать и жить со смертностью в поле зрения.",
+      "signal2Title": "Общие bucket",
+      "signal2": "Люди смогут делиться целями и находить тех, кто идёт к той же жизни.",
+      "signal3Title": "По-человечески, без шума",
+      "signal3": "Сообщество должно ощущаться настоящим кругом, а не ещё одной лентой для отвлечения."
+    },
+    "join": {
+      "kicker": "Ранний доступ",
+      "title": "Сначала приложение. Потом круг.",
+      "lead": "Готовим бета Android и первый публичный путь. Вступите в список, если хотите протестировать Небесные часы до большого сообщества.",
+      "placeholder": "your@email.com",
+      "button": "Уведомить",
+      "note": "Этот предпросмотр сохраняет email только на этом устройстве. Реальный сервис очереди подключим до публичного релиза.",
+      "success": "Вы в локальном списке предпросмотра. Реальное подключение — до публичного релиза.",
+      "invalidEmail": "Введите действительный адрес email."
+    },
+    "footer": "Небесные часы · Напоминание жить, пока день не ушёл."
+  },
+  "vi": {
+    "meta": {
+      "title": "Đồng Hồ Thiên Đàng - Sống hôm nay",
+      "landingEnglishFallback": "Trang đích hiện bằng tiếng Anh. Mở ứng dụng đồng hồ để dùng ngôn ngữ của bạn."
+    },
+    "brand": "Đồng Hồ Thiên Đàng",
+    "nav": {
+      "app": "Ứng dụng",
+      "beta": "Beta",
+      "community": "Cộng đồng",
+      "join": "Tham gia"
+    },
+    "hero": {
+      "kicker": "Memento Mori · Sống hôm nay",
+      "title": "Đếm ít hơn.<br>Sống nhiều hơn.",
+      "body": "Đồng hồ đời cao cấp cho người từ chối trôi theo dòng. Theo dõi thời gian bạn mong sống, giữ một bucket ý nghĩa gần bên và quay về ngày hôm nay trước khi nó biến mất.",
+      "primaryCta": "Nhận thông báo beta Android",
+      "secondaryCta": "Khám phá nghi thức",
+      "openWebClock": "Mở đồng hồ web (Premium)",
+      "installWebClock": "Cài trên PC (Premium)",
+      "proof1": "Android trước",
+      "proof2": "Thiết kế toàn cầu",
+      "proof3": "Cộng đồng là đích đến"
+    },
+    "mock": {
+      "appTitle": "Đồng Hồ Thiên Đàng",
+      "caption": "Thời gian còn",
+      "year": "Năm",
+      "day": "Ngày",
+      "hour": "Giờ",
+      "bucketTitle": "Bucket hôm nay",
+      "bucketText": "Viết một điều bạn không muốn trì hoãn."
+    },
+    "app": {
+      "kicker": "Ứng dụng",
+      "title": "Đồng hồ cho những ngày hữu hạn.",
+      "lead": "Đồng Hồ Thiên Đàng không phải bảng năng suất. Đó là nghi thức: cái chết thành chú ý, chú ý thành hành động, hành động thành cuộc đời bạn nhận ra.",
+      "lifeClockTitle": "Đồng hồ đời",
+      "lifeClock": "Xem phần đời còn lại theo năm, ngày, giờ, phút, giây và các vòng sống động.",
+      "todayBucketTitle": "Bucket hôm nay",
+      "todayBucket": "Để một bucket ý nghĩa luân phiên trên màn hình chính, gần với lựa chọn của bạn.",
+      "clockSkinsTitle": "Giao diện đồng hồ",
+      "clockSkins": "Giao diện premium có thể biến cùng một lời nhắc thành cổ xưa, sang trọng, tương lai hoặc rất riêng."
+    },
+    "beta": {
+      "kicker": "Lộ trình beta",
+      "title": "Từ beta Android đến ra mắt công khai.",
+      "lead": "Trang web hỗ trợ ứng dụng. Ứng dụng trước; sau đó vòng tròn lớn lên từ người dùng thật cảm nhận đồng hồ đổi ngày của họ.",
+      "step1Title": "Ổn định ứng dụng",
+      "step1": "Hoàn thiện trải nghiệm Android cốt lõi: onboarding, đồng hồ đời, danh sách bucket, chủ đề và ngôn ngữ.",
+      "step2Title": "Mở thông báo beta",
+      "step2": "Dùng trang đích này để tuyển người thử sớm và giải thích vì sao ứng dụng tồn tại.",
+      "step3Title": "Phát hành Android",
+      "step3": "Chuẩn bị tài sản cửa hàng, chính sách riêng tư, ảnh chụp và bản phát hành đầu tập trung.",
+      "step4Title": "Mở rộng vòng tròn",
+      "step4": "Chỉ sau khi dùng thật, tiến tới bucket chung, nhóm và trường học những ngày hữu hạn."
+    },
+    "community": {
+      "kicker": "Đích cuối",
+      "manifesto": "Vòng tròn toàn cầu cho người chia sẻ mục tiêu, bucket và can đảm sống trước khi ngày qua đi.",
+      "signal1Title": "Trường những ngày hữu hạn",
+      "signal1": "Nơi tương lai để học chọn, lên kế hoạch và sống với cái chết trong tầm mắt.",
+      "signal2Title": "Bucket chung",
+      "signal2": "Mọi người sẽ chia sẻ mục tiêu và tìm người đi về cùng kiểu cuộc đời.",
+      "signal3Title": "Con người, không ồn ào",
+      "signal3": "Cộng đồng phải giống vòng tròn thật, không phải feed làm bạn xao nhãng."
+    },
+    "join": {
+      "kicker": "Truy cập sớm",
+      "title": "Ứng dụng trước. Vòng tròn sau.",
+      "lead": "Chúng tôi chuẩn bị beta Android và lộ trình công khai đầu tiên. Tham gia danh sách nếu bạn muốn thử Đồng Hồ Thiên Đàng trước khi thành cộng đồng lớn hơn.",
+      "placeholder": "your@email.com",
+      "button": "Báo cho tôi",
+      "note": "Bản xem trước này chỉ lưu email trên thiết bị này. Dịch vụ danh sách chờ thật sẽ được kết nối trước khi phát hành công khai.",
+      "success": "Bạn đã có trong danh sách xem trước cục bộ. Kết nối thật sẽ có trước khi phát hành công khai.",
+      "invalidEmail": "Nhập địa chỉ email hợp lệ."
+    },
+    "footer": "Đồng Hồ Thiên Đàng · Lời nhắc sống trước khi ngày qua đi."
+  },
+  "th": {
+    "meta": {
+      "title": "นาฬิกาสวรรค์ - ใช้ชีวิตวันนี้",
+      "landingEnglishFallback": "หน้าแลนดิ้งเป็นภาษาอังกฤษชั่วคราว เปิดแอปนาฬิกาเพื่อใช้ภาษาของคุณ"
+    },
+    "brand": "นาฬิกาสวรรค์",
+    "nav": {
+      "app": "แอป",
+      "beta": "เบต้า",
+      "community": "ชุมชน",
+      "join": "เข้าร่วม"
+    },
+    "hero": {
+      "kicker": "Memento Mori · ใช้ชีวิตวันนี้",
+      "title": "นับน้อยลง<br>ใช้ชีวิตมากขึ้น",
+      "body": "นาฬิกาชีวิตพรีเมียมสำหรับผู้ที่ปฏิเสธจะไหลตามกระแส มองเวลาที่คุณหวังจะมี เก็บบักเก็ตที่มีความหมายไว้ใกล้ แล้วกลับมาที่วันนี้ก่อนที่มันจะหายไป",
+      "primaryCta": "รับแจ้งเตือนเบต้า Android",
+      "secondaryCta": "สำรวจพิธีกรรม",
+      "openWebClock": "เปิดนาฬิกาเว็บ (พรีเมียม)",
+      "installWebClock": "ติดตั้งบน PC (พรีเมียม)",
+      "proof1": "Android ก่อน",
+      "proof2": "ออกแบบเพื่อโลก",
+      "proof3": "ชุมชนคือเป้าหมายสุดท้าย"
+    },
+    "mock": {
+      "appTitle": "นาฬิกาสวรรค์",
+      "caption": "เวลาที่เหลือ",
+      "year": "ปี",
+      "day": "วัน",
+      "hour": "ชั่วโมง",
+      "bucketTitle": "บักเก็ตวันนี้",
+      "bucketText": "เขียนสิ่งหนึ่งที่คุณไม่อยากเลื่อนออกไป"
+    },
+    "app": {
+      "kicker": "แอป",
+      "title": "นาฬิกาสำหรับวันที่จำกัด",
+      "lead": "นาฬิกาสวรรค์ไม่ใช่แดชบอร์ดผลิตภาพ แต่เป็นพิธีกรรม: ความตายกลายเป็นสติ สติกลายเป็นการกระทำ และการกระทำกลายเป็นชีวิตที่คุณจำได้",
+      "lifeClockTitle": "นาฬิกาชีวิต",
+      "lifeClock": "มองชีวิตที่เหลือเป็นปี วัน ชั่วโมง นาที วินาที และวงแหวนที่มีชีวิต",
+      "todayBucketTitle": "บักเก็ตวันนี้",
+      "todayBucket": "ให้บักเก็ตที่มีความหมายหมุนบนหน้าจอหลัก เพื่ออยู่ใกล้กับทางเลือกของคุณ",
+      "clockSkinsTitle": "สกินนาฬิกา",
+      "clockSkins": "สกินพรีเมียมทำให้การเตือนเดิมรู้สึกโบราณ หรู อนาคต หรือเป็นส่วนตัวอย่างลึก"
+    },
+    "beta": {
+      "kicker": "เส้นทางเบต้า",
+      "title": "จากเบต้า Android สู่การเปิดตัวสาธารณะ",
+      "lead": "เว็บไซต์สนับสนุนแอป แอปมาก่อน จากนั้นวงกลมเติบโตจากผู้ใช้จริงที่รู้สึกว่านาฬิกาเปลี่ยนวันของพวกเขา",
+      "step1Title": "ทำให้แอปเสถียร",
+      "step1": "ทำประสบการณ์ Android หลักให้ครบ: ออนบอร์ดดิ้ง นาฬิกาชีวิต รายการบักเก็ต ธีม และภาษา",
+      "step2Title": "เปิดแจ้งเตือนเบต้า",
+      "step2": "ใช้แลนดิ้งนี้รวบรวมผู้ทดสอบรุ่นแรกและอธิบายว่าทำไมแอปจึงมีอยู่",
+      "step3Title": "เผยแพร่ Android",
+      "step3": "เตรียมสินทรัพย์สโตร์ นโยบายความเป็นส่วนตัว ภาพหน้าจอ และรุ่นแรกที่มุ่งเน้น",
+      "step4Title": "ขยายวงกลม",
+      "step4": "หลังการใช้งานจริงเท่านั้น จึงพัฒนาสู่บักเก็ตร่วม กลุ่ม และโรงเรียนวันจำกัด"
+    },
+    "community": {
+      "kicker": "เป้าหมายสุดท้าย",
+      "manifesto": "วงกลมทั่วโลกสำหรับผู้แบ่งปันเป้าหมาย บักเก็ต และความกล้าที่จะใช้ชีวิตก่อนวันจบลง",
+      "signal1Title": "โรงเรียนวันจำกัด",
+      "signal1": "สถานที่ในอนาคตเพื่อเรียนรู้เลือก วางแผน และใช้ชีวิตโดยมองความตาย",
+      "signal2Title": "บักเก็ตร่วม",
+      "signal2": "ผู้คนจะแบ่งปันเป้าหมายและพบคนที่เดินไปสู่ชีวิตแบบเดียวกัน",
+      "signal3Title": "เป็นมนุษย์ ไม่เสียงดัง",
+      "signal3": "ชุมชนควรรู้สึกเป็นวงกลมจริง ไม่ใช่ฟีดที่สร้างมาเพื่อเบี่ยงสมาธิ"
+    },
+    "join": {
+      "kicker": "เข้าถึงก่อน",
+      "title": "แอปมาก่อน วงกลมตามหลัง",
+      "lead": "เรากำลังเตรียมเบต้า Android และเส้นทางสาธารณะแรก เข้าร่วมรายชื่อหากอยากทดลองนาฬิกาสวรรค์ก่อนเป็นชุมชนใหญ่",
+      "placeholder": "your@email.com",
+      "button": "แจ้งเตือนฉัน",
+      "note": "ตัวอย่างนี้เก็บอีเมลบนอุปกรณ์นี้เท่านั้น จะเชื่อมบริการรายชื่อรอจริงก่อนเปิดตัวสาธารณะ",
+      "success": "คุณอยู่ในรายชื่อตัวอย่างท้องถิ่น การเชื่อมจริงจะมาก่อนเปิดตัวสาธารณะ",
+      "invalidEmail": "กรอกที่อยู่อีเมลที่ถูกต้อง"
+    },
+    "footer": "นาฬิกาสวรรค์ · เตือนให้ใช้ชีวิตก่อนวันจบลง"
+  },
+  "id": {
+    "meta": {
+      "title": "Jam Surga - Hidup hari ini",
+      "landingEnglishFallback": "Halaman arahan masih berbahasa Inggris. Buka aplikasi jam untuk bahasa Anda."
+    },
+    "brand": "Jam Surga",
+    "nav": {
+      "app": "Aplikasi",
+      "beta": "Beta",
+      "community": "Komunitas",
+      "join": "Gabung"
+    },
+    "hero": {
+      "kicker": "Memento Mori · Hidup hari ini",
+      "title": "Hitung lebih sedikit.<br>Hidup lebih banyak.",
+      "body": "Jam kehidupan premium bagi mereka yang menolak hanyut. Lacak waktu yang Anda harapkan hidup, dekatkan satu bucket bermakna, dan kembali ke hari ini sebelum lenyap.",
+      "primaryCta": "Pemberitahuan beta Android",
+      "secondaryCta": "Jelajahi ritual",
+      "openWebClock": "Buka jam web (Premium)",
+      "installWebClock": "Instal di PC (Premium)",
+      "proof1": "Android dulu",
+      "proof2": "Global sejak desain",
+      "proof3": "Komunitas adalah tujuan akhir"
+    },
+    "mock": {
+      "appTitle": "Jam Surga",
+      "caption": "Waktu tersisa",
+      "year": "Tahun",
+      "day": "Hari",
+      "hour": "Jam",
+      "bucketTitle": "Bucket hari ini",
+      "bucketText": "Tulis satu hal yang tidak ingin Anda tunda."
+    },
+    "app": {
+      "kicker": "Aplikasi",
+      "title": "Jam untuk hari yang terbatas.",
+      "lead": "Jam Surga bukan dasbor produktivitas. Ini ritual: kematian jadi perhatian, perhatian jadi tindakan, tindakan jadi hidup yang Anda kenali.",
+      "lifeClockTitle": "Jam kehidupan",
+      "lifeClock": "Lihat sisa hidup dalam tahun, hari, jam, menit, detik, dan cincin hidup.",
+      "todayBucketTitle": "Bucket hari ini",
+      "todayBucket": "Biarkan satu bucket bermakna berputar di layar utama agar dekat dengan pilihan Anda.",
+      "clockSkinsTitle": "Kulit jam",
+      "clockSkins": "Kulit premium bisa membuat pengingat yang sama terasa kuno, mewah, futuristik, atau sangat personal."
+    },
+    "beta": {
+      "kicker": "Jalur beta",
+      "title": "Dari beta Android ke peluncuran publik.",
+      "lead": "Situs mendukung aplikasi. Aplikasi dulu; lalu lingkaran tumbuh dari pengguna yang merasakan jam mengubah harinya.",
+      "step1Title": "Stabilkan aplikasi",
+      "step1": "Selesaikan inti Android: onboarding, jam kehidupan, daftar bucket, tema, dan alur bahasa.",
+      "step2Title": "Buka pemberitahuan beta",
+      "step2": "Gunakan landing ini untuk mengumpulkan penguji awal dan menjelaskan mengapa aplikasi ada.",
+      "step3Title": "Terbitkan Android",
+      "step3": "Siapkan aset toko, kebijakan privasi, tangkapan layar, dan rilis pertama yang fokus.",
+      "step4Title": "Perluas lingkaran",
+      "step4": "Hanya setelah penggunaan nyata, menuju bucket bersama, grup, dan sekolah hari terbatas."
+    },
+    "community": {
+      "kicker": "Tujuan akhir",
+      "manifesto": "Lingkaran global bagi mereka yang berbagi tujuan, bucket, dan keberanian hidup sebelum hari berlalu.",
+      "signal1Title": "Sekolah hari terbatas",
+      "signal1": "Tempat masa depan untuk belajar memilih, merencanakan, dan hidup dengan kematian dalam pandangan.",
+      "signal2Title": "Bucket bersama",
+      "signal2": "Orang akan bisa berbagi tujuan dan menemukan yang berjalan ke jenis hidup yang sama.",
+      "signal3Title": "Manusiawi, tidak berisik",
+      "signal3": "Komunitas harus terasa seperti lingkaran nyata, bukan feed lain untuk mengalihkan perhatian."
+    },
+    "join": {
+      "kicker": "Akses awal",
+      "title": "Aplikasi dulu. Lingkaran menyusul.",
+      "lead": "Kami menyiapkan beta Android dan jalur publik pertama. Gabung daftar jika ingin mencoba Jam Surga sebelum menjadi komunitas yang lebih besar.",
+      "placeholder": "your@email.com",
+      "button": "Beritahu saya",
+      "note": "Pratinjau ini menyimpan email hanya di perangkat ini. Penyedia daftar tunggu nyata akan dihubungkan sebelum rilis publik.",
+      "success": "Anda ada di daftar pratinjau lokal. Koneksi nyata hadir sebelum rilis publik.",
+      "invalidEmail": "Masukkan alamat email yang valid."
+    },
+    "footer": "Jam Surga · Pengingat untuk hidup sebelum hari berlalu."
+  },
+  "tr": {
+    "meta": {
+      "title": "Cennet Saati - Bugünü yaşa",
+      "landingEnglishFallback": "Açılış sayfası şimdilik İngilizce. Dil için saat uygulamasını açın."
+    },
+    "brand": "Cennet Saati",
+    "nav": {
+      "app": "Uygulama",
+      "beta": "Beta",
+      "community": "Topluluk",
+      "join": "Katıl"
+    },
+    "hero": {
+      "kicker": "Memento Mori · Bugünü yaşa",
+      "title": "Daha az say.<br>Daha çok yaşa.",
+      "body": "Akıntıya kapılmayı reddedenler için premium bir yaşam saati. Yaşamayı umduğun zamanı izle, anlamlı bir bucket'ı yakında tut ve gün kaybolmadan bugüne dön.",
+      "primaryCta": "Android beta bildirimi",
+      "secondaryCta": "Ritüeli keşfet",
+      "openWebClock": "Web saatini aç (Premium)",
+      "installWebClock": "PC'ye kur (Premium)",
+      "proof1": "Önce Android",
+      "proof2": "Küresel tasarım",
+      "proof3": "Topluluk son hedef"
+    },
+    "mock": {
+      "appTitle": "Cennet Saati",
+      "caption": "Kalan süre",
+      "year": "Yıl",
+      "day": "Gün",
+      "hour": "Saat",
+      "bucketTitle": "Bugünün hedefi",
+      "bucketText": "Ertelemek istemediğin bir şeyi yaz."
+    },
+    "app": {
+      "kicker": "Uygulama",
+      "title": "Sınırlı günler için bir saat.",
+      "lead": "Cennet Saati bir verimlilik panosu değil. Bir ritüel: ölümlülük dikkate, dikkat eyleme, eylem tanıdığın bir hayata dönüşür.",
+      "lifeClockTitle": "Yaşam saati",
+      "lifeClock": "Kalan hayatını yıl, gün, saat, dakika, saniye ve canlı halkalarla gör.",
+      "todayBucketTitle": "Bugünün hedefi",
+      "todayBucket": "Ana ekranda anlamlı bir bucket dönsün; seçimlerine yakın kalsın.",
+      "clockSkinsTitle": "Saat görünümleri",
+      "clockSkins": "Premium görünümler aynı hatırlatmayı antik, lüks, gelecekçi veya derinden kişisel hissettirebilir."
+    },
+    "beta": {
+      "kicker": "Beta yolu",
+      "title": "Android betadan halka açık sürüme.",
+      "lead": "Site uygulamayı destekler. Önce uygulama; sonra saatin günlerini değiştirdiğini hisseden gerçek kullanıcılarla çember büyür.",
+      "step1Title": "Uygulamayı stabilize et",
+      "step1": "Android çekirdeğini tamamla: onboarding, yaşam saati, bucket listesi, temalar ve dil akışı.",
+      "step2Title": "Beta bildirimini aç",
+      "step2": "Bu landing ile erken testçiler topla ve uygulamanın neden var olduğunu anlat.",
+      "step3Title": "Android'i yayınla",
+      "step3": "Mağaza varlıkları, gizlilik politikası, ekran görüntüleri ve odaklı ilk sürümü hazırla.",
+      "step4Title": "Çemberi büyüt",
+      "step4": "Yalnızca gerçek kullanımdan sonra paylaşılan bucket'lara, gruplara ve sınırlı günler okuluna."
+    },
+    "community": {
+      "kicker": "Son hedef",
+      "manifesto": "Hedefleri, bucket'ları ve gün gitmeden yaşama cesaretini paylaşan küresel bir çember.",
+      "signal1Title": "Sınırlı günler okulu",
+      "signal1": "Ölümlülüğü görerek seçmeyi, planlamayı ve yaşamayı öğreneceğin gelecekteki yer.",
+      "signal2Title": "Paylaşılan bucket'lar",
+      "signal2": "İnsanlar hedef paylaşacak ve aynı hayata yürüyenleri bulacak.",
+      "signal3Title": "İnsani, gürültüsüz",
+      "signal3": "Topluluk gerçek bir çember gibi hissettirmeli; dikkat dağıtan bir feed değil."
+    },
+    "join": {
+      "kicker": "Erken erişim",
+      "title": "Önce uygulama. Sonra çember.",
+      "lead": "Android beta ve ilk halka açık yolu hazırlıyoruz. Cennet Saati daha büyük bir topluluk olmadan önce denemek istiyorsan listeye katıl.",
+      "placeholder": "your@email.com",
+      "button": "Bildir",
+      "note": "Bu önizleme e-postanı yalnızca bu cihazda saklar. Halka açık sürümden önce gerçek bekleme listesi bağlanır.",
+      "success": "Yerel önizleme listesindesin. Gerçek bağlantı halka açık sürümden önce gelir.",
+      "invalidEmail": "Geçerli bir e-posta adresi gir."
+    },
+    "footer": "Cennet Saati · Gün gitmeden yaşamak için bir hatırlatma."
+  },
+  "nl": {
+    "meta": {
+      "title": "Hemelklok - Leef vandaag",
+      "landingEnglishFallback": "Landingspagina is voorlopig Engels. Open de klok-app voor jouw taal."
+    },
+    "brand": "Hemelklok",
+    "nav": {
+      "app": "App",
+      "beta": "Beta",
+      "community": "Community",
+      "join": "Meedoen"
+    },
+    "hero": {
+      "kicker": "Memento Mori · Leef vandaag",
+      "title": "Tel minder.<br>Leef meer.",
+      "body": "Een premium levensklok voor wie weigert mee te drijven. Volg de tijd die je hoopt te leven, houd één betekenisvolle bucket dichtbij en keer terug naar de dag voordat hij verdwijnt.",
+      "primaryCta": "Android-bètamelding",
+      "secondaryCta": "Ontdek het ritueel",
+      "openWebClock": "Webklok openen (Premium)",
+      "installWebClock": "Installeren op pc (Premium)",
+      "proof1": "Android eerst",
+      "proof2": "Wereldwijd ontworpen",
+      "proof3": "Community is het einddoel"
+    },
+    "mock": {
+      "appTitle": "Hemelklok",
+      "caption": "Resterend",
+      "year": "Jaar",
+      "day": "Dag",
+      "hour": "Uur",
+      "bucketTitle": "Bucket van vandaag",
+      "bucketText": "Schrijf iets op dat je niet wilt uitstellen."
+    },
+    "app": {
+      "kicker": "De app",
+      "title": "Een klok voor eindige dagen.",
+      "lead": "Hemelklok is geen productiviteitsdashboard. Het is een ritueel: sterfelijkheid wordt aandacht, aandacht actie, en actie een leven dat je herkent.",
+      "lifeClockTitle": "Levensklok",
+      "lifeClock": "Zie je resterende leven in jaren, dagen, uren, minuten, seconden en levende ringen.",
+      "todayBucketTitle": "Bucket van vandaag",
+      "todayBucket": "Laat één betekenisvolle bucket op het hoofdscherm rouleren, dicht bij je keuzes.",
+      "clockSkinsTitle": "Klokthema's",
+      "clockSkins": "Premium thema's kunnen dezelfde herinnering oud, luxe, futuristisch of diep persoonlijk laten voelen."
+    },
+    "beta": {
+      "kicker": "Bètapad",
+      "title": "Van Android-bèta naar publieke launch.",
+      "lead": "De site ondersteunt de app. De app eerst; daarna groeit de kring uit echte gebruikers die voelden hoe de klok hun dag veranderde.",
+      "step1Title": "App stabiliseren",
+      "step1": "Rond de kern-Android-ervaring af: onboarding, levensklok, bucketlijst, thema's en talen.",
+      "step2Title": "Bètameld openen",
+      "step2": "Gebruik deze landing om vroege testers te verzamelen en uit te leggen waarom de app bestaat.",
+      "step3Title": "Android publiceren",
+      "step3": "Bereid store-assets, privacybeleid, screenshots en een gerichte eerste release voor.",
+      "step4Title": "Kring vergroten",
+      "step4": "Pas na echt gebruik richting gedeelde buckets, groepen en een school van eindige dagen."
+    },
+    "community": {
+      "kicker": "Het einddoel",
+      "manifesto": "Een wereldwijde kring voor wie doelen, buckets en de moed deelt om te leven voordat de dag weg is.",
+      "signal1Title": "School van eindige dagen",
+      "signal1": "Een toekomstige plek om te leren kiezen, plannen en leven met sterfelijkheid in zicht.",
+      "signal2Title": "Gedeelde buckets",
+      "signal2": "Mensen kunnen doelen delen en anderen vinden die naar hetzelfde soort leven lopen.",
+      "signal3Title": "Menselijk, niet luid",
+      "signal3": "De community moet voelen als een echte kring, niet nog een feed voor afleiding."
+    },
+    "join": {
+      "kicker": "Vroege toegang",
+      "title": "Eerst de app. Dan de kring.",
+      "lead": "We bereiden de Android-bèta en het eerste publieke pad voor. Meld je aan als je Hemelklok wilt testen voordat het een grotere community wordt.",
+      "placeholder": "your@email.com",
+      "button": "Stuur melding",
+      "note": "Deze preview slaat je e-mail alleen op dit apparaat op. Een echte wachtlijst komt vóór de publieke release.",
+      "success": "Je staat op de lokale previewlijst. Echte koppeling volgt vóór de publieke release.",
+      "invalidEmail": "Voer een geldig e-mailadres in."
+    },
+    "footer": "Hemelklok · Een herinnering om te leven voordat de dag weg is."
+  },
+  "pl": {
+    "meta": {
+      "title": "Zegar Nieba - Żyj dziś",
+      "landingEnglishFallback": "Strona docelowa jest na razie po angielsku. Otwórz aplikację zegara, by użyć swojego języka."
+    },
+    "brand": "Zegar Nieba",
+    "nav": {
+      "app": "Aplikacja",
+      "beta": "Beta",
+      "community": "Społeczność",
+      "join": "Dołącz"
+    },
+    "hero": {
+      "kicker": "Memento Mori · Żyj dziś",
+      "title": "Licz mniej.<br>Żyj więcej.",
+      "body": "Premiumowy zegar życia dla tych, którzy odmawiają dryfowania. Śledź czas, który chcesz przeżyć, trzymaj blisko jeden ważny bucket i wracaj do dnia, zanim zniknie.",
+      "primaryCta": "Powiadomienie o becie Android",
+      "secondaryCta": "Poznaj rytuał",
+      "openWebClock": "Otwórz zegar web (Premium)",
+      "installWebClock": "Zainstaluj na PC (Premium)",
+      "proof1": "Najpierw Android",
+      "proof2": "Globalnie zaprojektowany",
+      "proof3": "Społeczność to cel"
+    },
+    "mock": {
+      "appTitle": "Zegar Nieba",
+      "caption": "Pozostało",
+      "year": "Rok",
+      "day": "Dzień",
+      "hour": "Godzina",
+      "bucketTitle": "Dzisiejsze marzenie",
+      "bucketText": "Zapisz jedną rzecz, której nie chcesz odkładać."
+    },
+    "app": {
+      "kicker": "Aplikacja",
+      "title": "Zegar na skończone dni.",
+      "lead": "Zegar Nieba to nie panel produktywności. To rytuał: śmiertelność staje się uwagą, uwaga działaniem, a działanie życiem, które rozpoznajesz.",
+      "lifeClockTitle": "Zegar życia",
+      "lifeClock": "Zobacz pozostałe życie w latach, dniach, godzinach, minutach, sekundach i żywych pierścieniach.",
+      "todayBucketTitle": "Dzisiejsze marzenie",
+      "todayBucket": "Niech jeden ważny bucket obraca się na ekranie głównym, blisko twoich wyborów.",
+      "clockSkinsTitle": "Skórki zegara",
+      "clockSkins": "Skórki premium mogą sprawić, że to samo przypomnienie będzie starożytne, luksusowe, futurystyczne lub głęboko osobiste."
+    },
+    "beta": {
+      "kicker": "Ścieżka beta",
+      "title": "Od bety Android do publicznej premiery.",
+      "lead": "Strona wspiera aplikację. Najpierw aplikacja — potem krąg rośnie z użytkowników, którzy poczuli, jak zegar zmienił ich dzień.",
+      "step1Title": "Ustabilizuj aplikację",
+      "step1": "Dokończ rdzeń Androida: onboarding, zegar życia, lista bucket, motywy i języki.",
+      "step2Title": "Otwórz powiadomienie beta",
+      "step2": "Użyj tej strony, by zebrać wczesnych testerów i wyjaśnić, po co jest aplikacja.",
+      "step3Title": "Opublikuj Androida",
+      "step3": "Przygotuj zasoby sklepu, politykę prywatności, zrzuty ekranu i skupioną pierwszą wersję.",
+      "step4Title": "Rozszerz krąg",
+      "step4": "Dopiero po realnym użyciu — wspólne bucket, grupy i szkoła skończonych dni."
+    },
+    "community": {
+      "kicker": "Cel końcowy",
+      "manifesto": "Globalny krąg dla tych, którzy dzielą cele, bucket i odwagę, by żyć, zanim dzień minie.",
+      "signal1Title": "Szkoła skończonych dni",
+      "signal1": "Przyszłe miejsce, by uczyć się wybierać, planować i żyć ze śmiertelnością w polu widzenia.",
+      "signal2Title": "Wspólne bucket",
+      "signal2": "Ludzie będą mogli dzielić cele i znajdować innych idących w stronę tego samego życia.",
+      "signal3Title": "Ludzko, bez hałasu",
+      "signal3": "Społeczność ma być prawdziwym kręgiem, a nie kolejnym feedem do rozpraszania."
+    },
+    "join": {
+      "kicker": "Wczesny dostęp",
+      "title": "Najpierw aplikacja. Potem krąg.",
+      "lead": "Przygotowujemy betę Android i pierwszą publiczną ścieżkę. Dołącz do listy, jeśli chcesz przetestować Zegar Nieba, zanim stanie się większą społecznością.",
+      "placeholder": "your@email.com",
+      "button": "Powiadom mnie",
+      "note": "Ten podgląd zapisuje e-mail tylko na tym urządzeniu. Prawdziwa lista oczekujących zostanie podłączona przed publiczną premierą.",
+      "success": "Jesteś na lokalnej liście podglądu. Prawdziwe połączenie przed publiczną premierą.",
+      "invalidEmail": "Wprowadź prawidłowy adres e-mail."
+    },
+    "footer": "Zegar Nieba · Przypomnienie, by żyć, zanim dzień minie."
+  }
+}

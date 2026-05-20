@@ -1,26 +1,26 @@
 {
   "meta": {
-    "title": "天堂之钟",
-    "landingEnglishFallback": "Landing page in English for now. Open the clock app for your language."
+    "title": "天堂之钟 - 活出今天",
+    "landingEnglishFallback": "着陆页暂时为英文。打开时钟应用可使用您选择的语言。"
   },
   "brand": "天堂之钟",
   "nav": {
-    "app": "App",
-    "beta": "Beta",
-    "community": "Community",
-    "join": "Join"
+    "app": "应用",
+    "beta": "测试",
+    "community": "社区",
+    "join": "加入"
   },
   "hero": {
-    "kicker": "Memento Mori · Live Today",
-    "title": "Count less.<br>Live more.",
-    "body": "A premium life clock for people who refuse to drift. Track the time you hope to live, keep one meaningful bucket close, and return to the day before it disappears.",
-    "primaryCta": "Get Android beta notice",
-    "secondaryCta": "Explore the ritual",
-    "openWebClock": "Open web clock (Premium)",
-    "installWebClock": "Install on PC (Premium)",
-    "proof1": "Android first",
-    "proof2": "Global by design",
-    "proof3": "Community is the endgame"
+    "kicker": "Memento Mori · 活出今天",
+    "title": "少计时光，<br>多活当下。",
+    "body": "为拒绝随波逐流的人打造的高级人生时钟。看见你渴望活出的时间，让一件有意义的心愿靠近你，在今天消失之前回到这一天。",
+    "primaryCta": "获取 Android 测试版通知",
+    "secondaryCta": "探索这份仪式",
+    "openWebClock": "打开网页时钟（高级版）",
+    "installWebClock": "安装到电脑（高级版）",
+    "proof1": "Android 优先",
+    "proof2": "为全球市场而设计",
+    "proof3": "社区是终局"
   },
   "mock": {
     "appTitle": "天堂之钟",
@@ -32,48 +32,48 @@
     "bucketText": "写下一件你不想再拖延的事。"
   },
   "app": {
-    "kicker": "The app",
-    "title": "A clock for finite days.",
-    "lead": "Heaven's Clock is not a productivity dashboard. It is a ritual: mortality becomes attention, attention becomes action, and action becomes a life you recognize.",
-    "lifeClockTitle": "Life Clock",
-    "lifeClock": "See your remaining life as years, days, hours, minutes, seconds, and living rings.",
-    "todayBucketTitle": "Today's Bucket",
-    "todayBucket": "Let one meaningful bucket item rotate on the main screen so it stays close to your choices.",
-    "clockSkinsTitle": "Clock Skins",
-    "clockSkins": "Premium clock skins can make the same reminder feel ancient, luxurious, futuristic, or deeply personal."
+    "kicker": "应用",
+    "title": "为有限之日而生的钟。",
+    "lead": "天堂之钟不是效率仪表盘。它是一种仪式：把死亡变成专注，把专注变成行动，把行动变成你认得出的生活。",
+    "lifeClockTitle": "人生时钟",
+    "lifeClock": "以年、日、时、分、秒与跃动的圆环，看见你剩余的人生。",
+    "todayBucketTitle": "今日愿望",
+    "todayBucket": "让一件有意义的心愿在主屏上静静轮换，贴近你的每一次选择。",
+    "clockSkinsTitle": "时钟皮肤",
+    "clockSkins": "高级皮肤让同一句提醒，变得古老、奢华、未来，或只属于你。"
   },
   "beta": {
-    "kicker": "Beta path",
-    "title": "From Android beta to public launch.",
-    "lead": "The site supports the app. The app comes first, then the circle grows from real users who felt the clock change their day.",
-    "step1Title": "Stabilize the app",
-    "step1": "Finish the core Android experience: onboarding, life clock, bucket list, themes, and language flow.",
-    "step2Title": "Open beta notice",
-    "step2": "Use this landing page to gather early testers and explain why the app exists.",
-    "step3Title": "Publish Android",
-    "step3": "Prepare store assets, privacy policy, screenshots, and a focused first release.",
-    "step4Title": "Grow the circle",
-    "step4": "Only after real use, evolve toward shared buckets, groups, and a school for finite days."
+    "kicker": "测试路径",
+    "title": "从 Android 测试到公开发布。",
+    "lead": "网站服务应用。应用先行，再由真正感到时钟改变了一天的用户，让圈子生长。",
+    "step1Title": "稳定应用",
+    "step1": "完成 Android 核心体验：引导、人生时钟、愿望清单、主题与语言流程。",
+    "step2Title": "开放测试通知",
+    "step2": "用此着陆页招募早期测试者，说明应用为何存在。",
+    "step3Title": "发布 Android",
+    "step3": "准备商店素材、隐私政策、截图与聚焦的首次发布。",
+    "step4Title": "扩大圈子",
+    "step4": "只有在真实使用之后，才走向共享愿望、群组与有限之日的学堂。"
   },
   "community": {
-    "kicker": "The endgame",
-    "manifesto": "A global circle for people who share goals, buckets, and the courage to live before the day is gone.",
-    "signal1Title": "School of finite days",
-    "signal1": "A future place to learn how to choose, plan, and live with mortality in view.",
-    "signal2Title": "Shared buckets",
-    "signal2": "People will be able to share goals and find others walking toward the same kind of life.",
-    "signal3Title": "Human, not noisy",
-    "signal3": "The community should feel like a real circle, not another feed built for distraction."
+    "kicker": "终局",
+    "manifesto": "一个全球圈子：分享目标与心愿，分享在日子消逝前勇敢活出的勇气。",
+    "signal1Title": "有限之日学堂",
+    "signal1": "未来学习如何在选择、计划与生活中正视终局的地方。",
+    "signal2Title": "共享心愿",
+    "signal2": "人们将能分享目标，遇见走向同一种人生的人。",
+    "signal3Title": "有人味，不嘈杂",
+    "signal3": "社区应像真正的圈子，而不是为分心而建的又一条信息流。"
   },
   "join": {
-    "kicker": "Early access",
-    "title": "The app comes first. The circle follows.",
-    "lead": "We are preparing the Android beta and the first public path. Join the list if you want to test Heaven's Clock before it becomes a larger community.",
+    "kicker": "抢先体验",
+    "title": "应用先来，圈子随后。",
+    "lead": "我们正在准备 Android 测试版与第一条公开路径。若想在天堂之钟成为更大社区之前抢先试用，请加入名单。",
     "placeholder": "your@email.com",
-    "button": "Notify me",
-    "note": "This preview stores your email only on this device. A real waitlist provider will be connected before public release.",
-    "success": "You're on the local preview list. Real waitlist connection comes before public release.",
-    "invalidEmail": "Enter a valid email address."
+    "button": "通知我",
+    "note": "此预览仅在本设备保存您的邮箱。公开发布前将接入真实的候补名单服务。",
+    "success": "您已加入本地预览名单。真实的候补连接将在公开发布前完成。",
+    "invalidEmail": "请输入有效的邮箱地址。"
   },
-  "footer": "Heaven's Clock · A reminder to live before the day is gone."
+  "footer": "天堂之钟 · 在日子消逝前活出来的提醒。"
 }

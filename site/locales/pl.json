@@ -1,26 +1,26 @@
 {
   "meta": {
-    "title": "Zegar Nieba",
-    "landingEnglishFallback": "Landing page in English for now. Open the clock app for your language."
+    "title": "Zegar Nieba - Żyj dziś",
+    "landingEnglishFallback": "Strona docelowa jest na razie po angielsku. Otwórz aplikację zegara, by użyć swojego języka."
   },
   "brand": "Zegar Nieba",
   "nav": {
-    "app": "App",
+    "app": "Aplikacja",
     "beta": "Beta",
-    "community": "Community",
-    "join": "Join"
+    "community": "Społeczność",
+    "join": "Dołącz"
   },
   "hero": {
-    "kicker": "Memento Mori · Live Today",
-    "title": "Count less.<br>Live more.",
-    "body": "A premium life clock for people who refuse to drift. Track the time you hope to live, keep one meaningful bucket close, and return to the day before it disappears.",
-    "primaryCta": "Get Android beta notice",
-    "secondaryCta": "Explore the ritual",
-    "openWebClock": "Open web clock (Premium)",
-    "installWebClock": "Install on PC (Premium)",
-    "proof1": "Android first",
-    "proof2": "Global by design",
-    "proof3": "Community is the endgame"
+    "kicker": "Memento Mori · Żyj dziś",
+    "title": "Licz mniej.<br>Żyj więcej.",
+    "body": "Premiumowy zegar życia dla tych, którzy odmawiają dryfowania. Śledź czas, który chcesz przeżyć, trzymaj blisko jeden ważny bucket i wracaj do dnia, zanim zniknie.",
+    "primaryCta": "Powiadomienie o becie Android",
+    "secondaryCta": "Poznaj rytuał",
+    "openWebClock": "Otwórz zegar web (Premium)",
+    "installWebClock": "Zainstaluj na PC (Premium)",
+    "proof1": "Najpierw Android",
+    "proof2": "Globalnie zaprojektowany",
+    "proof3": "Społeczność to cel"
   },
   "mock": {
     "appTitle": "Zegar Nieba",
@@ -32,48 +32,48 @@
     "bucketText": "Zapisz jedną rzecz, której nie chcesz odkładać."
   },
   "app": {
-    "kicker": "The app",
-    "title": "A clock for finite days.",
-    "lead": "Heaven's Clock is not a productivity dashboard. It is a ritual: mortality becomes attention, attention becomes action, and action becomes a life you recognize.",
-    "lifeClockTitle": "Life Clock",
-    "lifeClock": "See your remaining life as years, days, hours, minutes, seconds, and living rings.",
-    "todayBucketTitle": "Today's Bucket",
-    "todayBucket": "Let one meaningful bucket item rotate on the main screen so it stays close to your choices.",
-    "clockSkinsTitle": "Clock Skins",
-    "clockSkins": "Premium clock skins can make the same reminder feel ancient, luxurious, futuristic, or deeply personal."
+    "kicker": "Aplikacja",
+    "title": "Zegar na skończone dni.",
+    "lead": "Zegar Nieba to nie panel produktywności. To rytuał: śmiertelność staje się uwagą, uwaga działaniem, a działanie życiem, które rozpoznajesz.",
+    "lifeClockTitle": "Zegar życia",
+    "lifeClock": "Zobacz pozostałe życie w latach, dniach, godzinach, minutach, sekundach i żywych pierścieniach.",
+    "todayBucketTitle": "Dzisiejsze marzenie",
+    "todayBucket": "Niech jeden ważny bucket obraca się na ekranie głównym, blisko twoich wyborów.",
+    "clockSkinsTitle": "Skórki zegara",
+    "clockSkins": "Skórki premium mogą sprawić, że to samo przypomnienie będzie starożytne, luksusowe, futurystyczne lub głęboko osobiste."
   },
   "beta": {
-    "kicker": "Beta path",
-    "title": "From Android beta to public launch.",
-    "lead": "The site supports the app. The app comes first, then the circle grows from real users who felt the clock change their day.",
-    "step1Title": "Stabilize the app",
-    "step1": "Finish the core Android experience: onboarding, life clock, bucket list, themes, and language flow.",
-    "step2Title": "Open beta notice",
-    "step2": "Use this landing page to gather early testers and explain why the app exists.",
-    "step3Title": "Publish Android",
-    "step3": "Prepare store assets, privacy policy, screenshots, and a focused first release.",
-    "step4Title": "Grow the circle",
-    "step4": "Only after real use, evolve toward shared buckets, groups, and a school for finite days."
+    "kicker": "Ścieżka beta",
+    "title": "Od bety Android do publicznej premiery.",
+    "lead": "Strona wspiera aplikację. Najpierw aplikacja — potem krąg rośnie z użytkowników, którzy poczuli, jak zegar zmienił ich dzień.",
+    "step1Title": "Ustabilizuj aplikację",
+    "step1": "Dokończ rdzeń Androida: onboarding, zegar życia, lista bucket, motywy i języki.",
+    "step2Title": "Otwórz powiadomienie beta",
+    "step2": "Użyj tej strony, by zebrać wczesnych testerów i wyjaśnić, po co jest aplikacja.",
+    "step3Title": "Opublikuj Androida",
+    "step3": "Przygotuj zasoby sklepu, politykę prywatności, zrzuty ekranu i skupioną pierwszą wersję.",
+    "step4Title": "Rozszerz krąg",
+    "step4": "Dopiero po realnym użyciu — wspólne bucket, grupy i szkoła skończonych dni."
   },
   "community": {
-    "kicker": "The endgame",
-    "manifesto": "A global circle for people who share goals, buckets, and the courage to live before the day is gone.",
-    "signal1Title": "School of finite days",
-    "signal1": "A future place to learn how to choose, plan, and live with mortality in view.",
-    "signal2Title": "Shared buckets",
-    "signal2": "People will be able to share goals and find others walking toward the same kind of life.",
-    "signal3Title": "Human, not noisy",
-    "signal3": "The community should feel like a real circle, not another feed built for distraction."
+    "kicker": "Cel końcowy",
+    "manifesto": "Globalny krąg dla tych, którzy dzielą cele, bucket i odwagę, by żyć, zanim dzień minie.",
+    "signal1Title": "Szkoła skończonych dni",
+    "signal1": "Przyszłe miejsce, by uczyć się wybierać, planować i żyć ze śmiertelnością w polu widzenia.",
+    "signal2Title": "Wspólne bucket",
+    "signal2": "Ludzie będą mogli dzielić cele i znajdować innych idących w stronę tego samego życia.",
+    "signal3Title": "Ludzko, bez hałasu",
+    "signal3": "Społeczność ma być prawdziwym kręgiem, a nie kolejnym feedem do rozpraszania."
   },
   "join": {
-    "kicker": "Early access",
-    "title": "The app comes first. The circle follows.",
-    "lead": "We are preparing the Android beta and the first public path. Join the list if you want to test Heaven's Clock before it becomes a larger community.",
+    "kicker": "Wczesny dostęp",
+    "title": "Najpierw aplikacja. Potem krąg.",
+    "lead": "Przygotowujemy betę Android i pierwszą publiczną ścieżkę. Dołącz do listy, jeśli chcesz przetestować Zegar Nieba, zanim stanie się większą społecznością.",
     "placeholder": "your@email.com",
-    "button": "Notify me",
-    "note": "This preview stores your email only on this device. A real waitlist provider will be connected before public release.",
-    "success": "You're on the local preview list. Real waitlist connection comes before public release.",
-    "invalidEmail": "Enter a valid email address."
+    "button": "Powiadom mnie",
+    "note": "Ten podgląd zapisuje e-mail tylko na tym urządzeniu. Prawdziwa lista oczekujących zostanie podłączona przed publiczną premierą.",
+    "success": "Jesteś na lokalnej liście podglądu. Prawdziwe połączenie przed publiczną premierą.",
+    "invalidEmail": "Wprowadź prawidłowy adres e-mail."
   },
-  "footer": "Heaven's Clock · A reminder to live before the day is gone."
+  "footer": "Zegar Nieba · Przypomnienie, by żyć, zanim dzień minie."
 }

@@ -44,15 +44,11 @@
   }
 
   function t(key) {
-    let v = strings;
-    for (const p of key.split(".")) v = v?.[p];
-    return typeof v === "string" ? v : key;
+    return window.HeavensClockLocaleLoader?.t(strings, key) ?? key;
   }
 
   function applyI18n() {
-    document.querySelectorAll("[data-i18n]").forEach((el) => {
-      el.textContent = t(el.dataset.i18n);
-    });
+    window.HeavensClockLocaleLoader?.applyI18n(strings);
   }
 
   function two(n) { return String(n).padStart(2, "0"); }
@@ -108,6 +104,7 @@
         grid.querySelectorAll("button").forEach((x) => x.classList.remove("active"));
         b.classList.add("active");
         draft.locale = code;
+        saveSettings(draft);
         await loadLocale(code);
         applyI18n();
         document.title = t("appTitle");

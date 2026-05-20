@@ -124,16 +124,36 @@
       align-items: center;
     }
 
+    /* Closed control: opaque so it pops on aurora/bg; avoids “washed” gray slab. */
     .lang-select {
-      border: 1px solid var(--line);
+      border: 1px solid var(--gold-line);
       border-radius: 999px;
-      background: rgba(0, 0, 0, 0.22);
+      background: #0d1018;
       color: var(--fg);
-      padding: 0.48rem 0.7rem;
+      padding: 0.48rem 0.85rem;
       font: inherit;
       font-size: 0.7rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+      outline: none;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35);
+    }
+
+    .lang-select:hover,
+    .lang-select:focus-visible {
+      border-color: rgba(241, 200, 115, 0.45);
+      box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 0.35),
+        0 0 0 3px rgba(241, 200, 115, 0.12);
+    }
+
+    /*
+      Native dropdown list is OS-drawn (often gray bg + pale text).
+      Hint dark menu where supported so options read clearly on top of the gradient.
+    */
+    .lang-select option {
+      background-color: #070a11;
+      color: #fff6e6;
     }
 
     .hero {
@@ -716,14 +736,47 @@
     }
 
     @media (max-width: 760px) {
-      .topbar,
-      nav {
-        align-items: flex-start;
-        flex-direction: column;
+      .topbar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem 0.75rem;
+        row-gap: 0.6rem;
+        padding: 0.75rem 0;
       }
 
       nav {
-        gap: 0.75rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 0.45rem 0.75rem;
+        flex: 1 1 12rem;
+        min-width: 0;
+      }
+
+      nav a {
+        letter-spacing: 0.12em;
+        white-space: nowrap;
+      }
+
+      .brand {
+        min-width: 0;
+      }
+
+      .brand > span:last-child {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: min(52vw, 11.5rem);
+      }
+
+      .lang-select {
+        flex-shrink: 0;
+        font-size: 0.62rem;
+        padding: 0.38rem 0.62rem;
+        letter-spacing: 0.06em;
       }
 
       h1 {
@@ -914,6 +967,6 @@
 
   <footer class="wrap" data-i18n="footer">Heaven's Clock · A reminder to live before the day is gone.</footer>
   <script src="/js/locales-meta.js"></script>
-  <script src="/site/site.js?v=20260519-lang-2"></script>
+  <script src="/site/site.js?v=20260519-lang-3"></script>
 </body>
 </html>

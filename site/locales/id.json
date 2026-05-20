@@ -1,26 +1,26 @@
 {
   "meta": {
-    "title": "Jam Surga",
-    "landingEnglishFallback": "Landing page in English for now. Open the clock app for your language."
+    "title": "Jam Surga - Hidup hari ini",
+    "landingEnglishFallback": "Halaman arahan masih berbahasa Inggris. Buka aplikasi jam untuk bahasa Anda."
   },
   "brand": "Jam Surga",
   "nav": {
-    "app": "App",
+    "app": "Aplikasi",
     "beta": "Beta",
-    "community": "Community",
-    "join": "Join"
+    "community": "Komunitas",
+    "join": "Gabung"
   },
   "hero": {
-    "kicker": "Memento Mori · Live Today",
-    "title": "Count less.<br>Live more.",
-    "body": "A premium life clock for people who refuse to drift. Track the time you hope to live, keep one meaningful bucket close, and return to the day before it disappears.",
-    "primaryCta": "Get Android beta notice",
-    "secondaryCta": "Explore the ritual",
-    "openWebClock": "Open web clock (Premium)",
-    "installWebClock": "Install on PC (Premium)",
-    "proof1": "Android first",
-    "proof2": "Global by design",
-    "proof3": "Community is the endgame"
+    "kicker": "Memento Mori · Hidup hari ini",
+    "title": "Hitung lebih sedikit.<br>Hidup lebih banyak.",
+    "body": "Jam kehidupan premium bagi mereka yang menolak hanyut. Lacak waktu yang Anda harapkan hidup, dekatkan satu bucket bermakna, dan kembali ke hari ini sebelum lenyap.",
+    "primaryCta": "Pemberitahuan beta Android",
+    "secondaryCta": "Jelajahi ritual",
+    "openWebClock": "Buka jam web (Premium)",
+    "installWebClock": "Instal di PC (Premium)",
+    "proof1": "Android dulu",
+    "proof2": "Global sejak desain",
+    "proof3": "Komunitas adalah tujuan akhir"
   },
   "mock": {
     "appTitle": "Jam Surga",
@@ -32,48 +32,48 @@
     "bucketText": "Tulis satu hal yang tidak ingin Anda tunda."
   },
   "app": {
-    "kicker": "The app",
-    "title": "A clock for finite days.",
-    "lead": "Heaven's Clock is not a productivity dashboard. It is a ritual: mortality becomes attention, attention becomes action, and action becomes a life you recognize.",
-    "lifeClockTitle": "Life Clock",
-    "lifeClock": "See your remaining life as years, days, hours, minutes, seconds, and living rings.",
-    "todayBucketTitle": "Today's Bucket",
-    "todayBucket": "Let one meaningful bucket item rotate on the main screen so it stays close to your choices.",
-    "clockSkinsTitle": "Clock Skins",
-    "clockSkins": "Premium clock skins can make the same reminder feel ancient, luxurious, futuristic, or deeply personal."
+    "kicker": "Aplikasi",
+    "title": "Jam untuk hari yang terbatas.",
+    "lead": "Jam Surga bukan dasbor produktivitas. Ini ritual: kematian jadi perhatian, perhatian jadi tindakan, tindakan jadi hidup yang Anda kenali.",
+    "lifeClockTitle": "Jam kehidupan",
+    "lifeClock": "Lihat sisa hidup dalam tahun, hari, jam, menit, detik, dan cincin hidup.",
+    "todayBucketTitle": "Bucket hari ini",
+    "todayBucket": "Biarkan satu bucket bermakna berputar di layar utama agar dekat dengan pilihan Anda.",
+    "clockSkinsTitle": "Kulit jam",
+    "clockSkins": "Kulit premium bisa membuat pengingat yang sama terasa kuno, mewah, futuristik, atau sangat personal."
   },
   "beta": {
-    "kicker": "Beta path",
-    "title": "From Android beta to public launch.",
-    "lead": "The site supports the app. The app comes first, then the circle grows from real users who felt the clock change their day.",
-    "step1Title": "Stabilize the app",
-    "step1": "Finish the core Android experience: onboarding, life clock, bucket list, themes, and language flow.",
-    "step2Title": "Open beta notice",
-    "step2": "Use this landing page to gather early testers and explain why the app exists.",
-    "step3Title": "Publish Android",
-    "step3": "Prepare store assets, privacy policy, screenshots, and a focused first release.",
-    "step4Title": "Grow the circle",
-    "step4": "Only after real use, evolve toward shared buckets, groups, and a school for finite days."
+    "kicker": "Jalur beta",
+    "title": "Dari beta Android ke peluncuran publik.",
+    "lead": "Situs mendukung aplikasi. Aplikasi dulu; lalu lingkaran tumbuh dari pengguna yang merasakan jam mengubah harinya.",
+    "step1Title": "Stabilkan aplikasi",
+    "step1": "Selesaikan inti Android: onboarding, jam kehidupan, daftar bucket, tema, dan alur bahasa.",
+    "step2Title": "Buka pemberitahuan beta",
+    "step2": "Gunakan landing ini untuk mengumpulkan penguji awal dan menjelaskan mengapa aplikasi ada.",
+    "step3Title": "Terbitkan Android",
+    "step3": "Siapkan aset toko, kebijakan privasi, tangkapan layar, dan rilis pertama yang fokus.",
+    "step4Title": "Perluas lingkaran",
+    "step4": "Hanya setelah penggunaan nyata, menuju bucket bersama, grup, dan sekolah hari terbatas."
   },
   "community": {
-    "kicker": "The endgame",
-    "manifesto": "A global circle for people who share goals, buckets, and the courage to live before the day is gone.",
-    "signal1Title": "School of finite days",
-    "signal1": "A future place to learn how to choose, plan, and live with mortality in view.",
-    "signal2Title": "Shared buckets",
-    "signal2": "People will be able to share goals and find others walking toward the same kind of life.",
-    "signal3Title": "Human, not noisy",
-    "signal3": "The community should feel like a real circle, not another feed built for distraction."
+    "kicker": "Tujuan akhir",
+    "manifesto": "Lingkaran global bagi mereka yang berbagi tujuan, bucket, dan keberanian hidup sebelum hari berlalu.",
+    "signal1Title": "Sekolah hari terbatas",
+    "signal1": "Tempat masa depan untuk belajar memilih, merencanakan, dan hidup dengan kematian dalam pandangan.",
+    "signal2Title": "Bucket bersama",
+    "signal2": "Orang akan bisa berbagi tujuan dan menemukan yang berjalan ke jenis hidup yang sama.",
+    "signal3Title": "Manusiawi, tidak berisik",
+    "signal3": "Komunitas harus terasa seperti lingkaran nyata, bukan feed lain untuk mengalihkan perhatian."
   },
   "join": {
-    "kicker": "Early access",
-    "title": "The app comes first. The circle follows.",
-    "lead": "We are preparing the Android beta and the first public path. Join the list if you want to test Heaven's Clock before it becomes a larger community.",
+    "kicker": "Akses awal",
+    "title": "Aplikasi dulu. Lingkaran menyusul.",
+    "lead": "Kami menyiapkan beta Android dan jalur publik pertama. Gabung daftar jika ingin mencoba Jam Surga sebelum menjadi komunitas yang lebih besar.",
     "placeholder": "your@email.com",
-    "button": "Notify me",
-    "note": "This preview stores your email only on this device. A real waitlist provider will be connected before public release.",
-    "success": "You're on the local preview list. Real waitlist connection comes before public release.",
-    "invalidEmail": "Enter a valid email address."
+    "button": "Beritahu saya",
+    "note": "Pratinjau ini menyimpan email hanya di perangkat ini. Penyedia daftar tunggu nyata akan dihubungkan sebelum rilis publik.",
+    "success": "Anda ada di daftar pratinjau lokal. Koneksi nyata hadir sebelum rilis publik.",
+    "invalidEmail": "Masukkan alamat email yang valid."
   },
-  "footer": "Heaven's Clock · A reminder to live before the day is gone."
+  "footer": "Jam Surga · Pengingat untuk hidup sebelum hari berlalu."
 }

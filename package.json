@@ -4,7 +4,12 @@
   "description": "Memento Mori life countdown clock",
   "scripts": {
     "prepare:web": "node scripts/prepare-web.js",
+    "verify:i18n": "node scripts/verify-i18n.js",
+    "apply:premium-i18n": "node scripts/apply-premium-translations.js && node scripts/verify-i18n.js",
+    "apply:bucket-i18n": "node scripts/generate-bucket-extended.js && node scripts/verify-i18n.js",
+    "apply:site-i18n": "node scripts/_gen-site-locales.mjs && node scripts/apply-site-translations.js && node scripts/verify-site-i18n.js",
     "web": "npm run prepare:web && npx --yes serve www -l 4173",
+    "web:lan": "npm run prepare:web && npx --yes serve www -l tcp://0.0.0.0:4173",
     "build:billing": "node scripts/build-billing.js",
     "cap:init": "npx cap init \"Heaven's Clock\" com.heavensclock.app --web-dir www",
     "cap:add:ios": "npx cap add ios",

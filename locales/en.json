@@ -126,5 +126,63 @@
     "delete": "Delete item",
     "today": "Today's Bucket",
     "manage": "Manage Bucket List"
+  },
+  "bucketExtended": {
+    "page": {
+      "back": "← Clock",
+      "kicker": "Memento Mori Practice",
+      "intro": "Do not try to write 100 things at once. Answer one question, borrow one good example, and slowly collect the life you do not want to postpone.",
+      "writeTitle": "Write My Own",
+      "inputPlaceholder": "Example: Take the trip I postponed with my parents",
+      "addToLife": "Add to My Life",
+      "promptsTitle": "Questions That Make You Write",
+      "suggestionsTitle": "High-Quality Examples",
+      "myList": "My Bucket List",
+      "emptyPage": "No buckets yet. Tap a question or example to begin with one.",
+      "all": "All",
+      "done": "done",
+      "bucketLimit": "Free plan allows up to 3 bucket items. Open Premium to add more?"
+    },
+    "categories": {
+      "family": "Family",
+      "travel": "Travel",
+      "learning": "Learning",
+      "courage": "Courage",
+      "health": "Health",
+      "creation": "Creation",
+      "spirit": "Spirit"
+    },
+    "prompts": {
+      "beforeLate": "What do you want to do before it is too late?",
+      "gratitude": "Who do you want to thank while you still can?",
+      "place": "Is there a place you must visit before you die?",
+      "learn": "If money were not the issue, what would you learn?",
+      "apology": "Is there an apology or reconciliation you have postponed?",
+      "body": "What do you want to do for your body?",
+      "memory": "What scene do you want to leave with someone you love?"
+    },
+    "suggestions": {
+      "family_phone_free": "Spend a full day with my parents without phones",
+      "family_photo": "Take a proper family photo and frame it",
+      "family_letter": "Write a handwritten letter to someone I am grateful for",
+      "travel_city_week": "Live for one week in the city I keep saying I will visit someday",
+      "travel_dawn_train": "Take a dawn train alone to see an unfamiliar sea",
+      "travel_meaningful_place": "Return to a place that means something to me",
+      "learning_instrument": "Start one instrument I have wanted to learn for years",
+      "learning_language_letter": "Study until I can write a short letter in another language",
+      "learning_books": "Reread 10 books that changed my life",
+      "courage_apology": "Deliver the apology I have postponed",
+      "courage_public_start": "Share even a small start on the thing fear kept me from beginning",
+      "courage_release_regret": "Name the regret that held me for too long and let it go",
+      "health_walk_100": "Walk for 100 days in a way my body will thank me for",
+      "health_checkup": "Book the health checkup I have been delaying",
+      "health_sleep_month": "Live one month without sacrificing sleep",
+      "creation_finish_work": "Finish one small work under my own name",
+      "creation_record_year": "Record this year of my life through photos, writing, or video",
+      "creation_teach": "Teach someone something I know",
+      "spirit_no_proving": "Spend one day proving nothing to anyone",
+      "spirit_values": "Write down the five values that truly matter to me",
+      "spirit_end_today": "Imagine the end of my life in a quiet place and choose today again"
+    }
   }
 }

@@ -1,26 +1,26 @@
 {
   "meta": {
-    "title": "Cennet Saati",
-    "landingEnglishFallback": "Landing page in English for now. Open the clock app for your language."
+    "title": "Cennet Saati - Bugünü yaşa",
+    "landingEnglishFallback": "Açılış sayfası şimdilik İngilizce. Dil için saat uygulamasını açın."
   },
   "brand": "Cennet Saati",
   "nav": {
-    "app": "App",
+    "app": "Uygulama",
     "beta": "Beta",
-    "community": "Community",
-    "join": "Join"
+    "community": "Topluluk",
+    "join": "Katıl"
   },
   "hero": {
-    "kicker": "Memento Mori · Live Today",
-    "title": "Count less.<br>Live more.",
-    "body": "A premium life clock for people who refuse to drift. Track the time you hope to live, keep one meaningful bucket close, and return to the day before it disappears.",
-    "primaryCta": "Get Android beta notice",
-    "secondaryCta": "Explore the ritual",
-    "openWebClock": "Open web clock (Premium)",
-    "installWebClock": "Install on PC (Premium)",
-    "proof1": "Android first",
-    "proof2": "Global by design",
-    "proof3": "Community is the endgame"
+    "kicker": "Memento Mori · Bugünü yaşa",
+    "title": "Daha az say.<br>Daha çok yaşa.",
+    "body": "Akıntıya kapılmayı reddedenler için premium bir yaşam saati. Yaşamayı umduğun zamanı izle, anlamlı bir bucket'ı yakında tut ve gün kaybolmadan bugüne dön.",
+    "primaryCta": "Android beta bildirimi",
+    "secondaryCta": "Ritüeli keşfet",
+    "openWebClock": "Web saatini aç (Premium)",
+    "installWebClock": "PC'ye kur (Premium)",
+    "proof1": "Önce Android",
+    "proof2": "Küresel tasarım",
+    "proof3": "Topluluk son hedef"
   },
   "mock": {
     "appTitle": "Cennet Saati",
@@ -32,48 +32,48 @@
     "bucketText": "Ertelemek istemediğin bir şeyi yaz."
   },
   "app": {
-    "kicker": "The app",
-    "title": "A clock for finite days.",
-    "lead": "Heaven's Clock is not a productivity dashboard. It is a ritual: mortality becomes attention, attention becomes action, and action becomes a life you recognize.",
-    "lifeClockTitle": "Life Clock",
-    "lifeClock": "See your remaining life as years, days, hours, minutes, seconds, and living rings.",
-    "todayBucketTitle": "Today's Bucket",
-    "todayBucket": "Let one meaningful bucket item rotate on the main screen so it stays close to your choices.",
-    "clockSkinsTitle": "Clock Skins",
-    "clockSkins": "Premium clock skins can make the same reminder feel ancient, luxurious, futuristic, or deeply personal."
+    "kicker": "Uygulama",
+    "title": "Sınırlı günler için bir saat.",
+    "lead": "Cennet Saati bir verimlilik panosu değil. Bir ritüel: ölümlülük dikkate, dikkat eyleme, eylem tanıdığın bir hayata dönüşür.",
+    "lifeClockTitle": "Yaşam saati",
+    "lifeClock": "Kalan hayatını yıl, gün, saat, dakika, saniye ve canlı halkalarla gör.",
+    "todayBucketTitle": "Bugünün hedefi",
+    "todayBucket": "Ana ekranda anlamlı bir bucket dönsün; seçimlerine yakın kalsın.",
+    "clockSkinsTitle": "Saat görünümleri",
+    "clockSkins": "Premium görünümler aynı hatırlatmayı antik, lüks, gelecekçi veya derinden kişisel hissettirebilir."
   },
   "beta": {
-    "kicker": "Beta path",
-    "title": "From Android beta to public launch.",
-    "lead": "The site supports the app. The app comes first, then the circle grows from real users who felt the clock change their day.",
-    "step1Title": "Stabilize the app",
-    "step1": "Finish the core Android experience: onboarding, life clock, bucket list, themes, and language flow.",
-    "step2Title": "Open beta notice",
-    "step2": "Use this landing page to gather early testers and explain why the app exists.",
-    "step3Title": "Publish Android",
-    "step3": "Prepare store assets, privacy policy, screenshots, and a focused first release.",
-    "step4Title": "Grow the circle",
-    "step4": "Only after real use, evolve toward shared buckets, groups, and a school for finite days."
+    "kicker": "Beta yolu",
+    "title": "Android betadan halka açık sürüme.",
+    "lead": "Site uygulamayı destekler. Önce uygulama; sonra saatin günlerini değiştirdiğini hisseden gerçek kullanıcılarla çember büyür.",
+    "step1Title": "Uygulamayı stabilize et",
+    "step1": "Android çekirdeğini tamamla: onboarding, yaşam saati, bucket listesi, temalar ve dil akışı.",
+    "step2Title": "Beta bildirimini aç",
+    "step2": "Bu landing ile erken testçiler topla ve uygulamanın neden var olduğunu anlat.",
+    "step3Title": "Android'i yayınla",
+    "step3": "Mağaza varlıkları, gizlilik politikası, ekran görüntüleri ve odaklı ilk sürümü hazırla.",
+    "step4Title": "Çemberi büyüt",
+    "step4": "Yalnızca gerçek kullanımdan sonra paylaşılan bucket'lara, gruplara ve sınırlı günler okuluna."
   },
   "community": {
-    "kicker": "The endgame",
-    "manifesto": "A global circle for people who share goals, buckets, and the courage to live before the day is gone.",
-    "signal1Title": "School of finite days",
-    "signal1": "A future place to learn how to choose, plan, and live with mortality in view.",
-    "signal2Title": "Shared buckets",
-    "signal2": "People will be able to share goals and find others walking toward the same kind of life.",
-    "signal3Title": "Human, not noisy",
-    "signal3": "The community should feel like a real circle, not another feed built for distraction."
+    "kicker": "Son hedef",
+    "manifesto": "Hedefleri, bucket'ları ve gün gitmeden yaşama cesaretini paylaşan küresel bir çember.",
+    "signal1Title": "Sınırlı günler okulu",
+    "signal1": "Ölümlülüğü görerek seçmeyi, planlamayı ve yaşamayı öğreneceğin gelecekteki yer.",
+    "signal2Title": "Paylaşılan bucket'lar",
+    "signal2": "İnsanlar hedef paylaşacak ve aynı hayata yürüyenleri bulacak.",
+    "signal3Title": "İnsani, gürültüsüz",
+    "signal3": "Topluluk gerçek bir çember gibi hissettirmeli; dikkat dağıtan bir feed değil."
   },
   "join": {
-    "kicker": "Early access",
-    "title": "The app comes first. The circle follows.",
-    "lead": "We are preparing the Android beta and the first public path. Join the list if you want to test Heaven's Clock before it becomes a larger community.",
+    "kicker": "Erken erişim",
+    "title": "Önce uygulama. Sonra çember.",
+    "lead": "Android beta ve ilk halka açık yolu hazırlıyoruz. Cennet Saati daha büyük bir topluluk olmadan önce denemek istiyorsan listeye katıl.",
     "placeholder": "your@email.com",
-    "button": "Notify me",
-    "note": "This preview stores your email only on this device. A real waitlist provider will be connected before public release.",
-    "success": "You're on the local preview list. Real waitlist connection comes before public release.",
-    "invalidEmail": "Enter a valid email address."
+    "button": "Bildir",
+    "note": "Bu önizleme e-postanı yalnızca bu cihazda saklar. Halka açık sürümden önce gerçek bekleme listesi bağlanır.",
+    "success": "Yerel önizleme listesindesin. Gerçek bağlantı halka açık sürümden önce gelir.",
+    "invalidEmail": "Geçerli bir e-posta adresi gir."
   },
-  "footer": "Heaven's Clock · A reminder to live before the day is gone."
+  "footer": "Cennet Saati · Gün gitmeden yaşamak için bir hatırlatma."
 }

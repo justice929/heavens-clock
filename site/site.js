@@ -1,13 +1,16 @@
 (function () {
 
-  const SITE_VERSION = "20260519-lang-2";
+  const SITE_VERSION = "20260519-lang-3";
 
   const SITE_LOCALE_KEY = "heavens-clock-site-locale";
 
   const SETTINGS_KEY = "memento-mori-settings";
 
   const WAITLIST_KEY = "heavens-clock-site-waitlist";
-  const SITE_FULLY_TRANSLATED = ["en", "ko"];
+  const SITE_FULLY_TRANSLATED = [
+    "en", "ko", "ja", "zh-Hans", "zh-Hant", "es", "fr", "de", "pt", "it",
+    "ar", "hi", "ru", "vi", "th", "id", "tr", "nl", "pl",
+  ];
 
   const { SUPPORTED, normalize, detectBrowser, documentLang, fillLanguageSelect } =
 

@@ -1,26 +1,26 @@
 {
   "meta": {
-    "title": "Đồng Hồ Thiên Đàng",
-    "landingEnglishFallback": "Landing page in English for now. Open the clock app for your language."
+    "title": "Đồng Hồ Thiên Đàng - Sống hôm nay",
+    "landingEnglishFallback": "Trang đích hiện bằng tiếng Anh. Mở ứng dụng đồng hồ để dùng ngôn ngữ của bạn."
   },
   "brand": "Đồng Hồ Thiên Đàng",
   "nav": {
-    "app": "App",
+    "app": "Ứng dụng",
     "beta": "Beta",
-    "community": "Community",
-    "join": "Join"
+    "community": "Cộng đồng",
+    "join": "Tham gia"
   },
   "hero": {
-    "kicker": "Memento Mori · Live Today",
-    "title": "Count less.<br>Live more.",
-    "body": "A premium life clock for people who refuse to drift. Track the time you hope to live, keep one meaningful bucket close, and return to the day before it disappears.",
-    "primaryCta": "Get Android beta notice",
-    "secondaryCta": "Explore the ritual",
-    "openWebClock": "Open web clock (Premium)",
-    "installWebClock": "Install on PC (Premium)",
-    "proof1": "Android first",
-    "proof2": "Global by design",
-    "proof3": "Community is the endgame"
+    "kicker": "Memento Mori · Sống hôm nay",
+    "title": "Đếm ít hơn.<br>Sống nhiều hơn.",
+    "body": "Đồng hồ đời cao cấp cho người từ chối trôi theo dòng. Theo dõi thời gian bạn mong sống, giữ một bucket ý nghĩa gần bên và quay về ngày hôm nay trước khi nó biến mất.",
+    "primaryCta": "Nhận thông báo beta Android",
+    "secondaryCta": "Khám phá nghi thức",
+    "openWebClock": "Mở đồng hồ web (Premium)",
+    "installWebClock": "Cài trên PC (Premium)",
+    "proof1": "Android trước",
+    "proof2": "Thiết kế toàn cầu",
+    "proof3": "Cộng đồng là đích đến"
   },
   "mock": {
     "appTitle": "Đồng Hồ Thiên Đàng",
@@ -32,48 +32,48 @@
     "bucketText": "Viết một điều bạn không muốn trì hoãn."
   },
   "app": {
-    "kicker": "The app",
-    "title": "A clock for finite days.",
-    "lead": "Heaven's Clock is not a productivity dashboard. It is a ritual: mortality becomes attention, attention becomes action, and action becomes a life you recognize.",
-    "lifeClockTitle": "Life Clock",
-    "lifeClock": "See your remaining life as years, days, hours, minutes, seconds, and living rings.",
-    "todayBucketTitle": "Today's Bucket",
-    "todayBucket": "Let one meaningful bucket item rotate on the main screen so it stays close to your choices.",
-    "clockSkinsTitle": "Clock Skins",
-    "clockSkins": "Premium clock skins can make the same reminder feel ancient, luxurious, futuristic, or deeply personal."
+    "kicker": "Ứng dụng",
+    "title": "Đồng hồ cho những ngày hữu hạn.",
+    "lead": "Đồng Hồ Thiên Đàng không phải bảng năng suất. Đó là nghi thức: cái chết thành chú ý, chú ý thành hành động, hành động thành cuộc đời bạn nhận ra.",
+    "lifeClockTitle": "Đồng hồ đời",
+    "lifeClock": "Xem phần đời còn lại theo năm, ngày, giờ, phút, giây và các vòng sống động.",
+    "todayBucketTitle": "Bucket hôm nay",
+    "todayBucket": "Để một bucket ý nghĩa luân phiên trên màn hình chính, gần với lựa chọn của bạn.",
+    "clockSkinsTitle": "Giao diện đồng hồ",
+    "clockSkins": "Giao diện premium có thể biến cùng một lời nhắc thành cổ xưa, sang trọng, tương lai hoặc rất riêng."
   },
   "beta": {
-    "kicker": "Beta path",
-    "title": "From Android beta to public launch.",
-    "lead": "The site supports the app. The app comes first, then the circle grows from real users who felt the clock change their day.",
-    "step1Title": "Stabilize the app",
-    "step1": "Finish the core Android experience: onboarding, life clock, bucket list, themes, and language flow.",
-    "step2Title": "Open beta notice",
-    "step2": "Use this landing page to gather early testers and explain why the app exists.",
-    "step3Title": "Publish Android",
-    "step3": "Prepare store assets, privacy policy, screenshots, and a focused first release.",
-    "step4Title": "Grow the circle",
-    "step4": "Only after real use, evolve toward shared buckets, groups, and a school for finite days."
+    "kicker": "Lộ trình beta",
+    "title": "Từ beta Android đến ra mắt công khai.",
+    "lead": "Trang web hỗ trợ ứng dụng. Ứng dụng trước; sau đó vòng tròn lớn lên từ người dùng thật cảm nhận đồng hồ đổi ngày của họ.",
+    "step1Title": "Ổn định ứng dụng",
+    "step1": "Hoàn thiện trải nghiệm Android cốt lõi: onboarding, đồng hồ đời, danh sách bucket, chủ đề và ngôn ngữ.",
+    "step2Title": "Mở thông báo beta",
+    "step2": "Dùng trang đích này để tuyển người thử sớm và giải thích vì sao ứng dụng tồn tại.",
+    "step3Title": "Phát hành Android",
+    "step3": "Chuẩn bị tài sản cửa hàng, chính sách riêng tư, ảnh chụp và bản phát hành đầu tập trung.",
+    "step4Title": "Mở rộng vòng tròn",
+    "step4": "Chỉ sau khi dùng thật, tiến tới bucket chung, nhóm và trường học những ngày hữu hạn."
   },
   "community": {
-    "kicker": "The endgame",
-    "manifesto": "A global circle for people who share goals, buckets, and the courage to live before the day is gone.",
-    "signal1Title": "School of finite days",
-    "signal1": "A future place to learn how to choose, plan, and live with mortality in view.",
-    "signal2Title": "Shared buckets",
-    "signal2": "People will be able to share goals and find others walking toward the same kind of life.",
-    "signal3Title": "Human, not noisy",
-    "signal3": "The community should feel like a real circle, not another feed built for distraction."
+    "kicker": "Đích cuối",
+    "manifesto": "Vòng tròn toàn cầu cho người chia sẻ mục tiêu, bucket và can đảm sống trước khi ngày qua đi.",
+    "signal1Title": "Trường những ngày hữu hạn",
+    "signal1": "Nơi tương lai để học chọn, lên kế hoạch và sống với cái chết trong tầm mắt.",
+    "signal2Title": "Bucket chung",
+    "signal2": "Mọi người sẽ chia sẻ mục tiêu và tìm người đi về cùng kiểu cuộc đời.",
+    "signal3Title": "Con người, không ồn ào",
+    "signal3": "Cộng đồng phải giống vòng tròn thật, không phải feed làm bạn xao nhãng."
   },
   "join": {
-    "kicker": "Early access",
-    "title": "The app comes first. The circle follows.",
-    "lead": "We are preparing the Android beta and the first public path. Join the list if you want to test Heaven's Clock before it becomes a larger community.",
+    "kicker": "Truy cập sớm",
+    "title": "Ứng dụng trước. Vòng tròn sau.",
+    "lead": "Chúng tôi chuẩn bị beta Android và lộ trình công khai đầu tiên. Tham gia danh sách nếu bạn muốn thử Đồng Hồ Thiên Đàng trước khi thành cộng đồng lớn hơn.",
     "placeholder": "your@email.com",
-    "button": "Notify me",
-    "note": "This preview stores your email only on this device. A real waitlist provider will be connected before public release.",
-    "success": "You're on the local preview list. Real waitlist connection comes before public release.",
-    "invalidEmail": "Enter a valid email address."
+    "button": "Báo cho tôi",
+    "note": "Bản xem trước này chỉ lưu email trên thiết bị này. Dịch vụ danh sách chờ thật sẽ được kết nối trước khi phát hành công khai.",
+    "success": "Bạn đã có trong danh sách xem trước cục bộ. Kết nối thật sẽ có trước khi phát hành công khai.",
+    "invalidEmail": "Nhập địa chỉ email hợp lệ."
   },
-  "footer": "Heaven's Clock · A reminder to live before the day is gone."
+  "footer": "Đồng Hồ Thiên Đàng · Lời nhắc sống trước khi ngày qua đi."
 }

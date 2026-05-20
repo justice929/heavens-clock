@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Heaven's Clock - Live Today",
+    "title": "Heaven's Clock",
     "landingEnglishFallback": "Landing page in English for now. Open the clock app for your language."
   },
   "brand": "Heaven's Clock",
@@ -24,10 +24,10 @@
   },
   "mock": {
     "appTitle": "Heaven's Clock",
-    "caption": "Time left",
-    "year": "Year",
-    "day": "Day",
-    "hour": "Hour",
+    "caption": "TIME LEFT",
+    "year": "YEAR",
+    "day": "DAY",
+    "hour": "HOUR",
     "bucketTitle": "Today's Bucket",
     "bucketText": "Write one thing you do not want to postpone."
   },
