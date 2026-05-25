@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="ko" class="hc-app hc-preview">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>유료 테마 시계 미리보기 — Heaven's Clock</title>
+  <style>
+    :root {
+      --size: min(72vmin, 420px);
+      --mini-size: min(42vw, 168px);
+      --ease: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      background: var(--bg, #07090d);
+      color: var(--fg, #b8c4d0);
+      font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+      transition: background 0.5s var(--ease), color 0.5s var(--ease);
+    }
+
+    .backdrop {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: var(--vignette, radial-gradient(ellipse 80% 70% at 50% 45%, transparent 40%, rgba(0,0,0,0.55) 100%));
+      transition: background 0.5s var(--ease);
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 1.25rem 1rem 2.5rem;
+    }
+
+    .top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+    }
+
+    .lead {
+      font-size: 0.78rem;
+      line-height: 1.55;
+      color: var(--dim, rgba(184, 196, 208, 0.55));
+      max-width: 28rem;
+      margin-top: 0.35rem;
+    }
+
+    .top a {
+      font-size: 0.72rem;
+      color: inherit;
+      opacity: 0.7;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .badge-free {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      background: rgba(255,255,255,0.08);
+      color: var(--dim);
+    }
+
+    .badge-premium {
+      display: inline-block;
+      padding: 0.15rem 0.45rem;
+      border-radius: 6px;
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      background: linear-gradient(135deg, rgba(255,200,120,0.25), rgba(255,120,80,0.2));
+      color: #ffe8c8;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 0.5rem 0 1.25rem;
+    }
+
+    .hero h2 {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin-bottom: 0.35rem;
+    }
+
+    #hero-name {
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.25rem;
+    }
+
+    #hero-desc {
+      font-size: 0.75rem;
+      color: var(--dim);
+      margin-bottom: 1rem;
+      min-height: 2.4em;
+    }
+
+    .hero-clock {
+      display: flex;
+      justify-content: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 0.85rem;
+    }
+
+    .theme-card {
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 0.75rem 0.6rem 0.85rem;
+      background: rgba(0,0,0,0.25);
+      cursor: pointer;
+      transition: border-color var(--ease), transform 0.2s ease, box-shadow var(--ease);
+      text-align: center;
+    }
+
+    .theme-card:hover { border-color: rgba(255,255,255,0.18); }
+    .theme-card.is-active {
+      border-color: var(--card-accent, rgba(255,255,255,0.35));
+      box-shadow: 0 0 24px color-mix(in srgb, var(--card-accent) 25%, transparent);
+      transform: translateY(-2px);
+    }
+
+    .theme-card.locked-free { opacity: 0.92; cursor: default; }
+    .theme-card h3 {
+      font-size: 0.78rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .theme-card p {
+      font-size: 0.62rem;
+      line-height: 1.4;
+      color: var(--dim, rgba(184,196,208,0.5));
+      margin-bottom: 0.55rem;
+      min-height: 2.5em;
+    }
+
+    .note {
+      margin-top: 1.25rem;
+      padding: 0.85rem 1rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.2);
+      font-size: 0.68rem;
+      line-height: 1.55;
+      color: var(--dim);
+    }
+
+    .note strong { color: var(--fg); font-weight: 600; }
+
+    /* —— shared app clock (5 rings, clamp widths) —— */
+    .clock-wrap {
+      position: relative;
+      width: var(--clock-size, var(--size));
+      height: var(--clock-size, var(--size));
+      margin: 0 auto;
+      isolation: isolate;
+    }
+
+    .clock-wrap .clock-demo {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .clock-wrap .clock-demo > span {
+      position: absolute;
+      inset: var(--inset);
+      border-radius: 50%;
+      border: var(--width) solid var(--track, rgba(255,255,255,0.06));
+      transform-origin: 50% 50%;
+      pointer-events: none;
+      box-sizing: border-box;
+      z-index: 1;
+    }
+
+    .clock-wrap .clock-demo > span::before {
+      content: "";
+      position: absolute;
+      inset: calc(var(--width) * -1);
+      border-radius: 50%;
+      border: var(--width) solid transparent;
+      border-top-color: var(--color);
+      border-right-color: var(--color);
+      transform: rotate(var(--rotate));
+      filter: var(--ring-filter, drop-shadow(0 0 clamp(3px, 1vmin, 8px) color-mix(in srgb, var(--color) 65%, transparent)));
+      animation: var(--ring-pulse, ringPulse 5s ease-in-out infinite);
+    }
+
+    @keyframes ringPulse {
+      0%, 100% { opacity: 0.78; }
+      50% { opacity: 1; }
+    }
+
+    @keyframes orbit { to { transform: rotate(360deg); } }
+    @keyframes orbitRev { to { transform: rotate(-360deg); } }
+
+    .clock-wrap .clock-demo .r1 {
+      --inset: 0;
+      --width: clamp(2.5px, 1.05vmin, 5.5px);
+      --rotate: 35deg;
+      animation: orbit var(--dur-1, 36s) linear infinite;
+    }
+    .clock-wrap .clock-demo .r2 {
+      --inset: 22%;
+      --width: clamp(2px, 0.88vmin, 4.25px);
+      --rotate: 120deg;
+      animation: orbitRev var(--dur-2, 26s) linear infinite;
+    }
+    .clock-wrap .clock-demo .r3 {
+      --inset: 44%;
+      --width: clamp(2px, 0.88vmin, 4.25px);
+      --rotate: 250deg;
+      animation: orbit var(--dur-3, 18s) linear infinite;
+    }
+    .clock-wrap .clock-demo .r4 {
+      --inset: 66%;
+      --width: clamp(1.5px, 0.72vmin, 3.25px);
+      --rotate: 12deg;
+      animation: orbitRev var(--dur-4, 12s) linear infinite;
+    }
+
+    .clock-ring-sec {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      pointer-events: none;
+    }
+
+    .clock-ring-sec .sec-ring-track {
+      fill: none;
+      stroke: var(--sec-track, rgba(255,255,255,0.06));
+      stroke-width: clamp(1.5px, 0.55vmin, 3px);
+    }
+
+    .clock-ring-sec .sec-ring-arc {
+      fill: none;
+      stroke: var(--sec-stroke, rgba(255, 72, 78, 0.92));
+      stroke-width: clamp(2px, 0.72vmin, 3.5px);
+      stroke-linecap: butt;
+      filter: var(--sec-glow, drop-shadow(0 0 clamp(3px, 1vmin, 8px) rgba(255, 70, 75, 0.45)));
+    }
+
+    .clock-label {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 5;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      pointer-events: none;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .clock-label .pct {
+      display: block;
+      font-size: clamp(1.1rem, calc(var(--clock-size, 300px) * 0.09), 2.4rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      text-shadow: var(--pct-glow, none);
+    }
+
+    .clock-label .caption {
+      display: block;
+      margin-top: 0.15rem;
+      font-size: clamp(0.4rem, calc(var(--clock-size, 300px) * 0.028), 0.58rem);
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      color: var(--dim, rgba(184,196,208,0.5));
+    }
+
+    .theme-card .clock-wrap {
+      --clock-size: var(--mini-size);
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       VOID (무료) — 앱 메인과 동일. 변경 금지.
+       ═══════════════════════════════════════════════════════════ */
+    body[data-theme="void"] {
+      --bg: #07090d;
+      --fg: #b8c4d0;
+      --dim: rgba(184, 196, 208, 0.5);
+      --vignette: radial-gradient(ellipse 80% 70% at 50% 45%, transparent 40%, rgba(0,0,0,0.55) 100%);
+    }
+
+    body[data-theme="void"] .clock-wrap .clock-demo {
+      background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.035) 0 22%, transparent 24%);
+      box-shadow: none;
+    }
+
+    body[data-theme="void"] .clock-wrap .clock-demo .r1 { --color: rgba(210, 218, 228, 0.82); }
+    body[data-theme="void"] .clock-wrap .clock-demo .r2 { --color: rgba(175, 185, 198, 0.68); }
+    body[data-theme="void"] .clock-wrap .clock-demo .r3 { --color: rgba(140, 150, 165, 0.58); }
+    body[data-theme="void"] .clock-wrap .clock-demo .r4 { --color: rgba(105, 115, 130, 0.5); }
+    body[data-theme="void"] .clock-wrap .clock-demo > span::before { animation: none; filter: none; }
+    body[data-theme="void"] { --sec-stroke: rgba(255, 72, 78, 0.92); }
+
+    /* ═══ CLASSIC — 무료 확정 직전 · 컬러 링 4색 + 빨간 초 (참고용) ═══ */
+    body[data-theme="classic"] {
+      --bg: #07090d;
+      --fg: #e8ecf2;
+      --dim: rgba(184, 196, 208, 0.5);
+      --vignette: radial-gradient(ellipse 80% 70% at 50% 45%, transparent 38%, rgba(0, 0, 0, 0.52) 100%);
+    }
+
+    body[data-theme="classic"] .clock-wrap .clock-demo {
+      background:
+        radial-gradient(circle at 50% 50%, rgba(255, 246, 230, 0.13) 0 20%, transparent 22%),
+        radial-gradient(circle, rgba(72, 234, 255, 0.1), transparent 66%);
+      box-shadow: 0 0 clamp(16px, 5.5vmin, 48px) rgba(72, 234, 255, 0.22);
+    }
+
+    body[data-theme="classic"] .clock-wrap .clock-demo > span {
+      border-color: rgba(255, 246, 230, 0.13);
+    }
+
+    body[data-theme="classic"] .clock-wrap .clock-demo > span::before {
+      border-top-color: var(--color);
+      border-right-color: var(--color);
+      filter: drop-shadow(0 0 clamp(4px, 1.25vmin, 12px) var(--color));
+      animation: ringPulse 5s ease-in-out infinite;
+    }
+
+    body[data-theme="classic"] .clock-wrap .clock-demo .r1 {
+      --color: rgba(255, 246, 230, 0.95);
+      --dur-1: 36s;
+    }
+    body[data-theme="classic"] .clock-wrap .clock-demo .r2 {
+      --color: rgba(72, 234, 255, 0.9);
+      --dur-2: 26s;
+    }
+    body[data-theme="classic"] .clock-wrap .clock-demo .r3 {
+      --color: rgba(155, 92, 255, 0.9);
+      --dur-3: 18s;
+    }
+    body[data-theme="classic"] .clock-wrap .clock-demo .r4 {
+      --color: rgba(255, 232, 110, 0.96);
+      --dur-4: 12s;
+    }
+    body[data-theme="classic"] {
+      --sec-stroke: rgba(255, 72, 78, 0.92);
+      --sec-glow: drop-shadow(0 0 clamp(3px, 1vmin, 8px) rgba(255, 70, 75, 0.45));
+    }
+
+    /* ═══ EMBER — 불꽃·재, 빠른 궤도, 강한 글로우 ═══ */
+    body[data-theme="ember"] {
+      --bg: #050202;
+      --fg: #fff2ec;
+      --dim: rgba(255, 200, 180, 0.5);
+      --vignette: radial-gradient(ellipse 75% 55% at 50% 68%, rgba(255, 60, 25, 0.18), transparent 58%);
+    }
+
+    body[data-theme="ember"] .clock-wrap .clock-demo {
+      background:
+        radial-gradient(ellipse 90% 75% at 50% 78%, rgba(255, 90, 40, 0.32) 0%, transparent 52%),
+        radial-gradient(circle at 50% 42%, rgba(60, 18, 12, 0.85) 0%, rgba(20, 6, 4, 0.95) 68%, transparent 72%);
+      box-shadow:
+        0 0 clamp(20px, 8vmin, 56px) rgba(255, 70, 35, 0.35),
+        inset 0 0 clamp(12px, 4vmin, 32px) rgba(255, 120, 60, 0.08);
+    }
+
+    body[data-theme="ember"] .clock-wrap .clock-demo .r1 {
+      --color: rgba(255, 235, 210, 0.95);
+      --dur-1: 28s;
+      --width: clamp(3px, 1.15vmin, 6px);
+    }
+    body[data-theme="ember"] .clock-wrap .clock-demo .r2 {
+      --color: rgba(255, 150, 80, 0.92);
+      --dur-2: 20s;
+    }
+    body[data-theme="ember"] .clock-wrap .clock-demo .r3 {
+      --color: rgba(255, 85, 50, 0.9);
+      --dur-3: 14s;
+    }
+    body[data-theme="ember"] .clock-wrap .clock-demo .r4 {
+      --color: rgba(220, 45, 30, 0.88);
+      --dur-4: 9s;
+    }
+    body[data-theme="ember"] .clock-wrap .clock-demo > span::before {
+      --ring-filter: drop-shadow(0 0 clamp(6px, 1.8vmin, 14px) rgba(255, 90, 45, 0.55));
+    }
+    body[data-theme="ember"] {
+      --sec-stroke: rgba(255, 95, 55, 0.96);
+      --sec-glow: drop-shadow(0 0 clamp(4px, 1.2vmin, 10px) rgba(255, 80, 40, 0.6));
+      --pct-glow: 0 0 20px rgba(255, 120, 80, 0.35);
+    }
+
+    /* ═══ COSMOS — 심해·성운, 느린 궤도, 차가운 오로라 ═══ */
+    body[data-theme="cosmos"] {
+      --bg: #020712;
+      --fg: #dcecff;
+      --dim: rgba(160, 200, 255, 0.5);
+      --vignette: radial-gradient(ellipse 85% 65% at 50% 38%, rgba(60, 120, 255, 0.14), transparent 62%);
+    }
+
+    body[data-theme="cosmos"] .clock-wrap::before {
+      content: "";
+      position: absolute;
+      inset: -5%;
+      border-radius: 50%;
+      background:
+        radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1px 1px at 70% 20%, rgba(200,230,255,0.4), transparent),
+        radial-gradient(1.5px 1.5px at 55% 75%, rgba(180,220,255,0.35), transparent),
+        radial-gradient(1px 1px at 85% 55%, rgba(255,255,255,0.3), transparent);
+      opacity: 0.7;
+      animation: cosmosTwinkle 8s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes cosmosTwinkle {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 0.85; }
+    }
+
+    body[data-theme="cosmos"] .clock-wrap .clock-demo {
+      background:
+        radial-gradient(circle at 35% 35%, rgba(120, 200, 255, 0.2) 0%, transparent 45%),
+        radial-gradient(circle at 65% 60%, rgba(100, 80, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(circle, rgba(8, 20, 55, 0.9), rgba(2, 8, 25, 0.98) 70%);
+      box-shadow: 0 0 clamp(18px, 6vmin, 48px) rgba(80, 150, 255, 0.28);
+    }
+
+    body[data-theme="cosmos"] .clock-wrap .clock-demo .r1 {
+      --color: rgba(230, 248, 255, 0.9);
+      --dur-1: 48s;
+    }
+    body[data-theme="cosmos"] .clock-wrap .clock-demo .r2 {
+      --color: rgba(120, 210, 255, 0.88);
+      --dur-2: 34s;
+    }
+    body[data-theme="cosmos"] .clock-wrap .clock-demo .r3 {
+      --color: rgba(140, 120, 255, 0.85);
+      --dur-3: 24s;
+    }
+    body[data-theme="cosmos"] .clock-wrap .clock-demo .r4 {
+      --color: rgba(70, 140, 255, 0.82);
+      --dur-4: 16s;
+    }
+    body[data-theme="cosmos"] {
+      --sec-stroke: rgba(100, 220, 255, 0.95);
+      --sec-glow: drop-shadow(0 0 clamp(4px, 1.2vmin, 12px) rgba(80, 200, 255, 0.5));
+      --pct-glow: 0 0 22px rgba(130, 210, 255, 0.4);
+    }
+
+    /* ═══ CHRONOGRAPH — 크로노 다이얼, 눈금·얇은 링 ═══ */
+    body[data-theme="chronograph"] {
+      --bg: #070604;
+      --fg: #f0e3c2;
+      --dim: rgba(210, 190, 150, 0.5);
+      --vignette: radial-gradient(ellipse 72% 58% at 50% 45%, rgba(215, 194, 138, 0.1), transparent 60%);
+    }
+
+    body[data-theme="chronograph"] .clock-wrap .clock-demo {
+      background:
+        radial-gradient(circle at 50% 50%, rgba(30, 28, 24, 0.95) 0%, rgba(12, 11, 9, 1) 62%, transparent 64%),
+        conic-gradient(from 0deg, rgba(215, 194, 138, 0.08) 0deg, transparent 30deg);
+      border: clamp(1px, 0.35vmin, 2px) solid rgba(215, 194, 138, 0.35);
+      box-shadow:
+        inset 0 0 0 clamp(3px, 1vmin, 8px) rgba(0, 0, 0, 0.5),
+        0 0 clamp(10px, 3vmin, 24px) rgba(0, 0, 0, 0.4);
+    }
+
+    body[data-theme="chronograph"] .clock-wrap .clock-demo::after {
+      content: "";
+      position: absolute;
+      inset: 8%;
+      border-radius: 50%;
+      background: repeating-conic-gradient(
+        from -90deg,
+        rgba(215, 194, 138, 0.55) 0deg 1.2deg,
+        transparent 1.2deg 7.5deg
+      );
+      opacity: 0.35;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    body[data-theme="chronograph"] .clock-wrap .clock-demo .r1 {
+      --color: rgba(240, 228, 200, 0.88);
+      --width: clamp(1.5px, 0.55vmin, 2.5px);
+      --dur-1: 55s;
+    }
+    body[data-theme="chronograph"] .clock-wrap .clock-demo .r2 {
+      --color: rgba(190, 165, 110, 0.8);
+      --width: clamp(1.5px, 0.55vmin, 2.5px);
+      --dur-2: 40s;
+    }
+    body[data-theme="chronograph"] .clock-wrap .clock-demo .r3 {
+      --color: rgba(150, 140, 120, 0.72);
+      --width: clamp(1.2px, 0.48vmin, 2px);
+      --dur-3: 28s;
+    }
+    body[data-theme="chronograph"] .clock-wrap .clock-demo .r4 {
+      --color: rgba(215, 190, 130, 0.85);
+      --width: clamp(1.2px, 0.48vmin, 2px);
+      --dur-4: 20s;
+    }
+    body[data-theme="chronograph"] .clock-wrap .clock-demo > span::before {
+      border-top-color: var(--color);
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+      --ring-pulse: none;
+    }
+    body[data-theme="chronograph"] .clock-label .pct {
+      font-family: "Consolas", "Roboto Mono", monospace;
+      font-weight: 500;
+    }
+    body[data-theme="chronograph"] {
+      --sec-stroke: rgba(255, 215, 140, 0.94);
+      --sec-glow: drop-shadow(0 0 4px rgba(200, 170, 100, 0.4));
+    }
+
+    /* ═══ LEGACY — 헤리룸 골드, 굵은 링 ═══ */
+    body[data-theme="legacy"] {
+      --bg: #050504;
+      --fg: #f7ead0;
+      --dim: rgba(230, 210, 170, 0.52);
+      --vignette: radial-gradient(ellipse 75% 58% at 50% 45%, rgba(235, 197, 118, 0.14), transparent 62%);
+    }
+
+    body[data-theme="legacy"] .clock-wrap .clock-demo {
+      background:
+        radial-gradient(circle at 50% 38%, rgba(255, 244, 218, 0.12) 0%, transparent 42%),
+        radial-gradient(circle, rgba(45, 38, 22, 0.6), rgba(18, 15, 8, 0.92) 68%);
+      box-shadow:
+        0 0 clamp(16px, 5vmin, 40px) rgba(230, 190, 95, 0.22),
+        inset 0 0 clamp(20px, 6vmin, 50px) rgba(235, 197, 118, 0.06);
+    }
+
+    body[data-theme="legacy"] .clock-wrap .clock-demo .r1 {
+      --color: rgba(255, 244, 218, 0.96);
+      --width: clamp(3.5px, 1.25vmin, 6.5px);
+      --dur-1: 42s;
+    }
+    body[data-theme="legacy"] .clock-wrap .clock-demo .r2 {
+      --color: rgba(235, 200, 120, 0.9);
+      --width: clamp(3px, 1.1vmin, 5.5px);
+      --dur-2: 30s;
+    }
+    body[data-theme="legacy"] .clock-wrap .clock-demo .r3 {
+      --color: rgba(180, 140, 70, 0.85);
+      --dur-3: 22s;
+    }
+    body[data-theme="legacy"] .clock-wrap .clock-demo .r4 {
+      --color: rgba(255, 230, 180, 0.88);
+      --dur-4: 15s;
+    }
+    body[data-theme="legacy"] .clock-label .pct {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 600;
+    }
+    body[data-theme="legacy"] {
+      --sec-stroke: rgba(255, 196, 83, 0.98);
+      --sec-glow: drop-shadow(0 0 clamp(5px, 1.5vmin, 12px) rgba(230, 190, 95, 0.45));
+      --pct-glow: 0 0 18px rgba(235, 197, 118, 0.35);
+    }
+
+    /* ═══ HOLOGRAM — HUD·네온·스캔라인 ═══ */
+    body[data-theme="hologram"] {
+      --bg: #02030a;
+      --fg: #e8fbff;
+      --dim: rgba(160, 230, 255, 0.5);
+      --vignette: radial-gradient(ellipse 75% 58% at 50% 45%, rgba(60, 220, 255, 0.14), transparent 62%);
+    }
+
+    body[data-theme="hologram"] .clock-wrap::after {
+      content: "";
+      position: absolute;
+      inset: -6%;
+      border-radius: 50%;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent 0px,
+        transparent 3px,
+        rgba(60, 220, 255, 0.04) 3px,
+        rgba(60, 220, 255, 0.04) 4px
+      );
+      opacity: 0.65;
+      pointer-events: none;
+      z-index: 4;
+      mix-blend-mode: screen;
+      animation: holoScan 6s linear infinite;
+    }
+
+    @keyframes holoScan {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(8px); }
+    }
+
+    body[data-theme="hologram"] .clock-wrap .clock-demo {
+      background:
+        radial-gradient(circle at 50% 50%, rgba(60, 220, 255, 0.08) 0%, transparent 55%),
+        radial-gradient(circle, rgba(20, 40, 80, 0.5), rgba(4, 8, 20, 0.95) 70%);
+      box-shadow:
+        0 0 clamp(20px, 7vmin, 52px) rgba(0, 225, 255, 0.25),
+        inset 0 0 clamp(8px, 2.5vmin, 20px) rgba(180, 70, 255, 0.08);
+    }
+
+    body[data-theme="hologram"] .clock-wrap .clock-demo .r1 {
+      --color: rgba(200, 255, 255, 0.85);
+      --dur-1: 32s;
+    }
+    body[data-theme="hologram"] .clock-wrap .clock-demo .r2 {
+      --color: rgba(255, 70, 240, 0.82);
+      --dur-2: 22s;
+    }
+    body[data-theme="hologram"] .clock-wrap .clock-demo .r3 {
+      --color: rgba(60, 245, 255, 0.88);
+      --dur-3: 15s;
+    }
+    body[data-theme="hologram"] .clock-wrap .clock-demo .r4 {
+      --color: rgba(170, 90, 255, 0.85);
+      --dur-4: 10s;
+    }
+    body[data-theme="hologram"] .clock-wrap .clock-demo > span::before {
+      --ring-pulse: holoPulse 2.5s ease-in-out infinite;
+      --ring-filter: drop-shadow(0 0 clamp(5px, 1.5vmin, 12px) rgba(0, 225, 255, 0.5));
+    }
+
+    @keyframes holoPulse {
+      0%, 100% { opacity: 0.65; filter: hue-rotate(0deg); }
+      50% { opacity: 1; filter: hue-rotate(12deg); }
+    }
+
+    body[data-theme="hologram"] .clock-label .pct {
+      font-family: "Consolas", monospace;
+      color: #d8fcff;
+    }
+    body[data-theme="hologram"] {
+      --sec-stroke: rgba(60, 245, 255, 0.98);
+      --sec-glow: drop-shadow(0 0 clamp(6px, 1.8vmin, 14px) rgba(0, 225, 255, 0.55));
+      --pct-glow: 0 0 24px rgba(70, 230, 255, 0.5), 0 0 48px rgba(180, 70, 255, 0.25);
+    }
+
+    /* per-card scope (mini previews inherit theme tokens) */
+    .theme-card[data-theme="void"] { --card-accent: #b8c4d0; }
+    .theme-card[data-theme="classic"] { --card-accent: #48eaff; }
+
+    .badge-classic {
+      display: inline-block;
+      padding: 0.15rem 0.45rem;
+      border-radius: 6px;
+      font-size: 0.58rem;
+      letter-spacing: 0.08em;
+      background: rgba(72, 234, 255, 0.15);
+      color: #9ae8ff;
+    }
+
+    .theme-card[data-theme="ember"] { --card-accent: #ff6b4a; }
+    .theme-card[data-theme="cosmos"] { --card-accent: #8ae8ff; }
+    .theme-card[data-theme="chronograph"] { --card-accent: #d7c28a; }
+    .theme-card[data-theme="legacy"] { --card-accent: #f3c76f; }
+    .theme-card[data-theme="hologram"] { --card-accent: #48eaff; }
+
+    .theme-card[data-theme] .clock-wrap .clock-demo,
+    .theme-card[data-theme] .clock-wrap .clock-demo .r1,
+    .theme-card[data-theme] .clock-wrap .clock-demo .r2,
+    .theme-card[data-theme] .clock-wrap .clock-demo .r3,
+    .theme-card[data-theme] .clock-wrap .clock-demo .r4,
+    .theme-card[data-theme] .clock-ring-sec .sec-ring-arc {
+      /* inherit from body when hero; cards duplicate via JS theme class on card wrapper */
+    }
+
+    /* Mini clocks: theme tokens scoped on card */
+    .theme-card[data-theme="void"] .clock-wrap .clock-demo {
+      background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.035) 0 22%, transparent 24%);
+      box-shadow: none;
+    }
+    .theme-card[data-theme="void"] .clock-wrap .clock-demo .r1 { --color: rgba(210, 218, 228, 0.82); }
+    .theme-card[data-theme="void"] .clock-wrap .clock-demo .r2 { --color: rgba(175, 185, 198, 0.68); }
+    .theme-card[data-theme="void"] .clock-wrap .clock-demo .r3 { --color: rgba(140, 150, 165, 0.58); }
+    .theme-card[data-theme="void"] .clock-wrap .clock-demo .r4 { --color: rgba(105, 115, 130, 0.5); }
+    .theme-card[data-theme="void"] .sec-ring-arc { stroke: rgba(255, 72, 78, 0.92); }
+
+    .theme-card[data-theme="classic"] .clock-wrap .clock-demo {
+      background:
+        radial-gradient(circle at 50% 50%, rgba(255, 246, 230, 0.13) 0 20%, transparent 22%),
+        radial-gradient(circle, rgba(72, 234, 255, 0.1), transparent 66%);
+      box-shadow: 0 0 18px rgba(72, 234, 255, 0.2);
+    }
+    .theme-card[data-theme="classic"] .clock-wrap .clock-demo > span::before {
+      border-top-color: var(--color);
+      border-right-color: var(--color);
+      filter: drop-shadow(0 0 6px var(--color));
+      animation: ringPulse 5s ease-in-out infinite;
+    }
+    .theme-card[data-theme="classic"] .r1 { --color: rgba(255, 246, 230, 0.95); --dur-1: 36s; }
+    .theme-card[data-theme="classic"] .r2 { --color: rgba(72, 234, 255, 0.9); --dur-2: 26s; }
+    .theme-card[data-theme="classic"] .r3 { --color: rgba(155, 92, 255, 0.9); --dur-3: 18s; }
+    .theme-card[data-theme="classic"] .r4 { --color: rgba(255, 232, 110, 0.96); --dur-4: 12s; }
+    .theme-card[data-theme="classic"] .sec-ring-arc { stroke: rgba(255, 72, 78, 0.92); }
+
+    .theme-card[data-theme="ember"] .clock-wrap .clock-demo {
+      background: radial-gradient(ellipse 90% 75% at 50% 78%, rgba(255, 90, 40, 0.32) 0%, transparent 52%),
+        radial-gradient(circle at 50% 42%, rgba(60, 18, 12, 0.85) 0%, rgba(20, 6, 4, 0.95) 68%, transparent 72%);
+      box-shadow: 0 0 20px rgba(255, 70, 35, 0.3);
+    }
+    .theme-card[data-theme="ember"] .r1 { --color: rgba(255, 235, 210, 0.95); --dur-1: 28s; }
+    .theme-card[data-theme="ember"] .r2 { --color: rgba(255, 150, 80, 0.92); --dur-2: 20s; }
+    .theme-card[data-theme="ember"] .r3 { --color: rgba(255, 85, 50, 0.9); --dur-3: 14s; }
+    .theme-card[data-theme="ember"] .r4 { --color: rgba(220, 45, 30, 0.88); --dur-4: 9s; }
+    .theme-card[data-theme="ember"] .sec-ring-arc { stroke: rgba(255, 95, 55, 0.96); }
+
+    .theme-card[data-theme="cosmos"] .clock-wrap .clock-demo {
+      background: radial-gradient(circle at 35% 35%, rgba(120, 200, 255, 0.2) 0%, transparent 45%),
+        radial-gradient(circle, rgba(8, 20, 55, 0.9), rgba(2, 8, 25, 0.98) 70%);
+      box-shadow: 0 0 18px rgba(80, 150, 255, 0.25);
+    }
+    .theme-card[data-theme="cosmos"] .r1 { --color: rgba(230, 248, 255, 0.9); --dur-1: 48s; }
+    .theme-card[data-theme="cosmos"] .r2 { --color: rgba(120, 210, 255, 0.88); --dur-2: 34s; }
+    .theme-card[data-theme="cosmos"] .r3 { --color: rgba(140, 120, 255, 0.85); --dur-3: 24s; }
+    .theme-card[data-theme="cosmos"] .r4 { --color: rgba(70, 140, 255, 0.82); --dur-4: 16s; }
+    .theme-card[data-theme="cosmos"] .sec-ring-arc { stroke: rgba(100, 220, 255, 0.95); }
+
+    .theme-card[data-theme="chronograph"] .clock-wrap .clock-demo {
+      background: radial-gradient(circle at 50% 50%, rgba(30, 28, 24, 0.95) 0%, rgba(12, 11, 9, 1) 62%, transparent 64%);
+      border: 1px solid rgba(215, 194, 138, 0.35);
+    }
+    .theme-card[data-theme="chronograph"] .r1 { --color: rgba(240, 228, 200, 0.88); --width: 2px; --dur-1: 55s; }
+    .theme-card[data-theme="chronograph"] .r2 { --color: rgba(190, 165, 110, 0.8); --width: 2px; --dur-2: 40s; }
+    .theme-card[data-theme="chronograph"] .r3 { --color: rgba(150, 140, 120, 0.72); --dur-3: 28s; }
+    .theme-card[data-theme="chronograph"] .r4 { --color: rgba(215, 190, 130, 0.85); --dur-4: 20s; }
+    .theme-card[data-theme="chronograph"] .sec-ring-arc { stroke: rgba(255, 215, 140, 0.94); }
+
+    .theme-card[data-theme="legacy"] .clock-wrap .clock-demo {
+      background: radial-gradient(circle at 50% 38%, rgba(255, 244, 218, 0.12) 0%, transparent 42%),
+        radial-gradient(circle, rgba(45, 38, 22, 0.6), rgba(18, 15, 8, 0.92) 68%);
+      box-shadow: 0 0 16px rgba(230, 190, 95, 0.2);
+    }
+    .theme-card[data-theme="legacy"] .r1 { --color: rgba(255, 244, 218, 0.96); --width: 3.5px; --dur-1: 42s; }
+    .theme-card[data-theme="legacy"] .r2 { --color: rgba(235, 200, 120, 0.9); --width: 3px; --dur-2: 30s; }
+    .theme-card[data-theme="legacy"] .r3 { --color: rgba(180, 140, 70, 0.85); --dur-3: 22s; }
+    .theme-card[data-theme="legacy"] .r4 { --color: rgba(255, 230, 180, 0.88); --dur-4: 15s; }
+    .theme-card[data-theme="legacy"] .sec-ring-arc { stroke: rgba(255, 196, 83, 0.98); }
+
+    .theme-card[data-theme="hologram"] .clock-wrap .clock-demo {
+      background: radial-gradient(circle at 50% 50%, rgba(60, 220, 255, 0.08) 0%, transparent 55%),
+        radial-gradient(circle, rgba(20, 40, 80, 0.5), rgba(4, 8, 20, 0.95) 70%);
+      box-shadow: 0 0 20px rgba(0, 225, 255, 0.22);
+    }
+    .theme-card[data-theme="hologram"] .r1 { --color: rgba(200, 255, 255, 0.85); --dur-1: 32s; }
+    .theme-card[data-theme="hologram"] .r2 { --color: rgba(255, 70, 240, 0.82); --dur-2: 22s; }
+    .theme-card[data-theme="hologram"] .r3 { --color: rgba(60, 245, 255, 0.88); --dur-3: 15s; }
+    .theme-card[data-theme="hologram"] .r4 { --color: rgba(170, 90, 255, 0.85); --dur-4: 10s; }
+    .theme-card[data-theme="hologram"] .sec-ring-arc { stroke: rgba(60, 245, 255, 0.98); }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body data-mood="calm" data-theme="classic">
+  <div class="backdrop" aria-hidden="true"></div>
+  <div class="page">
+    <header class="top">
+      <div>
+        <h1>유료 테마 시계 미리보기</h1>
+        <p class="lead"><strong>Void</strong> = 확정 무료. <strong>Classic</strong> 포함 유료 테마는 앱에 반영됨. 카드를 누르면 위 큰 시계가 바뀝니다.</p>
+        <span class="badge-free">Void — 앱 무료 (고정)</span>
+      </div>
+      <a href="index.html">← 앱으로</a>
+    </header>
+
+    <section class="hero" aria-label="선택한 테마 큰 미리보기">
+      <h2>선택 테마</h2>
+      <p id="hero-name">Classic</p>
+      <p id="hero-desc">무료 확정 직전 — 흰·시안·보라·노랑 4링 + 빨간 초</p>
+      <div class="hero-clock" id="hero-clock"></div>
+    </section>
+
+    <div class="grid" id="theme-grid" role="list"></div>
+
+    <p class="note">
+      <strong>앱 동기화:</strong> 유료 테마 시계 스타일은 <code>index.html</code>의
+      <code>html.hc-app body[data-theme="…"]</code>와 맞춰 두었습니다.
+      미리보기와 앱이 다르면 <code>npm run cap:sync</code> 후 앱을 다시 실행해 주세요.
+    </p>
+  </div>
+
+  <script>
+    const THEMES = [
+      { id: "void", name: "Void", tier: "free", desc: "현재 앱 무료 — 회색 4링 + 빨간 초 (변경 금지)", locked: true },
+      { id: "classic", name: "Classic", tier: "premium", desc: "유료 — 컬러 링 4색(흰·시안·보라·노랑) + 빨간 초" },
+      { id: "ember", name: "Ember", tier: "premium", desc: "불꽃·재 — 빠른 궤도, 따뜻한 글로우, 오렌지 초 링" },
+      { id: "cosmos", name: "Cosmos", tier: "premium", desc: "심해 성운 — 느린 궤도, 별빛, 시안 초 링" },
+      { id: "chronograph", name: "Chronograph", tier: "premium", desc: "크로노 다이얼 — 눈금·얇은 브라스 링" },
+      { id: "legacy", name: "Legacy", tier: "premium", desc: "헤리룸 골드 — 굵은 금링·세리프 톤" },
+      { id: "hologram", name: "Hologram", tier: "premium", desc: "네온 HUD — 시안·마젠타·스캔라인" },
+    ];
+
+    const C_SEC = 2 * Math.PI * 40;
+    let active = "classic";
+
+    function clockMarkup() {
+      return `
+        <div class="clock-wrap">
+          <div class="clock-demo">
+            <span class="r1" aria-hidden="true"></span>
+            <span class="r2" aria-hidden="true"></span>
+            <span class="r3" aria-hidden="true"></span>
+            <span class="r4" aria-hidden="true"></span>
+            <svg class="clock-ring-sec" viewBox="0 0 200 200" aria-hidden="true">
+              <circle class="sec-ring-track" cx="100" cy="100" r="40" />
+              <g transform="rotate(-90 100 100)">
+                <circle class="sec-ring-arc" cx="100" cy="100" r="40" fill="none" />
+              </g>
+            </svg>
+            <div class="clock-label">
+              <span class="pct">64.8<small style="font-size:0.42em;opacity:0.7">%</small></span>
+              <span class="caption">TIME LEFT</span>
+            </div>
+          </div>
+        </div>`;
+    }
+
+    function secLeft(now) {
+      const s = now.getSeconds();
+      return s === 0 ? 60 : 60 - s;
+    }
+
+    function syncSecRings(now) {
+      const left = secLeft(now);
+      const vis = (left / 60) * C_SEC;
+      const gap = Math.max(0, C_SEC - vis);
+      document.querySelectorAll(".sec-ring-arc").forEach((arc) => {
+        arc.setAttribute("stroke-dasharray", `${vis} ${gap}`);
+      });
+    }
+
+    function setTheme(id) {
+      active = id;
+      const t = THEMES.find((x) => x.id === id) || THEMES[1];
+      document.body.dataset.theme = id;
+      const suffix = t.tier === "free" ? " (무료·고정)" : t.tier === "premium" ? " (유료)" : "";
+      document.getElementById("hero-name").textContent = t.name + suffix;
+      document.getElementById("hero-desc").textContent = t.desc;
+      document.querySelectorAll(".theme-card").forEach((card) => {
+        card.classList.toggle("is-active", card.dataset.theme === id);
+      });
+    }
+
+    function buildGrid() {
+      const grid = document.getElementById("theme-grid");
+      const hero = document.getElementById("hero-clock");
+      hero.innerHTML = clockMarkup();
+
+      THEMES.forEach((t) => {
+        const card = document.createElement("button");
+        card.type = "button";
+        card.className = "theme-card" + (t.locked ? " locked-free" : "");
+        card.dataset.theme = t.id;
+        card.setAttribute("role", "listitem");
+        card.innerHTML = `
+          <h3>${t.name} ${t.tier === "premium" ? '<span class="badge-premium">PRO</span>' : ""}</h3>
+          <p>${t.desc}</p>
+          ${clockMarkup()}
+        `;
+        card.addEventListener("click", () => setTheme(t.id));
+        grid.appendChild(card);
+      });
+
+      setTheme(active);
+    }
+
+    buildGrid();
+    function tick() {
+      syncSecRings(new Date());
+      requestAnimationFrame(tick);
+    }
+    tick();
+  </script>
+</body>
+</html>

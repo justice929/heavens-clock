@@ -43,7 +43,10 @@
     return /\/site\/?(index\.html)?(\?|#|$)/i.test(window.location.pathname);
   }
 
-  if (isNativeApp()) return;
+  if (isNativeApp()) {
+    document.documentElement.classList.add("hc-app");
+    return;
+  }
   if (isPremium(loadEntitlements())) return;
   if (isLandingPage()) return;
 

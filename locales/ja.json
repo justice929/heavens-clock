@@ -18,6 +18,10 @@
     "min": "分",
     "sec": "秒"
   },
+  "digit": {
+    "switchToTotalDays": "Show total days left, then hours and seconds",
+    "switchToYears": "Show years, days, and hours"
+  },
   "onboarding": {
     "title": "はじめる",
     "subtitle": "望む人生の長さを設定します。",
@@ -46,7 +50,9 @@
     "birthTimeQuestion": "分かる場合は、生まれた時間を入力してください。",
     "lifespanQuestion": "何年生きたいですか？",
     "invalidDate": "正しい日付を入力してください。",
-    "invalidTime": "正しい時刻を入力してください。"
+    "invalidTime": "正しい時刻を入力してください。",
+    "privacyPrefix": "すべての情報はこの端末にのみ保存されます。",
+    "privacyLink": "プライバシーポリシー"
   },
   "quotes": [
     "This day will not come again. Make it count.",
@@ -115,7 +121,22 @@
     "purchaseYearlyDone": "年間プレミアムが有効になりました。",
     "purchaseLifetimeDone": "買い切りプレミアムが有効になりました。",
     "restoreFound": "プレミアムを復元しました。",
-    "restoreEmpty": "このGoogleアカウントではプレミアムの購入が見つかりませんでした。"
+    "restoreEmpty": "このGoogleアカウントではプレミアムの購入が見つかりませんでした。",
+    "productNotAvailable": "This product isn't available on your account. Make sure the app is installed from Google Play.",
+    "networkError": "Network error. Check your connection and try again.",
+    "paymentNotAllowed": "Payments are blocked on this account or device.",
+    "verificationFailed": "Payment verification failed. Please contact support.",
+    "alreadyOwned": "You already own this product. Tap Restore purchases.",
+    "testTitle": "Test activation",
+    "testBody": "Turn on Premium on this device without completing Play Billing.",
+    "testLifetime": "Lifetime (test)",
+    "testYearly": "Yearly (test)",
+    "testRevoke": "Reset to free",
+    "testHint": "On the main screen, long-press ✦ (about 0.7s) to enable test mode, then open Premium again.",
+    "testModeOn": "Billing test mode is on. Tap ✦ again to open Premium.",
+    "longPressHint": "Long-press for billing test mode",
+    "legalPrefix": "決済はGoogle Playで処理されます。",
+    "privacyLink": "プライバシーポリシー"
   },
   "bucket": {
     "title": "バケットリスト",

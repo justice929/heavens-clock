@@ -18,6 +18,10 @@
     "min": "分",
     "sec": "秒"
   },
+  "digit": {
+    "switchToTotalDays": "Show total days left, then hours and seconds",
+    "switchToYears": "Show years, days, and hours"
+  },
   "onboarding": {
     "title": "开始",
     "subtitle": "设定你期望的人生长度。",
@@ -46,7 +50,9 @@
     "birthTimeQuestion": "如果知道，请输入你出生的时间。",
     "lifespanQuestion": "你希望活多少年？",
     "invalidDate": "请输入有效日期。",
-    "invalidTime": "请输入有效时间。"
+    "invalidTime": "请输入有效时间。",
+    "privacyPrefix": "所有信息仅存储在此设备上。",
+    "privacyLink": "隐私政策"
   },
   "quotes": [
     "This day will not come again. Make it count.",
@@ -115,7 +121,22 @@
     "purchaseYearlyDone": "年付高级版已在此设备激活。",
     "purchaseLifetimeDone": "终身高级版已在此设备激活。",
     "restoreFound": "已恢复高级版权限。",
-    "restoreEmpty": "此 Google 账号尚未找到高级版购买记录。"
+    "restoreEmpty": "此 Google 账号尚未找到高级版购买记录。",
+    "productNotAvailable": "This product isn't available on your account. Make sure the app is installed from Google Play.",
+    "networkError": "Network error. Check your connection and try again.",
+    "paymentNotAllowed": "Payments are blocked on this account or device.",
+    "verificationFailed": "Payment verification failed. Please contact support.",
+    "alreadyOwned": "You already own this product. Tap Restore purchases.",
+    "testTitle": "Test activation",
+    "testBody": "Turn on Premium on this device without completing Play Billing.",
+    "testLifetime": "Lifetime (test)",
+    "testYearly": "Yearly (test)",
+    "testRevoke": "Reset to free",
+    "testHint": "On the main screen, long-press ✦ (about 0.7s) to enable test mode, then open Premium again.",
+    "testModeOn": "Billing test mode is on. Tap ✦ again to open Premium.",
+    "longPressHint": "Long-press for billing test mode",
+    "legalPrefix": "付款由 Google Play 处理。",
+    "privacyLink": "隐私政策"
   },
   "bucket": {
     "title": "愿望清单",

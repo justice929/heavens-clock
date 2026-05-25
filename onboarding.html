@@ -168,6 +168,20 @@
       grid-template-columns: 0.32fr 1fr;
       gap: 0.65rem;
     }
+    .privacy-note {
+      margin-top: 1.4rem;
+      text-align: center;
+      font-size: 0.7rem;
+      color: rgba(215, 224, 234, 0.4);
+      line-height: 1.55;
+    }
+    .privacy-note a {
+      color: rgba(215, 224, 234, 0.78);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: rgba(215, 224, 234, 0.32);
+    }
+    .privacy-note a:hover { color: #f1c873; }
     .btn {
       min-height: 3.15rem;
       border-radius: 999px;
@@ -257,6 +271,10 @@
       <button type="button" class="btn btn-back hidden" id="btn-back" data-i18n="onboarding.back">Back</button>
       <button type="button" class="btn btn-primary" id="btn-next" data-i18n="onboarding.next">Next</button>
     </div>
+    <p class="privacy-note" id="onboarding-privacy">
+      <span data-i18n="onboarding.privacyPrefix">All your information stays on this device.</span>
+      <a href="https://heavens-clock.app/privacy" target="_blank" rel="noopener" data-i18n="onboarding.privacyLink">Privacy Policy</a>
+    </p>
   </main>
   <nav class="edit-bottom hidden" id="edit-bottom" aria-label="Edit shortcuts">
     <button type="button" class="btn btn-clock" id="btn-clock" data-i18n="onboarding.backToClock">Back to clock</button>

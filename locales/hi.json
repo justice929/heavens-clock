@@ -18,6 +18,10 @@
     "min": "मिनट",
     "sec": "सेकंड"
   },
+  "digit": {
+    "switchToTotalDays": "Show total days left, then hours and seconds",
+    "switchToYears": "Show years, days, and hours"
+  },
   "onboarding": {
     "title": "शुरू करें",
     "subtitle": "अपनी आशा की जीवन अवधि निर्धारित करें।",
@@ -46,7 +50,9 @@
     "birthTimeQuestion": "यदि पता हो, तो अपने जन्म का समय जोड़ें।",
     "lifespanQuestion": "आप कितने वर्ष जीना चाहते हैं?",
     "invalidDate": "कृपया सही तारीख दर्ज करें।",
-    "invalidTime": "कृपया सही समय दर्ज करें।"
+    "invalidTime": "कृपया सही समय दर्ज करें।",
+    "privacyPrefix": "आपकी सारी जानकारी केवल इस डिवाइस पर रहती है।",
+    "privacyLink": "गोपनीयता नीति"
   },
   "quotes": [
     "This day will not come again. Make it count.",
@@ -115,7 +121,22 @@
     "purchaseYearlyDone": "वार्षिक प्रीमियम इस डिवाइस पर सक्रिय किया गया।",
     "purchaseLifetimeDone": "आजीवन प्रीमियम इस डिवाइस पर सक्रिय किया गया।",
     "restoreFound": "इस डिवाइस पर प्रीमियम पहुँच पुनर्स्थापित की गई।",
-    "restoreEmpty": "इस Google खाते पर अभी कोई प्रीमियम खरीद नहीं मिली।"
+    "restoreEmpty": "इस Google खाते पर अभी कोई प्रीमियम खरीद नहीं मिली।",
+    "productNotAvailable": "This product isn't available on your account. Make sure the app is installed from Google Play.",
+    "networkError": "Network error. Check your connection and try again.",
+    "paymentNotAllowed": "Payments are blocked on this account or device.",
+    "verificationFailed": "Payment verification failed. Please contact support.",
+    "alreadyOwned": "You already own this product. Tap Restore purchases.",
+    "testTitle": "Test activation",
+    "testBody": "Turn on Premium on this device without completing Play Billing.",
+    "testLifetime": "Lifetime (test)",
+    "testYearly": "Yearly (test)",
+    "testRevoke": "Reset to free",
+    "testHint": "On the main screen, long-press ✦ (about 0.7s) to enable test mode, then open Premium again.",
+    "testModeOn": "Billing test mode is on. Tap ✦ again to open Premium.",
+    "longPressHint": "Long-press for billing test mode",
+    "legalPrefix": "भुगतान Google Play द्वारा प्रोसेस होते हैं।",
+    "privacyLink": "गोपनीयता नीति"
   },
   "bucket": {
     "title": "बकेट लिस्ट",

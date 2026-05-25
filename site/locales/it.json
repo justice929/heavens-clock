@@ -75,5 +75,6 @@
     "success": "Sei nella lista locale di anteprima. La connessione reale arriverà prima del rilascio pubblico.",
     "invalidEmail": "Inserisci un indirizzo email valido."
   },
-  "footer": "Orologio del Cielo · Un promemoria per vivere prima che il giorno finisca."
+  "footer": "Orologio del Cielo · Un promemoria per vivere prima che il giorno finisca.",
+  "footerPrivacy": "Informativa sulla privacy"
 }

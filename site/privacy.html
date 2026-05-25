@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy · Heaven's Clock</title>
+  <meta name="description" content="How Heaven's Clock handles your data. We do not collect or transmit personal information.">
+  <link rel="icon" type="image/svg+xml" href="/icon.svg">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #020306;
+      --fg: #fff6e6;
+      --dim: rgba(255, 246, 230, 0.74);
+      --muted: rgba(255, 246, 230, 0.46);
+      --gold: #f1c873;
+      --cyan: #48eaff;
+      --violet: #9b5cff;
+      --line: rgba(255, 246, 230, 0.12);
+      --panel: rgba(255, 255, 255, 0.045);
+      font-family: "Inter", "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(72, 234, 255, 0.14), transparent 24rem),
+        radial-gradient(circle at 80% 8%, rgba(155, 92, 255, 0.14), transparent 26rem),
+        var(--bg);
+      color: var(--fg);
+      line-height: 1.65;
+      padding: 3.5rem 0 5rem;
+    }
+
+    .wrap {
+      width: min(760px, calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 2.5rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--fg);
+    }
+
+    .brand-mark {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1px solid var(--gold);
+      background:
+        radial-gradient(circle at 30% 30%, rgba(241, 200, 115, 0.6), transparent 60%),
+        rgba(241, 200, 115, 0.08);
+    }
+
+    .back-home {
+      font-size: 0.9rem;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .back-home:hover {
+      border-color: var(--gold);
+      color: var(--fg);
+    }
+
+    .lang-tabs {
+      display: inline-flex;
+      gap: 0;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 3px;
+      margin-bottom: 2rem;
+    }
+
+    .lang-tabs button {
+      background: none;
+      border: 0;
+      color: var(--muted);
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: color 0.2s ease, background 0.2s ease;
+    }
+
+    .lang-tabs button[aria-selected="true"] {
+      background: rgba(241, 200, 115, 0.16);
+      color: var(--gold);
+    }
+
+    h1 {
+      font-family: "Cormorant Garamond", "Times New Roman", serif;
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      margin-bottom: 0.5rem;
+    }
+
+    .lede {
+      color: var(--dim);
+      font-size: 1.05rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .updated {
+      color: var(--muted);
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-family: "Cormorant Garamond", "Times New Roman", serif;
+      font-size: 1.55rem;
+      font-weight: 500;
+      margin: 2.5rem 0 0.8rem;
+      color: var(--gold);
+    }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.5rem;
+      color: var(--fg);
+    }
+
+    p { color: var(--dim); margin-bottom: 0.8rem; }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 0.8rem;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 1.2rem;
+      margin-bottom: 0.35rem;
+      color: var(--dim);
+    }
+
+    ul li::before {
+      content: "·";
+      position: absolute;
+      left: 0.3rem;
+      top: -0.15rem;
+      color: var(--gold);
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    strong { color: var(--fg); font-weight: 600; }
+
+    a.inline {
+      color: var(--gold);
+      border-bottom: 1px dotted rgba(241, 200, 115, 0.5);
+      transition: opacity 0.2s ease;
+    }
+
+    a.inline:hover { opacity: 0.8; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--panel);
+    }
+
+    th, td {
+      padding: 0.7rem 0.9rem;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.92rem;
+    }
+
+    th {
+      background: rgba(241, 200, 115, 0.08);
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .lang-section { display: none; }
+    .lang-section.active { display: block; }
+
+    .contact-box {
+      margin-top: 3rem;
+      padding: 1.5rem;
+      border: 1px solid var(--gold-line, rgba(241, 200, 115, 0.26));
+      border-radius: 12px;
+      background: rgba(241, 200, 115, 0.05);
+    }
+
+    .contact-box h3 { margin-top: 0; color: var(--gold); }
+
+    footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.85rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <a class="brand" href="/site/">
+        <span class="brand-mark" aria-hidden="true"></span>
+        Heaven's Clock
+      </a>
+      <a class="back-home" href="/site/">← Back to home</a>
+    </div>
+
+    <div class="lang-tabs" role="tablist" aria-label="Language">
+      <button type="button" role="tab" aria-selected="true" data-lang="en">English</button>
+      <button type="button" role="tab" aria-selected="false" data-lang="ko">한국어</button>
+    </div>
+
+    <!-- ENGLISH -->
+    <section class="lang-section active" data-lang="en">
+      <h1>Privacy Policy</h1>
+      <p class="lede">Heaven's Clock is built around a simple promise: we do not collect, store, or transmit your personal data.</p>
+      <p class="updated">Last updated: <strong>[EFFECTIVE_DATE]</strong></p>
+
+      <h2>1. Who we are</h2>
+      <p>Heaven's Clock is developed and published by <strong>justice</strong> ("we", "us"), based in <strong>[COUNTRY]</strong>. You can reach us anytime at <a class="inline" href="mailto:paxpax13@gmail.com">paxpax13@gmail.com</a>.</p>
+
+      <h2>2. What data we collect</h2>
+      <p><strong>None on our servers.</strong> Heaven's Clock has no user accounts, no backend database, and no analytics SDKs.</p>
+      <p>The following information stays <strong>only on your device</strong> (the app's local storage) and is never transmitted to us or any third party:</p>
+      <ul>
+        <li>Birth date and optional birth time you enter during onboarding</li>
+        <li>Hoped-for lifespan in years</li>
+        <li>Device time zone (read locally, not sent)</li>
+        <li>Selected theme, mood, and language</li>
+        <li>Bucket-list items you create</li>
+        <li>Premium entitlement flags after a successful purchase</li>
+      </ul>
+      <p>Uninstalling the app removes all of this data.</p>
+
+      <h2>3. Permissions</h2>
+      <ul>
+        <li><strong>Internet</strong> — required for Google Play in-app purchases and OS/app updates. The app itself never sends your personal data over the internet.</li>
+        <li><strong>Google Play Billing</strong> — used only when you tap a purchase or restore button.</li>
+      </ul>
+      <p>The app does <strong>not</strong> request location, contacts, microphone, camera, calendar, SMS, or photo permissions.</p>
+
+      <h2>4. Payments</h2>
+      <p>Yearly Premium and Lifetime Premium purchases are processed by <strong>Google Play Billing</strong>. Google is the merchant of record and handles your payment information directly. We only receive:</p>
+      <ul>
+        <li>An order confirmation (anonymous order ID, product ID, purchase state)</li>
+        <li>Permission to grant your device the premium features</li>
+      </ul>
+      <p>We never see your card number, address, full name, or Google account email. Google's handling of payment data is governed by the <a class="inline" href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</p>
+
+      <h2>5. Third-party services</h2>
+      <table>
+        <thead>
+          <tr><th>Service</th><th>Purpose</th><th>Personal data we receive</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Google Play Billing</td><td>Process in-app purchases</td><td>None (only order metadata)</td></tr>
+          <tr><td>Capacitor runtime</td><td>App framework</td><td>None</td></tr>
+        </tbody>
+      </table>
+      <p>We do not use Google Analytics, Firebase Analytics, Facebook SDK, AdMob, or any other tracking or advertising SDK.</p>
+
+      <h2>6. Children</h2>
+      <p>Heaven's Clock is intended for users aged 13 and older. We do not knowingly collect personal data from children. If you believe a child has stored information through the app, contact us and we will help you delete it.</p>
+
+      <h2>7. Your rights</h2>
+      <p>Because all personal data stays on your device, you can exercise your rights at any time:</p>
+      <ul>
+        <li><strong>Access / Correct</strong> — open the app's settings (⚙) and edit your information.</li>
+        <li><strong>Delete</strong> — uninstall the app, or clear all fields from the onboarding edit screen.</li>
+        <li><strong>Withdraw consent</strong> — uninstall the app.</li>
+      </ul>
+      <p>If you live in the EU/UK (GDPR), Korea (PIPA), California (CCPA), or another jurisdiction with similar rights, the above applies. We have no server-side data to provide, correct, or erase.</p>
+
+      <h2>8. Data retention</h2>
+      <p>Data lives on your device until you uninstall the app or clear it manually. We have no retention obligation because we hold nothing centrally.</p>
+
+      <h2>9. Changes to this policy</h2>
+      <p>If we ever start collecting data on our servers, we will update this page and notify users inside the app before the change takes effect.</p>
+
+      <div class="contact-box">
+        <h3>10. Contact</h3>
+        <p>Questions, concerns, or requests: <a class="inline" href="mailto:paxpax13@gmail.com">paxpax13@gmail.com</a></p>
+      </div>
+    </section>
+
+    <!-- KOREAN -->
+    <section class="lang-section" data-lang="ko">
+      <h1>개인정보처리방침</h1>
+      <p class="lede">Heaven's Clock은 단순한 약속 위에 만들어졌습니다 — 개발자는 이용자의 개인정보를 수집·저장·전송하지 않습니다.</p>
+      <p class="updated">시행일: <strong>[EFFECTIVE_DATE]</strong></p>
+
+      <h2>1. 개발자 정보</h2>
+      <p>본 앱은 <strong>justice</strong>(이하 "개발자")이 개발·운영합니다.</p>
+      <ul>
+        <li>소재지: <strong>[COUNTRY]</strong></li>
+        <li>문의: <a class="inline" href="mailto:paxpax13@gmail.com">paxpax13@gmail.com</a></li>
+      </ul>
+
+      <h2>2. 수집·이용하는 정보</h2>
+      <p><strong>개발자 서버에서 수집·저장하는 개인정보는 없습니다.</strong> 본 앱은 회원가입·로그인·자체 백엔드·분석 SDK를 사용하지 않습니다.</p>
+      <p>다음 정보는 <strong>이용자 기기에만 저장</strong>되며, 외부로 전송되지 않습니다.</p>
+      <ul>
+        <li>온보딩 시 입력한 생년월일과(선택) 출생 시각</li>
+        <li>희망 수명(년)</li>
+        <li>기기에서 자동 감지한 표준시간대 (전송되지 않음)</li>
+        <li>선택한 테마, 무드, 언어</li>
+        <li>이용자가 등록한 버킷리스트 항목</li>
+        <li>결제 후 부여된 프리미엄 이용 권한 플래그</li>
+      </ul>
+      <p>앱을 삭제하면 위 정보는 모두 함께 삭제됩니다.</p>
+
+      <h2>3. 권한 사용 목적</h2>
+      <ul>
+        <li><strong>인터넷 권한</strong> — Google Play 인앱 결제 및 앱·OS 업데이트를 위해 필요합니다. 앱 자체는 이용자 개인정보를 인터넷으로 송신하지 않습니다.</li>
+        <li><strong>Google Play Billing</strong> — 결제 또는 구매 복원 버튼을 누를 때만 사용됩니다.</li>
+      </ul>
+      <p>위치, 연락처, 마이크, 카메라, 일정, SMS, 사진 권한은 <strong>요청하지 않습니다</strong>.</p>
+
+      <h2>4. 결제 정보 처리</h2>
+      <p>연간 구독·평생 이용권의 결제는 <strong>Google Play 결제 시스템</strong>을 통해 처리됩니다. Google이 결제 사업자이며, 카드·은행 정보는 직접 Google에 전달됩니다. 개발자는 다음 정보만 받습니다.</p>
+      <ul>
+        <li>주문 확인 정보(익명 주문 ID, 상품 ID, 결제 상태)</li>
+        <li>해당 기기에 프리미엄 기능을 부여할 권리</li>
+      </ul>
+      <p>카드번호, 주소, 실명, Google 계정 이메일 등은 <strong>개발자에게 전달되지 않습니다</strong>. Google의 결제 데이터 처리는 <a class="inline" href="https://policies.google.com/privacy?hl=ko" target="_blank" rel="noopener">Google 개인정보처리방침</a>을 따릅니다.</p>
+
+      <h2>5. 제3자 서비스</h2>
+      <table>
+        <thead>
+          <tr><th>서비스</th><th>목적</th><th>개발자가 받는 정보</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Google Play Billing</td><td>인앱 결제 처리</td><td>없음(주문 메타데이터만)</td></tr>
+          <tr><td>Capacitor 런타임</td><td>앱 프레임워크</td><td>없음</td></tr>
+        </tbody>
+      </table>
+      <p>Google Analytics, Firebase Analytics, Facebook SDK, AdMob 등 추적·분석·광고 SDK는 사용하지 않습니다.</p>
+
+      <h2>6. 만 14세 미만 아동</h2>
+      <p>본 앱은 만 13세 이상 이용을 권장하며, 만 14세 미만 아동의 개인정보를 의도적으로 수집하지 않습니다. 아동이 정보를 입력한 사실을 발견하면 위 메일로 알려 주세요. 확인 후 알 수 있는 모든 기기에서 삭제하도록 안내드립니다.</p>
+
+      <h2>7. 이용자의 권리</h2>
+      <p>모든 정보가 이용자 기기에만 저장되므로, 다음과 같이 직접 권리를 행사할 수 있습니다.</p>
+      <ul>
+        <li><strong>열람·정정</strong> — 앱의 설정(⚙) 화면에서 정보 수정</li>
+        <li><strong>삭제</strong> — 앱 삭제 또는 온보딩 "수정" → 입력값 초기화</li>
+        <li><strong>동의 철회</strong> — 앱 삭제</li>
+      </ul>
+      <p>EU/UK(GDPR), 한국(PIPA), 캘리포니아(CCPA) 등 다른 관할의 개인정보 권리도 동일하게 적용됩니다. 개발자 서버에 저장된 데이터가 없으므로 별도 청구 절차 없이 이용자가 직접 처리할 수 있습니다.</p>
+
+      <h2>8. 보유 기간</h2>
+      <p>모든 데이터는 이용자가 앱을 삭제하거나 직접 초기화할 때까지 기기에서만 보존됩니다. 개발자는 중앙 저장소를 운영하지 않습니다.</p>
+
+      <h2>9. 정책 변경 고지</h2>
+      <p>서버에서 데이터를 수집하기 시작하는 등 처리 방식이 바뀔 경우, 본 페이지를 갱신하고 변경 시행 전 앱 내에서 이용자에게 알립니다.</p>
+
+      <div class="contact-box">
+        <h3>10. 문의처</h3>
+        <p>문의·요청: <a class="inline" href="mailto:paxpax13@gmail.com">paxpax13@gmail.com</a></p>
+      </div>
+    </section>
+
+    <footer>
+      Heaven's Clock · A reminder to live before the day is gone.
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      const tabs = document.querySelectorAll('.lang-tabs button');
+      const sections = document.querySelectorAll('.lang-section');
+      const saved = (() => { try { return localStorage.getItem('hc-privacy-lang'); } catch (_) { return null; } })();
+      const initial = saved || (navigator.language && navigator.language.toLowerCase().startsWith('ko') ? 'ko' : 'en');
+      activate(initial);
+
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => activate(tab.dataset.lang));
+      });
+
+      function activate(lang) {
+        tabs.forEach((tab) => {
+          const on = tab.dataset.lang === lang;
+          tab.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+        sections.forEach((section) => {
+          section.classList.toggle('active', section.dataset.lang === lang);
+        });
+        document.documentElement.lang = lang;
+        try { localStorage.setItem('hc-privacy-lang', lang); } catch (_) { /* ignore */ }
+      }
+    })();
+  </script>
+</body>
+</html>

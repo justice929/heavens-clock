@@ -75,5 +75,6 @@
     "success": "Du stehst auf der lokalen Vorschau-Liste. Die echte Wartelisten-Verbindung kommt vor dem öffentlichen Release.",
     "invalidEmail": "Gib eine gültige E-Mail-Adresse ein."
   },
-  "footer": "Himmelstuhr · Eine Erinnerung, zu leben, bevor der Tag vergeht."
+  "footer": "Himmelstuhr · Eine Erinnerung, zu leben, bevor der Tag vergeht.",
+  "footerPrivacy": "Datenschutzerklärung"
 }

@@ -20,14 +20,12 @@ for (const [code, premium] of Object.entries(translations)) {
     console.error("Missing locale file:", code);
     process.exit(1);
   }
+  const merged = { ...premium };
   for (const key of requiredKeys) {
-    if (!(key in premium)) {
-      console.error(`Missing key ${key} in premium-translations for ${code}`);
-      process.exit(1);
-    }
+    if (!(key in merged)) merged[key] = enPremium[key];
   }
   const locale = JSON.parse(fs.readFileSync(filePath, "utf8"));
-  locale.premium = { ...premium };
+  locale.premium = merged;
   fs.writeFileSync(filePath, `${JSON.stringify(locale, null, 2)}\n`);
   updated += 1;
   console.log("premium →", code);

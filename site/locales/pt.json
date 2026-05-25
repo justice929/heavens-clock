@@ -75,5 +75,6 @@
     "success": "Você está na lista local de prévia. A conexão real virá antes do lançamento público.",
     "invalidEmail": "Digite um endereço de e-mail válido."
   },
-  "footer": "Relógio do Céu · Um lembrete de viver antes que o dia acabe."
+  "footer": "Relógio do Céu · Um lembrete de viver antes que o dia acabe.",
+  "footerPrivacy": "Política de Privacidade"
 }

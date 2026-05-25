@@ -75,5 +75,6 @@
     "success": "Bạn đã có trong danh sách xem trước cục bộ. Kết nối thật sẽ có trước khi phát hành công khai.",
     "invalidEmail": "Nhập địa chỉ email hợp lệ."
   },
-  "footer": "Đồng Hồ Thiên Đàng · Lời nhắc sống trước khi ngày qua đi."
+  "footer": "Đồng Hồ Thiên Đàng · Lời nhắc sống trước khi ngày qua đi.",
+  "footerPrivacy": "Chính sách bảo mật"
 }

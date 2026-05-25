@@ -9,6 +9,13 @@ export const THEMES = [
     description: "Minimal black, white rings, quiet meditation.",
   },
   {
+    id: "classic",
+    name: "Classic",
+    tier: "premium",
+    accent: "#48eaff",
+    description: "Vivid orbital rings — cream, cyan, violet, and gold with a red second hand.",
+  },
+  {
     id: "ember",
     name: "Ember",
     tier: "premium",

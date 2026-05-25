@@ -20,9 +20,29 @@
   const btnRestore = document.getElementById("btn-restore");
   const message = document.getElementById("message");
   const previewNote = document.getElementById("preview-note");
+  const testPanel = document.getElementById("test-panel");
+  const btnTestLifetime = document.getElementById("btn-test-lifetime");
+  const btnTestYearly = document.getElementById("btn-test-yearly");
+  const btnTestRevoke = document.getElementById("btn-test-revoke");
   const planButtons = [...document.querySelectorAll(".plan")];
 
   const billing = () => window.HeavensClockBilling;
+
+  function isBillingTestMode() {
+    const params = new URLSearchParams(location.search);
+    if (params.get("test") === "1" || params.get("dev") === "1") return true;
+    try {
+      return localStorage.getItem("heavens-clock-billing-test") === "1";
+    } catch (_) {
+      return false;
+    }
+  }
+
+  function enableBillingTestMode() {
+    try {
+      localStorage.setItem("heavens-clock-billing-test", "1");
+    } catch (_) {}
+  }
 
   function loadSettings() {
     try {
@@ -102,6 +122,28 @@
     if (!previewNote) return;
     previewNote.textContent =
       billingMode === "store" ? t("premium.storeNote") : t("premium.previewNote");
+  }
+
+  function updateTestPanelVisibility() {
+    if (!testPanel) return;
+    const show = billingMode === "preview" || isBillingTestMode();
+    testPanel.classList.toggle("hidden", !show);
+  }
+
+  function applyTestPurchase(productId) {
+    const api = billing();
+    if (!api?.applyLocalPurchase) throw new Error("BILLING_UNAVAILABLE");
+    return api.applyLocalPurchase(productId);
+  }
+
+  function applyTestRevoke() {
+    const api = billing();
+    if (api?.revokeLocalEntitlements) return api.revokeLocalEntitlements();
+    localStorage.setItem(
+      ENTITLEMENTS_KEY,
+      JSON.stringify({ yearlyPremium: false, lifetimePremium: false, yearlyExpiresAt: null })
+    );
+    return "free";
   }
 
   function updateStorePrices() {
@@ -190,16 +232,55 @@
       redirectAfterSuccess(plan);
     } catch (err) {
       const code = err?.message || "";
-      if (code === "PAYMENT_CANCELLED") {
-        setMessage("premium.purchaseCancelled");
-      } else if (code === "STORE_NOT_READY" || code === "BILLING_UNAVAILABLE") {
-        setMessage("premium.billingUnavailable");
-      } else {
-        setMessage("premium.purchaseFailed");
-      }
+      const map = {
+        PAYMENT_CANCELLED: "premium.purchaseCancelled",
+        STORE_NOT_READY: "premium.billingUnavailable",
+        BILLING_UNAVAILABLE: "premium.billingUnavailable",
+        SUBSCRIPTIONS_NOT_AVAILABLE: "premium.billingUnavailable",
+        PRODUCT_NOT_AVAILABLE: "premium.productNotAvailable",
+        NETWORK_ERROR: "premium.networkError",
+        PAYMENT_NOT_ALLOWED: "premium.paymentNotAllowed",
+        VERIFICATION_FAILED: "premium.verificationFailed",
+        ALREADY_OWNED: "premium.alreadyOwned",
+      };
+      setMessage(map[code] || "premium.purchaseFailed");
+      if (code === "ALREADY_OWNED") updatePlanUi();
     } finally {
       setBusy(false);
     }
+  });
+
+  btnTestLifetime?.addEventListener("click", () => {
+    setBusy(true);
+    try {
+      const plan = applyTestPurchase(PRODUCT_IDS.lifetimePremium);
+      updatePlanUi();
+      redirectAfterSuccess(plan);
+    } catch (_) {
+      setMessage("premium.purchaseFailed");
+    } finally {
+      setBusy(false);
+    }
+  });
+
+  btnTestYearly?.addEventListener("click", () => {
+    setBusy(true);
+    try {
+      const plan = applyTestPurchase(PRODUCT_IDS.yearlyPremium);
+      updatePlanUi();
+      redirectAfterSuccess(plan);
+    } catch (_) {
+      setMessage("premium.purchaseFailed");
+    } finally {
+      setBusy(false);
+    }
+  });
+
+  btnTestRevoke?.addEventListener("click", () => {
+    applyTestRevoke();
+    updatePlanUi();
+    setMessage("premium.freePlan");
+    if (planStatus) planStatus.textContent = t("premium.freePlan");
   });
 
   btnRestore?.addEventListener("click", async () => {
@@ -225,8 +306,10 @@
       window.setTimeout(() => {
         location.href = returnUrl();
       }, 700);
-    } catch (_) {
-      setMessage("premium.restoreFailed");
+    } catch (err) {
+      const code = err?.message || "";
+      if (code === "NETWORK_ERROR") setMessage("premium.networkError");
+      else setMessage("premium.restoreFailed");
     } finally {
       setBusy(false);
     }
@@ -254,9 +337,32 @@
     }
 
     updatePreviewNote();
+    updateTestPanelVisibility();
     updateStorePrices();
     updatePlanUi();
     if (message) message.textContent = "";
+
+    window.HeavensClockDev = {
+      enableTestMode: () => {
+        enableBillingTestMode();
+        updateTestPanelVisibility();
+      },
+      grantLifetime: () => {
+        applyTestPurchase(PRODUCT_IDS.lifetimePremium);
+        updatePlanUi();
+      },
+      grantYearly: () => {
+        applyTestPurchase(PRODUCT_IDS.yearlyPremium);
+        updatePlanUi();
+      },
+      revoke: () => {
+        applyTestRevoke();
+        updatePlanUi();
+      },
+      getPlan: () => getPlan(loadEntitlements()),
+      isPremium: () => isPremium(loadEntitlements()),
+      billingMode: () => billingMode,
+    };
   }
 
   init();

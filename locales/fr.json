@@ -18,6 +18,10 @@
     "min": "MIN",
     "sec": "SEC"
   },
+  "digit": {
+    "switchToTotalDays": "Show total days left, then hours and seconds",
+    "switchToYears": "Show years, days, and hours"
+  },
   "onboarding": {
     "title": "Commencer",
     "subtitle": "Définissez la vie que vous espérez.",
@@ -46,7 +50,9 @@
     "birthTimeQuestion": "Si tu la connais, ajoute ton heure de naissance.",
     "lifespanQuestion": "Combien d’années espères-tu vivre ?",
     "invalidDate": "Veuillez saisir une date valide.",
-    "invalidTime": "Veuillez saisir une heure valide."
+    "invalidTime": "Veuillez saisir une heure valide.",
+    "privacyPrefix": "Toutes vos informations restent sur cet appareil.",
+    "privacyLink": "Politique de confidentialité"
   },
   "quotes": [
     "This day will not come again. Make it count.",
@@ -115,7 +121,22 @@
     "purchaseYearlyDone": "Premium annuel activé sur cet appareil.",
     "purchaseLifetimeDone": "Premium à vie activé sur cet appareil.",
     "restoreFound": "Accès Premium restauré sur cet appareil.",
-    "restoreEmpty": "Aucun achat Premium trouvé pour ce compte Google."
+    "restoreEmpty": "Aucun achat Premium trouvé pour ce compte Google.",
+    "productNotAvailable": "This product isn't available on your account. Make sure the app is installed from Google Play.",
+    "networkError": "Network error. Check your connection and try again.",
+    "paymentNotAllowed": "Payments are blocked on this account or device.",
+    "verificationFailed": "Payment verification failed. Please contact support.",
+    "alreadyOwned": "You already own this product. Tap Restore purchases.",
+    "testTitle": "Test activation",
+    "testBody": "Turn on Premium on this device without completing Play Billing.",
+    "testLifetime": "Lifetime (test)",
+    "testYearly": "Yearly (test)",
+    "testRevoke": "Reset to free",
+    "testHint": "On the main screen, long-press ✦ (about 0.7s) to enable test mode, then open Premium again.",
+    "testModeOn": "Billing test mode is on. Tap ✦ again to open Premium.",
+    "longPressHint": "Long-press for billing test mode",
+    "legalPrefix": "Les paiements sont traités par Google Play.",
+    "privacyLink": "Politique de confidentialité"
   },
   "bucket": {
     "title": "Liste de vie",

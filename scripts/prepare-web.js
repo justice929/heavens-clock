@@ -15,6 +15,7 @@ const out = path.join(root, "www");
 
 const entries = [
   "index.html",
+  "theme-preview.html",
   "onboarding.html",
   "premium.html",
   "bucket.html",

@@ -18,6 +18,10 @@
     "min": "PHÚT",
     "sec": "GIÂY"
   },
+  "digit": {
+    "switchToTotalDays": "Show total days left, then hours and seconds",
+    "switchToYears": "Show years, days, and hours"
+  },
   "onboarding": {
     "title": "Bắt đầu",
     "subtitle": "Đặt cuộc đời bạn mong muốn.",
@@ -46,7 +50,9 @@
     "birthTimeQuestion": "Nếu biết, hãy nhập giờ bạn chào đời.",
     "lifespanQuestion": "Bạn hy vọng sống bao nhiêu năm?",
     "invalidDate": "Vui lòng nhập ngày hợp lệ.",
-    "invalidTime": "Vui lòng nhập thời gian hợp lệ."
+    "invalidTime": "Vui lòng nhập thời gian hợp lệ.",
+    "privacyPrefix": "Mọi thông tin của bạn chỉ lưu trên thiết bị này.",
+    "privacyLink": "Chính sách bảo mật"
   },
   "quotes": [
     "This day will not come again. Make it count.",
@@ -115,7 +121,22 @@
     "purchaseYearlyDone": "Premium hàng năm đã kích hoạt trên thiết bị này.",
     "purchaseLifetimeDone": "Premium trọn đời đã kích hoạt trên thiết bị này.",
     "restoreFound": "Đã khôi phục quyền Premium trên thiết bị này.",
-    "restoreEmpty": "Chưa tìm thấy giao dịch Premium cho tài khoản Google này."
+    "restoreEmpty": "Chưa tìm thấy giao dịch Premium cho tài khoản Google này.",
+    "productNotAvailable": "This product isn't available on your account. Make sure the app is installed from Google Play.",
+    "networkError": "Network error. Check your connection and try again.",
+    "paymentNotAllowed": "Payments are blocked on this account or device.",
+    "verificationFailed": "Payment verification failed. Please contact support.",
+    "alreadyOwned": "You already own this product. Tap Restore purchases.",
+    "testTitle": "Test activation",
+    "testBody": "Turn on Premium on this device without completing Play Billing.",
+    "testLifetime": "Lifetime (test)",
+    "testYearly": "Yearly (test)",
+    "testRevoke": "Reset to free",
+    "testHint": "On the main screen, long-press ✦ (about 0.7s) to enable test mode, then open Premium again.",
+    "testModeOn": "Billing test mode is on. Tap ✦ again to open Premium.",
+    "longPressHint": "Long-press for billing test mode",
+    "legalPrefix": "Thanh toán được xử lý qua Google Play.",
+    "privacyLink": "Chính sách bảo mật"
   },
   "bucket": {
     "title": "Danh sách muốn làm",

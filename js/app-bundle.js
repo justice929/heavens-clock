@@ -3,6 +3,7 @@
   const THEME_KEY = "heavens-clock-theme";
   const WIDGET_DATA_KEY = "memento-mori-widget";
   const MOOD_KEY = "heaven-clock-mood";
+  const DIGIT_TIER_KEY = "heavens-clock-digit-tier";
   const BUCKET_KEY = "heavens-clock-bucket-list";
   const ENTITLEMENTS_KEY = "heavens-clock-entitlements";
 
@@ -19,6 +20,7 @@
 
   const THEMES = [
     { id: "void", name: "Void", tier: "free", accent: "#e8d9b8" },
+    { id: "classic", name: "Classic", tier: "premium", accent: "#48eaff" },
     { id: "ember", name: "Ember", tier: "premium", accent: "#ff6b4a" },
     { id: "cosmos", name: "Cosmos", tier: "premium", accent: "#8ae8ff" },
     { id: "chronograph", name: "Chronograph", tier: "premium", accent: "#d7c28a" },
@@ -293,6 +295,37 @@
 
   function pad(n) { return String(n).padStart(2, "0"); }
 
+  function isNativeApp() {
+    try {
+      if (window.HeavensClockBridge) return true;
+      if (window.Capacitor?.isNativePlatform?.()) return true;
+      const platform = window.Capacitor?.getPlatform?.();
+      if (platform && platform !== "web") return true;
+    } catch (_) {}
+    return false;
+  }
+
+  function loadDigitTier() {
+    try {
+      return localStorage.getItem(DIGIT_TIER_KEY) === "totalDays" ? "totalDays" : "years";
+    } catch (_) {
+      return "years";
+    }
+  }
+
+  function saveDigitTier(tier) {
+    try { localStorage.setItem(DIGIT_TIER_KEY, tier); } catch (_) {}
+  }
+
+  function totalDaysRemaining(now, target) {
+    return Math.max(0, Math.ceil((target - now) / 86_400_000));
+  }
+
+  function minuteSecondsCountdown(now) {
+    const s = now.getSeconds();
+    return s === 0 ? 60 : 60 - s;
+  }
+
   function remainingParts(from, to) {
     if (to <= from) return { years: 0, days: 0, hours: 0, minutes: 0, seconds: 0 };
     let cursor = new Date(from.getTime());
@@ -345,10 +378,24 @@
     const moodHint = document.getElementById("mood-hint");
     const caption = document.getElementById("caption");
     const clockWrap = document.getElementById("clock-wrap");
+    const secRingArc = isNativeApp() ? document.getElementById("sec-ring-arc") : null;
+    let secRingCircumference = 0;
+    let prevSecRingTick = -1;
+    if (secRingArc) {
+      const rRing = Number(secRingArc.getAttribute("r")) || 40;
+      secRingCircumference = 2 * Math.PI * rRing;
+    }
     const themeSwitch = document.getElementById("theme-switch");
     const bucketSpotlight = document.getElementById("bucket-spotlight");
     const bucketCount = document.getElementById("bucket-count");
     const values = Object.fromEntries([...document.querySelectorAll(".unit-value")].map((el) => [el.dataset.key, el]));
+    const digitsPanel = document.getElementById("digits-panel");
+    const digitTierToggle = document.getElementById("digit-tier-toggle");
+    const digitLabel1 = document.getElementById("digit-label-1");
+    const digitLabel2 = document.getElementById("digit-label-2");
+    const digitLabel3 = document.getElementById("digit-label-3");
+    const digitSlot3 = document.getElementById("digit-slot-3");
+    let digitTier = loadDigitTier();
     const tabs = [...document.querySelectorAll(".mood-switch button")];
     let entitlements = loadEntitlements();
     enforceBucketLimit(entitlements);
@@ -360,6 +407,29 @@
     quote.textContent = quoteForToday();
     tabs[0].textContent = t("mood.calm");
     tabs[1].textContent = t("mood.impact");
+
+    function applyDigitTierChrome() {
+      if (digitsPanel) digitsPanel.dataset.digitTier = digitTier;
+      if (digitTierToggle) {
+        digitTierToggle.setAttribute("aria-pressed", digitTier === "totalDays" ? "true" : "false");
+        digitTierToggle.setAttribute(
+          "aria-label",
+          t(digitTier === "years" ? "digit.switchToTotalDays" : "digit.switchToYears")
+        );
+      }
+      if (digitSlot3) digitSlot3.classList.toggle("unit-as-seconds", digitTier === "totalDays");
+    }
+
+    function cycleDigitTier() {
+      digitTier = digitTier === "years" ? "totalDays" : "years";
+      saveDigitTier(digitTier);
+      applyDigitTierChrome();
+      updateDigits(new Date());
+    }
+
+    applyDigitTierChrome();
+    digitTierToggle?.addEventListener("click", cycleDigitTier);
+    if (secRingArc && secRingCircumference) syncSecRingArc(new Date());
 
     function updateWidgetSnapshot() {
       const now = new Date();
@@ -452,6 +522,8 @@
       moodHint.textContent = t(`hint.${document.body.dataset.mood || "calm"}`);
       quote.textContent = quoteForToday();
       targetLabel.textContent = formatTargetLabel(target);
+      applyDigitTierChrome();
+      updateDigits(new Date());
       showBucketItem();
       updateWidgetSnapshot();
     }
@@ -506,7 +578,24 @@
       syncMoodLocks();
       bucketState = loadBucketItems(entitlements);
       showBucketItem();
+      const currentTheme = document.body.dataset.theme || "void";
+      const theme = THEMES.find((t) => t.id === currentTheme) || THEMES[0];
+      if (!hasPremiumThemeAccess(theme, entitlements)) {
+        setTheme(FREE_LIMITS.themeId);
+      }
       updateWidgetSnapshot();
+    }
+
+    const billingApi = window.HeavensClockBilling;
+    if (billingApi?.isNativeStoreAvailable?.()) {
+      billingApi
+        .initStore({ onProductsUpdated: syncAccessUI })
+        .catch(() => {});
+      document.addEventListener("visibilitychange", () => {
+        if (!document.hidden && billingApi.refreshEntitlements) {
+          billingApi.refreshEntitlements().then(syncAccessUI).catch(() => {});
+        }
+      });
     }
 
     window.HeavensClockDev = {
@@ -535,19 +624,50 @@
       return total > 0 ? Math.max(0, Math.min(1, left / total)) : 0;
     }
     let prevWallSec = -1;
+    function syncSecRingArc(now) {
+      if (!secRingArc || !secRingCircumference) return;
+      const s = now.getSeconds();
+      if (s === prevSecRingTick) return;
+      prevSecRingTick = s;
+      const left = minuteSecondsCountdown(now);
+      const visible = (left / 60) * secRingCircumference;
+      const gap = Math.max(0, secRingCircumference - visible);
+      secRingArc.setAttribute("stroke-dasharray", `${visible} ${gap}`);
+      secRingArc.setAttribute("stroke-dashoffset", "0");
+    }
+
     function updateDigits(now) {
       pctValue.textContent = (lifeRatio(now) * 100).toFixed(1);
       const parts = remainingParts(now, target);
-      values.years.textContent = parts.years;
-      values.days.textContent = parts.days;
-      values.hours.textContent = pad(parts.hours);
+      if (digitTier === "years") {
+        values.years.textContent = parts.years;
+        if (digitLabel1) digitLabel1.textContent = t("unit.year");
+        values.days.textContent = parts.days;
+        if (digitLabel2) digitLabel2.textContent = t("unit.day");
+        values.hours.textContent = pad(parts.hours);
+        if (digitLabel3) digitLabel3.textContent = t("unit.hour");
+      } else {
+        values.years.textContent = totalDaysRemaining(now, target);
+        if (digitLabel1) digitLabel1.textContent = t("unit.day");
+        values.days.textContent = pad(parts.hours);
+        if (digitLabel2) digitLabel2.textContent = t("unit.hour");
+        values.hours.textContent = pad(minuteSecondsCountdown(now));
+        if (digitLabel3) digitLabel3.textContent = t("unit.sec");
+      }
       if (values.minutes) values.minutes.textContent = pad(parts.minutes);
+      if (values.seconds) values.seconds.textContent = pad(parts.seconds);
+      syncSecRingArc(now);
     }
     function animate() {
       const now = new Date();
+      syncSecRingArc(now);
+      if (digitTier === "totalDays") {
+        values.hours.textContent = pad(minuteSecondsCountdown(now));
+      }
       const ws = now.getSeconds();
       if (ws !== prevWallSec) {
         prevWallSec = ws;
+        updateDigits(now);
         if (document.body.dataset.mood === "impact") {
           clockWrap.classList.remove("heartbeat");
           void clockWrap.offsetWidth;

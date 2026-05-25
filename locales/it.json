@@ -18,6 +18,10 @@
     "min": "MIN",
     "sec": "SEC"
   },
+  "digit": {
+    "switchToTotalDays": "Show total days left, then hours and seconds",
+    "switchToYears": "Show years, days, and hours"
+  },
   "onboarding": {
     "title": "Inizia",
     "subtitle": "Imposta la vita che speri di vivere.",
@@ -46,7 +50,9 @@
     "birthTimeQuestion": "Se la conosci, aggiungi l’ora in cui sei nato.",
     "lifespanQuestion": "Quanti anni speri di vivere?",
     "invalidDate": "Inserisci una data valida.",
-    "invalidTime": "Inserisci un orario valido."
+    "invalidTime": "Inserisci un orario valido.",
+    "privacyPrefix": "Tutte le tue informazioni restano solo su questo dispositivo.",
+    "privacyLink": "Informativa sulla privacy"
   },
   "quotes": [
     "This day will not come again. Make it count.",
@@ -115,7 +121,22 @@
     "purchaseYearlyDone": "Premium annuale attivato su questo dispositivo.",
     "purchaseLifetimeDone": "Premium a vita attivato su questo dispositivo.",
     "restoreFound": "Accesso Premium ripristinato su questo dispositivo.",
-    "restoreEmpty": "Nessun acquisto Premium trovato per questo account Google."
+    "restoreEmpty": "Nessun acquisto Premium trovato per questo account Google.",
+    "productNotAvailable": "This product isn't available on your account. Make sure the app is installed from Google Play.",
+    "networkError": "Network error. Check your connection and try again.",
+    "paymentNotAllowed": "Payments are blocked on this account or device.",
+    "verificationFailed": "Payment verification failed. Please contact support.",
+    "alreadyOwned": "You already own this product. Tap Restore purchases.",
+    "testTitle": "Test activation",
+    "testBody": "Turn on Premium on this device without completing Play Billing.",
+    "testLifetime": "Lifetime (test)",
+    "testYearly": "Yearly (test)",
+    "testRevoke": "Reset to free",
+    "testHint": "On the main screen, long-press ✦ (about 0.7s) to enable test mode, then open Premium again.",
+    "testModeOn": "Billing test mode is on. Tap ✦ again to open Premium.",
+    "longPressHint": "Long-press for billing test mode",
+    "legalPrefix": "I pagamenti sono gestiti da Google Play.",
+    "privacyLink": "Informativa sulla privacy"
   },
   "bucket": {
     "title": "Lista dei desideri",

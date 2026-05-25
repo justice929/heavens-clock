@@ -718,6 +718,26 @@
       padding: 3rem 0;
       color: var(--muted);
       font-size: 0.82rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+    }
+
+    footer .legal {
+      display: inline-flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    footer .legal a {
+      color: var(--dim);
+      transition: color 0.2s ease;
+    }
+
+    footer .legal a:hover {
+      color: var(--gold);
     }
 
     @media (max-width: 900px) {
@@ -965,7 +985,12 @@
     </section>
   </main>
 
-  <footer class="wrap" data-i18n="footer">Heaven's Clock · A reminder to live before the day is gone.</footer>
+  <footer class="wrap">
+    <span data-i18n="footer">Heaven's Clock · A reminder to live before the day is gone.</span>
+    <span class="legal">
+      <a href="/site/privacy.html" data-i18n="footerPrivacy">Privacy Policy</a>
+    </span>
+  </footer>
   <script src="/js/locales-meta.js"></script>
   <script src="/site/site.js?v=20260519-lang-3"></script>
 </body>

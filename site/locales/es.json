@@ -75,5 +75,6 @@
     "success": "Estás en la lista local de vista previa. La conexión real llegará antes del lanzamiento público.",
     "invalidEmail": "Introduce una dirección de correo válida."
   },
-  "footer": "Reloj del Cielo · Un recordatorio de vivir antes de que el día se acabe."
+  "footer": "Reloj del Cielo · Un recordatorio de vivir antes de que el día se acabe.",
+  "footerPrivacy": "Política de Privacidad"
 }

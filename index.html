@@ -89,6 +89,22 @@
       --vignette: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(255, 40, 40, 0.06) 0%, transparent 55%);
     }
 
+    body[data-theme="classic"] {
+      --bg: #07090d;
+      --fg: #e8ecf2;
+      --dim: rgba(184, 196, 208, 0.48);
+      --glow: rgba(72, 234, 255, 0.16);
+      --ring-years: rgba(255, 246, 230, 0.92);
+      --ring-days: rgba(72, 234, 255, 0.78);
+      --ring-hours: rgba(155, 92, 255, 0.72);
+      --ring-minutes: rgba(255, 232, 110, 0.68);
+      --ring-seconds: rgba(255, 72, 78, 0.95);
+      --panel-border: rgba(72, 234, 255, 0.18);
+      --panel-bg: rgba(72, 234, 255, 0.04);
+      --text-glow: 0 0 18px rgba(72, 234, 255, 0.35), 0 0 48px rgba(155, 92, 255, 0.15);
+      --vignette: radial-gradient(ellipse 80% 70% at 50% 45%, rgba(72, 234, 255, 0.06), transparent 55%);
+    }
+
     body[data-theme="ember"] {
       --bg: #050202;
       --fg: #fff2ec;
@@ -734,6 +750,51 @@
       transition: border-color var(--ease-mood), box-shadow var(--ease-mood), transform 0.15s ease;
     }
 
+    button.unit-face {
+      width: 100%;
+      font: inherit;
+      color: inherit;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button.unit-face:focus-visible {
+      outline: 2px solid var(--fg);
+      outline-offset: 3px;
+    }
+
+    button.unit-face:active {
+      transform: scale(0.98);
+    }
+
+    .digits[data-digit-tier="totalDays"] .unit-hours.unit-as-seconds .unit-face {
+      border-color: rgba(255, 80, 80, 0.42);
+      box-shadow: 0 0 36px rgba(255, 50, 50, 0.14);
+    }
+
+    body[data-mood="calm"] .digits[data-digit-tier="totalDays"] .unit-hours.unit-as-seconds .unit-face {
+      border-color: rgba(255, 90, 90, 0.32);
+      box-shadow: 0 0 28px rgba(255, 60, 60, 0.1);
+    }
+
+    .digits[data-digit-tier="totalDays"] .unit-hours.unit-as-seconds .unit-value {
+      color: #ff5a5e;
+      text-shadow: 0 0 18px rgba(255, 70, 75, 0.35);
+    }
+
+    .digits[data-digit-tier="totalDays"] .unit-hours.unit-as-seconds .unit-label {
+      color: #ff6b6f;
+    }
+
+    body[data-mood="impact"] .digits[data-digit-tier="totalDays"] .unit-hours.unit-as-seconds .unit-value {
+      text-shadow: 0 0 20px rgba(255, 80, 85, 0.55), 0 0 48px rgba(255, 50, 50, 0.25);
+    }
+
+    /* ⑤ 초 링 — 앱에서만 표시 (웹 시계 연출은 그대로) */
+    .clock-ring-sec {
+      display: none;
+    }
+
     body[data-mood="calm"] .unit-face::before,
     body[data-mood="calm"] .unit-face::after { display: none; }
 
@@ -1058,6 +1119,407 @@
         animation: none !important;
       }
     }
+
+    /*
+      앱(네이티브) 전용 — html.hc-app 은 Capacitor 에서만 붙음.
+      브라우저·site 마케팅 시계(.clock-demo 기본 규칙)는 변경하지 않음.
+    */
+    html.hc-app body[data-theme="void"] .clock-wrap .clock-demo {
+      background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.035) 0 22%, transparent 24%);
+      box-shadow: none;
+    }
+
+    html.hc-app body[data-theme="void"] .clock-wrap .clock-demo > span {
+      border-color: rgba(255, 255, 255, 0.06);
+    }
+
+    /*
+      WebView: calc(var(--size)/300) 무효 → 궤도 링 두께 0.
+      앱에서만 clamp/vmin 으로 ①~④ 링을 다시 그림.
+    */
+    html.hc-app .clock-wrap .clock-demo > span {
+      z-index: 1;
+    }
+
+    html.hc-app .clock-wrap .clock-demo .r1 {
+      --width: clamp(2.5px, 1.05vmin, 5.5px);
+    }
+
+    html.hc-app .clock-wrap .clock-demo .r2 {
+      --width: clamp(2px, 0.88vmin, 4.25px);
+    }
+
+    html.hc-app .clock-wrap .clock-demo .r3 {
+      --width: clamp(2px, 0.88vmin, 4.25px);
+    }
+
+    html.hc-app .clock-wrap .clock-demo .r4 {
+      --width: clamp(1.5px, 0.72vmin, 3.25px);
+    }
+
+    html.hc-app .clock-wrap .clock-demo > span::before {
+      filter: drop-shadow(0 0 clamp(3px, 1vmin, 8px) color-mix(in srgb, var(--color) 70%, transparent));
+    }
+
+    html.hc-app body[data-theme="void"] .clock-wrap .clock-demo .r1 {
+      --color: rgba(210, 218, 228, 0.82);
+    }
+
+    html.hc-app body[data-theme="void"] .clock-wrap .clock-demo .r2 {
+      --color: rgba(175, 185, 198, 0.68);
+    }
+
+    html.hc-app body[data-theme="void"] .clock-wrap .clock-demo .r3 {
+      --color: rgba(140, 150, 165, 0.58);
+    }
+
+    html.hc-app body[data-theme="void"] .clock-wrap .clock-demo .r4 {
+      --color: rgba(105, 115, 130, 0.5);
+    }
+
+    html.hc-app .clock-ring-sec {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      display: block;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      pointer-events: none;
+    }
+
+    html.hc-app .clock-ring-sec .sec-ring-track {
+      fill: none;
+      stroke: rgba(255, 255, 255, 0.06);
+      stroke-width: clamp(1.5px, 0.55vmin, 3px);
+      stroke-linecap: round;
+    }
+
+    html.hc-app body[data-theme="void"] .clock-ring-sec #sec-ring-arc {
+      fill: none;
+      stroke: rgba(255, 72, 78, 0.92);
+      stroke-width: clamp(2px, 0.72vmin, 3.5px);
+      stroke-linecap: butt;
+      filter: drop-shadow(0 0 clamp(3px, 1vmin, 8px) rgba(255, 70, 75, 0.45));
+    }
+
+    /* ═══ CLASSIC (유료) — 컬러 링 4색 + 빨간 초 ═══ */
+    html.hc-app body[data-theme="classic"] .clock-wrap .clock-demo {
+      background:
+        radial-gradient(circle at 50% 50%, rgba(255, 246, 230, 0.13) 0 20%, transparent 22%),
+        radial-gradient(circle, rgba(72, 234, 255, 0.1), transparent 66%);
+      box-shadow: 0 0 clamp(16px, 5.5vmin, 48px) rgba(72, 234, 255, 0.22);
+    }
+
+    html.hc-app body[data-theme="classic"] .clock-wrap .clock-demo > span {
+      border-color: rgba(255, 246, 230, 0.13);
+    }
+
+    html.hc-app body[data-theme="classic"] .clock-wrap .clock-demo > span::before {
+      border-top-color: var(--color);
+      border-right-color: var(--color);
+      filter: drop-shadow(0 0 clamp(4px, 1.25vmin, 12px) var(--color));
+      animation: hcSiteRingPulse 5s ease-in-out infinite;
+    }
+
+    html.hc-app body[data-theme="classic"] .clock-wrap .clock-demo .r1 {
+      --color: rgba(255, 246, 230, 0.95);
+      animation: hcSiteOrbit 36s linear infinite;
+    }
+
+    html.hc-app body[data-theme="classic"] .clock-wrap .clock-demo .r2 {
+      --color: rgba(72, 234, 255, 0.9);
+      animation: hcSiteOrbitReverse 26s linear infinite;
+    }
+
+    html.hc-app body[data-theme="classic"] .clock-wrap .clock-demo .r3 {
+      --color: rgba(155, 92, 255, 0.9);
+      animation: hcSiteOrbit 18s linear infinite;
+    }
+
+    html.hc-app body[data-theme="classic"] .clock-wrap .clock-demo .r4 {
+      --color: rgba(255, 232, 110, 0.96);
+      animation: hcSiteOrbitReverse 12s linear infinite;
+    }
+
+    html.hc-app body[data-theme="classic"] .clock-ring-sec #sec-ring-arc {
+      stroke: rgba(255, 72, 78, 0.92);
+      filter: drop-shadow(0 0 clamp(3px, 1vmin, 8px) rgba(255, 70, 75, 0.45));
+    }
+
+    /* ═══ CHRONOGRAPH (유료) — 크로노 다이얼 · 눈금 · 얇은 브라스 링 ═══ */
+    html.hc-app body[data-theme="chronograph"] .clock-wrap .clock-demo {
+      background:
+        radial-gradient(circle at 50% 50%, rgba(30, 28, 24, 0.95) 0%, rgba(12, 11, 9, 1) 62%, transparent 64%),
+        conic-gradient(from 0deg, rgba(215, 194, 138, 0.08) 0deg, transparent 30deg);
+      border: clamp(1px, 0.35vmin, 2px) solid rgba(215, 194, 138, 0.35);
+      box-shadow:
+        inset 0 0 0 clamp(3px, 1vmin, 8px) rgba(0, 0, 0, 0.5),
+        0 0 clamp(10px, 3vmin, 24px) rgba(0, 0, 0, 0.4);
+    }
+
+    html.hc-app body[data-theme="chronograph"] .clock-wrap .clock-demo::after {
+      content: "";
+      position: absolute;
+      inset: 8%;
+      border-radius: 50%;
+      background: repeating-conic-gradient(
+        from -90deg,
+        rgba(215, 194, 138, 0.55) 0deg 1.2deg,
+        transparent 1.2deg 7.5deg
+      );
+      opacity: 0.35;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    html.hc-app body[data-theme="chronograph"] .clock-wrap .clock-demo .r1 {
+      --color: rgba(240, 228, 200, 0.88);
+      --width: clamp(1.5px, 0.55vmin, 2.5px);
+      animation: hcSiteOrbit 55s linear infinite;
+    }
+
+    html.hc-app body[data-theme="chronograph"] .clock-wrap .clock-demo .r2 {
+      --color: rgba(190, 165, 110, 0.8);
+      --width: clamp(1.5px, 0.55vmin, 2.5px);
+      animation: hcSiteOrbitReverse 40s linear infinite;
+    }
+
+    html.hc-app body[data-theme="chronograph"] .clock-wrap .clock-demo .r3 {
+      --color: rgba(150, 140, 120, 0.72);
+      --width: clamp(1.2px, 0.48vmin, 2px);
+      animation: hcSiteOrbit 28s linear infinite;
+    }
+
+    html.hc-app body[data-theme="chronograph"] .clock-wrap .clock-demo .r4 {
+      --color: rgba(215, 190, 130, 0.85);
+      --width: clamp(1.2px, 0.48vmin, 2px);
+      animation: hcSiteOrbitReverse 20s linear infinite;
+    }
+
+    html.hc-app body[data-theme="chronograph"] .clock-wrap .clock-demo > span::before {
+      border-top-color: var(--color);
+      border-right-color: transparent;
+      animation: none;
+      filter: none;
+    }
+
+    html.hc-app body[data-theme="chronograph"] .clock-wrap .clock-demo .clock-label .pct {
+      font-family: "Consolas", "Roboto Mono", monospace;
+      font-weight: 500;
+    }
+
+    html.hc-app body[data-theme="chronograph"] .clock-ring-sec #sec-ring-arc {
+      stroke: rgba(255, 215, 140, 0.94);
+      filter: drop-shadow(0 0 4px rgba(200, 170, 100, 0.4));
+    }
+
+    html.hc-app body[data-theme="chronograph"] .clock-ring-sec .sec-ring-track {
+      stroke: rgba(215, 194, 138, 0.12);
+    }
+
+    @keyframes hcCosmosTwinkle {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 0.85; }
+    }
+
+    @keyframes hcHoloScan {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(8px); }
+    }
+
+    @keyframes hcHoloPulse {
+      0%, 100% { opacity: 0.65; filter: hue-rotate(0deg); }
+      50% { opacity: 1; filter: hue-rotate(12deg); }
+    }
+
+    /* ═══ EMBER (유료) ═══ */
+    html.hc-app body[data-theme="ember"] .clock-wrap .clock-demo {
+      background:
+        radial-gradient(ellipse 90% 75% at 50% 78%, rgba(255, 90, 40, 0.32) 0%, transparent 52%),
+        radial-gradient(circle at 50% 42%, rgba(60, 18, 12, 0.85) 0%, rgba(20, 6, 4, 0.95) 68%, transparent 72%);
+      box-shadow:
+        0 0 clamp(20px, 8vmin, 56px) rgba(255, 70, 35, 0.35),
+        inset 0 0 clamp(12px, 4vmin, 32px) rgba(255, 120, 60, 0.08);
+    }
+
+    html.hc-app body[data-theme="ember"] .clock-wrap .clock-demo .r1 {
+      --color: rgba(255, 235, 210, 0.95);
+      --width: clamp(3px, 1.15vmin, 6px);
+      animation: hcSiteOrbit 28s linear infinite;
+    }
+
+    html.hc-app body[data-theme="ember"] .clock-wrap .clock-demo .r2 {
+      --color: rgba(255, 150, 80, 0.92);
+      animation: hcSiteOrbitReverse 20s linear infinite;
+    }
+
+    html.hc-app body[data-theme="ember"] .clock-wrap .clock-demo .r3 {
+      --color: rgba(255, 85, 50, 0.9);
+      animation: hcSiteOrbit 14s linear infinite;
+    }
+
+    html.hc-app body[data-theme="ember"] .clock-wrap .clock-demo .r4 {
+      --color: rgba(220, 45, 30, 0.88);
+      animation: hcSiteOrbitReverse 9s linear infinite;
+    }
+
+    html.hc-app body[data-theme="ember"] .clock-wrap .clock-demo > span::before {
+      filter: drop-shadow(0 0 clamp(6px, 1.8vmin, 14px) rgba(255, 90, 45, 0.55));
+    }
+
+    html.hc-app body[data-theme="ember"] .clock-ring-sec #sec-ring-arc {
+      stroke: rgba(255, 95, 55, 0.96);
+      filter: drop-shadow(0 0 clamp(4px, 1.2vmin, 10px) rgba(255, 80, 40, 0.6));
+    }
+
+    /* ═══ COSMOS (유료) ═══ */
+    html.hc-app body[data-theme="cosmos"] .clock-wrap::before {
+      inset: -5%;
+      background:
+        radial-gradient(1px 1px at 20% 30%, rgba(255, 255, 255, 0.5), transparent),
+        radial-gradient(1px 1px at 70% 20%, rgba(200, 230, 255, 0.4), transparent),
+        radial-gradient(1.5px 1.5px at 55% 75%, rgba(180, 220, 255, 0.35), transparent),
+        radial-gradient(1px 1px at 85% 55%, rgba(255, 255, 255, 0.3), transparent);
+      opacity: 0.7;
+      animation: hcCosmosTwinkle 8s ease-in-out infinite;
+    }
+
+    html.hc-app body[data-theme="cosmos"] .clock-wrap .clock-demo {
+      background:
+        radial-gradient(circle at 35% 35%, rgba(120, 200, 255, 0.2) 0%, transparent 45%),
+        radial-gradient(circle at 65% 60%, rgba(100, 80, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(circle, rgba(8, 20, 55, 0.9), rgba(2, 8, 25, 0.98) 70%);
+      box-shadow: 0 0 clamp(18px, 6vmin, 48px) rgba(80, 150, 255, 0.28);
+    }
+
+    html.hc-app body[data-theme="cosmos"] .clock-wrap .clock-demo .r1 {
+      --color: rgba(230, 248, 255, 0.9);
+      animation: hcSiteOrbit 48s linear infinite;
+    }
+
+    html.hc-app body[data-theme="cosmos"] .clock-wrap .clock-demo .r2 {
+      --color: rgba(120, 210, 255, 0.88);
+      animation: hcSiteOrbitReverse 34s linear infinite;
+    }
+
+    html.hc-app body[data-theme="cosmos"] .clock-wrap .clock-demo .r3 {
+      --color: rgba(140, 120, 255, 0.85);
+      animation: hcSiteOrbit 24s linear infinite;
+    }
+
+    html.hc-app body[data-theme="cosmos"] .clock-wrap .clock-demo .r4 {
+      --color: rgba(70, 140, 255, 0.82);
+      animation: hcSiteOrbitReverse 16s linear infinite;
+    }
+
+    html.hc-app body[data-theme="cosmos"] .clock-ring-sec #sec-ring-arc {
+      stroke: rgba(100, 220, 255, 0.95);
+      filter: drop-shadow(0 0 clamp(4px, 1.2vmin, 12px) rgba(80, 200, 255, 0.5));
+    }
+
+    /* ═══ LEGACY (유료) ═══ */
+    html.hc-app body[data-theme="legacy"] .clock-wrap .clock-demo {
+      background:
+        radial-gradient(circle at 50% 38%, rgba(255, 244, 218, 0.12) 0%, transparent 42%),
+        radial-gradient(circle, rgba(45, 38, 22, 0.6), rgba(18, 15, 8, 0.92) 68%);
+      box-shadow:
+        0 0 clamp(16px, 5vmin, 40px) rgba(230, 190, 95, 0.22),
+        inset 0 0 clamp(20px, 6vmin, 50px) rgba(235, 197, 118, 0.06);
+    }
+
+    html.hc-app body[data-theme="legacy"] .clock-wrap .clock-demo .r1 {
+      --color: rgba(255, 244, 218, 0.96);
+      --width: clamp(3.5px, 1.25vmin, 6.5px);
+      animation: hcSiteOrbit 42s linear infinite;
+    }
+
+    html.hc-app body[data-theme="legacy"] .clock-wrap .clock-demo .r2 {
+      --color: rgba(235, 200, 120, 0.9);
+      --width: clamp(3px, 1.1vmin, 5.5px);
+      animation: hcSiteOrbitReverse 30s linear infinite;
+    }
+
+    html.hc-app body[data-theme="legacy"] .clock-wrap .clock-demo .r3 {
+      --color: rgba(180, 140, 70, 0.85);
+      animation: hcSiteOrbit 22s linear infinite;
+    }
+
+    html.hc-app body[data-theme="legacy"] .clock-wrap .clock-demo .r4 {
+      --color: rgba(255, 230, 180, 0.88);
+      animation: hcSiteOrbitReverse 15s linear infinite;
+    }
+
+    html.hc-app body[data-theme="legacy"] .clock-wrap .clock-demo .clock-label .pct {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 600;
+    }
+
+    html.hc-app body[data-theme="legacy"] .clock-ring-sec #sec-ring-arc {
+      stroke: rgba(255, 196, 83, 0.98);
+      filter: drop-shadow(0 0 clamp(5px, 1.5vmin, 12px) rgba(230, 190, 95, 0.45));
+    }
+
+    /* ═══ HOLOGRAM (유료) ═══ */
+    html.hc-app body[data-theme="hologram"] .clock-wrap::after {
+      inset: -6%;
+      opacity: 0.65;
+      background-image: none;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent 0px,
+        transparent 3px,
+        rgba(60, 220, 255, 0.04) 3px,
+        rgba(60, 220, 255, 0.04) 4px
+      );
+      mix-blend-mode: screen;
+      animation: hcHoloScan 6s linear infinite;
+      z-index: 4;
+    }
+
+    html.hc-app body[data-theme="hologram"] .clock-wrap .clock-demo {
+      background:
+        radial-gradient(circle at 50% 50%, rgba(60, 220, 255, 0.08) 0%, transparent 55%),
+        radial-gradient(circle, rgba(20, 40, 80, 0.5), rgba(4, 8, 20, 0.95) 70%);
+      box-shadow:
+        0 0 clamp(20px, 7vmin, 52px) rgba(0, 225, 255, 0.25),
+        inset 0 0 clamp(8px, 2.5vmin, 20px) rgba(180, 70, 255, 0.08);
+    }
+
+    html.hc-app body[data-theme="hologram"] .clock-wrap .clock-demo .r1 {
+      --color: rgba(200, 255, 255, 0.85);
+      animation: hcSiteOrbit 32s linear infinite;
+    }
+
+    html.hc-app body[data-theme="hologram"] .clock-wrap .clock-demo .r2 {
+      --color: rgba(255, 70, 240, 0.82);
+      animation: hcSiteOrbitReverse 22s linear infinite;
+    }
+
+    html.hc-app body[data-theme="hologram"] .clock-wrap .clock-demo .r3 {
+      --color: rgba(60, 245, 255, 0.88);
+      animation: hcSiteOrbit 15s linear infinite;
+    }
+
+    html.hc-app body[data-theme="hologram"] .clock-wrap .clock-demo .r4 {
+      --color: rgba(170, 90, 255, 0.85);
+      animation: hcSiteOrbitReverse 10s linear infinite;
+    }
+
+    html.hc-app body[data-theme="hologram"] .clock-wrap .clock-demo > span::before {
+      animation: hcHoloPulse 2.5s ease-in-out infinite;
+      filter: drop-shadow(0 0 clamp(5px, 1.5vmin, 12px) rgba(0, 225, 255, 0.5));
+    }
+
+    html.hc-app body[data-theme="hologram"] .clock-wrap .clock-demo .clock-label .pct {
+      font-family: "Consolas", monospace;
+      color: #d8fcff;
+    }
+
+    html.hc-app body[data-theme="hologram"] .clock-ring-sec #sec-ring-arc {
+      stroke: rgba(60, 245, 255, 0.98);
+      filter: drop-shadow(0 0 clamp(6px, 1.8vmin, 14px) rgba(0, 225, 255, 0.55));
+    }
   </style>
 </head>
 <body data-mood="calm" data-theme="void">
@@ -1090,6 +1552,12 @@
         <span class="r2" aria-hidden="true"></span>
         <span class="r3" aria-hidden="true"></span>
         <span class="r4" aria-hidden="true"></span>
+        <svg class="clock-ring-sec" viewBox="0 0 200 200" aria-hidden="true">
+          <circle class="sec-ring-track" cx="100" cy="100" r="40" />
+          <g transform="rotate(-90 100 100)">
+            <circle id="sec-ring-arc" cx="100" cy="100" r="40" fill="none" />
+          </g>
+        </svg>
         <div class="clock-label">
           <span class="pct"><span id="pct-value">—</span><span class="pct-suffix">%</span></span>
           <span class="caption" id="caption" data-i18n="remaining">TIME LEFT</span>
@@ -1097,23 +1565,23 @@
       </div>
     </div>
 
-    <div class="digits" aria-live="polite">
+    <div class="digits" id="digits-panel" data-digit-tier="years" aria-live="polite">
       <div class="unit unit-years">
-        <div class="unit-face">
+        <button type="button" class="unit-face" id="digit-tier-toggle" aria-pressed="false">
           <span class="unit-value" data-key="years">0</span>
-          <span class="unit-label" data-i18n="unit.year">YEAR</span>
-        </div>
+          <span class="unit-label" id="digit-label-1" data-i18n="unit.year">YEAR</span>
+        </button>
       </div>
       <div class="unit unit-days">
         <div class="unit-face">
           <span class="unit-value" data-key="days">0</span>
-          <span class="unit-label" data-i18n="unit.day">DAY</span>
+          <span class="unit-label" id="digit-label-2" data-i18n="unit.day">DAY</span>
         </div>
       </div>
-      <div class="unit unit-hours">
+      <div class="unit unit-hours" id="digit-slot-3">
         <div class="unit-face">
           <span class="unit-value" data-key="hours">00</span>
-          <span class="unit-label" data-i18n="unit.hour">HOUR</span>
+          <span class="unit-label" id="digit-label-3" data-i18n="unit.hour">HOUR</span>
         </div>
       </div>
       <div class="unit unit-minutes">
@@ -1157,6 +1625,7 @@
   <script src="js/web-install.js"></script>
   <script src="js/locales-meta.js"></script>
   <script src="js/locale-loader.js"></script>
+  <script src="js/billing-bundle.js"></script>
   <script src="js/app-bundle.js"></script>
 </body>
 </html>

@@ -75,5 +75,6 @@
     "success": "Yerel önizleme listesindesin. Gerçek bağlantı halka açık sürümden önce gelir.",
     "invalidEmail": "Geçerli bir e-posta adresi gir."
   },
-  "footer": "Cennet Saati · Gün gitmeden yaşamak için bir hatırlatma."
+  "footer": "Cennet Saati · Gün gitmeden yaşamak için bir hatırlatma.",
+  "footerPrivacy": "Gizlilik Politikası"
 }

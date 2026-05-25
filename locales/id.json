@@ -18,6 +18,10 @@
     "min": "MENIT",
     "sec": "DETIK"
   },
+  "digit": {
+    "switchToTotalDays": "Show total days left, then hours and seconds",
+    "switchToYears": "Show years, days, and hours"
+  },
   "onboarding": {
     "title": "Mulai",
     "subtitle": "Tetapkan hidup yang Anda harapkan.",
@@ -46,7 +50,9 @@
     "birthTimeQuestion": "Jika tahu, masukkan jam kelahiran Anda.",
     "lifespanQuestion": "Berapa tahun Anda berharap hidup?",
     "invalidDate": "Masukkan tanggal yang valid.",
-    "invalidTime": "Masukkan waktu yang valid."
+    "invalidTime": "Masukkan waktu yang valid.",
+    "privacyPrefix": "Semua informasi Anda hanya tersimpan di perangkat ini.",
+    "privacyLink": "Kebijakan Privasi"
   },
   "quotes": [
     "This day will not come again. Make it count.",
@@ -115,7 +121,22 @@
     "purchaseYearlyDone": "Premium tahunan diaktifkan di perangkat ini.",
     "purchaseLifetimeDone": "Premium seumur hidup diaktifkan di perangkat ini.",
     "restoreFound": "Akses Premium dipulihkan di perangkat ini.",
-    "restoreEmpty": "Belum ada pembelian Premium di akun Google ini."
+    "restoreEmpty": "Belum ada pembelian Premium di akun Google ini.",
+    "productNotAvailable": "This product isn't available on your account. Make sure the app is installed from Google Play.",
+    "networkError": "Network error. Check your connection and try again.",
+    "paymentNotAllowed": "Payments are blocked on this account or device.",
+    "verificationFailed": "Payment verification failed. Please contact support.",
+    "alreadyOwned": "You already own this product. Tap Restore purchases.",
+    "testTitle": "Test activation",
+    "testBody": "Turn on Premium on this device without completing Play Billing.",
+    "testLifetime": "Lifetime (test)",
+    "testYearly": "Yearly (test)",
+    "testRevoke": "Reset to free",
+    "testHint": "On the main screen, long-press ✦ (about 0.7s) to enable test mode, then open Premium again.",
+    "testModeOn": "Billing test mode is on. Tap ✦ again to open Premium.",
+    "longPressHint": "Long-press for billing test mode",
+    "legalPrefix": "Pembayaran diproses oleh Google Play.",
+    "privacyLink": "Kebijakan Privasi"
   },
   "bucket": {
     "title": "Daftar hidup",

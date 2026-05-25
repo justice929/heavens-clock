@@ -75,5 +75,6 @@
     "success": "Tu es sur la liste locale d'aperçu. La connexion réelle viendra avant la sortie publique.",
     "invalidEmail": "Entre une adresse e-mail valide."
   },
-  "footer": "Horloge du Ciel · Un rappel de vivre avant que le jour ne s'en aille."
+  "footer": "Horloge du Ciel · Un rappel de vivre avant que le jour ne s'en aille.",
+  "footerPrivacy": "Politique de confidentialité"
 }

@@ -75,5 +75,6 @@
     "success": "You're on the local preview list. Real waitlist connection comes before public release.",
     "invalidEmail": "Enter a valid email address."
   },
-  "footer": "Heaven's Clock · A reminder to live before the day is gone."
+  "footer": "Heaven's Clock · A reminder to live before the day is gone.",
+  "footerPrivacy": "Privacy Policy"
 }

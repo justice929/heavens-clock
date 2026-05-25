@@ -75,5 +75,6 @@
     "success": "Jesteś na lokalnej liście podglądu. Prawdziwe połączenie przed publiczną premierą.",
     "invalidEmail": "Wprowadź prawidłowy adres e-mail."
   },
-  "footer": "Zegar Nieba · Przypomnienie, by żyć, zanim dzień minie."
+  "footer": "Zegar Nieba · Przypomnienie, by żyć, zanim dzień minie.",
+  "footerPrivacy": "Polityka prywatności"
 }

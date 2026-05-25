@@ -18,6 +18,10 @@
     "min": "นาที",
     "sec": "วิ"
   },
+  "digit": {
+    "switchToTotalDays": "Show total days left, then hours and seconds",
+    "switchToYears": "Show years, days, and hours"
+  },
   "onboarding": {
     "title": "เริ่มต้น",
     "subtitle": "กำหนดชีวิตที่คุณหวัง",
@@ -46,7 +50,9 @@
     "birthTimeQuestion": "ถ้าทราบ ให้ใส่เวลาที่คุณเกิด",
     "lifespanQuestion": "คุณหวังว่าจะมีชีวิตอยู่กี่ปี?",
     "invalidDate": "โปรดกรอกวันที่ที่ถูกต้อง",
-    "invalidTime": "โปรดกรอกเวลาที่ถูกต้อง"
+    "invalidTime": "โปรดกรอกเวลาที่ถูกต้อง",
+    "privacyPrefix": "ข้อมูลทั้งหมดของคุณจะอยู่บนอุปกรณ์นี้เท่านั้น",
+    "privacyLink": "นโยบายความเป็นส่วนตัว"
   },
   "quotes": [
     "This day will not come again. Make it count.",
@@ -115,7 +121,22 @@
     "purchaseYearlyDone": "เปิดใช้ Premium รายปีบนอุปกรณ์นี้แล้ว",
     "purchaseLifetimeDone": "เปิดใช้ Premium ตลอดชีพบนอุปกรณ์นี้แล้ว",
     "restoreFound": "กู้คืนสิทธิ์ Premium บนอุปกรณ์นี้แล้ว",
-    "restoreEmpty": "ยังไม่พบการซื้อ Premium ในบัญชี Google นี้"
+    "restoreEmpty": "ยังไม่พบการซื้อ Premium ในบัญชี Google นี้",
+    "productNotAvailable": "This product isn't available on your account. Make sure the app is installed from Google Play.",
+    "networkError": "Network error. Check your connection and try again.",
+    "paymentNotAllowed": "Payments are blocked on this account or device.",
+    "verificationFailed": "Payment verification failed. Please contact support.",
+    "alreadyOwned": "You already own this product. Tap Restore purchases.",
+    "testTitle": "Test activation",
+    "testBody": "Turn on Premium on this device without completing Play Billing.",
+    "testLifetime": "Lifetime (test)",
+    "testYearly": "Yearly (test)",
+    "testRevoke": "Reset to free",
+    "testHint": "On the main screen, long-press ✦ (about 0.7s) to enable test mode, then open Premium again.",
+    "testModeOn": "Billing test mode is on. Tap ✦ again to open Premium.",
+    "longPressHint": "Long-press for billing test mode",
+    "legalPrefix": "ชำระเงินผ่าน Google Play",
+    "privacyLink": "นโยบายความเป็นส่วนตัว"
   },
   "bucket": {
     "title": "บักเก็ตลิสต์",

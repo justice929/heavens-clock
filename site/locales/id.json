@@ -75,5 +75,6 @@
     "success": "Anda ada di daftar pratinjau lokal. Koneksi nyata hadir sebelum rilis publik.",
     "invalidEmail": "Masukkan alamat email yang valid."
   },
-  "footer": "Jam Surga · Pengingat untuk hidup sebelum hari berlalu."
+  "footer": "Jam Surga · Pengingat untuk hidup sebelum hari berlalu.",
+  "footerPrivacy": "Kebijakan Privasi"
 }

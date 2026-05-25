@@ -28,7 +28,9 @@ var HeavensClockBilling = (() => {
     isNativeStoreAvailable: () => isNativeStoreAvailable,
     isPremium: () => isPremium,
     purchaseProduct: () => purchaseProduct,
-    restorePurchases: () => restorePurchases
+    refreshEntitlements: () => refreshEntitlements,
+    restorePurchases: () => restorePurchases,
+    revokeLocalEntitlements: () => revokeLocalEntitlements
   });
 
   // node_modules/@capacitor/core/dist/index.js
@@ -8626,8 +8628,14 @@ Enter "E" to fail with an error.Anything else to cancel.`);
       ]);
       store.when().productUpdated(() => onProductsUpdated()).approved((transaction) => {
         syncEntitlementsFromStore();
-        transaction.finish();
+        try {
+          transaction.finish();
+        } catch (_) {
+        }
       }).finished(() => {
+        syncEntitlementsFromStore();
+        onProductsUpdated();
+      }).receiptUpdated(() => {
         syncEntitlementsFromStore();
         onProductsUpdated();
       });
@@ -8648,19 +8656,38 @@ Enter "E" to fail with an error.Anything else to cancel.`);
     });
     return initPromise;
   }
+  function mapErrorCode(code) {
+    if (code === ErrorCode.PAYMENT_CANCELLED) return "PAYMENT_CANCELLED";
+    if (code === ErrorCode.PRODUCT_NOT_AVAILABLE) return "PRODUCT_NOT_AVAILABLE";
+    if (code === ErrorCode.COMMUNICATION || code === ErrorCode.CLOUD_SERVICE_NETWORK_CONNECTION_FAILED || code === ErrorCode.LOAD || code === ErrorCode.BAD_RESPONSE || code === ErrorCode.REFRESH) {
+      return "NETWORK_ERROR";
+    }
+    if (code === ErrorCode.PAYMENT_INVALID || code === ErrorCode.PAYMENT_NOT_ALLOWED || code === ErrorCode.CLOUD_SERVICE_PERMISSION_DENIED || code === ErrorCode.CLOUD_SERVICE_REVOKED) {
+      return "PAYMENT_NOT_ALLOWED";
+    }
+    if (code === ErrorCode.SUBSCRIPTIONS_NOT_AVAILABLE) {
+      return "SUBSCRIPTIONS_NOT_AVAILABLE";
+    }
+    if (code === ErrorCode.VERIFICATION_FAILED || code === ErrorCode.INVALID_SIGNATURE) {
+      return "VERIFICATION_FAILED";
+    }
+    return "PURCHASE_FAILED";
+  }
   async function purchaseProduct(productId) {
     if (!storeReady) {
       throw new Error("STORE_NOT_READY");
     }
     const product = store.get(productId);
-    const offer = product?.getOffer?.();
-    if (!offer) throw new Error("PRODUCT_NOT_FOUND");
+    if (!product) throw new Error("PRODUCT_NOT_AVAILABLE");
+    if (store.owned(productId)) {
+      syncEntitlementsFromStore();
+      throw new Error("ALREADY_OWNED");
+    }
+    const offer = product.getOffer?.();
+    if (!offer) throw new Error("PRODUCT_NOT_AVAILABLE");
     const result = await offer.order();
     if (result?.isError) {
-      if (result.code === ErrorCode.PAYMENT_CANCELLED) {
-        throw new Error("PAYMENT_CANCELLED");
-      }
-      throw new Error(result.message || "PURCHASE_FAILED");
+      throw new Error(mapErrorCode(result.code));
     }
     return syncEntitlementsFromStore();
   }
@@ -8668,8 +8695,28 @@ Enter "E" to fail with an error.Anything else to cancel.`);
     if (!storeReady) {
       throw new Error("STORE_NOT_READY");
     }
-    await store.restorePurchases();
+    try {
+      await store.restorePurchases();
+    } catch (err) {
+      throw new Error(mapErrorCode(err?.code));
+    }
     return syncEntitlementsFromStore();
+  }
+  async function refreshEntitlements() {
+    if (!storeReady) return getPlan();
+    try {
+      await store.update();
+    } catch (_) {
+    }
+    return syncEntitlementsFromStore();
+  }
+  function revokeLocalEntitlements() {
+    saveEntitlements({
+      lifetimePremium: false,
+      yearlyPremium: false,
+      yearlyExpiresAt: null
+    });
+    return "free";
   }
   function applyLocalPurchase(productId) {
     if (productId === PRODUCT_IDS.lifetimePremium) {

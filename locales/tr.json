@@ -18,6 +18,10 @@
     "min": "DAK",
     "sec": "SN"
   },
+  "digit": {
+    "switchToTotalDays": "Show total days left, then hours and seconds",
+    "switchToYears": "Show years, days, and hours"
+  },
   "onboarding": {
     "title": "Başla",
     "subtitle": "Umut ettiğiniz yaşam süresini belirleyin.",
@@ -46,7 +50,9 @@
     "birthTimeQuestion": "Biliyorsan doğduğun saati ekle.",
     "lifespanQuestion": "Kaç yıl yaşamayı umuyorsun?",
     "invalidDate": "Lütfen geçerli bir tarih girin.",
-    "invalidTime": "Lütfen geçerli bir saat girin."
+    "invalidTime": "Lütfen geçerli bir saat girin.",
+    "privacyPrefix": "Tüm bilgileriniz yalnızca bu cihazda kalır.",
+    "privacyLink": "Gizlilik Politikası"
   },
   "quotes": [
     "This day will not come again. Make it count.",
@@ -115,7 +121,22 @@
     "purchaseYearlyDone": "Yıllık Premium bu cihazda etkinleştirildi.",
     "purchaseLifetimeDone": "Ömür boyu Premium bu cihazda etkinleştirildi.",
     "restoreFound": "Premium erişimi bu cihazda geri yüklendi.",
-    "restoreEmpty": "Bu Google hesabında henüz Premium satın alımı bulunamadı."
+    "restoreEmpty": "Bu Google hesabında henüz Premium satın alımı bulunamadı.",
+    "productNotAvailable": "This product isn't available on your account. Make sure the app is installed from Google Play.",
+    "networkError": "Network error. Check your connection and try again.",
+    "paymentNotAllowed": "Payments are blocked on this account or device.",
+    "verificationFailed": "Payment verification failed. Please contact support.",
+    "alreadyOwned": "You already own this product. Tap Restore purchases.",
+    "testTitle": "Test activation",
+    "testBody": "Turn on Premium on this device without completing Play Billing.",
+    "testLifetime": "Lifetime (test)",
+    "testYearly": "Yearly (test)",
+    "testRevoke": "Reset to free",
+    "testHint": "On the main screen, long-press ✦ (about 0.7s) to enable test mode, then open Premium again.",
+    "testModeOn": "Billing test mode is on. Tap ✦ again to open Premium.",
+    "longPressHint": "Long-press for billing test mode",
+    "legalPrefix": "Ödemeler Google Play üzerinden işlenir.",
+    "privacyLink": "Gizlilik Politikası"
   },
   "bucket": {
     "title": "Yapılacaklar listesi",

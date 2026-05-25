@@ -18,6 +18,10 @@
     "min": "МИН",
     "sec": "СЕК"
   },
+  "digit": {
+    "switchToTotalDays": "Show total days left, then hours and seconds",
+    "switchToYears": "Show years, days, and hours"
+  },
   "onboarding": {
     "title": "Начать",
     "subtitle": "Задайте жизнь, которую надеетесь прожить.",
@@ -46,7 +50,9 @@
     "birthTimeQuestion": "Если знаете, укажите время рождения.",
     "lifespanQuestion": "Сколько лет вы надеетесь прожить?",
     "invalidDate": "Введите правильную дату.",
-    "invalidTime": "Введите правильное время."
+    "invalidTime": "Введите правильное время.",
+    "privacyPrefix": "Все ваши данные остаются только на этом устройстве.",
+    "privacyLink": "Политика конфиденциальности"
   },
   "quotes": [
     "This day will not come again. Make it count.",
@@ -115,7 +121,22 @@
     "purchaseYearlyDone": "Годовой Premium активирован на этом устройстве.",
     "purchaseLifetimeDone": "Пожизненный Premium активирован на этом устройстве.",
     "restoreFound": "Доступ Premium восстановлен на этом устройстве.",
-    "restoreEmpty": "Покупка Premium для этого аккаунта Google не найдена."
+    "restoreEmpty": "Покупка Premium для этого аккаунта Google не найдена.",
+    "productNotAvailable": "This product isn't available on your account. Make sure the app is installed from Google Play.",
+    "networkError": "Network error. Check your connection and try again.",
+    "paymentNotAllowed": "Payments are blocked on this account or device.",
+    "verificationFailed": "Payment verification failed. Please contact support.",
+    "alreadyOwned": "You already own this product. Tap Restore purchases.",
+    "testTitle": "Test activation",
+    "testBody": "Turn on Premium on this device without completing Play Billing.",
+    "testLifetime": "Lifetime (test)",
+    "testYearly": "Yearly (test)",
+    "testRevoke": "Reset to free",
+    "testHint": "On the main screen, long-press ✦ (about 0.7s) to enable test mode, then open Premium again.",
+    "testModeOn": "Billing test mode is on. Tap ✦ again to open Premium.",
+    "longPressHint": "Long-press for billing test mode",
+    "legalPrefix": "Платежи обрабатываются через Google Play.",
+    "privacyLink": "Политика конфиденциальности"
   },
   "bucket": {
     "title": "Список желаний",

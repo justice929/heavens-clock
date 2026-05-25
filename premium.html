@@ -166,6 +166,20 @@
       text-align: center;
     }
     .message { color: rgba(232, 217, 184, 0.9); min-height: 1.2em; }
+    .legal-footer {
+      margin-top: 1.6rem;
+      text-align: center;
+      font-size: 0.7rem;
+      color: rgba(215, 224, 234, 0.42);
+      line-height: 1.55;
+    }
+    .legal-footer a {
+      color: rgba(232, 217, 184, 0.78);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: rgba(232, 217, 184, 0.3);
+    }
+    .legal-footer a:hover { color: #f1c873; }
     .active-panel {
       border: 1px solid rgba(232, 217, 184, 0.28);
       border-radius: 20px;
@@ -174,6 +188,50 @@
       background: rgba(232, 217, 184, 0.06);
     }
     .active-panel.hidden { display: none; }
+
+    .test-panel {
+      margin-top: 1rem;
+      padding: 0.95rem 1rem;
+      border: 1px dashed rgba(232, 217, 184, 0.35);
+      border-radius: 16px;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .test-panel.hidden { display: none; }
+
+    .test-panel h2 {
+      margin: 0 0 0.35rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #e8d9b8;
+    }
+
+    .test-panel p {
+      margin: 0 0 0.65rem;
+      font-size: 0.78rem;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    .test-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .test-actions .btn {
+      flex: 1 1 auto;
+      min-width: 7rem;
+      font-size: 0.62rem;
+    }
+
+    .test-hint {
+      margin: 0.55rem 0 0;
+      font-size: 0.62rem;
+      line-height: 1.45;
+      color: rgba(255, 255, 255, 0.4);
+    }
   </style>
 </head>
 <body>
@@ -226,6 +284,22 @@
 
     <p class="message" id="message" aria-live="polite"></p>
     <p class="note" id="preview-note" data-i18n="premium.previewNote">Store billing connects in the next release. Purchases on this screen apply locally for testing until Play Billing is live.</p>
+
+    <section class="test-panel hidden" id="test-panel" aria-label="Test activation">
+      <h2 data-i18n="premium.testTitle">Test activation</h2>
+      <p data-i18n="premium.testBody">Turn on Premium on this device without completing Play Billing.</p>
+      <div class="test-actions">
+        <button type="button" class="btn" id="btn-test-lifetime" data-i18n="premium.testLifetime">Lifetime (test)</button>
+        <button type="button" class="btn" id="btn-test-yearly" data-i18n="premium.testYearly">Yearly (test)</button>
+        <button type="button" class="btn" id="btn-test-revoke" data-i18n="premium.testRevoke">Reset to free</button>
+      </div>
+      <p class="test-hint" data-i18n="premium.testHint">On Android, open Premium with ?test=1 in the URL if the store purchase does not finish.</p>
+    </section>
+
+    <p class="legal-footer">
+      <span data-i18n="premium.legalPrefix">Purchases are processed by Google Play.</span>
+      <a href="https://heavens-clock.app/privacy" target="_blank" rel="noopener" data-i18n="premium.privacyLink">Privacy Policy</a>
+    </p>
   </div>
 
   <script src="js/locales-meta.js"></script>
