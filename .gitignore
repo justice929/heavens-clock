@@ -7,4 +7,6 @@ android/app/build/
 android/build/
 window*.xml
 *.keystore
+*.jks
+keystore.properties
 
