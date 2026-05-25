@@ -51,10 +51,10 @@ We have no server-side data to delete.
 게시한 정책 URL을 입력합니다.
 
 ```
-https://heavens-clock.app/privacy
+https://justice929.github.io/heavens-clock/site/privacy.html
 ```
 
-> 도메인을 아직 연결하기 전이라면, 임시로 GitHub Pages / Vercel / Netlify 등에 `site/privacy.html` 만 올려도 됩니다.
+> 위 URL 은 GitHub Pages 무료 호스팅 결과 주소입니다. 도메인 구입 후 자체 도메인으로 교체하려면 Play Console 의 정책 URL 만 갱신하고, `onboarding.html` / `premium.html` 의 in-app 링크 두 곳을 같이 수정하면 됩니다.
 
 ## 5. Children
 
