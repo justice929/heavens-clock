@@ -102,10 +102,10 @@
     "feature3": "วิดเจ็ตหน้าจอหลัก",
     "feature4": "นาฬิกาเว็บ + ติดตั้งบน PC",
     "yearlyName": "รายปี",
-    "yearlyPrice": "ราคาเมื่อเปิดตัว",
+    "yearlyPrice": "$4.99 / ปี",
     "yearlyDesc": "ต่ออายุทุกปี เข้าถึงครบขณะยังใช้งาน",
     "lifetimeName": "ตลอดชีพ",
-    "lifetimePrice": "ราคาเมื่อเปิดตัว",
+    "lifetimePrice": "$14.99 ครั้งเดียว",
     "lifetimeDesc": "จ่ายครั้งเดียว ใช้ Premium ตลอดไป",
     "continue": "ดำเนินการต่อ",
     "restore": "กู้คืนการซื้อ",
@@ -122,6 +122,8 @@
     "purchaseLifetimeDone": "เปิดใช้ Premium ตลอดชีพบนอุปกรณ์นี้แล้ว",
     "restoreFound": "กู้คืนสิทธิ์ Premium บนอุปกรณ์นี้แล้ว",
     "restoreEmpty": "ยังไม่พบการซื้อ Premium ในบัญชี Google นี้",
+    "legalPrefix": "ชำระเงินผ่าน Google Play",
+    "privacyLink": "นโยบายความเป็นส่วนตัว",
     "productNotAvailable": "This product isn't available on your account. Make sure the app is installed from Google Play.",
     "networkError": "Network error. Check your connection and try again.",
     "paymentNotAllowed": "Payments are blocked on this account or device.",
@@ -134,9 +136,7 @@
     "testRevoke": "Reset to free",
     "testHint": "On the main screen, long-press ✦ (about 0.7s) to enable test mode, then open Premium again.",
     "testModeOn": "Billing test mode is on. Tap ✦ again to open Premium.",
-    "longPressHint": "Long-press for billing test mode",
-    "legalPrefix": "ชำระเงินผ่าน Google Play",
-    "privacyLink": "นโยบายความเป็นส่วนตัว"
+    "longPressHint": "Long-press for billing test mode"
   },
   "bucket": {
     "title": "บักเก็ตลิสต์",

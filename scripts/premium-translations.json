@@ -13,10 +13,10 @@
     "feature3": "홈 화면 위젯",
     "feature4": "웹 시계 + PC 설치",
     "yearlyName": "연간 구독",
-    "yearlyPrice": "출시 시 가격 공개",
+    "yearlyPrice": "연 $4.99",
     "yearlyDesc": "매년 갱신. 구독 기간 동안 전 기능 이용.",
     "lifetimeName": "평생 이용",
-    "lifetimePrice": "출시 시 가격 공개",
+    "lifetimePrice": "$14.99 1회",
     "lifetimeDesc": "한 번 결제로 프리미엄 기능을 계속 이용.",
     "continue": "계속",
     "restore": "구매 복원",
@@ -40,7 +40,9 @@
     "purchaseYearlyDone": "연간 프리미엄이 활성화되었습니다.",
     "purchaseLifetimeDone": "평생 프리미엄이 활성화되었습니다.",
     "restoreFound": "프리미엄 이용 권한을 복원했습니다.",
-    "restoreEmpty": "이 Google 계정에서 프리미엄 구매 내역을 찾지 못했습니다."
+    "restoreEmpty": "이 Google 계정에서 프리미엄 구매 내역을 찾지 못했습니다.",
+    "legalPrefix": "결제는 Google Play를 통해 처리됩니다.",
+    "privacyLink": "개인정보처리방침"
   },
   "ja": {
     "back": "← 時計",
@@ -56,10 +58,10 @@
     "feature3": "ホーム画面ウィジェット",
     "feature4": "ウェブ時計 + PCへのインストール",
     "yearlyName": "年間プラン",
-    "yearlyPrice": "リリース時に価格公開",
+    "yearlyPrice": "年 $4.99",
     "yearlyDesc": "毎年更新。有効期間中は全機能を利用できます。",
     "lifetimeName": "買い切り",
-    "lifetimePrice": "リリース時に価格公開",
+    "lifetimePrice": "$14.99 単発",
     "lifetimeDesc": "一度の購入でプレミアム機能をずっと利用。",
     "continue": "続ける",
     "restore": "購入を復元",
@@ -75,7 +77,9 @@
     "purchaseYearlyDone": "年間プレミアムが有効になりました。",
     "purchaseLifetimeDone": "買い切りプレミアムが有効になりました。",
     "restoreFound": "プレミアムを復元しました。",
-    "restoreEmpty": "このGoogleアカウントではプレミアムの購入が見つかりませんでした。"
+    "restoreEmpty": "このGoogleアカウントではプレミアムの購入が見つかりませんでした。",
+    "legalPrefix": "決済はGoogle Playで処理されます。",
+    "privacyLink": "プライバシーポリシー"
   },
   "zh-Hans": {
     "back": "← 时钟",
@@ -91,10 +95,10 @@
     "feature3": "主屏幕小组件",
     "feature4": "网页时钟 + 安装到电脑",
     "yearlyName": "年付订阅",
-    "yearlyPrice": "上线时公布价格",
+    "yearlyPrice": "$4.99 / 年",
     "yearlyDesc": "每年续订，订阅期内可使用全部功能。",
     "lifetimeName": "终身",
-    "lifetimePrice": "上线时公布价格",
+    "lifetimePrice": "$14.99 一次性",
     "lifetimeDesc": "一次购买，永久享有全部高级功能。",
     "continue": "继续",
     "restore": "恢复购买",
@@ -110,7 +114,9 @@
     "purchaseYearlyDone": "年付高级版已在此设备激活。",
     "purchaseLifetimeDone": "终身高级版已在此设备激活。",
     "restoreFound": "已恢复高级版权限。",
-    "restoreEmpty": "此 Google 账号尚未找到高级版购买记录。"
+    "restoreEmpty": "此 Google 账号尚未找到高级版购买记录。",
+    "legalPrefix": "付款由 Google Play 处理。",
+    "privacyLink": "隐私政策"
   },
   "zh-Hant": {
     "back": "← 時鐘",
@@ -126,10 +132,10 @@
     "feature3": "主畫面小工具",
     "feature4": "網頁時鐘 + 安裝到電腦",
     "yearlyName": "年付方案",
-    "yearlyPrice": "上線時公布價格",
+    "yearlyPrice": "$4.99 / 年",
     "yearlyDesc": "每年續訂，訂閱期間可使用全部功能。",
     "lifetimeName": "終身",
-    "lifetimePrice": "上線時公布價格",
+    "lifetimePrice": "$14.99 一次",
     "lifetimeDesc": "一次購買，永久享有全部進階功能。",
     "continue": "繼續",
     "restore": "恢復購買",
@@ -145,7 +151,9 @@
     "purchaseYearlyDone": "年付進階版已在此裝置啟用。",
     "purchaseLifetimeDone": "終身進階版已在此裝置啟用。",
     "restoreFound": "已恢復進階版權限。",
-    "restoreEmpty": "此 Google 帳號尚未找到進階版購買記錄。"
+    "restoreEmpty": "此 Google 帳號尚未找到進階版購買記錄。",
+    "legalPrefix": "付款由 Google Play 處理。",
+    "privacyLink": "隱私權政策"
   },
   "es": {
     "back": "← Reloj",
@@ -161,10 +169,10 @@
     "feature3": "Widget en la pantalla de inicio",
     "feature4": "Reloj web + instalación en PC",
     "yearlyName": "Anual",
-    "yearlyPrice": "Precio al lanzamiento",
+    "yearlyPrice": "$4.99 / año",
     "yearlyDesc": "Se renueva cada año. Acceso completo mientras esté activo.",
     "lifetimeName": "De por vida",
-    "lifetimePrice": "Precio al lanzamiento",
+    "lifetimePrice": "$14.99 una vez",
     "lifetimeDesc": "Paga una vez y conserva Premium para siempre.",
     "continue": "Continuar",
     "restore": "Restaurar compras",
@@ -180,7 +188,9 @@
     "purchaseYearlyDone": "Premium anual activado en este dispositivo.",
     "purchaseLifetimeDone": "Premium de por vida activado en este dispositivo.",
     "restoreFound": "Acceso Premium restaurado en este dispositivo.",
-    "restoreEmpty": "No se encontró ninguna compra Premium en esta cuenta de Google."
+    "restoreEmpty": "No se encontró ninguna compra Premium en esta cuenta de Google.",
+    "legalPrefix": "Los pagos se procesan en Google Play.",
+    "privacyLink": "Política de Privacidad"
   },
   "fr": {
     "back": "← Horloge",
@@ -196,10 +206,10 @@
     "feature3": "Widget sur l'écran d'accueil",
     "feature4": "Horloge web + installation sur PC",
     "yearlyName": "Annuel",
-    "yearlyPrice": "Prix au lancement",
+    "yearlyPrice": "$4.99 / an",
     "yearlyDesc": "Renouvellement annuel. Accès complet tant que l'abonnement est actif.",
     "lifetimeName": "À vie",
-    "lifetimePrice": "Prix au lancement",
+    "lifetimePrice": "$14.99 paiement unique",
     "lifetimeDesc": "Payez une fois et gardez Premium pour toujours.",
     "continue": "Continuer",
     "restore": "Restaurer les achats",
@@ -215,7 +225,9 @@
     "purchaseYearlyDone": "Premium annuel activé sur cet appareil.",
     "purchaseLifetimeDone": "Premium à vie activé sur cet appareil.",
     "restoreFound": "Accès Premium restauré sur cet appareil.",
-    "restoreEmpty": "Aucun achat Premium trouvé pour ce compte Google."
+    "restoreEmpty": "Aucun achat Premium trouvé pour ce compte Google.",
+    "legalPrefix": "Les paiements sont traités par Google Play.",
+    "privacyLink": "Politique de confidentialité"
   },
   "de": {
     "back": "← Uhr",
@@ -231,10 +243,10 @@
     "feature3": "Startbildschirm-Widget",
     "feature4": "Web-Uhr + Installation auf dem PC",
     "yearlyName": "Jährlich",
-    "yearlyPrice": "Preis zum Start",
+    "yearlyPrice": "$4.99 / Jahr",
     "yearlyDesc": "Jährliche Verlängerung. Voller Zugriff solange aktiv.",
     "lifetimeName": "Lebenslang",
-    "lifetimePrice": "Preis zum Start",
+    "lifetimePrice": "$14.99 einmalig",
     "lifetimeDesc": "Einmal zahlen, Premium für immer behalten.",
     "continue": "Weiter",
     "restore": "Käufe wiederherstellen",
@@ -250,7 +262,9 @@
     "purchaseYearlyDone": "Jährliches Premium auf diesem Gerät aktiviert.",
     "purchaseLifetimeDone": "Lebenslanges Premium auf diesem Gerät aktiviert.",
     "restoreFound": "Premium-Zugang auf diesem Gerät wiederhergestellt.",
-    "restoreEmpty": "Für dieses Google-Konto wurde kein Premium-Kauf gefunden."
+    "restoreEmpty": "Für dieses Google-Konto wurde kein Premium-Kauf gefunden.",
+    "legalPrefix": "Zahlungen werden über Google Play abgewickelt.",
+    "privacyLink": "Datenschutzerklärung"
   },
   "pt": {
     "back": "← Relógio",
@@ -266,10 +280,10 @@
     "feature3": "Widget na tela inicial",
     "feature4": "Relógio web + instalação no PC",
     "yearlyName": "Anual",
-    "yearlyPrice": "Preço no lançamento",
+    "yearlyPrice": "$4.99 / ano",
     "yearlyDesc": "Renova todo ano. Acesso completo enquanto ativo.",
     "lifetimeName": "Vitalício",
-    "lifetimePrice": "Preço no lançamento",
+    "lifetimePrice": "$14.99 uma vez",
     "lifetimeDesc": "Pague uma vez e mantenha o Premium para sempre.",
     "continue": "Continuar",
     "restore": "Restaurar compras",
@@ -285,7 +299,9 @@
     "purchaseYearlyDone": "Premium anual ativado neste dispositivo.",
     "purchaseLifetimeDone": "Premium vitalício ativado neste dispositivo.",
     "restoreFound": "Acesso Premium restaurado neste dispositivo.",
-    "restoreEmpty": "Nenhuma compra Premium encontrada nesta conta Google."
+    "restoreEmpty": "Nenhuma compra Premium encontrada nesta conta Google.",
+    "legalPrefix": "Os pagamentos são processados pelo Google Play.",
+    "privacyLink": "Política de Privacidade"
   },
   "it": {
     "back": "← Orologio",
@@ -301,10 +317,10 @@
     "feature3": "Widget sulla schermata Home",
     "feature4": "Orologio web + installazione su PC",
     "yearlyName": "Annuale",
-    "yearlyPrice": "Prezzo al lancio",
+    "yearlyPrice": "$4.99 / anno",
     "yearlyDesc": "Si rinnova ogni anno. Accesso completo finché è attivo.",
     "lifetimeName": "A vita",
-    "lifetimePrice": "Prezzo al lancio",
+    "lifetimePrice": "$14.99 una volta",
     "lifetimeDesc": "Paga una volta e tieni Premium per sempre.",
     "continue": "Continua",
     "restore": "Ripristina acquisti",
@@ -320,7 +336,9 @@
     "purchaseYearlyDone": "Premium annuale attivato su questo dispositivo.",
     "purchaseLifetimeDone": "Premium a vita attivato su questo dispositivo.",
     "restoreFound": "Accesso Premium ripristinato su questo dispositivo.",
-    "restoreEmpty": "Nessun acquisto Premium trovato per questo account Google."
+    "restoreEmpty": "Nessun acquisto Premium trovato per questo account Google.",
+    "legalPrefix": "I pagamenti sono gestiti da Google Play.",
+    "privacyLink": "Informativa sulla privacy"
   },
   "ar": {
     "back": "← الساعة",
@@ -336,10 +354,10 @@
     "feature3": "ودجت الشاشة الرئيسية",
     "feature4": "ساعة ويب + تثبيت على الكمبيوتر",
     "yearlyName": "سنوي",
-    "yearlyPrice": "السعر عند الإطلاق",
+    "yearlyPrice": "$4.99 / سنة",
     "yearlyDesc": "يتجدد كل عام. وصول كامل طالما الاشتراك نشط.",
     "lifetimeName": "مدى الحياة",
-    "lifetimePrice": "السعر عند الإطلاق",
+    "lifetimePrice": "$14.99 لمرة واحدة",
     "lifetimeDesc": "ادفع مرة واحدة واحتفظ ببريميوم للأبد.",
     "continue": "متابعة",
     "restore": "استعادة المشتريات",
@@ -355,7 +373,9 @@
     "purchaseYearlyDone": "تم تفعيل البريميوم السنوي على هذا الجهاز.",
     "purchaseLifetimeDone": "تم تفعيل البريميوم مدى الحياة على هذا الجهاز.",
     "restoreFound": "تمت استعادة وصول بريميوم على هذا الجهاز.",
-    "restoreEmpty": "لم يُعثر على شراء بريميوم لهذا حساب Google بعد."
+    "restoreEmpty": "لم يُعثر على شراء بريميوم لهذا حساب Google بعد.",
+    "legalPrefix": "تتم المدفوعات عبر Google Play.",
+    "privacyLink": "سياسة الخصوصية"
   },
   "hi": {
     "back": "← घड़ी",
@@ -371,10 +391,10 @@
     "feature3": "होम स्क्रीन विजेट",
     "feature4": "वेब घड़ी + PC पर इंस्टॉल",
     "yearlyName": "वार्षिक",
-    "yearlyPrice": "लॉन्च पर कीमत",
+    "yearlyPrice": "$4.99 / वर्ष",
     "yearlyDesc": "हर साल नवीनीकरण। सक्रिय रहने तक पूर्ण पहुँच।",
     "lifetimeName": "आजीवन",
-    "lifetimePrice": "लॉन्च पर कीमत",
+    "lifetimePrice": "$14.99 एक बार",
     "lifetimeDesc": "एक बार भुगतान करें, प्रीमियम हमेशा के लिए।",
     "continue": "जारी रखें",
     "restore": "खरीद पुनर्स्थापित करें",
@@ -390,7 +410,9 @@
     "purchaseYearlyDone": "वार्षिक प्रीमियम इस डिवाइस पर सक्रिय किया गया।",
     "purchaseLifetimeDone": "आजीवन प्रीमियम इस डिवाइस पर सक्रिय किया गया।",
     "restoreFound": "इस डिवाइस पर प्रीमियम पहुँच पुनर्स्थापित की गई।",
-    "restoreEmpty": "इस Google खाते पर अभी कोई प्रीमियम खरीद नहीं मिली।"
+    "restoreEmpty": "इस Google खाते पर अभी कोई प्रीमियम खरीद नहीं मिली।",
+    "legalPrefix": "भुगतान Google Play द्वारा प्रोसेस होते हैं।",
+    "privacyLink": "गोपनीयता नीति"
   },
   "ru": {
     "back": "← Часы",
@@ -406,10 +428,10 @@
     "feature3": "Виджет на главном экране",
     "feature4": "Веб-часы + установка на ПК",
     "yearlyName": "Годовая",
-    "yearlyPrice": "Цена при запуске",
+    "yearlyPrice": "$4.99 / год",
     "yearlyDesc": "Продление каждый год. Полный доступ, пока подписка активна.",
     "lifetimeName": "Навсегда",
-    "lifetimePrice": "Цена при запуске",
+    "lifetimePrice": "$14.99 разово",
     "lifetimeDesc": "Оплатите один раз и сохраните Premium навсегда.",
     "continue": "Продолжить",
     "restore": "Восстановить покупки",
@@ -425,7 +447,9 @@
     "purchaseYearlyDone": "Годовой Premium активирован на этом устройстве.",
     "purchaseLifetimeDone": "Пожизненный Premium активирован на этом устройстве.",
     "restoreFound": "Доступ Premium восстановлен на этом устройстве.",
-    "restoreEmpty": "Покупка Premium для этого аккаунта Google не найдена."
+    "restoreEmpty": "Покупка Premium для этого аккаунта Google не найдена.",
+    "legalPrefix": "Платежи обрабатываются через Google Play.",
+    "privacyLink": "Политика конфиденциальности"
   },
   "vi": {
     "back": "← Đồng hồ",
@@ -441,10 +465,10 @@
     "feature3": "Widget màn hình chính",
     "feature4": "Đồng hồ web + cài trên PC",
     "yearlyName": "Hàng năm",
-    "yearlyPrice": "Giá khi ra mắt",
+    "yearlyPrice": "$4.99 / năm",
     "yearlyDesc": "Gia hạn mỗi năm. Truy cập đầy đủ khi còn hiệu lực.",
     "lifetimeName": "Trọn đời",
-    "lifetimePrice": "Giá khi ra mắt",
+    "lifetimePrice": "$14.99 một lần",
     "lifetimeDesc": "Trả một lần, giữ Premium mãi mãi.",
     "continue": "Tiếp tục",
     "restore": "Khôi phục giao dịch",
@@ -460,7 +484,9 @@
     "purchaseYearlyDone": "Premium hàng năm đã kích hoạt trên thiết bị này.",
     "purchaseLifetimeDone": "Premium trọn đời đã kích hoạt trên thiết bị này.",
     "restoreFound": "Đã khôi phục quyền Premium trên thiết bị này.",
-    "restoreEmpty": "Chưa tìm thấy giao dịch Premium cho tài khoản Google này."
+    "restoreEmpty": "Chưa tìm thấy giao dịch Premium cho tài khoản Google này.",
+    "legalPrefix": "Thanh toán được xử lý qua Google Play.",
+    "privacyLink": "Chính sách bảo mật"
   },
   "th": {
     "back": "← นาฬิกา",
@@ -476,10 +502,10 @@
     "feature3": "วิดเจ็ตหน้าจอหลัก",
     "feature4": "นาฬิกาเว็บ + ติดตั้งบน PC",
     "yearlyName": "รายปี",
-    "yearlyPrice": "ราคาเมื่อเปิดตัว",
+    "yearlyPrice": "$4.99 / ปี",
     "yearlyDesc": "ต่ออายุทุกปี เข้าถึงครบขณะยังใช้งาน",
     "lifetimeName": "ตลอดชีพ",
-    "lifetimePrice": "ราคาเมื่อเปิดตัว",
+    "lifetimePrice": "$14.99 ครั้งเดียว",
     "lifetimeDesc": "จ่ายครั้งเดียว ใช้ Premium ตลอดไป",
     "continue": "ดำเนินการต่อ",
     "restore": "กู้คืนการซื้อ",
@@ -495,7 +521,9 @@
     "purchaseYearlyDone": "เปิดใช้ Premium รายปีบนอุปกรณ์นี้แล้ว",
     "purchaseLifetimeDone": "เปิดใช้ Premium ตลอดชีพบนอุปกรณ์นี้แล้ว",
     "restoreFound": "กู้คืนสิทธิ์ Premium บนอุปกรณ์นี้แล้ว",
-    "restoreEmpty": "ยังไม่พบการซื้อ Premium ในบัญชี Google นี้"
+    "restoreEmpty": "ยังไม่พบการซื้อ Premium ในบัญชี Google นี้",
+    "legalPrefix": "ชำระเงินผ่าน Google Play",
+    "privacyLink": "นโยบายความเป็นส่วนตัว"
   },
   "id": {
     "back": "← Jam",
@@ -511,10 +539,10 @@
     "feature3": "Widget layar utama",
     "feature4": "Jam web + instal di PC",
     "yearlyName": "Tahunan",
-    "yearlyPrice": "Harga saat peluncuran",
+    "yearlyPrice": "$4.99 / tahun",
     "yearlyDesc": "Diperpanjang setiap tahun. Akses penuh selama aktif.",
     "lifetimeName": "Seumur hidup",
-    "lifetimePrice": "Harga saat peluncuran",
+    "lifetimePrice": "$14.99 sekali",
     "lifetimeDesc": "Bayar sekali, pertahankan Premium selamanya.",
     "continue": "Lanjutkan",
     "restore": "Pulihkan pembelian",
@@ -530,7 +558,9 @@
     "purchaseYearlyDone": "Premium tahunan diaktifkan di perangkat ini.",
     "purchaseLifetimeDone": "Premium seumur hidup diaktifkan di perangkat ini.",
     "restoreFound": "Akses Premium dipulihkan di perangkat ini.",
-    "restoreEmpty": "Belum ada pembelian Premium di akun Google ini."
+    "restoreEmpty": "Belum ada pembelian Premium di akun Google ini.",
+    "legalPrefix": "Pembayaran diproses oleh Google Play.",
+    "privacyLink": "Kebijakan Privasi"
   },
   "tr": {
     "back": "← Saat",
@@ -546,10 +576,10 @@
     "feature3": "Ana ekran widget'ı",
     "feature4": "Web saati + PC'ye yükleme",
     "yearlyName": "Yıllık",
-    "yearlyPrice": "Çıkışta fiyat",
+    "yearlyPrice": "$4.99 / yıl",
     "yearlyDesc": "Her yıl yenilenir. Aktifken tam erişim.",
     "lifetimeName": "Ömür boyu",
-    "lifetimePrice": "Çıkışta fiyat",
+    "lifetimePrice": "$14.99 tek seferlik",
     "lifetimeDesc": "Bir kez ödeyin, Premium'u sonsuza kadar kullanın.",
     "continue": "Devam",
     "restore": "Satın alımları geri yükle",
@@ -565,7 +595,9 @@
     "purchaseYearlyDone": "Yıllık Premium bu cihazda etkinleştirildi.",
     "purchaseLifetimeDone": "Ömür boyu Premium bu cihazda etkinleştirildi.",
     "restoreFound": "Premium erişimi bu cihazda geri yüklendi.",
-    "restoreEmpty": "Bu Google hesabında henüz Premium satın alımı bulunamadı."
+    "restoreEmpty": "Bu Google hesabında henüz Premium satın alımı bulunamadı.",
+    "legalPrefix": "Ödemeler Google Play üzerinden işlenir.",
+    "privacyLink": "Gizlilik Politikası"
   },
   "nl": {
     "back": "← Klok",
@@ -581,10 +613,10 @@
     "feature3": "Startschermwidget",
     "feature4": "Webklok + installatie op pc",
     "yearlyName": "Jaarlijks",
-    "yearlyPrice": "Prijs bij lancering",
+    "yearlyPrice": "$4.99 / jaar",
     "yearlyDesc": "Verlengt jaarlijks. Volledige toegang zolang actief.",
     "lifetimeName": "Levenslang",
-    "lifetimePrice": "Prijs bij lancering",
+    "lifetimePrice": "$14.99 eenmalig",
     "lifetimeDesc": "Eenmalig betalen, Premium voor altijd.",
     "continue": "Doorgaan",
     "restore": "Aankopen herstellen",
@@ -600,7 +632,9 @@
     "purchaseYearlyDone": "Jaarlijks Premium geactiveerd op dit apparaat.",
     "purchaseLifetimeDone": "Levenslang Premium geactiveerd op dit apparaat.",
     "restoreFound": "Premium-toegang hersteld op dit apparaat.",
-    "restoreEmpty": "Geen Premium-aankoop gevonden voor dit Google-account."
+    "restoreEmpty": "Geen Premium-aankoop gevonden voor dit Google-account.",
+    "legalPrefix": "Betalingen verlopen via Google Play.",
+    "privacyLink": "Privacybeleid"
   },
   "pl": {
     "back": "← Zegar",
@@ -616,10 +650,10 @@
     "feature3": "Widget na ekranie głównym",
     "feature4": "Zegar webowy + instalacja na PC",
     "yearlyName": "Roczny",
-    "yearlyPrice": "Cena przy premierze",
+    "yearlyPrice": "$4.99 / rok",
     "yearlyDesc": "Odnawia się co rok. Pełny dostęp, gdy aktywny.",
     "lifetimeName": "Dożywotni",
-    "lifetimePrice": "Cena przy premierze",
+    "lifetimePrice": "$14.99 jednorazowo",
     "lifetimeDesc": "Zapłać raz i zachowaj Premium na zawsze.",
     "continue": "Kontynuuj",
     "restore": "Przywróć zakupy",
@@ -635,6 +669,8 @@
     "purchaseYearlyDone": "Roczne Premium aktywowane na tym urządzeniu.",
     "purchaseLifetimeDone": "Dożywotnie Premium aktywowane na tym urządzeniu.",
     "restoreFound": "Przywrócono dostęp Premium na tym urządzeniu.",
-    "restoreEmpty": "Nie znaleziono zakupu Premium na tym koncie Google."
+    "restoreEmpty": "Nie znaleziono zakupu Premium na tym koncie Google.",
+    "legalPrefix": "Płatności są przetwarzane przez Google Play.",
+    "privacyLink": "Polityka prywatności"
   }
 }

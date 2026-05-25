@@ -102,10 +102,10 @@
     "feature3": "होम स्क्रीन विजेट",
     "feature4": "वेब घड़ी + PC पर इंस्टॉल",
     "yearlyName": "वार्षिक",
-    "yearlyPrice": "लॉन्च पर कीमत",
+    "yearlyPrice": "$4.99 / वर्ष",
     "yearlyDesc": "हर साल नवीनीकरण। सक्रिय रहने तक पूर्ण पहुँच।",
     "lifetimeName": "आजीवन",
-    "lifetimePrice": "लॉन्च पर कीमत",
+    "lifetimePrice": "$14.99 एक बार",
     "lifetimeDesc": "एक बार भुगतान करें, प्रीमियम हमेशा के लिए।",
     "continue": "जारी रखें",
     "restore": "खरीद पुनर्स्थापित करें",
@@ -122,6 +122,8 @@
     "purchaseLifetimeDone": "आजीवन प्रीमियम इस डिवाइस पर सक्रिय किया गया।",
     "restoreFound": "इस डिवाइस पर प्रीमियम पहुँच पुनर्स्थापित की गई।",
     "restoreEmpty": "इस Google खाते पर अभी कोई प्रीमियम खरीद नहीं मिली।",
+    "legalPrefix": "भुगतान Google Play द्वारा प्रोसेस होते हैं।",
+    "privacyLink": "गोपनीयता नीति",
     "productNotAvailable": "This product isn't available on your account. Make sure the app is installed from Google Play.",
     "networkError": "Network error. Check your connection and try again.",
     "paymentNotAllowed": "Payments are blocked on this account or device.",
@@ -134,9 +136,7 @@
     "testRevoke": "Reset to free",
     "testHint": "On the main screen, long-press ✦ (about 0.7s) to enable test mode, then open Premium again.",
     "testModeOn": "Billing test mode is on. Tap ✦ again to open Premium.",
-    "longPressHint": "Long-press for billing test mode",
-    "legalPrefix": "भुगतान Google Play द्वारा प्रोसेस होते हैं।",
-    "privacyLink": "गोपनीयता नीति"
+    "longPressHint": "Long-press for billing test mode"
   },
   "bucket": {
     "title": "बकेट लिस्ट",

@@ -20,8 +20,10 @@ var HeavensClockBilling = (() => {
   // js/billing.mjs
   var billing_exports = {};
   __export(billing_exports, {
+    BASE_PLAN_IDS: () => BASE_PLAN_IDS,
     PRODUCT_IDS: () => PRODUCT_IDS,
     applyLocalPurchase: () => applyLocalPurchase,
+    diagnose: () => diagnose,
     getPlan: () => getPlan,
     getProductPriceLabel: () => getProductPriceLabel,
     initStore: () => initStore,
@@ -8501,6 +8503,9 @@ Enter "E" to fail with an error.Anything else to cancel.`);
     yearlyPremium: "heavens_clock_yearly_premium",
     lifetimePremium: "heavens_clock_lifetime_premium"
   };
+  var BASE_PLAN_IDS = {
+    yearlyPremium: "yearly-autorenew"
+  };
   var ENTITLEMENTS_KEY = "heavens-clock-entitlements";
   var initPromise = null;
   var storeReady = false;
@@ -8717,6 +8722,32 @@ Enter "E" to fail with an error.Anything else to cancel.`);
       yearlyExpiresAt: null
     });
     return "free";
+  }
+  function diagnose() {
+    const summary = {
+      nativeStore: isNativeStoreAvailable(),
+      storeReady,
+      plan: getPlan(),
+      entitlements: loadEntitlements(),
+      products: {}
+    };
+    if (storeReady) {
+      for (const [key, id] of Object.entries(PRODUCT_IDS)) {
+        const product = store.get(id);
+        summary.products[key] = product ? {
+          id,
+          title: product.title,
+          owned: store.owned(id),
+          canPurchase: product.canPurchase,
+          priceLabel: getProductPriceLabel(id),
+          offers: product.offers?.map((o) => o.id) || []
+        } : { id, registered: false };
+      }
+      summary.basePlanIds = BASE_PLAN_IDS;
+    }
+    console.table(summary.products);
+    console.log("[billing] diagnose", summary);
+    return summary;
   }
   function applyLocalPurchase(productId) {
     if (productId === PRODUCT_IDS.lifetimePremium) {

@@ -102,10 +102,10 @@
     "feature3": "ホーム画面ウィジェット",
     "feature4": "ウェブ時計 + PCへのインストール",
     "yearlyName": "年間プラン",
-    "yearlyPrice": "リリース時に価格公開",
+    "yearlyPrice": "年 $4.99",
     "yearlyDesc": "毎年更新。有効期間中は全機能を利用できます。",
     "lifetimeName": "買い切り",
-    "lifetimePrice": "リリース時に価格公開",
+    "lifetimePrice": "$14.99 単発",
     "lifetimeDesc": "一度の購入でプレミアム機能をずっと利用。",
     "continue": "続ける",
     "restore": "購入を復元",
@@ -122,6 +122,8 @@
     "purchaseLifetimeDone": "買い切りプレミアムが有効になりました。",
     "restoreFound": "プレミアムを復元しました。",
     "restoreEmpty": "このGoogleアカウントではプレミアムの購入が見つかりませんでした。",
+    "legalPrefix": "決済はGoogle Playで処理されます。",
+    "privacyLink": "プライバシーポリシー",
     "productNotAvailable": "This product isn't available on your account. Make sure the app is installed from Google Play.",
     "networkError": "Network error. Check your connection and try again.",
     "paymentNotAllowed": "Payments are blocked on this account or device.",
@@ -134,9 +136,7 @@
     "testRevoke": "Reset to free",
     "testHint": "On the main screen, long-press ✦ (about 0.7s) to enable test mode, then open Premium again.",
     "testModeOn": "Billing test mode is on. Tap ✦ again to open Premium.",
-    "longPressHint": "Long-press for billing test mode",
-    "legalPrefix": "決済はGoogle Playで処理されます。",
-    "privacyLink": "プライバシーポリシー"
+    "longPressHint": "Long-press for billing test mode"
   },
   "bucket": {
     "title": "バケットリスト",

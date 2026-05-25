@@ -102,10 +102,10 @@
     "feature3": "主畫面小工具",
     "feature4": "網頁時鐘 + 安裝到電腦",
     "yearlyName": "年付方案",
-    "yearlyPrice": "上線時公布價格",
+    "yearlyPrice": "$4.99 / 年",
     "yearlyDesc": "每年續訂，訂閱期間可使用全部功能。",
     "lifetimeName": "終身",
-    "lifetimePrice": "上線時公布價格",
+    "lifetimePrice": "$14.99 一次",
     "lifetimeDesc": "一次購買，永久享有全部進階功能。",
     "continue": "繼續",
     "restore": "恢復購買",
@@ -122,6 +122,8 @@
     "purchaseLifetimeDone": "終身進階版已在此裝置啟用。",
     "restoreFound": "已恢復進階版權限。",
     "restoreEmpty": "此 Google 帳號尚未找到進階版購買記錄。",
+    "legalPrefix": "付款由 Google Play 處理。",
+    "privacyLink": "隱私權政策",
     "productNotAvailable": "This product isn't available on your account. Make sure the app is installed from Google Play.",
     "networkError": "Network error. Check your connection and try again.",
     "paymentNotAllowed": "Payments are blocked on this account or device.",
@@ -134,9 +136,7 @@
     "testRevoke": "Reset to free",
     "testHint": "On the main screen, long-press ✦ (about 0.7s) to enable test mode, then open Premium again.",
     "testModeOn": "Billing test mode is on. Tap ✦ again to open Premium.",
-    "longPressHint": "Long-press for billing test mode",
-    "legalPrefix": "付款由 Google Play 處理。",
-    "privacyLink": "隱私權政策"
+    "longPressHint": "Long-press for billing test mode"
   },
   "bucket": {
     "title": "願望清單",

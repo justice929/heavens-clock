@@ -102,10 +102,10 @@
     "feature3": "Widget en la pantalla de inicio",
     "feature4": "Reloj web + instalación en PC",
     "yearlyName": "Anual",
-    "yearlyPrice": "Precio al lanzamiento",
+    "yearlyPrice": "$4.99 / año",
     "yearlyDesc": "Se renueva cada año. Acceso completo mientras esté activo.",
     "lifetimeName": "De por vida",
-    "lifetimePrice": "Precio al lanzamiento",
+    "lifetimePrice": "$14.99 una vez",
     "lifetimeDesc": "Paga una vez y conserva Premium para siempre.",
     "continue": "Continuar",
     "restore": "Restaurar compras",
@@ -122,6 +122,8 @@
     "purchaseLifetimeDone": "Premium de por vida activado en este dispositivo.",
     "restoreFound": "Acceso Premium restaurado en este dispositivo.",
     "restoreEmpty": "No se encontró ninguna compra Premium en esta cuenta de Google.",
+    "legalPrefix": "Los pagos se procesan en Google Play.",
+    "privacyLink": "Política de Privacidad",
     "productNotAvailable": "This product isn't available on your account. Make sure the app is installed from Google Play.",
     "networkError": "Network error. Check your connection and try again.",
     "paymentNotAllowed": "Payments are blocked on this account or device.",
@@ -134,9 +136,7 @@
     "testRevoke": "Reset to free",
     "testHint": "On the main screen, long-press ✦ (about 0.7s) to enable test mode, then open Premium again.",
     "testModeOn": "Billing test mode is on. Tap ✦ again to open Premium.",
-    "longPressHint": "Long-press for billing test mode",
-    "legalPrefix": "Los pagos se procesan en Google Play.",
-    "privacyLink": "Política de Privacidad"
+    "longPressHint": "Long-press for billing test mode"
   },
   "bucket": {
     "title": "Lista de vida",

@@ -102,10 +102,10 @@
     "feature3": "主屏幕小组件",
     "feature4": "网页时钟 + 安装到电脑",
     "yearlyName": "年付订阅",
-    "yearlyPrice": "上线时公布价格",
+    "yearlyPrice": "$4.99 / 年",
     "yearlyDesc": "每年续订，订阅期内可使用全部功能。",
     "lifetimeName": "终身",
-    "lifetimePrice": "上线时公布价格",
+    "lifetimePrice": "$14.99 一次性",
     "lifetimeDesc": "一次购买，永久享有全部高级功能。",
     "continue": "继续",
     "restore": "恢复购买",
@@ -122,6 +122,8 @@
     "purchaseLifetimeDone": "终身高级版已在此设备激活。",
     "restoreFound": "已恢复高级版权限。",
     "restoreEmpty": "此 Google 账号尚未找到高级版购买记录。",
+    "legalPrefix": "付款由 Google Play 处理。",
+    "privacyLink": "隐私政策",
     "productNotAvailable": "This product isn't available on your account. Make sure the app is installed from Google Play.",
     "networkError": "Network error. Check your connection and try again.",
     "paymentNotAllowed": "Payments are blocked on this account or device.",
@@ -134,9 +136,7 @@
     "testRevoke": "Reset to free",
     "testHint": "On the main screen, long-press ✦ (about 0.7s) to enable test mode, then open Premium again.",
     "testModeOn": "Billing test mode is on. Tap ✦ again to open Premium.",
-    "longPressHint": "Long-press for billing test mode",
-    "legalPrefix": "付款由 Google Play 处理。",
-    "privacyLink": "隐私政策"
+    "longPressHint": "Long-press for billing test mode"
   },
   "bucket": {
     "title": "愿望清单",

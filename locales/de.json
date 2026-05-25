@@ -102,10 +102,10 @@
     "feature3": "Startbildschirm-Widget",
     "feature4": "Web-Uhr + Installation auf dem PC",
     "yearlyName": "Jährlich",
-    "yearlyPrice": "Preis zum Start",
+    "yearlyPrice": "$4.99 / Jahr",
     "yearlyDesc": "Jährliche Verlängerung. Voller Zugriff solange aktiv.",
     "lifetimeName": "Lebenslang",
-    "lifetimePrice": "Preis zum Start",
+    "lifetimePrice": "$14.99 einmalig",
     "lifetimeDesc": "Einmal zahlen, Premium für immer behalten.",
     "continue": "Weiter",
     "restore": "Käufe wiederherstellen",
@@ -122,6 +122,8 @@
     "purchaseLifetimeDone": "Lebenslanges Premium auf diesem Gerät aktiviert.",
     "restoreFound": "Premium-Zugang auf diesem Gerät wiederhergestellt.",
     "restoreEmpty": "Für dieses Google-Konto wurde kein Premium-Kauf gefunden.",
+    "legalPrefix": "Zahlungen werden über Google Play abgewickelt.",
+    "privacyLink": "Datenschutzerklärung",
     "productNotAvailable": "This product isn't available on your account. Make sure the app is installed from Google Play.",
     "networkError": "Network error. Check your connection and try again.",
     "paymentNotAllowed": "Payments are blocked on this account or device.",
@@ -134,9 +136,7 @@
     "testRevoke": "Reset to free",
     "testHint": "On the main screen, long-press ✦ (about 0.7s) to enable test mode, then open Premium again.",
     "testModeOn": "Billing test mode is on. Tap ✦ again to open Premium.",
-    "longPressHint": "Long-press for billing test mode",
-    "legalPrefix": "Zahlungen werden über Google Play abgewickelt.",
-    "privacyLink": "Datenschutzerklärung"
+    "longPressHint": "Long-press for billing test mode"
   },
   "bucket": {
     "title": "Bucket List",

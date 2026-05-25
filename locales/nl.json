@@ -102,10 +102,10 @@
     "feature3": "Startschermwidget",
     "feature4": "Webklok + installatie op pc",
     "yearlyName": "Jaarlijks",
-    "yearlyPrice": "Prijs bij lancering",
+    "yearlyPrice": "$4.99 / jaar",
     "yearlyDesc": "Verlengt jaarlijks. Volledige toegang zolang actief.",
     "lifetimeName": "Levenslang",
-    "lifetimePrice": "Prijs bij lancering",
+    "lifetimePrice": "$14.99 eenmalig",
     "lifetimeDesc": "Eenmalig betalen, Premium voor altijd.",
     "continue": "Doorgaan",
     "restore": "Aankopen herstellen",
@@ -122,6 +122,8 @@
     "purchaseLifetimeDone": "Levenslang Premium geactiveerd op dit apparaat.",
     "restoreFound": "Premium-toegang hersteld op dit apparaat.",
     "restoreEmpty": "Geen Premium-aankoop gevonden voor dit Google-account.",
+    "legalPrefix": "Betalingen verlopen via Google Play.",
+    "privacyLink": "Privacybeleid",
     "productNotAvailable": "This product isn't available on your account. Make sure the app is installed from Google Play.",
     "networkError": "Network error. Check your connection and try again.",
     "paymentNotAllowed": "Payments are blocked on this account or device.",
@@ -134,9 +136,7 @@
     "testRevoke": "Reset to free",
     "testHint": "On the main screen, long-press ✦ (about 0.7s) to enable test mode, then open Premium again.",
     "testModeOn": "Billing test mode is on. Tap ✦ again to open Premium.",
-    "longPressHint": "Long-press for billing test mode",
-    "legalPrefix": "Betalingen verlopen via Google Play.",
-    "privacyLink": "Privacybeleid"
+    "longPressHint": "Long-press for billing test mode"
   },
   "bucket": {
     "title": "Bucketlist",

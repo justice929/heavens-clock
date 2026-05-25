@@ -10,9 +10,29 @@ import {
   ErrorCode,
 } from "capacitor-plugin-cdv-purchase";
 
+/**
+ * Google Play product identifiers.
+ *
+ * These IDs must be created EXACTLY the same in Play Console:
+ *   Yearly  → 구독 (subscription), Base plan ID below
+ *   Lifetime → 인앱 상품 (non-consumable)
+ *
+ * Renaming requires updates here, premium.html data-product attrs,
+ * premium-bundle.js PRODUCT_IDS, and docs/android-play-billing.md.
+ */
 export const PRODUCT_IDS = {
   yearlyPremium: "heavens_clock_yearly_premium",
   lifetimePremium: "heavens_clock_lifetime_premium",
+};
+
+/**
+ * Base plan / offer identifiers for the subscription.
+ * The cdv-purchase plugin picks the default offer automatically via
+ * `product.getOffer()`, so these values are documentation only — but
+ * Play Console MUST register the same base plan id for prices to load.
+ */
+export const BASE_PLAN_IDS = {
+  yearlyPremium: "yearly-autorenew",
 };
 
 const ENTITLEMENTS_KEY = "heavens-clock-entitlements";
@@ -283,6 +303,40 @@ export function revokeLocalEntitlements() {
     yearlyExpiresAt: null,
   });
   return "free";
+}
+
+/**
+ * Print product/entitlement status to the console.
+ * Run from chrome://inspect on a connected device:
+ *   HeavensClockBilling.diagnose()
+ */
+export function diagnose() {
+  const summary = {
+    nativeStore: isNativeStoreAvailable(),
+    storeReady,
+    plan: getPlan(),
+    entitlements: loadEntitlements(),
+    products: {},
+  };
+  if (storeReady) {
+    for (const [key, id] of Object.entries(PRODUCT_IDS)) {
+      const product = store.get(id);
+      summary.products[key] = product
+        ? {
+            id,
+            title: product.title,
+            owned: store.owned(id),
+            canPurchase: product.canPurchase,
+            priceLabel: getProductPriceLabel(id),
+            offers: product.offers?.map((o) => o.id) || [],
+          }
+        : { id, registered: false };
+    }
+    summary.basePlanIds = BASE_PLAN_IDS;
+  }
+  console.table(summary.products);
+  console.log("[billing] diagnose", summary);
+  return summary;
 }
 
 /** Local-only grant for web preview / dev (no Play Billing). */
