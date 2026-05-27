@@ -56,9 +56,9 @@ Android Studio가 열리며 `android/` 폴더가 프로젝트로 로드됩니다
    | Alias | `heavens-clock` |
    | Password (alias) | 위 store 비밀번호와 같게 해도 OK |
    | Validity (years) | **25 이상** (Play 요구: 최소 25년) |
-   | First and Last Name | `justice` |
+   | First and Last Name | `Pax Studio Co.` (개발자 표시 이름과 일치) |
    | Organizational Unit | (비워둠 OK) |
-   | Organization | (비워둠 OK 또는 본인 사업명) |
+   | Organization | `Pax Studio Co.` |
    | City, State, Country code | `Seoul`, `Seoul`, `KR` |
 
 5. OK 클릭 → keystore 파일 생성됨

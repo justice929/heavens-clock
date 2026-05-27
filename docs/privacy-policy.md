@@ -2,7 +2,7 @@
 
 > 게시 정보
 >
-> - 개발자: **justice**
+> - 개발자: **Pax Studio Co.**
 > - 문의 메일: **paxpax13@gmail.com**
 > - 시행일: **2026-06-01**
 > - 소재지(영문): **Republic of Korea**, 소재지(한국어): **대한민국**
@@ -18,7 +18,7 @@
 This policy explains how the **Heaven's Clock** mobile app (and the related website) handles your data.
 
 ### 1. Who we are
-Heaven's Clock is developed and published by **justice** ("we", "us"), based in Republic of Korea.
+Heaven's Clock is developed and published by **Pax Studio Co.** ("we", "us"), based in Republic of Korea.
 You can reach us at **paxpax13@gmail.com**.
 
 ### 2. What data we collect
@@ -87,7 +87,7 @@ Questions, concerns, or requests: **paxpax13@gmail.com**
 이 방침은 **Heaven's Clock**(이하 "본 앱") 및 관련 웹사이트에서 이용자의 정보를 어떻게 처리하는지를 설명합니다.
 
 ### 1. 개발자
-본 앱은 **justice**(이하 "개발자")이 개발·운영하며, 본 정책에 따라 이용자의 개인정보를 처리합니다.
+본 앱은 **Pax Studio Co.**(이하 "개발자")가 개발·운영하며, 본 정책에 따라 이용자의 개인정보를 처리합니다.
 - 소재지: 대한민국
 - 문의: **paxpax13@gmail.com**
 
