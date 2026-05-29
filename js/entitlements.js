@@ -25,7 +25,7 @@ export const ENTITLEMENTS_KEY = "heavens-clock-entitlements";
 export const FREE_LIMITS = {
   bucketItems: 3,
   themeId: "void",
-  moods: ["calm", "impact"],
+  moods: ["calm"],
 };
 
 /**
@@ -37,7 +37,7 @@ export const PLAN_ACCESS = {
     app: {
       basicClock: true,
       premiumThemes: false,
-      impactMood: true,
+      impactMood: false,
       homeWidget: false,
       bucketListMax: FREE_LIMITS.bucketItems,
     },

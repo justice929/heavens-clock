@@ -146,17 +146,17 @@
     return "free";
   }
 
-  function updateStorePrices() {
-    const api = billing();
-    if (billingMode !== "store" || !api?.getProductPriceLabel) return;
-
-    const yearlyPrice = api.getProductPriceLabel(PRODUCT_IDS.yearlyPremium);
-    const lifetimePrice = api.getProductPriceLabel(PRODUCT_IDS.lifetimePremium);
-
+  function applyPlanPricesFromLocale() {
     const yearlyEl = document.querySelector("#plan-yearly .plan-price");
     const lifetimeEl = document.querySelector("#plan-lifetime .plan-price");
-    if (yearlyEl && yearlyPrice) yearlyEl.textContent = yearlyPrice;
-    if (lifetimeEl && lifetimePrice) lifetimeEl.textContent = lifetimePrice;
+    if (yearlyEl) yearlyEl.textContent = t("premium.yearlyPrice");
+    if (lifetimeEl) lifetimeEl.textContent = t("premium.lifetimePrice");
+  }
+
+  function updateStorePrices() {
+    // UI price labels are fixed to locale strings (USD-based copy),
+    // regardless of Play billing country currency returned by store APIs.
+    applyPlanPricesFromLocale();
   }
 
   function updatePlanUi() {

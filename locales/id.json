@@ -44,15 +44,15 @@
     "back": "Kembali",
     "backToClock": "Back to clock",
     "start": "Mulai jam",
+    "privacyPrefix": "Semua informasi Anda hanya tersimpan di perangkat ini.",
+    "privacyLink": "Kebijakan Privasi",
     "note": "Hanya di perangkat Anda. Hitung mundur mengikuti zona waktu.",
     "languageQuestion": "Pilih bahasa untuk jam Anda.",
     "birthDateQuestion": "Kapan kisah Anda dimulai?",
     "birthTimeQuestion": "Jika tahu, masukkan jam kelahiran Anda.",
     "lifespanQuestion": "Berapa tahun Anda berharap hidup?",
     "invalidDate": "Masukkan tanggal yang valid.",
-    "invalidTime": "Masukkan waktu yang valid.",
-    "privacyPrefix": "Semua informasi Anda hanya tersimpan di perangkat ini.",
-    "privacyLink": "Kebijakan Privasi"
+    "invalidTime": "Masukkan waktu yang valid."
   },
   "quotes": [
     "This day will not come again. Make it count.",
@@ -124,6 +124,8 @@
     "restoreEmpty": "Belum ada pembelian Premium di akun Google ini.",
     "legalPrefix": "Pembayaran diproses oleh Google Play.",
     "privacyLink": "Kebijakan Privasi",
+    "feature5": "Home screen widget (digital counter)",
+    "feature6": "Future Premium: luxury themes, web clock + PC install, bucket community",
     "productNotAvailable": "This product isn't available on your account. Make sure the app is installed from Google Play.",
     "networkError": "Network error. Check your connection and try again.",
     "paymentNotAllowed": "Payments are blocked on this account or device.",

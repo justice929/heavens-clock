@@ -16,6 +16,12 @@
     onboardingComplete: false,
     setupVersion: 0,
     purchased: false,
+    reminders: {
+      enabled: true,
+      morning: "09:00",
+      focus: "14:00",
+      review: "21:30",
+    },
   };
 
   const THEMES = [
@@ -28,7 +34,7 @@
     { id: "hologram", name: "Hologram", tier: "premium", accent: "#48eaff" },
   ];
 
-  const FREE_LIMITS = { bucketItems: 3, themeId: "void", moods: ["calm", "impact"] };
+  const FREE_LIMITS = { bucketItems: 3, themeId: "void", moods: ["calm"] };
   const DEFAULT_ENTITLEMENTS = {
     yearlyPremium: false,
     lifetimePremium: false,
@@ -134,6 +140,78 @@
 
   function saveSettings(settings) {
     localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings));
+  }
+
+  function normalizeReminderSettings(input) {
+    const base = DEFAULT_SETTINGS.reminders;
+    const raw = input && typeof input === "object" ? input : {};
+    const parse = (v, fallback) => {
+      const text = typeof v === "string" ? v.trim() : "";
+      return /^\d{2}:\d{2}$/.test(text) ? text : fallback;
+    };
+    return {
+      enabled: raw.enabled !== false,
+      morning: parse(raw.morning, base.morning),
+      focus: parse(raw.focus, base.focus),
+      review: parse(raw.review, base.review),
+    };
+  }
+
+  function ensureReminderSettings(settings) {
+    settings.reminders = normalizeReminderSettings(settings.reminders);
+    return settings.reminders;
+  }
+
+  function reminderCopy(locale) {
+    if ((locale || "").startsWith("ko")) {
+      return {
+        configTitle: "알림 설정",
+        enableQuestion: "하루 3회 행동 알림을 켤까요?",
+        disableQuestion: "현재 알림이 켜져 있습니다. 끄시겠어요?",
+        morningPrompt: "오전 의도 알림 시간 (HH:MM, 24시간)",
+        focusPrompt: "오후 실행 알림 시간 (HH:MM, 24시간)",
+        reviewPrompt: "저녁 리뷰 알림 시간 (HH:MM, 24시간)",
+        badTime: "시간 형식이 올바르지 않습니다. 예: 09:00",
+        saved: "알림이 저장되었습니다.",
+        disabled: "알림이 꺼졌습니다.",
+      };
+    }
+    return {
+      configTitle: "Reminder settings",
+      enableQuestion: "Enable 3 daily action reminders?",
+      disableQuestion: "Reminders are enabled. Disable them?",
+      morningPrompt: "Morning intention time (HH:MM, 24h)",
+      focusPrompt: "Afternoon action time (HH:MM, 24h)",
+      reviewPrompt: "Evening review time (HH:MM, 24h)",
+      badTime: "Invalid time format. Example: 09:00",
+      saved: "Reminders saved.",
+      disabled: "Reminders disabled.",
+    };
+  }
+
+  function isValidClockTime(value) {
+    if (!/^\d{2}:\d{2}$/.test(value || "")) return false;
+    const [hour, minute] = value.split(":").map(Number);
+    return hour >= 0 && hour <= 23 && minute >= 0 && minute <= 59;
+  }
+
+  function syncReminderSchedule(settings, { requestPermission = false } = {}) {
+    if (!isNativeApp()) return;
+    const bridge = window.HeavensClockBridge;
+    if (!bridge?.configureReminders) return;
+    const reminders = ensureReminderSettings(settings);
+    if (requestPermission) bridge.requestNotificationPermission?.();
+    const payload = {
+      enabled: reminders.enabled,
+      reminders: reminders.enabled
+        ? [
+            { id: "intention", time: reminders.morning, title: "Heaven's Clock", body: (currentLocale || "").startsWith("ko") ? "오늘 가장 중요한 1가지를 정해보세요." : "Name the one meaningful thing for today." },
+            { id: "focus", time: reminders.focus, title: "Heaven's Clock", body: (currentLocale || "").startsWith("ko") ? "지금 10분만, 미루던 한 가지를 시작해보세요." : "Take 10 minutes now and start one postponed task." },
+            { id: "review", time: reminders.review, title: "Heaven's Clock", body: (currentLocale || "").startsWith("ko") ? "오늘 시간을 어떻게 보냈는지 짧게 돌아보세요." : "Take a brief evening review of how you spent your time." },
+          ]
+        : [],
+    };
+    bridge.configureReminders(JSON.stringify(payload));
   }
 
   async function loadLocale(code) {
@@ -363,6 +441,8 @@
 
   async function init() {
     const settings = loadSettings();
+    ensureReminderSettings(settings);
+    saveSettings(settings);
     if (!settings.onboardingComplete || !settings.birthDate || settings.setupVersion !== 2) {
       location.replace("onboarding.html");
       return;
@@ -370,6 +450,7 @@
 
     await loadLocale(settings.locale || "en");
     applyI18n();
+    syncReminderSchedule(settings);
 
     const { birth: lifeStart, target } = computeLifeRange(settings);
     const pctValue = document.getElementById("pct-value");
@@ -436,22 +517,26 @@
       const total = target - lifeStart;
       const left = target - now;
       const percentLeft = total > 0 ? Math.max(0, Math.min(100, (left / total) * 100)) : 0;
+      const parts = remainingParts(now, target);
       const snapshot = {
-        version: 1,
+        version: 2,
         updatedAt: now.toISOString(),
         locale: currentLocale,
         theme: document.body.dataset.theme || "void",
         quote: quote.textContent,
         labels: {
           memento: t("mementoMori"),
-          daysLeft: currentLocale.startsWith("ko") ? "남은 일수" : currentLocale.startsWith("en") ? "DAYS LEFT" : t("remaining"),
+          yearUnit: t("unit.year"),
+          dayUnit: t("unit.day"),
+          hourUnit: t("unit.hour"),
         },
         timeZone: settings.timeZone || detectTimeZone(),
         birthAt: lifeStart.toISOString(),
         targetAt: target.toISOString(),
         lifespanYears: Number(settings.lifespanYears || 80),
-        daysLeft: Math.max(0, Math.ceil((target - now) / 86_400_000)),
-        hoursLeftToday: Math.floor((Math.max(0, target - now) % 86_400_000) / 3_600_000),
+        yearsLeft: parts.years,
+        daysLeft: parts.days,
+        hoursLeft: parts.hours,
         percentLeft: Number(percentLeft.toFixed(2)),
       };
       try { localStorage.setItem(WIDGET_DATA_KEY, JSON.stringify(snapshot)); } catch (_) {}
@@ -526,6 +611,7 @@
       updateDigits(new Date());
       showBucketItem();
       updateWidgetSnapshot();
+      syncReminderSchedule(settings);
     }
 
     const langSelect = document.getElementById("app-language");
@@ -540,9 +626,40 @@
       });
     }
 
+    function openReminderSetup() {
+      const copy = reminderCopy(currentLocale);
+      const reminders = ensureReminderSettings(settings);
+      if (reminders.enabled && confirm(copy.disableQuestion)) {
+        reminders.enabled = false;
+        saveSettings(settings);
+        window.HeavensClockBridge?.cancelReminders?.();
+        alert(copy.disabled);
+        return;
+      }
+      if (!confirm(copy.enableQuestion)) return;
+      const morning = prompt(copy.morningPrompt, reminders.morning);
+      if (morning == null) return;
+      const focus = prompt(copy.focusPrompt, reminders.focus);
+      if (focus == null) return;
+      const review = prompt(copy.reviewPrompt, reminders.review);
+      if (review == null) return;
+      if (!isValidClockTime(morning) || !isValidClockTime(focus) || !isValidClockTime(review)) {
+        alert(copy.badTime);
+        return;
+      }
+      reminders.enabled = true;
+      reminders.morning = morning;
+      reminders.focus = focus;
+      reminders.review = review;
+      saveSettings(settings);
+      syncReminderSchedule(settings, { requestPermission: true });
+      alert(copy.saved);
+    }
+
     document.getElementById("edit-settings")?.addEventListener("click", () => {
       location.href = "onboarding.html?edit=1";
     });
+    document.getElementById("open-reminders")?.addEventListener("click", openReminderSetup);
     document.getElementById("open-premium")?.addEventListener("click", openPremiumPage);
     document.body.classList.toggle("is-premium", isPremium(entitlements));
     const savedTheme = THEMES.find((theme) => theme.id === loadTheme()) || THEMES[0];

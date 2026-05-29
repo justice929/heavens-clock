@@ -44,15 +44,15 @@
     "back": "Geri",
     "backToClock": "Back to clock",
     "start": "Saati başlat",
+    "privacyPrefix": "Tüm bilgileriniz yalnızca bu cihazda kalır.",
+    "privacyLink": "Gizlilik Politikası",
     "note": "Yalnızca cihazınızda. Geri sayım saat diliminizi kullanır.",
     "languageQuestion": "Saatinin konuşacağı dili seç.",
     "birthDateQuestion": "Hikayen hangi gün başladı?",
     "birthTimeQuestion": "Biliyorsan doğduğun saati ekle.",
     "lifespanQuestion": "Kaç yıl yaşamayı umuyorsun?",
     "invalidDate": "Lütfen geçerli bir tarih girin.",
-    "invalidTime": "Lütfen geçerli bir saat girin.",
-    "privacyPrefix": "Tüm bilgileriniz yalnızca bu cihazda kalır.",
-    "privacyLink": "Gizlilik Politikası"
+    "invalidTime": "Lütfen geçerli bir saat girin."
   },
   "quotes": [
     "This day will not come again. Make it count.",
@@ -124,6 +124,8 @@
     "restoreEmpty": "Bu Google hesabında henüz Premium satın alımı bulunamadı.",
     "legalPrefix": "Ödemeler Google Play üzerinden işlenir.",
     "privacyLink": "Gizlilik Politikası",
+    "feature5": "Home screen widget (digital counter)",
+    "feature6": "Future Premium: luxury themes, web clock + PC install, bucket community",
     "productNotAvailable": "This product isn't available on your account. Make sure the app is installed from Google Play.",
     "networkError": "Network error. Check your connection and try again.",
     "paymentNotAllowed": "Payments are blocked on this account or device.",

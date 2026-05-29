@@ -44,15 +44,15 @@
     "back": "ย้อนกลับ",
     "backToClock": "Back to clock",
     "start": "เริ่มนาฬิกา",
+    "privacyPrefix": "ข้อมูลทั้งหมดของคุณจะอยู่บนอุปกรณ์นี้เท่านั้น",
+    "privacyLink": "นโยบายความเป็นส่วนตัว",
     "note": "เก็บบนอุปกรณ์เท่านั้น นับถอยหลังตามเขตเวลาที่เลือก",
     "languageQuestion": "เลือกภาษาของนาฬิกาคุณ",
     "birthDateQuestion": "เรื่องราวของคุณเริ่มต้นวันไหน?",
     "birthTimeQuestion": "ถ้าทราบ ให้ใส่เวลาที่คุณเกิด",
     "lifespanQuestion": "คุณหวังว่าจะมีชีวิตอยู่กี่ปี?",
     "invalidDate": "โปรดกรอกวันที่ที่ถูกต้อง",
-    "invalidTime": "โปรดกรอกเวลาที่ถูกต้อง",
-    "privacyPrefix": "ข้อมูลทั้งหมดของคุณจะอยู่บนอุปกรณ์นี้เท่านั้น",
-    "privacyLink": "นโยบายความเป็นส่วนตัว"
+    "invalidTime": "โปรดกรอกเวลาที่ถูกต้อง"
   },
   "quotes": [
     "This day will not come again. Make it count.",
@@ -124,6 +124,8 @@
     "restoreEmpty": "ยังไม่พบการซื้อ Premium ในบัญชี Google นี้",
     "legalPrefix": "ชำระเงินผ่าน Google Play",
     "privacyLink": "นโยบายความเป็นส่วนตัว",
+    "feature5": "Home screen widget (digital counter)",
+    "feature6": "Future Premium: luxury themes, web clock + PC install, bucket community",
     "productNotAvailable": "This product isn't available on your account. Make sure the app is installed from Google Play.",
     "networkError": "Network error. Check your connection and try again.",
     "paymentNotAllowed": "Payments are blocked on this account or device.",

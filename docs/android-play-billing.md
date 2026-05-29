@@ -73,10 +73,13 @@ ID 를 바꾸려면 다음 5곳을 모두 손봐야 합니다.
 
 > Play Console 의 "가격 자동 변환" 기능을 켜면 USD 기준값에서 모든 통화·국가 가격이 한 번에 생성됩니다. 출시 후 특정 국가만 수동 조정도 가능합니다.
 
-UI 에 표시되는 가격 텍스트는 **두 가지 경로**로 표시됩니다.
+UI 가격 라벨은 **모든 언어에서 USD 표기 고정**으로 동작합니다.
 
-1. **store 응답 후(실기기 정상 흐름)** — Play 가 사용자 국가 화폐로 자동 노출 (ex. `₩6,900/년`)
-2. **store 응답 전(아주 짧은 초기 로딩 또는 브라우저 미리보기)** — i18n 의 `premium.yearlyPrice`/`premium.lifetimePrice` 값이 폴백으로 표시됨. 현재는 `$4.99 / year`, `$14.99 once` (각 언어로 번역됨).
+1. `premium.html` 가격 텍스트는 항상 `locales/*.json` 의 `premium.yearlyPrice` / `premium.lifetimePrice` 값을 사용합니다.
+2. Play Store API 가 반환하는 국가별 통화(KRW, JPY 등) 값은 UI에 덮어쓰지 않습니다.
+3. 실제 결제 통화는 Play 결제 시트(사용자 Play 결제 프로필 국가) 기준으로 처리됩니다.
+
+구현: `js/premium-bundle.js` 의 `updateStorePrices()` 가 `applyPlanPricesFromLocale()` 만 사용.
 
 ---
 

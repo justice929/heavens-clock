@@ -249,7 +249,9 @@ function updateWidgetSnapshot() {
     quote: dailyQuote.textContent,
     labels: {
       memento: t("mementoMori"),
-      daysLeft: locale.startsWith("ko") ? "남은 일수" : locale.startsWith("en") ? "DAYS LEFT" : t("remaining"),
+      yearUnit: t("unit.year"),
+      dayUnit: t("unit.day"),
+      hourUnit: t("unit.hour"),
     },
     theme: document.body.dataset.theme || "void",
   }));

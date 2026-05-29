@@ -44,15 +44,15 @@
     "back": "वापस",
     "backToClock": "Back to clock",
     "start": "घड़ी शुरू",
+    "privacyPrefix": "आपकी सारी जानकारी केवल इस डिवाइस पर रहती है।",
+    "privacyLink": "गोपनीयता नीति",
     "note": "केवल आपके उपकरण पर। उलटी गिनती आपके समय क्षेत्र का पालन करती है।",
     "languageQuestion": "अपनी घड़ी की भाषा चुनें।",
     "birthDateQuestion": "आपकी कहानी किस दिन शुरू हुई?",
     "birthTimeQuestion": "यदि पता हो, तो अपने जन्म का समय जोड़ें।",
     "lifespanQuestion": "आप कितने वर्ष जीना चाहते हैं?",
     "invalidDate": "कृपया सही तारीख दर्ज करें।",
-    "invalidTime": "कृपया सही समय दर्ज करें।",
-    "privacyPrefix": "आपकी सारी जानकारी केवल इस डिवाइस पर रहती है।",
-    "privacyLink": "गोपनीयता नीति"
+    "invalidTime": "कृपया सही समय दर्ज करें।"
   },
   "quotes": [
     "This day will not come again. Make it count.",
@@ -124,6 +124,8 @@
     "restoreEmpty": "इस Google खाते पर अभी कोई प्रीमियम खरीद नहीं मिली।",
     "legalPrefix": "भुगतान Google Play द्वारा प्रोसेस होते हैं।",
     "privacyLink": "गोपनीयता नीति",
+    "feature5": "Home screen widget (digital counter)",
+    "feature6": "Future Premium: luxury themes, web clock + PC install, bucket community",
     "productNotAvailable": "This product isn't available on your account. Make sure the app is installed from Google Play.",
     "networkError": "Network error. Check your connection and try again.",
     "paymentNotAllowed": "Payments are blocked on this account or device.",

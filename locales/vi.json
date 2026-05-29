@@ -44,15 +44,15 @@
     "back": "Quay lại",
     "backToClock": "Back to clock",
     "start": "Bắt đầu đồng hồ",
+    "privacyPrefix": "Mọi thông tin của bạn chỉ lưu trên thiết bị này.",
+    "privacyLink": "Chính sách bảo mật",
     "note": "Chỉ lưu trên thiết bị. Đếm ngược theo múi giờ bạn chọn.",
     "languageQuestion": "Chọn ngôn ngữ cho chiếc đồng hồ của bạn.",
     "birthDateQuestion": "Câu chuyện của bạn bắt đầu vào ngày nào?",
     "birthTimeQuestion": "Nếu biết, hãy nhập giờ bạn chào đời.",
     "lifespanQuestion": "Bạn hy vọng sống bao nhiêu năm?",
     "invalidDate": "Vui lòng nhập ngày hợp lệ.",
-    "invalidTime": "Vui lòng nhập thời gian hợp lệ.",
-    "privacyPrefix": "Mọi thông tin của bạn chỉ lưu trên thiết bị này.",
-    "privacyLink": "Chính sách bảo mật"
+    "invalidTime": "Vui lòng nhập thời gian hợp lệ."
   },
   "quotes": [
     "This day will not come again. Make it count.",
@@ -124,6 +124,8 @@
     "restoreEmpty": "Chưa tìm thấy giao dịch Premium cho tài khoản Google này.",
     "legalPrefix": "Thanh toán được xử lý qua Google Play.",
     "privacyLink": "Chính sách bảo mật",
+    "feature5": "Home screen widget (digital counter)",
+    "feature6": "Future Premium: luxury themes, web clock + PC install, bucket community",
     "productNotAvailable": "This product isn't available on your account. Make sure the app is installed from Google Play.",
     "networkError": "Network error. Check your connection and try again.",
     "paymentNotAllowed": "Payments are blocked on this account or device.",

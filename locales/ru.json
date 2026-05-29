@@ -44,15 +44,15 @@
     "back": "Назад",
     "backToClock": "Back to clock",
     "start": "Запустить часы",
+    "privacyPrefix": "Все ваши данные остаются только на этом устройстве.",
+    "privacyLink": "Политика конфиденциальности",
     "note": "Только на устройстве. Отсчёт следует вашему поясу.",
     "languageQuestion": "Выберите язык ваших часов.",
     "birthDateQuestion": "Когда началась ваша история?",
     "birthTimeQuestion": "Если знаете, укажите время рождения.",
     "lifespanQuestion": "Сколько лет вы надеетесь прожить?",
     "invalidDate": "Введите правильную дату.",
-    "invalidTime": "Введите правильное время.",
-    "privacyPrefix": "Все ваши данные остаются только на этом устройстве.",
-    "privacyLink": "Политика конфиденциальности"
+    "invalidTime": "Введите правильное время."
   },
   "quotes": [
     "This day will not come again. Make it count.",
@@ -124,6 +124,8 @@
     "restoreEmpty": "Покупка Premium для этого аккаунта Google не найдена.",
     "legalPrefix": "Платежи обрабатываются через Google Play.",
     "privacyLink": "Политика конфиденциальности",
+    "feature5": "Home screen widget (digital counter)",
+    "feature6": "Future Premium: luxury themes, web clock + PC install, bucket community",
     "productNotAvailable": "This product isn't available on your account. Make sure the app is installed from Google Play.",
     "networkError": "Network error. Check your connection and try again.",
     "paymentNotAllowed": "Payments are blocked on this account or device.",

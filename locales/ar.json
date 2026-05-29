@@ -44,15 +44,15 @@
     "back": "رجوع",
     "backToClock": "Back to clock",
     "start": "ابدأ الساعة",
+    "privacyPrefix": "تبقى جميع معلوماتك على هذا الجهاز فقط.",
+    "privacyLink": "سياسة الخصوصية",
     "note": "يُحفظ على جهازك فقط. العد التنازلي يتبع منطقتك الزمنية.",
     "languageQuestion": "اختر لغة ساعتك.",
     "birthDateQuestion": "متى بدأت قصتك؟",
     "birthTimeQuestion": "إذا كنت تعرفه، فأدخل وقت ميلادك.",
     "lifespanQuestion": "كم سنة تأمل أن تعيش؟",
     "invalidDate": "يرجى إدخال تاريخ صحيح.",
-    "invalidTime": "يرجى إدخال وقت صحيح.",
-    "privacyPrefix": "تبقى جميع معلوماتك على هذا الجهاز فقط.",
-    "privacyLink": "سياسة الخصوصية"
+    "invalidTime": "يرجى إدخال وقت صحيح."
   },
   "quotes": [
     "This day will not come again. Make it count.",
@@ -124,6 +124,8 @@
     "restoreEmpty": "لم يُعثر على شراء بريميوم لهذا حساب Google بعد.",
     "legalPrefix": "تتم المدفوعات عبر Google Play.",
     "privacyLink": "سياسة الخصوصية",
+    "feature5": "Home screen widget (digital counter)",
+    "feature6": "Future Premium: luxury themes, web clock + PC install, bucket community",
     "productNotAvailable": "This product isn't available on your account. Make sure the app is installed from Google Play.",
     "networkError": "Network error. Check your connection and try again.",
     "paymentNotAllowed": "Payments are blocked on this account or device.",

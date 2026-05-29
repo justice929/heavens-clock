@@ -44,15 +44,15 @@
     "back": "返回",
     "backToClock": "Back to clock",
     "start": "啟動時鐘",
+    "privacyPrefix": "所有資訊僅儲存於此裝置。",
+    "privacyLink": "隱私權政策",
     "note": "僅儲存在本裝置。倒數遵循所選時區。",
     "languageQuestion": "選擇你的時鐘使用的語言。",
     "birthDateQuestion": "你的故事從哪一天開始？",
     "birthTimeQuestion": "如果知道，請輸入你出生的時間。",
     "lifespanQuestion": "你希望活多少年？",
     "invalidDate": "請輸入有效日期。",
-    "invalidTime": "請輸入有效時間。",
-    "privacyPrefix": "所有資訊僅儲存於此裝置。",
-    "privacyLink": "隱私權政策"
+    "invalidTime": "請輸入有效時間。"
   },
   "quotes": [
     "This day will not come again. Make it count.",
@@ -124,6 +124,8 @@
     "restoreEmpty": "此 Google 帳號尚未找到進階版購買記錄。",
     "legalPrefix": "付款由 Google Play 處理。",
     "privacyLink": "隱私權政策",
+    "feature5": "Home screen widget (digital counter)",
+    "feature6": "Future Premium: luxury themes, web clock + PC install, bucket community",
     "productNotAvailable": "This product isn't available on your account. Make sure the app is installed from Google Play.",
     "networkError": "Network error. Check your connection and try again.",
     "paymentNotAllowed": "Payments are blocked on this account or device.",

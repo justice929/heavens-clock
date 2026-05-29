@@ -44,15 +44,15 @@
     "back": "戻る",
     "backToClock": "時計に戻る",
     "start": "時計を始める",
+    "privacyPrefix": "すべての情報はこの端末にのみ保存されます。",
+    "privacyLink": "プライバシーポリシー",
     "note": "端末内のみに保存。カウントダウンは選択した時間帯に従います。",
     "languageQuestion": "時計が話す言葉を選んでください。",
     "birthDateQuestion": "あなたの物語が始まった日はいつですか？",
     "birthTimeQuestion": "分かる場合は、生まれた時間を入力してください。",
     "lifespanQuestion": "何年生きたいですか？",
     "invalidDate": "正しい日付を入力してください。",
-    "invalidTime": "正しい時刻を入力してください。",
-    "privacyPrefix": "すべての情報はこの端末にのみ保存されます。",
-    "privacyLink": "プライバシーポリシー"
+    "invalidTime": "正しい時刻を入力してください。"
   },
   "quotes": [
     "This day will not come again. Make it count.",
@@ -124,6 +124,8 @@
     "restoreEmpty": "このGoogleアカウントではプレミアムの購入が見つかりませんでした。",
     "legalPrefix": "決済はGoogle Playで処理されます。",
     "privacyLink": "プライバシーポリシー",
+    "feature5": "Home screen widget (digital counter)",
+    "feature6": "Future Premium: luxury themes, web clock + PC install, bucket community",
     "productNotAvailable": "This product isn't available on your account. Make sure the app is installed from Google Play.",
     "networkError": "Network error. Check your connection and try again.",
     "paymentNotAllowed": "Payments are blocked on this account or device.",

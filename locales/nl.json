@@ -44,15 +44,15 @@
     "back": "Terug",
     "backToClock": "Back to clock",
     "start": "Start klok",
+    "privacyPrefix": "Al je gegevens blijven alleen op dit apparaat.",
+    "privacyLink": "Privacybeleid",
     "note": "Alleen op uw apparaat. Aftellen volgt uw tijdzone.",
     "languageQuestion": "Kies de taal van je klok.",
     "birthDateQuestion": "Wanneer begon jouw verhaal?",
     "birthTimeQuestion": "Als je het weet, voeg je geboortetijd toe.",
     "lifespanQuestion": "Hoeveel jaar hoop je te leven?",
     "invalidDate": "Voer een geldige datum in.",
-    "invalidTime": "Voer een geldige tijd in.",
-    "privacyPrefix": "Al je gegevens blijven alleen op dit apparaat.",
-    "privacyLink": "Privacybeleid"
+    "invalidTime": "Voer een geldige tijd in."
   },
   "quotes": [
     "This day will not come again. Make it count.",
@@ -124,6 +124,8 @@
     "restoreEmpty": "Geen Premium-aankoop gevonden voor dit Google-account.",
     "legalPrefix": "Betalingen verlopen via Google Play.",
     "privacyLink": "Privacybeleid",
+    "feature5": "Home screen widget (digital counter)",
+    "feature6": "Future Premium: luxury themes, web clock + PC install, bucket community",
     "productNotAvailable": "This product isn't available on your account. Make sure the app is installed from Google Play.",
     "networkError": "Network error. Check your connection and try again.",
     "paymentNotAllowed": "Payments are blocked on this account or device.",

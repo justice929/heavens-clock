@@ -45,6 +45,22 @@
 
   if (isNativeApp()) {
     document.documentElement.classList.add("hc-app");
+    const style = document.createElement("style");
+    style.id = "hc-app-viewport-lock";
+    style.textContent = `
+      html.hc-app,
+      html.hc-app body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        overscroll-behavior-x: none;
+      }
+      html.hc-app body {
+        min-height: 100dvh;
+        touch-action: pan-y;
+      }
+    `;
+    (document.head || document.documentElement).appendChild(style);
     return;
   }
   if (isPremium(loadEntitlements())) return;

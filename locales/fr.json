@@ -44,15 +44,15 @@
     "back": "Retour",
     "backToClock": "Back to clock",
     "start": "Lancer l'horloge",
+    "privacyPrefix": "Toutes vos informations restent sur cet appareil.",
+    "privacyLink": "Politique de confidentialité",
     "note": "Stocké sur l'appareil. Le compte à rebours suit votre fuseau.",
     "languageQuestion": "Choisis la voix de ton horloge.",
     "birthDateQuestion": "Quand ton histoire a-t-elle commencé ?",
     "birthTimeQuestion": "Si tu la connais, ajoute ton heure de naissance.",
     "lifespanQuestion": "Combien d’années espères-tu vivre ?",
     "invalidDate": "Veuillez saisir une date valide.",
-    "invalidTime": "Veuillez saisir une heure valide.",
-    "privacyPrefix": "Toutes vos informations restent sur cet appareil.",
-    "privacyLink": "Politique de confidentialité"
+    "invalidTime": "Veuillez saisir une heure valide."
   },
   "quotes": [
     "This day will not come again. Make it count.",
@@ -124,6 +124,8 @@
     "restoreEmpty": "Aucun achat Premium trouvé pour ce compte Google.",
     "legalPrefix": "Les paiements sont traités par Google Play.",
     "privacyLink": "Politique de confidentialité",
+    "feature5": "Home screen widget (digital counter)",
+    "feature6": "Future Premium: luxury themes, web clock + PC install, bucket community",
     "productNotAvailable": "This product isn't available on your account. Make sure the app is installed from Google Play.",
     "networkError": "Network error. Check your connection and try again.",
     "paymentNotAllowed": "Payments are blocked on this account or device.",
